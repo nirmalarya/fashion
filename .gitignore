@@ -25,6 +25,13 @@ update/
 var/
 vendor/
 .DS_Store
+app/etc/NonComposerComponentRegistration.php
+app/etc/di.xml
+app/etc/vendor_path.php
+app/functions.php
+app/autoload.php
+app/bootstrap.php
+
 
 /.buildpath
 /.cache
