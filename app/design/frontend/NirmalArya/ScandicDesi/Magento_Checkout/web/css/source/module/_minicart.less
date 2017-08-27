@@ -176,7 +176,13 @@
 
             &.showcart {
                 white-space: nowrap;
-
+				
+				&:before {
+					background: url('../images/shopping-bag-default-icon.svg') no-repeat top left;
+					text-indent: -1000px;
+					width: 3.5rem;
+					height: 3.5rem;
+				}
                 .text {
                     &:extend(.abs-visually-hidden all);
                 }

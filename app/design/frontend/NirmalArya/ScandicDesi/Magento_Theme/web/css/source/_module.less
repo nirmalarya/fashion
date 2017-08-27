@@ -131,21 +131,36 @@
 				float: left;
 				position: relative;
 				
+				.header-shipping-info {
+					font-weight: 300;
+					color: @color-dark_brown;
+					.primary-color {
+						font-family: @font-vidaloka;
+						font-weight: normal;
+						color: @sd_base__color;
+					}
+				}
 				.widget.block {
 					margin : 0;
-					
-					.primary-color{
-						color: @link__hover__color;
-					}
 
 					&.block-cms-link-inline {
 						position: absolute;
 						left: 8rem;
 						a {
 							position: relative;
+							font-size: 1.5rem;
+							font-weight: 300;
+							line-height: 4rem;
+							
+							color: @color-dark_brown;
+							
+							&:hover {
+								color: @sd_base__color;
+							
+							}
 							.lib-icon-font(
 								@_icon-font-content: @icon-help,
-								@_icon-font-size: @font-size__base,
+								@_icon-font-size: 1.5rem,
 								@_icon-font-line-height: @icon-font__line-height,
 								@_icon-font-color: @icon-font__color,
 								@_icon-font-color-hover: @icon-font__color-hover,
@@ -153,9 +168,14 @@
 								@_icon-font-margin: @icon-font__margin,
 								@_icon-font-vertical-align: @icon-font__vertical-align,
 								@_icon-font-position: before,
-								@_icon-font-display: true
 								);
-							line-height: 4rem;
+							
+							&:before {
+								background: url('../images/info-icon.svg') no-repeat top left;
+								text-indent: -1000px;
+								width: 2rem;
+								height: 2rem;
+							}							
 						}
 					}					
 				}
@@ -223,6 +243,12 @@
 					@_icon-font-position: before,
 					@_icon-font-display: false
 					);
+				&:before {
+					background: url('../images/account-icon.svg') no-repeat center;
+					text-indent: -1000px;
+					width: 3rem;
+					height: 3rem;
+				}
 			}
 			
 		}
@@ -582,10 +608,18 @@
 				float: left;
 				margin: 0;
 				line-height: 4rem;
+				font-size: 1.5rem;
 				.options {
 					.lib-dropdown(
-						@_icon-font-line-height: 4rem,
+							@_icon-font-line-height: 4.2rem,
+							@_icon-font-size: .8rem,
+							@_icon-font-color: @color-dark_brown,
+							@_icon-font-color-hover: @sd_base__color,
+							@_icon-font-color-active: @color-dark_brown
 						);
+					strong{
+						    font-weight: 300;
+					}
 				}
 			}
 		}

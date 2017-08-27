@@ -103,7 +103,13 @@
 			@_icon-font-position: before,
 			@_icon-font-display: false
 			);
-
+		&:before {
+			background: url('../images/search-icon.svg') no-repeat center;
+			text-indent: -1000px;
+			width: 3rem;
+			height: 3rem;
+		}
+		
 		&.active {
 			z-index: 6;
 			.lib-icon-font(
@@ -118,6 +124,9 @@
 				@_icon-font-position: before,
 				@_icon-font-display: false
 			);
+			&:before {
+				background: url('../images/search-close-icon.svg') no-repeat center;
+			}
 			
 		}
 	}
