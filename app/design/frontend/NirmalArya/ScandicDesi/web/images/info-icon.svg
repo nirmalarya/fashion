@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="17px" height="17px" viewBox="0 0 17 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>Info Icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home-Option-01-Copy" transform="translate(-178.000000, -69.000000)">
+            <g id="Info-Icon" transform="translate(178.000000, 69.000000)">
+                <g id="Group-Copy" stroke="#494949">
+                    <circle id="Oval-3" cx="8.5" cy="8.5" r="8"></circle>
+                </g>
+                <path d="M8.156,6.376 L8.96,6.376 L8.96,12.664 L8.156,12.664 L8.156,6.376 Z M8.96,4.162 C9.06400052,4.27000054 9.116,4.4039992 9.116,4.564 C9.116,4.7240008 9.06200054,4.85999944 8.954,4.972 C8.84599946,5.08400056 8.71600076,5.14 8.564,5.14 C8.4039992,5.14 8.27000054,5.08400056 8.162,4.972 C8.05399946,4.85999944 8,4.7240008 8,4.564 C8,4.4039992 8.05399946,4.27000054 8.162,4.162 C8.27000054,4.05399946 8.4039992,4 8.564,4 C8.7240008,4 8.85599948,4.05399946 8.96,4.162 Z" id="i" fill="#494949"></path>
+            </g>
+        </g>
+    </g>
+</svg>
