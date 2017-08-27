@@ -43,6 +43,13 @@
         position: absolute;
         top: 15px;
         z-index: 14;
+		&:before {
+			background: url('../images/hamburger-icon.svg') no-repeat center;
+			text-indent: -1000px;
+			width: 4rem;
+			height: 4rem;
+		}
+
 		&.web-nav-toggle {
 			display: none;
 			position: static;
@@ -56,6 +63,9 @@
 					@_icon-font-color-hover: @header-icons-color-hover
 					);
 				display: none;
+				&:before {
+					background: url('../images/hamburger-web-close-icon.svg') no-repeat center;
+				}
 				
 			}
 		}
