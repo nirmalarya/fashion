@@ -499,6 +499,20 @@
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+	.header.content {
+		.custom-currency-switcher-wrapper {
+			display: none;
+			~ .logo {
+				width: 100%;
+				max-width: 100%;
+				margin: 0;
+				position: absolute;
+				height: 50px;
+				overflow: hidden;
+			}
+		}
+	
+	}
     .customer-name,
     .customer-welcome + .authorization-link {
         display: none;
