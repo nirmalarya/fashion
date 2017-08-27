@@ -10,19 +10,19 @@
 & when (@media-common = true) {
 
     //  Using buttons mixins
+	input[type="button"],
+    input[type="reset"],
+    input[type="submit"],
     button,
+	a.button,
+    a.action.secondary ,
     a.action.primary {
-        .lib-css(border-radius, @button__border-radius);
-    }
-
-    button {
-        &:not(.primary) {
-            .lib-css(box-shadow, @button__shadow);
-
-            &:active {
-                .lib-css(box-shadow, @button__shadow-active);
-            }
-        }
+        /* .lib-css(border-radius, @button__border-radius); */
+		text-transform: uppercase;
+		-webkit-transition: background-color 0.3s ease-out;
+		-moz-transition: background-color 0.3s ease-out;
+		-o-transition: background-color 0.3s ease-out;
+		transition: background-color 0.3s ease-out;
     }
 
     body {
@@ -34,12 +34,31 @@
             }
         }
     }
-
+	a.action.secondary,
     a.action.primary {
         .lib-link-as-button();
     }
-
+	.action.secondary,
     .action.primary {
         .lib-button-primary();
     }
+	.action.secondary {
+		.lib-button-primary(
+			@_button-color:@button-secondary__color, 
+			@_button-background: @button-secondary__background,
+			@_button-background-hover: @button-secondary__hover__background,
+			@_button-border: @button-secondary__border,
+			@_button-border-hover: @button-secondary__hover__border,
+			@_button-border-active: @button-secondary__active__border,
+			@_button-background-active: @button-secondary__active__background,
+			@_button-color-hover: @button-secondary__hover__color,
+			@_button-color-active: @button-secondary__active__color); 
+	}
+	input[type="button"],
+    input[type="reset"],
+    input[type="submit"],
+	a.button{
+		.lib-button();
+		text-decoration: none;
+	}
 }

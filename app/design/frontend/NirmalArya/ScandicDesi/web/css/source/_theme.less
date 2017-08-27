@@ -14,9 +14,20 @@
 //
 //  Typography
 //  ---------------------------------------------
+//  SD Base Colors
+@sd_base__color: #f9678d;
+@sd_base__hover__color: #494949;
+@sd__anchor__color: #616161;
+@sd__icon__color: @sd_base__hover__color;
+@sd__icon__hover__color: @sd_base__color;
+@sd__anchor__hover__color: @sd_base__color;
+
+@active__color: @sd_base__color;
+@copyright__color: #a5a5a5;
+
 
 //  Fonts
-@icons__font-path: '@{baseDir}fonts/Luma-Icons';
+@icons__font-path: '@{baseDir}fonts/Luma_Icons/Luma-Icons';
 @icons__font-name: 'luma-icons';
 
 //  Color nesting
@@ -52,7 +63,7 @@
 //  Navigation
 //  ---------------------------------------------
 
-@navigation__background: @color-gray94;
+@navigation__background: @color-white;
 @navigation-level0-item__active__color: @primary__color;
 @submenu-item__active__color: @navigation-level0-item__active__color;
 
@@ -101,22 +112,59 @@
 //  ---------------------------------------------
 
 @button__font-weight: @font-weight__semibold;
+@button__border-radius: 0;
 
 //  Default = secondary button
-@button__background: @color-gray-darken0;
-@button__border: 1px solid @border-color__base;
-@button__hover__color: @button__color;
-@button__hover__background: darken(@button__background, 5%);
-@button__active__background: @color-gray-darken1;
+@button__background: @color-white;
+@button__border: 1px solid @sd_base__color;
+@button__color: @sd_base__color;
+@button__hover__background: @sd_base__color;
+@button__hover__color: @color-white;
+
+@button__active__background: @sd_base__color;
+@button__active__color: @color-white;
 
 //  Primary button
+@button-primary__background: @sd_base__color;
+@button-primary__border: 1px solid @sd_base__color;
+@button-primary__color: @color-white;
+
+@button-primary__hover__background: @sd_base__hover__color;
+@button-primary__hover__border: 1px solid @sd_base__hover__color;
 @button-primary__hover__color: @color-white;
-@button-primary__active__background: @link__hover__color;
-@button-primary__active__border: 1px solid @link__hover__color;
+
+@button-primary__active__background: @sd_base__hover__color;
+@button-primary__active__border: 1px solid @sd_base__hover__color;
 @button-primary__active__color: @color-white;
+
+
+//  Secondary button
+@button-secondary__background: transparent;
+@button-secondary__border: 1px solid @color-black;
+@button-secondary__color: @color-black;
+
+@button-secondary__hover__background: @color-black;
+@button-secondary__hover__border: 1px solid @color-black;
+@button-secondary__hover__color: @color-white;
+
+@button-secondary__active__background: @color-black;
+@button-secondary__active__border: 1px solid @color-black;
+@button-secondary__active__color: @color-white;
+
 
 //  Button with icon
 @button-icon__line-height: @icon-font__line-height;
+
+
+//
+//  Links
+//  ---------------------------------------------
+
+@link__color: @sd__anchor__color;
+@link__visited__color: @sd__anchor__color;
+@link__hover__color: @sd__anchor__hover__color;
+@link__active__color: @sd__anchor__hover__color;
+
 
 //
 //  Icons
@@ -150,8 +198,20 @@
 @loader-overlay__background-color: rgba(255, 255, 255, .7);
 
 //
+//  Focus
+//  ---------------------------------------------
+@focus__box-shadow: none;
+@focus__border-color: @sd__anchor__hover__color;
+
+
+//
 //  Forms
 //  ---------------------------------------------
+
+
+//  Form elements inputs 
+@form-element-input__height: 4.4rem;
+@form-element-input__padding : 0 1.5rem;
 
 //  Form fieldset
 @form-fieldset-legend__font-size: 18px;

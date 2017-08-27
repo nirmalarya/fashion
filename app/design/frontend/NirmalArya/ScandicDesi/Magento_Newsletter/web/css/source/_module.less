@@ -11,7 +11,7 @@
 
     //  Newsletter subscription
     .block.newsletter {
-        margin-bottom: 20px;
+        margin-bottom: 0;
 
         .form.subscribe {
             display: table;
@@ -46,9 +46,13 @@
         }
 
         input {
-            padding-left: 35px;
+            /* padding-left: 35px; */
+			font-size: 1.3rem;
+			font-weight: 300;
+			text-align: center;
+			color: #767676;
         }
-
+		
         .title {
             display: none;
         }
@@ -64,11 +68,63 @@
         }
 
         .action.subscribe {
-            border-bottom-left-radius: 0;
-            border-top-left-radius: 0;
+           /*  border-bottom-left-radius: 0;
+            border-top-left-radius: 0; */
             margin-left: -1px;
         }
+		.action.subscribe,
+		input {
+			height: 4.9rem;
+		}
     }
+	.footer-newsletter-wrapper {
+       /*  background: #f4f4f4; */
+		padding: 2.5rem 0;
+		font-size: 0;
+		h3 {
+			color: #20252d;
+			margin: 0;
+			font-size: 2.1rem;
+			font-family: @font-julius_sans_one;
+			font-weight: normal;
+			span {
+				color: @sd_base__color; 
+			}
+		}
+		
+		.block.newsletter{
+			.content {
+				position: relative;	
+				
+				.form.subscribe{
+					.control{
+						&:before {
+							display: none;
+						}
+					}
+					.field {
+						&.newsletter {
+							.control {
+								input {
+									box-sizing: border-box;
+									/* padding-right: 3rem; */
+								}
+							}
+						}
+					}
+				}
+			}
+			
+			.actions{
+				width: 0;
+				
+				.action.subscribe{
+					
+				}
+			}
+		}
+		
+	}
 }
 
 //
@@ -77,6 +133,29 @@
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     .block.newsletter {
-        width: 34%;
+        width: 34%;		
     }
+	.footer-newsletter-wrapper {
+		/* margin-bottom:25px; */
+		.footer-newsletter-content,
+		.block.newsletter{			
+			display: inline-block;
+			vertical-align: middle;	
+			box-sizing: border-box;
+			padding-left: 20px;
+			width: 40%;
+		}
+		.block.newsletter{
+			width: 60%;
+		}
+		
+		.footer-newsletter-content{
+			text-align: right;
+		}
+		.block.newsletter{			
+			padding-right: 10%;			
+		}
+		
+		
+	}
 }

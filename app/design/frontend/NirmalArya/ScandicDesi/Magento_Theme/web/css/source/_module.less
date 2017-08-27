@@ -27,8 +27,8 @@
 @header__background-color: false;
 @header-panel__background-color: @color-gray-middle3;
 @header-panel__text-color: @color-white;
-@header-icons-color: @color-gray56;
-@header-icons-color-hover: @color-gray20;
+@header-icons-color: @sd__icon__color;/* @color-gray56; */
+@header-icons-color-hover: @sd__icon__hover__color; /* @color-gray20; */
 @customer-welcome__z-index: @dropdown-list__z-index + 1;
 
 @addto-color: @color-gray60;
@@ -46,7 +46,7 @@
 @h1__margin-bottom__desktop: @indent__xl;
 
 //  Footer
-@footer__background-color: @color-gray-light01;
+@footer__background-color: @color-white;
 @footer-links-separator-border-color: @color-gray-light4;
 @footer-links-color: @color-gray34;
 @footer-links-color-hover: @color-gray20;
@@ -87,6 +87,7 @@
         .panel.wrapper {
             .lib-css(background-color, @header-panel__background-color);
             .lib-css(color, @header-panel__text-color);
+            .lib-css(display, none);
         }
     }
 
@@ -123,6 +124,52 @@
             padding-top: @indent__s;
             position: relative;
         }
+		&.content {
+			.custom-currency-switcher-wrapper {
+				display: block;
+				width: 33%;
+				float: left;
+				position: relative;
+				
+				.widget.block {
+					margin : 0;
+					
+					.primary-color{
+						color: @link__hover__color;
+					}
+
+					&.block-cms-link-inline {
+						position: absolute;
+						left: 8rem;
+						a {
+							position: relative;
+							.lib-icon-font(
+								@_icon-font-content: @icon-help,
+								@_icon-font-size: @font-size__base,
+								@_icon-font-line-height: @icon-font__line-height,
+								@_icon-font-color: @icon-font__color,
+								@_icon-font-color-hover: @icon-font__color-hover,
+								@_icon-font-color-active: @icon-font__color-active,
+								@_icon-font-margin: @icon-font__margin,
+								@_icon-font-vertical-align: @icon-font__vertical-align,
+								@_icon-font-position: before,
+								@_icon-font-display: true
+								);
+							line-height: 4rem;
+						}
+					}					
+				}
+				
+				~ .logo {
+					width: 33%;
+					text-align: center;
+					
+					img {
+						display: inline-block;
+					}
+				}
+			}
+		}
     }
 
     .logo {
@@ -131,8 +178,8 @@
         max-width: 50%;
         position: relative;
         z-index: 5;
-
-        img {
+		
+		img {
             display: block;
         }
 
@@ -141,7 +188,80 @@
             float: none;
         }
     }
-
+	.account_li {
+		display:block;
+		float:right;
+		text-align: left;
+		margin-bottom: 0;
+		
+		> .header.links {
+			padding: 0;
+			margin: 0;
+			> li {
+				display: none;
+			}
+			
+			> .authorization-link:first-child,
+			> .customer-welcome {
+				display: inline-block;
+				margin-bottom: 0;
+				min-width: 4rem
+			}
+			> .authorization-link:first-child a,
+			.customer-name {
+				position: relative;
+				font-size: 0;
+				.lib-icon-font(
+					@_icon-font-content: @icon-account,
+					@_icon-font-size: 2.4rem,
+					@_icon-font-line-height: 4rem,
+					@_icon-font-color: @header-icons-color,
+					@_icon-font-color-hover: @header-icons-color-hover,
+					@_icon-font-color-active: @header-icons-color,
+					@_icon-font-margin: @icon-font__margin,
+					@_icon-font-vertical-align: @icon-font__vertical-align,
+					@_icon-font-position: before,
+					@_icon-font-display: false
+					);
+			}
+			
+		}
+	}
+	.header-nav-container-fixed {
+		&:not(.fixed){
+			.minicart-wrapper,
+			.mbl_search_btn,
+			.account_li.wrapper{
+				margin-top: 1.5rem;
+			}
+		}
+		&.fixed {
+			position: fixed;
+			width: 100%;
+			box-sizing: border-box;
+			background-color: @color-white;
+			box-shadow: 0 2px 4px 0 rgba(204, 204, 204, 0.5);	
+			z-index: 20;
+			.custom-currency-switcher-wrapper{
+				.switcher.currency{
+					margin-left: 2rem;
+				}
+				.widget.block{
+					&.block-cms-link-inline {
+						margin-left: 3rem;
+					}
+					&.block-static-block{
+						display: none;
+					}
+				}
+				~ .logo {
+					overflow: hidden;
+					height: 50px; // need to be in px only
+					margin-bottom: 1.5rem;
+				}
+			}
+		}
+	}
     .page-main {
         > .page-title-wrapper {
             .page-title + .action {
@@ -256,7 +376,7 @@
 
     .copyright {
         .lib-css(background-color, @copyright__background-color);
-        .lib-css(color, @color-white);
+        .lib-css(color, @copyright__color);
         display: block;
         padding: @indent__s;
         text-align: center;
@@ -457,9 +577,26 @@
             margin-left: 15px;
             margin-right: -6px;
             .lib-vendor-prefix-order(1);
-        }
+        		
+			&.currency {
+				float: left;
+				margin: 0;
+				line-height: 4rem;
+				.options {
+					.lib-dropdown(
+						@_icon-font-line-height: 4rem,
+						);
+				}
+			}
+		}
     }
-
+	.header-nav-container-fixed {
+		&.fixed {
+			.web-nav-toggle {
+				display: inline-block;
+			}
+		}
+	}
     .page-main {
         > .page-title-wrapper {
             .page-title {
@@ -517,7 +654,7 @@
 
         .action.switch {
             .lib-button-reset();
-            .lib-css(color, @color-white);
+            .lib-css(color, @sd__icon__color);
         }
 
         .header.links {
@@ -581,12 +718,12 @@
         }
 
         &.content:extend(.abs-add-clearfix-desktop all) {
-            padding: @indent__l @indent__base 0;
+            padding: @indent__base  @indent__base 0;
         }
     }
 
     .logo {
-        margin: -8px auto @indent__m 0;
+        margin: -@indent__s auto @indent__s 0;
 
         img {
             max-height: inherit;
@@ -667,8 +804,11 @@
 
             .links {
                 display: inline-block;
-                padding-right: 50px;
                 vertical-align: top;
+				
+				width: 100%;
+				box-sizing: border-box;
+				text-align: center;
 
                 li {
                     background: transparent;
@@ -681,6 +821,22 @@
                 a,
                 strong {
                     display: inline;
+                }
+				.block.block-static-block {
+					float: none;
+					width: 20%;
+					margin: 0 2%;
+					clear: none;
+					display: inline-block;
+					vertical-align: top;
+					text-align: left;
+
+                    /* &:first-child {
+					   margin-left: 0;
+                    }
+					&:last-child {
+					   margin-right: 0;
+                    } */                    
                 }
             }
         }

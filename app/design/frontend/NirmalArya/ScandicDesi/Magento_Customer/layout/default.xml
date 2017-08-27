@@ -11,6 +11,11 @@
             <block class="Magento\Customer\Block\Account\Customer" name="customer" template="account/customer.phtml" before="-"/>
             <block class="Magento\Customer\Block\Account\AuthorizationLink" name="authorization-link-login" template="account/link/authorization.phtml"/>
         </referenceBlock>
+		<referenceBlock name="register-link">
+			<arguments>
+				<argument name="label" xsi:type="string" translate="true">Register</argument>
+			</arguments>
+		</referenceBlock>
         <block class="Magento\Theme\Block\Html\Header" name="header" as="header">
             <arguments>
                 <argument name="show_part" xsi:type="string">welcome</argument>
@@ -20,5 +25,8 @@
         <move element="register-link" destination="header.links"/>
         <move element="top.links" destination="customer"/>
         <move element="authorization-link" destination="top.links" after="-"/>
+       
+		<!-- removed welcome message -->
+		<referenceBlock name="header" remove="true" />
     </body>
 </page>

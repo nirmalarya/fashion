@@ -12,12 +12,20 @@
 //  ---------------------------------------------
 
 //  Fonts
-@font-family-name__base: 'Open Sans';
+/* @font-family-name__base: 'Open Sans';
+@font-family__base: @font-family-name__base, @font-family__sans-serif; */
+
+@font-montserrat: 'Montserrat';
+@font-vidaloka: 'Vidaloka';
+@font-julius_sans_one: 'Julius Sans One';
+@font-family-name__base: @font-montserrat;
 @font-family__base: @font-family-name__base, @font-family__sans-serif;
+
+
 
 //  Colors nesting
 @page__background-color: @color-white;
-@copyright__background-color: @color-gray56;
+@copyright__background-color: @color-white;
 
 //
 //  Icons
@@ -32,6 +40,10 @@
 @icon-private: '\e629';
 @icon-present: '\e62a';
 @icon-gift-registry: '\e62b';
+
+@icon-up: '\e618';
+@icon-down: '\e607';
+
 
 @icon-calendar__font-size: 23px;
 

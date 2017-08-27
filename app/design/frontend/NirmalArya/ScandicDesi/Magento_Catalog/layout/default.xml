@@ -22,5 +22,8 @@
                 </block>
             </container>
         </referenceContainer>
+		
+		<!-- removed compare from header bar -->
+		<referenceBlock name="compare-link-wrapper" remove="true" />
     </body>
 </page>
