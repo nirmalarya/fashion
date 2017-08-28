@@ -67,11 +67,38 @@
         border-bottom: 0;
         margin-left: 0;
         margin-right: 0;
+		.lib-css(text-align, center);
+		
+		.new-arrivals-best-picks-tab-product-items &{
+			max-width: 118.2rem;
+			margin: 0 auto;
+			.product-item-actions { /* Hide actions  */
+				display: none;
+			}
+		}
+		.item.title {
+            display: inline-block;
+			text-transform: uppercase;
+			
+			&.active {
+				border-bottom: 8px solid @sd_base__color;
+				/* padding-bottom: 5px;  */
+			}
+			a {
+				&:after {
+					display: none;
+				}
+			}
+			> a.switch {
+				letter-spacing: -0.3px;
+            }
+		}
+		.item.content {
+			border-top:2px solid rgba(0,0,0,.2);
 
-        .item.title a {
-            &:after {
+            .block-title {
                 display: none;
             }
-        }
+        }		
     }
 }
