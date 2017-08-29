@@ -183,6 +183,11 @@
 					width: 3.5rem;
 					height: 3.5rem;
 				}
+				&.not-empty{
+					&:before {
+						background: url('../images/shopping-bag-icon.svg') no-repeat top left;
+					}
+				}
                 .text {
                     &:extend(.abs-visually-hidden all);
                 }
@@ -204,7 +209,7 @@
                     &.empty {
                         display: none;
                     }
-
+					display: none;  /* not need  */
                     .loader {
                         > img {
                             .lib-css(max-width, @minicart-qty__height);
