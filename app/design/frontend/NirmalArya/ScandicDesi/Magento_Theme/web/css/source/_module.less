@@ -667,12 +667,39 @@
 .cc-col-6 {
  width: 50%;
 }
-
+	.trend-alert-wrapper {
+		position: relative;
+		&:before,
+		&:after {
+			content: '';
+			display: block;
+			width: 30%;
+			position: absolute;
+			height: 40%;
+			
+		}
+		&:before {
+			background: url('../images/home-trend-alert-bg.png') no-repeat left top;
+			left:5%;
+			top:20%;
+			background-size: contain;
+			
+		}
+		&:after{
+			background: url(../images/home-trend-alert-bg.png) no-repeat right top;
+			right: 10%;
+			bottom: 0;
+			background-size: contain;
+		}
+	}
 	.trend-alert-container {
 		max-width: 125.2rem;
 		box-sizing: border-box;
 		margin: 0 auto;
 		text-align: center;
+		z-index: 2;
+		position: relative;
+		
 		.main-header-sub-header {
 			color: @color-black;
 			span {
@@ -687,6 +714,7 @@
 			color: #494949;
 			width: 77.9rem;
 			display: inline-block;
+			margin-bottom: 4.1rem;
 		}
 	}
 	.custom-grid-set {
