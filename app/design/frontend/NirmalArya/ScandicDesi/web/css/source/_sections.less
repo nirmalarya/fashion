@@ -79,6 +79,7 @@
 		.item.title {
             display: inline-block;
 			text-transform: uppercase;
+            float: none;
 			
 			&.active {
 				border-bottom: 5px solid @sd_base__color;
@@ -91,6 +92,11 @@
 			}
 			> a.switch {
 				letter-spacing: -0.3px;
+            }
+            &.active > .switch,
+            &.active > .switch:focus,
+            &.active > .switch:hover {
+                .lib-css(padding-bottom, 0);
             }
 		}
 		.item.content {
