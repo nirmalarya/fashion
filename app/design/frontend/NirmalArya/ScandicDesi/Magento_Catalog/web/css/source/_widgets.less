@@ -97,6 +97,27 @@
             margin-left: 0;
         }
     }
+    
+    .page-layout-1column .block.widget.shop-by-occasion  .products-grid{
+        max-width: 600px;
+        .owl-carousel .product-item{
+            width: 100%;
+            margin-left: 0;
+        }
+        
+        .owl-carousel .owl-item{
+          opacity:0.4;
+          transition:.4s ease all;
+          transform:scale(.8);
+            
+        }
+
+        .owl-carousel .owl-item.active{
+          opacity:1;
+          transform:scale(1); 
+          margin:0;
+        }
+    }
 	
 	.page-layout-1column .block.widget .new-arrivals-best-picks-tab-product-items .products-grid .product-item {
         margin-left: calc(~'(100% - 3 * (100%/4)) / 2');
