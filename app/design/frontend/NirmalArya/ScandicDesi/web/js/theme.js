@@ -53,6 +53,7 @@ define([
 		} */
 		
 		container.height(containerFixedH);
+		container.css('min-height',containerFixedH);
 		
 		if(nav.attr('style') != undefined){ //reset style for nav
 			nav.removeAttr('style');				

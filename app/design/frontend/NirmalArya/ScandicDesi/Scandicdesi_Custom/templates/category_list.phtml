@@ -21,19 +21,20 @@
 <?php if ($items): ?>
 <div class="block widget shop-by-occasion" >
     <div class="block-title">
-        <strong role="heading" aria-level="2"><?php /* @escapeNotVerified */ echo $title; ?></strong>
+        <h2 role="heading" aria-level="2"><?php /* @escapeNotVerified */ echo $title; ?></h2>
     </div>
     <div class="block-content">
         <div class="products-<?php /* @escapeNotVerified */ echo $mode; ?> <?php /* @escapeNotVerified */ echo $mode; ?>">
             <ol class="owl-carousel  product-items shop-by-occasion-items"  data-mage-init='{
                "OwlCarousel":{
                
-                "stagePadding": 200,
+                "stagePadding": 320,
                 "loop":true,
-                "nav":true,
                 "items":1,
                 "lazyLoad": true,
                 "nav":true,
+                "rewind": false,
+                "dots": false,
                 "responsive":{
                     "0":{
                         "items":1,
@@ -45,23 +46,7 @@
                     },
                     "1000":{
                         "items":1,
-                        "stagePadding": 100
-                    },
-                    "1200":{
-                        "items":1,
-                        "stagePadding": 100
-                    },
-                    "1400":{
-                        "items":1,
-                        "stagePadding": 100
-                    },
-                    "1600":{
-                        "items":1,
-                        "stagePadding": 100
-                    },
-                    "1800":{
-                        "items":1,
-                        "stagePadding": 100
+                        "stagePadding": 316
                     }
                 }
                 
