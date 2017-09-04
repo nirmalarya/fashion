@@ -21,7 +21,9 @@
     .block-search {
 		display: none;
 		margin-bottom: 0;
-		&.active {
+        box-sizing: border-box;
+		
+        &.active {
 			display: block;
 			position: absolute;
 			background: #FFF;
@@ -264,6 +266,18 @@
     }
 }
 
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .block-search.active {
+        position: fixed;
+        height: 65px;
+        z-index: 15;
+        margin-top: 0;
+    }
+    .mbl_search_btn.active {
+        z-index: 16;
+    }
+}
 //
 //  Desktop
 //  _____________________________________________

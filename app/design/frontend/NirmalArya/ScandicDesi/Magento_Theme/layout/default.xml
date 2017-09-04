@@ -19,12 +19,16 @@
         </referenceContainer>
 		<referenceContainer name="header-wrapper">
 			<!-- Currency and help link -->
-			<container name="custom-header-currency-switcher-wrapper" as="custom-header-currency-switcher-wrapper" label="Custom - Header Currency Switcher Wrapper"  before="logo" htmlTag="div" htmlClass="custom-currency-switcher-wrapper" >
+			<container name="custom-header-currency-switcher-wrapper" as="custom-header-currency-switcher-wrapper" label="Custom - Header Currency Switcher Wrapper"  before="logo" htmlTag="div" htmlClass="custom-currency-switcher-wrapper header-top-left" >
 				<block class="Magento\Framework\View\Element\Template" name="navigation.web.toggle" before="-" template="Magento_Theme::web-nav-link.phtml" />
 			</container>
 			
-			<!-- Account Li in header-->
-			<container name="custom-header-account-wrapper" as="custom-header-account-wrapper"  label="Custom  - Header Account Li Wrapper" after="top.search" htmlTag="div" htmlClass="account_li wrapper" />
+			
+            <!-- Account Li in header -->
+            <container name="custom-header-account-wrapper" as="custom-header-account-wrapper"  label="Custom  - Header Account Li Wrapper"  htmlTag="div" htmlClass="account_li wrapper" />
+                
+            <!-- Custom Header Items Wrapper -->
+			<container name="custom-header-items-wrapper" as="custom-header-items-wrapper"  label="Custom  - Header Items Wrapper" after="logo" htmlTag="div" htmlClass="custom-header-items-wrapper  header-top-right" />
 			
 		</referenceContainer>
        
@@ -77,9 +81,25 @@
 		<move element="header.container" destination="header_nav_container_fixed"/>
         <move element="navigation.sections" destination="header_nav_container_fixed"/>
 		
-		<move element="header.links" destination="custom-header-account-wrapper"/>
+		
+        
+        <move element="header.links" destination="custom-header-account-wrapper"/>
+        <move element="top.search" destination="custom-header-items-wrapper"/>
+        <move element="minicart" destination="custom-header-items-wrapper" before="top.search"/>
+       
+        <move element="custom-header-account-wrapper" destination="custom-header-items-wrapper" after="top.search" />
+        
+        
+        
+        
+        
+        
+        
 		<move element="currency" destination="custom-header-currency-switcher-wrapper"/>
+		
 
+        
+        
         <!-- <referenceBlock name="header.panel" remove="true"/> -->
 		
 		<referenceBlock name="footer_links" remove="true"/>

@@ -172,14 +172,24 @@
         &.content:extend(.abs-add-clearfix all) {
             padding-top: @indent__s;
             position: relative;
+            text-align: center;
         }
 		&.content {
+            .custom-currency-switcher-wrapper,
+            .custom-header-items-wrapper {
+                width: 33%;
+                float: left;
+            }
+            
+            .custom-header-items-wrapper {
+                float:right;
+                
+            }
+            
 			.custom-currency-switcher-wrapper {
-				display: block;
-				width: 33%;
-				float: left;
 				position: relative;
-				
+                text-align: left;
+                    
 				.header-shipping-info {
 					font-weight: 300;
 					color: @color-dark_brown;
@@ -230,12 +240,12 @@
 				}
 				
 				~ .logo {
-					width: 33%;
-					text-align: center;
-					
+                    float: none;
+                    display: inline-block;
+                    
 					img {
 						display: inline-block;
-					}
+					} 
 				}
 			}
 		}
@@ -882,16 +892,45 @@
 				width: 100%;
 				max-width: 100%;
 				margin: 0;
-				position: absolute;
+				/* position: absolute; */
 				height: 50px;
 				overflow: hidden;
 			}
 		}
+        
+        .custom-header-items-wrapper {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
         .account_li {
             display: none;
-        }
-	
+        }        	
 	}
+    .header-nav-container-fixed {
+        .page-header {
+            margin-bottom: 0;
+        }
+        .header.content {
+            padding-bottom: 1rem;
+        }
+        
+        &:not(.fixed){
+            .minicart-wrapper,
+            .mbl_search_btn,
+            .account_li.wrapper{
+                margin-top: 1rem;
+            }
+        }
+        &.fixed {
+            .minicart-wrapper,
+            .mbl_search_btn,
+            .account_li.wrapper{
+                margin-top: 1rem;
+            }
+        }
+    }
+    
     .customer-name,
     .customer-welcome + .authorization-link {
         display: none;
@@ -1306,8 +1345,8 @@
 				box-sizing: border-box;
 				text-align: center;
                 
-                padding-top: 2.8rem;
-                padding-bottom: 3.4rem;
+                padding-top: 3rem;
+                padding-bottom: 3rem;
                 border-bottom: solid 1px rgba(151, 151, 151, 0.57);
 
 
@@ -1325,7 +1364,7 @@
                 }
 				.block.block-static-block {
 					float: none;
-					width: 20%;
+					width: 28%;
 					/* margin: 0 2%; */
 					clear: none;
 					display: inline-block;
@@ -1384,6 +1423,18 @@
 }
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+    .footer {
+        &.content {
+            .links {                 
+                padding-top: 2.8rem;
+                padding-bottom: 3.4rem;
+                
+				.block.block-static-block {
+					width: 20%;					                  
+                }
+            }
+        }
+    }
     .trend-alert-container {
         width: 100rem;  
         
