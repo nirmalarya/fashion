@@ -6,25 +6,31 @@
  * Time: 12:58 PM
  */
 
-namespace Echidna\Megamenu\Block;
+namespace ScandicDesi\Megamenu\Block;
 
+use Magento\Catalog\Model\CategoryFactory;
+use Magento\Catalog\Model\ResourceModel\Category\Collection;
 use Magento\Cms\Block\Block;
+use Magento\Framework\Data\Tree\Node;
 use Magento\Framework\View\Element\Template;
 use Magento\Framework\Data\TreeFactory;
 use Magento\Framework\Data\Tree\NodeFactory;
 use Magento\Theme\Block\Html\Topmenu as MagentoTopmenu;
-use Magento\Catalog\Model\Category;
-use Magento\Catalog\Model\CategoryFactory;
 
 class Topmenu extends MagentoTopmenu
 {
-    /** @var CategoryFactory $categoryFactory */
+    /** @var null|Collection\ */
+    private $categories = null;
+
+    /** @var CategoryFactory */
     private $categoryFactory;
 
     /**
+     * Topmenu constructor.
      * @param Template\Context $context
      * @param NodeFactory $nodeFactory
      * @param TreeFactory $treeFactory
+     * @param CategoryFactory $categoryFactory
      * @param array $data
      */
     public function __construct(
@@ -39,69 +45,114 @@ class Topmenu extends MagentoTopmenu
     }
 
     /**
-     * Build the Echidna Menu html output
-     * @param $category
-     *
+     * @return Collection|Node\Collection
+     */
+    private function getCategories()
+    {
+        if ($this->categories == null) {
+            $storeRootCategoryId = $this->_storeManager->getStore()->getRootCategoryId();
+            $this->categories = $this->categoryFactory->create()
+                ->getCategories($storeRootCategoryId, 5, true, true);
+        }
+        return $this->categories;
+    }
+
+    /**
+     * @param Node $child
+     * @param $column
      * @return string
      */
-    public function getEchidnaMenuHtml($category)
+    private function getCustomContent(Node $child, $column)
     {
-        $columns = $category->getEchidnaMenuTemplate();
+        /** @var Template $block */
+        $block = $this->getLayout()
+            ->createBlock(Template::class)
+            ->setTemplate($this->getStaticContentTemplate())
+            ->setCategory($child)
+            ->setContentField($column);
+        return $block->toHtml();
+    }
+
+    /**
+     * @param Node $child
+     * @param $column
+     * @return string
+     */
+    private function getBlockContent(Node $child, $column)
+    {
+        /** @var Block $block */
+        $block = $this->getLayout()
+            ->createBlock(Block::class)
+            ->setBlockId($child->getData('megamenu_col_block' . $column));
+        return $block->toHtml();
+    }
+
+    /**
+     * @param Node $child
+     * @param $column
+     * @return string
+     */
+    private function getCategoryContent(Node $child, $column)
+    {
+        $parentId = $child->getData('megamenu_col_category' . $column);
+        /** @var Node\Collection|Collection $categories */
+        $categories = [];
+        foreach ($this->getCategories() as $category) {
+            if($category->getParentId() == $parentId) {
+                $categories[] = $category;
+            }
+        }
+        /** @var Template $block */
+        $block = $this->getLayout()
+            ->createBlock(Template::class)
+            ->setTemplate($this->getCategoryListTemplate())
+            ->setCategoryList($categories);
+        return $block->toHtml();
+    }
+
+    /**
+     * Build the ScandicDesi Menu html output
+     *
+     * @param Node $child
+     * @return mixed
+     */
+    public function getMegamenuHtml(Node $child)
+    {
+        $columns = (int) $child->getData('megamenu_template');
         $template = $this->getLayoutTemplate();
         /** @var Template $block */
         $menuBlock = $this->getLayout()
-            ->createBlock(Template::class, 'echidna_menu_block' . $category->getId())
+            ->createBlock(Template::class, 'megamenu_block' . $child->getId())
             ->setTemplate($template);
         $blockColumns = [];
-		$mobileColumns = 0;
-        for ($column = 1; $column <= $columns; $column++) {
-			
-            if ($category->getData('echidna_menu_col_type' . $column) == 1) { // Category
-                /** @var Category $subCategory */
-                $subCategory = $this->categoryFactory->create();
-                $subCategory->getResource()
-                    ->load(
-                        $subCategory,
-                        $category->getData('echidna_menu_col_category' . $column)
-                    );
-                /** @var Template $block */
-                $block = $this->getLayout()
-                    ->createBlock(Template::class)
-                    ->setTemplate($this->getCategoryListTemplate())
-                    ->setCategory($subCategory)
-                    ->setCategoryList($subCategory->getChildrenCategories());
-                $blockColumns[$column]['html'] = $block->toHtml();
-				
-				$hideInMbl_Value = $category->getData('echidna_menu_col_mobilehide' . $column);
-                $blockColumns[$column]['hide_in_mbl'] = $hideInMbl_Value;
-				$mobileColumns += $hideInMbl_Value?1:0;
-            } elseif ($category->getData('echidna_menu_col_type' . $column) == 2) { // static block
-                /** @var Block $block */
-                $block = $this->getLayout()
-                    ->createBlock(Block::class)
-                    ->setBlockId($category->getData('echidna_menu_col_block' . $column));
-                $blockColumns[$column]['html'] = $block->toHtml();
-				
-				$hideInMbl_Value = $category->getData('echidna_menu_col_mobilehide' . $column);
-                $blockColumns[$column]['hide_in_mbl'] = $hideInMbl_Value;
-				$mobileColumns += $hideInMbl_Value?1:0;
-            } elseif ($category->getData('echidna_menu_col_type' . $column) == 3) { // Custom content
-                /** @var Template $block */
-                $block = $this->getLayout()
-                    ->createBlock(Template::class)
-                    ->setTemplate($this->getStaticContentTemplate())
-                    ->setCategory($category)
-                    ->setContentField($column);
-                $blockColumns[$column]['html'] = $block->toHtml();
-				
-				$hideInMbl_Value = $category->getData('echidna_menu_col_mobilehide' . $column);
-                $blockColumns[$column]['hide_in_mbl'] = $hideInMbl_Value;
-				$mobileColumns += $hideInMbl_Value?1:0;
-			}
+        $mobileColumns = 0;
+        if ($columns) {
+            for ($column = 1; $column <= $columns; $column++) {
+                if ($child->getData('megamenu_col_type' . $column) == 1) { // Category
+                    $blockColumns[$column]['html'] = $this->getCategoryContent($child, $column);
+
+                    $hideInMbl_Value = $child->getData('megamenu_col_mobilehide' . $column);
+                    $blockColumns[$column]['hide_in_mbl'] = $hideInMbl_Value;
+                    $mobileColumns += $hideInMbl_Value ? 1 : 0;
+                } elseif ($child->getData('megamenu_col_type' . $column) == 2) { // static block
+                    $blockColumns[$column]['html'] = $this->getBlockContent($child, $column);
+
+                    $hideInMbl_Value = $child->getData('megamenu_col_mobilehide' . $column);
+                    $blockColumns[$column]['hide_in_mbl'] = $hideInMbl_Value;
+                    $mobileColumns += $hideInMbl_Value ? 1 : 0;
+                } elseif ($child->getData('megamenu_col_type' . $column) == 3) { // Custom content
+                    $blockColumns[$column]['html'] = $this->getCustomContent($child, $column);
+
+                    $hideInMbl_Value = $child->getData('megamenu_col_mobilehide' . $column);
+                    $blockColumns[$column]['hide_in_mbl'] = $hideInMbl_Value;
+                    $mobileColumns += $hideInMbl_Value ? 1 : 0;
+                }
+            }
         }
-		$blockColumns['enable_mobile_columns'] = $mobileColumns;
+        $blockColumns['enable_mobile_columns'] = $mobileColumns;
         return $menuBlock->setColumns($blockColumns)->toHtml();
     }
+
     /**
      * Add sub menu HTML code for current menu item
      *
@@ -113,15 +164,9 @@ class Topmenu extends MagentoTopmenu
      */
     protected function _addSubMenu($child, $childLevel, $childrenWrapClass, $limit)
     {
-        $childId = $child->getId();
-        preg_match_all('/[0-9]/', $childId, $match);
-        $childId = implode('', $match[0]);
-        /** @var Category $category */
-        $category = $this->categoryFactory->create();
-        $category->getResource()->load($category, $childId);
         $html = '';
-        if ($category->getEchidnaMenuEnable()) {
-            $html .= $this->getEchidnaMenuHtml($category);
+        if ($child->getData('megamenu_enable')) {
+            $html .= $this->getMegamenuHtml($child);
         } else {
             if (!$child->hasChildren()) {
                 return $html;

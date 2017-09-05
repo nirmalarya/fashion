@@ -1,14 +1,14 @@
 <?php
 /**
- * Copyright © 2013-2017 Echidna, Inc. All rights reserved.
+ * Copyright © 2013-2017 ScandicDesi, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
-namespace Echidna\Megamenu\Model\Config\Source;
+namespace ScandicDesi\Megamenu\Model\Config\Source;
 
 use Magento\Eav\Model\Entity\Attribute\Source\AbstractSource;
 
 /**
- * Source model for Echidna Megamenu templates
+ * Source model for ScandicDesi Megamenu templates
  */
 class Template extends AbstractSource
 {

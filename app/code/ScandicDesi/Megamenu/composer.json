@@ -1,11 +1,11 @@
 {
-    "name": "echidna/module-megamenu",
+    "name": "scandicdesi/module-megamenu",
     "description": "",
     "license": "proprietary",
     "authors": [
         {
-            "name": "ranjith",
-            "email": "ranjith.vk@echidnainc.com"
+            "name": "Ranjith VK",
+            "email": "ranjith_vk@yahoo.com"
         }
     ],
     "require": {},
@@ -16,7 +16,7 @@
             "registration.php"
         ],
         "psr-4": {
-            "Echidna\\Megamenu\\": ""
+            "ScandicDesi\\Megamenu\\": ""
         }
     }
 }

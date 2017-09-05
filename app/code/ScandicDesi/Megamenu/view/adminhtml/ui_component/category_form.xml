@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 /**
- * Copyright © 2013-2017 Echidna, Inc. All rights reserved.
+ * Copyright © 2013-2017 ScandicDesi, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 -->
@@ -15,7 +15,7 @@
                 <item name="sortOrder" xsi:type="number">500</item>
             </item>
         </argument>
-        <field name="echidna_menu_enable">
+        <field name="megamenu_enable">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="sortOrder" xsi:type="number">10</item>
@@ -31,7 +31,7 @@
                 </item>
             </argument>
         </field>
-        <field name="echidna_menu_template">
+        <field name="megamenu_template">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="sortOrder" xsi:type="number">20</item>
@@ -45,83 +45,83 @@
                                 <item name="value" xsi:type="number">0</item>
                                 <item name="actions" xsi:type="array">
                                     <item name="0" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_type1</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_type1</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="1" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_type2</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_type2</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="2" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_type3</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_type3</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="3" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_type4</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_type4</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="4" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_category1</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_category1</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="5" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_block1</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_block1</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="6" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_content1</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_content1</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="7" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_category2</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_category2</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="8" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_block2</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_block2</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="9" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_content2</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_content2</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="10" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_category3</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_category3</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="11" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_block3</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_block3</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="12" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_content3</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_content3</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="13" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_category4</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_category4</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="14" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_block4</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_block4</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="15" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_content4</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_content4</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
 									<item name="16" xsi:type="array">
-										<item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_mobilehide1</item>
+										<item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_mobilehide1</item>
 										<item name="callback" xsi:type="string">hide</item>
 									</item>
 									<item name="17" xsi:type="array">
-										<item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_mobilehide2</item>
+										<item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_mobilehide2</item>
 										<item name="callback" xsi:type="string">hide</item>
 									</item>
 									<item name="18" xsi:type="array">
-										<item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_mobilehide3</item>
+										<item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_mobilehide3</item>
 										<item name="callback" xsi:type="string">hide</item>
 									</item>
 									<item name="19" xsi:type="array">
-										<item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_mobilehide4</item>
+										<item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_mobilehide4</item>
 										<item name="callback" xsi:type="string">hide</item>
 									</item>
                                 </item>
@@ -130,83 +130,83 @@
                                 <item name="value" xsi:type="number">1</item>
                                 <item name="actions" xsi:type="array">
                                     <item name="0" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_type1</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_type1</item>
                                         <item name="callback" xsi:type="string">show</item>
                                     </item>
                                     <item name="1" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_type2</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_type2</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="2" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_type3</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_type3</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="3" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_type4</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_type4</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="4" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_category1</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_category1</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="5" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_block1</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_block1</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="6" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_content1</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_content1</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="7" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_category2</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_category2</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="8" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_block2</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_block2</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="9" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_content2</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_content2</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="10" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_category3</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_category3</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="11" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_block3</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_block3</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="12" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_content3</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_content3</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="13" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_category4</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_category4</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="14" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_block4</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_block4</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="15" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_content4</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_content4</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
 									<item name="16" xsi:type="array">
-										<item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_mobilehide1</item>
+										<item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_mobilehide1</item>
 										<item name="callback" xsi:type="string">hide</item>
 									</item>
 									<item name="17" xsi:type="array">
-										<item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_mobilehide2</item>
+										<item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_mobilehide2</item>
 										<item name="callback" xsi:type="string">hide</item>
 									</item>
 									<item name="18" xsi:type="array">
-										<item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_mobilehide3</item>
+										<item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_mobilehide3</item>
 										<item name="callback" xsi:type="string">hide</item>
 									</item>
 									<item name="19" xsi:type="array">
-										<item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_mobilehide4</item>
+										<item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_mobilehide4</item>
 										<item name="callback" xsi:type="string">hide</item>
 									</item>
                                 </item>
@@ -215,83 +215,83 @@
                                 <item name="value" xsi:type="number">2</item>
                                 <item name="actions" xsi:type="array">
                                     <item name="0" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_type1</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_type1</item>
                                         <item name="callback" xsi:type="string">show</item>
                                     </item>
                                     <item name="1" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_type2</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_type2</item>
                                         <item name="callback" xsi:type="string">show</item>
                                     </item>
                                     <item name="2" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_type3</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_type3</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="3" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_type4</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_type4</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="4" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_category1</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_category1</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="5" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_block1</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_block1</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="6" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_content1</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_content1</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="7" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_category2</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_category2</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="8" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_block2</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_block2</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="9" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_content2</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_content2</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="10" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_category3</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_category3</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="11" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_block3</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_block3</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="12" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_content3</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_content3</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="13" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_category4</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_category4</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="14" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_block4</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_block4</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="15" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_content4</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_content4</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
 									<item name="16" xsi:type="array">
-										<item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_mobilehide1</item>
+										<item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_mobilehide1</item>
 										<item name="callback" xsi:type="string">hide</item>
 									</item>
 									<item name="17" xsi:type="array">
-										<item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_mobilehide2</item>
+										<item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_mobilehide2</item>
 										<item name="callback" xsi:type="string">hide</item>
 									</item>
 									<item name="18" xsi:type="array">
-										<item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_mobilehide3</item>
+										<item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_mobilehide3</item>
 										<item name="callback" xsi:type="string">hide</item>
 									</item>
 									<item name="19" xsi:type="array">
-										<item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_mobilehide4</item>
+										<item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_mobilehide4</item>
 										<item name="callback" xsi:type="string">hide</item>
 									</item>
                                 </item>
@@ -300,83 +300,83 @@
                                 <item name="value" xsi:type="number">3</item>
                                 <item name="actions" xsi:type="array">
                                     <item name="0" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_type1</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_type1</item>
                                         <item name="callback" xsi:type="string">show</item>
                                     </item>
                                     <item name="1" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_type2</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_type2</item>
                                         <item name="callback" xsi:type="string">show</item>
                                     </item>
                                     <item name="2" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_type3</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_type3</item>
                                         <item name="callback" xsi:type="string">show</item>
                                     </item>
                                     <item name="3" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_type4</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_type4</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="4" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_category1</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_category1</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="5" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_block1</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_block1</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="6" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_content1</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_content1</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="7" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_category2</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_category2</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="8" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_block2</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_block2</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="9" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_content2</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_content2</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="10" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_category3</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_category3</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="11" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_block3</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_block3</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="12" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_content3</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_content3</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="13" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_category4</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_category4</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="14" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_block4</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_block4</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="15" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_content4</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_content4</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
 									<item name="16" xsi:type="array">
-										<item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_mobilehide1</item>
+										<item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_mobilehide1</item>
 										<item name="callback" xsi:type="string">hide</item>
 									</item>
 									<item name="17" xsi:type="array">
-										<item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_mobilehide2</item>
+										<item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_mobilehide2</item>
 										<item name="callback" xsi:type="string">hide</item>
 									</item>
 									<item name="18" xsi:type="array">
-										<item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_mobilehide3</item>
+										<item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_mobilehide3</item>
 										<item name="callback" xsi:type="string">hide</item>
 									</item>
 									<item name="19" xsi:type="array">
-										<item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_mobilehide4</item>
+										<item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_mobilehide4</item>
 										<item name="callback" xsi:type="string">hide</item>
 									</item>
                                 </item>
@@ -385,83 +385,83 @@
                                 <item name="value" xsi:type="number">4</item>
                                 <item name="actions" xsi:type="array">
                                     <item name="0" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_type1</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_type1</item>
                                         <item name="callback" xsi:type="string">show</item>
                                     </item>
                                     <item name="1" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_type2</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_type2</item>
                                         <item name="callback" xsi:type="string">show</item>
                                     </item>
                                     <item name="2" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_type3</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_type3</item>
                                         <item name="callback" xsi:type="string">show</item>
                                     </item>
                                     <item name="3" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_type4</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_type4</item>
                                         <item name="callback" xsi:type="string">show</item>
                                     </item>
                                     <item name="4" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_category1</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_category1</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="5" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_block1</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_block1</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="6" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_content1</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_content1</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="7" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_category2</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_category2</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="8" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_block2</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_block2</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="9" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_content2</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_content2</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="10" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_category3</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_category3</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="11" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_block3</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_block3</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="12" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_content3</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_content3</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="13" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_category4</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_category4</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="14" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_block4</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_block4</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="15" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_content4</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_content4</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
 									<item name="16" xsi:type="array">
-										<item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_mobilehide1</item>
+										<item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_mobilehide1</item>
 										<item name="callback" xsi:type="string">hide</item>
 									</item>
 									<item name="17" xsi:type="array">
-										<item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_mobilehide2</item>
+										<item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_mobilehide2</item>
 										<item name="callback" xsi:type="string">hide</item>
 									</item>
 									<item name="18" xsi:type="array">
-										<item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_mobilehide3</item>
+										<item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_mobilehide3</item>
 										<item name="callback" xsi:type="string">hide</item>
 									</item>
 									<item name="19" xsi:type="array">
-										<item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_mobilehide4</item>
+										<item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_mobilehide4</item>
 										<item name="callback" xsi:type="string">hide</item>
 									</item>
                                 </item>
@@ -469,12 +469,12 @@
                         </item>
                     </item>
                 </item>
-                <item name="options" xsi:type="object">Echidna\Megamenu\Model\Config\Source\Template</item>
+                <item name="options" xsi:type="object">ScandicDesi\Megamenu\Model\Config\Source\Template</item>
             </argument>
         </field>
 		
-		<!--   Start : echidna_menu_col 1       -->
-        <field name="echidna_menu_col_type1">
+		<!--   Start : megamenu_col 1       -->
+        <field name="megamenu_col_type1">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="sortOrder" xsi:type="number">30</item>
@@ -489,19 +489,19 @@
                                 <item name="value" xsi:type="number">0</item>
                                 <item name="actions" xsi:type="array">
                                     <item name="0" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_category1</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_category1</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="1" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_block1</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_block1</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="2" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_content1</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_content1</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
 									<item name="3" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_mobilehide1</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_mobilehide1</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                 </item>
@@ -510,19 +510,19 @@
                                 <item name="value" xsi:type="number">1</item>
                                 <item name="actions" xsi:type="array">
                                     <item name="0" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_category1</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_category1</item>
                                         <item name="callback" xsi:type="string">show</item>
                                     </item>
                                     <item name="1" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_block1</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_block1</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="2" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_content1</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_content1</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
 									<item name="3" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_mobilehide1</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_mobilehide1</item>
                                         <item name="callback" xsi:type="string">show</item>
                                     </item>
                                 </item>
@@ -531,19 +531,19 @@
                                 <item name="value" xsi:type="number">2</item>
                                 <item name="actions" xsi:type="array">
                                     <item name="0" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_category1</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_category1</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="1" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_block1</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_block1</item>
                                         <item name="callback" xsi:type="string">show</item>
                                     </item>
                                     <item name="2" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_content1</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_content1</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
 									<item name="3" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_mobilehide1</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_mobilehide1</item>
                                         <item name="callback" xsi:type="string">show</item>
                                     </item>
                                 </item>
@@ -552,19 +552,19 @@
                                 <item name="value" xsi:type="number">3</item>
                                 <item name="actions" xsi:type="array">
                                     <item name="0" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_category1</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_category1</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="1" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_block1</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_block1</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="2" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_content1</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_content1</item>
                                         <item name="callback" xsi:type="string">show</item>
                                     </item>
 									<item name="3" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_mobilehide1</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_mobilehide1</item>
                                         <item name="callback" xsi:type="string">show</item>
                                     </item>
                                 </item>
@@ -572,10 +572,10 @@
                         </item>
                     </item>
                 </item>
-                <item name="options" xsi:type="object">Echidna\Megamenu\Model\Config\Source\Template\Type</item>
+                <item name="options" xsi:type="object">ScandicDesi\Megamenu\Model\Config\Source\Template\Type</item>
             </argument>
         </field>
-		<field name="echidna_menu_col_mobilehide1">
+		<field name="megamenu_col_mobilehide1">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="sortOrder" xsi:type="number">39</item>
@@ -591,7 +591,7 @@
                 </item>
             </argument>
         </field>
-        <field name="echidna_menu_col_category1">
+        <field name="megamenu_col_category1">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="sortOrder" xsi:type="number">40</item>
@@ -600,10 +600,10 @@
                     <item name="label" xsi:type="string" translate="true">Column 1 Content</item>
                     <item name="visible" xsi:type="boolean">true</item>
                 </item>
-                <item name="options" xsi:type="object">Echidna\Megamenu\Model\Config\Source\Category</item>
+                <item name="options" xsi:type="object">ScandicDesi\Megamenu\Model\Config\Source\Category</item>
             </argument>
         </field>
-        <field name="echidna_menu_col_block1">
+        <field name="megamenu_col_block1">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="sortOrder" xsi:type="number">40</item>
@@ -615,7 +615,7 @@
                 <item name="options" xsi:type="object">Magento\Catalog\Model\Category\Attribute\Source\Page</item>
             </argument>
         </field>
-        <field name="echidna_menu_col_content1">
+        <field name="megamenu_col_content1">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="class" xsi:type="string">Magento\Catalog\Ui\Component\Category\Form\Element\Wysiwyg</item>
@@ -638,7 +638,7 @@
                     <item name="template" xsi:type="string">ui/form/field</item>
                     <item name="source" xsi:type="string">category</item>
                     <item name="wysiwyg" xsi:type="boolean">true</item>
-                    <item name="dataScope" xsi:type="string">echidna_menu_col_content1</item>
+                    <item name="dataScope" xsi:type="string">megamenu_col_content1</item>
                     <item name="sortOrder" xsi:type="number">40</item>
                     <item name="rows" xsi:type="number">8</item>
                     <item name="visible" xsi:type="boolean">true</item>
@@ -647,10 +647,10 @@
             </argument>
         </field>
 		
-		<!--   End : echidna_menu_col 1       -->
+		<!--   End : megamenu_col 1       -->
 		
-		<!--   Start : echidna_menu_col 2       -->
-        <field name="echidna_menu_col_type2">
+		<!--   Start : megamenu_col 2       -->
+        <field name="megamenu_col_type2">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="sortOrder" xsi:type="number">50</item>
@@ -665,19 +665,19 @@
                                 <item name="value" xsi:type="number">0</item>
                                 <item name="actions" xsi:type="array">
                                     <item name="0" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_category2</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_category2</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="1" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_block2</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_block2</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="2" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_content2</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_content2</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
 									<item name="3" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_mobilehide2</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_mobilehide2</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                 </item>
@@ -686,19 +686,19 @@
                                 <item name="value" xsi:type="number">1</item>
                                 <item name="actions" xsi:type="array">
                                     <item name="0" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_category2</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_category2</item>
                                         <item name="callback" xsi:type="string">show</item>
                                     </item>
                                     <item name="1" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_block2</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_block2</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="2" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_content2</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_content2</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
 									<item name="3" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_mobilehide2</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_mobilehide2</item>
                                         <item name="callback" xsi:type="string">show</item>
                                     </item>
                                 </item>
@@ -707,19 +707,19 @@
                                 <item name="value" xsi:type="number">2</item>
                                 <item name="actions" xsi:type="array">
                                     <item name="0" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_category2</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_category2</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="1" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_block2</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_block2</item>
                                         <item name="callback" xsi:type="string">show</item>
                                     </item>
                                     <item name="2" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_content2</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_content2</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
 									<item name="3" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_mobilehide2</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_mobilehide2</item>
                                         <item name="callback" xsi:type="string">show</item>
                                     </item>
                                 </item>
@@ -728,19 +728,19 @@
                                 <item name="value" xsi:type="number">3</item>
                                 <item name="actions" xsi:type="array">
                                     <item name="0" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_category2</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_category2</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="1" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_block2</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_block2</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="2" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_content2</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_content2</item>
                                         <item name="callback" xsi:type="string">show</item>
                                     </item>
 									<item name="3" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_mobilehide2</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_mobilehide2</item>
                                         <item name="callback" xsi:type="string">show</item>
                                     </item>
                                 </item>
@@ -748,10 +748,10 @@
                         </item>
                     </item>
                 </item>
-                <item name="options" xsi:type="object">Echidna\Megamenu\Model\Config\Source\Template\Type</item>
+                <item name="options" xsi:type="object">ScandicDesi\Megamenu\Model\Config\Source\Template\Type</item>
             </argument>
         </field>
-		<field name="echidna_menu_col_mobilehide2">
+		<field name="megamenu_col_mobilehide2">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="sortOrder" xsi:type="number">59</item>
@@ -767,7 +767,7 @@
                 </item>
             </argument>
         </field>
-        <field name="echidna_menu_col_category2">
+        <field name="megamenu_col_category2">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="sortOrder" xsi:type="number">60</item>
@@ -776,10 +776,10 @@
                     <item name="label" xsi:type="string" translate="true">Column 2 Content</item>
                     <item name="visible" xsi:type="boolean">true</item>
                 </item>
-                <item name="options" xsi:type="object">Echidna\Megamenu\Model\Config\Source\Category</item>
+                <item name="options" xsi:type="object">ScandicDesi\Megamenu\Model\Config\Source\Category</item>
             </argument>
         </field>
-        <field name="echidna_menu_col_block2">
+        <field name="megamenu_col_block2">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="sortOrder" xsi:type="number">60</item>
@@ -791,7 +791,7 @@
                 <item name="options" xsi:type="object">Magento\Catalog\Model\Category\Attribute\Source\Page</item>
             </argument>
         </field>
-        <field name="echidna_menu_col_content2">
+        <field name="megamenu_col_content2">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="class" xsi:type="string">Magento\Catalog\Ui\Component\Category\Form\Element\Wysiwyg</item>
@@ -814,7 +814,7 @@
                     <item name="template" xsi:type="string">ui/form/field</item>
                     <item name="source" xsi:type="string">category</item>
                     <item name="wysiwyg" xsi:type="boolean">true</item>
-                    <item name="dataScope" xsi:type="string">echidna_menu_col_content2</item>
+                    <item name="dataScope" xsi:type="string">megamenu_col_content2</item>
                     <item name="sortOrder" xsi:type="number">60</item>
                     <item name="rows" xsi:type="number">8</item>
                     <item name="visible" xsi:type="boolean">true</item>
@@ -822,10 +822,10 @@
                 </item>
             </argument>
         </field>
-		<!--   End : echidna_menu_col 2       -->
+		<!--   End : megamenu_col 2       -->
 		
-		<!--   Start : echidna_menu_col 3       -->
-        <field name="echidna_menu_col_type3">
+		<!--   Start : megamenu_col 3       -->
+        <field name="megamenu_col_type3">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="sortOrder" xsi:type="number">70</item>
@@ -840,19 +840,19 @@
                                 <item name="value" xsi:type="number">0</item>
                                 <item name="actions" xsi:type="array">
                                     <item name="0" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_category3</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_category3</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="1" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_block3</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_block3</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="2" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_content3</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_content3</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
 									<item name="3" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_mobilehide3</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_mobilehide3</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                 </item>
@@ -861,19 +861,19 @@
                                 <item name="value" xsi:type="number">1</item>
                                 <item name="actions" xsi:type="array">
                                     <item name="0" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_category3</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_category3</item>
                                         <item name="callback" xsi:type="string">show</item>
                                     </item>
                                     <item name="1" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_block3</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_block3</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="2" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_content3</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_content3</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
 									<item name="3" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_mobilehide3</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_mobilehide3</item>
                                         <item name="callback" xsi:type="string">show</item>
                                     </item>
                                 </item>
@@ -882,19 +882,19 @@
                                 <item name="value" xsi:type="number">2</item>
                                 <item name="actions" xsi:type="array">
                                     <item name="0" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_category3</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_category3</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="1" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_block3</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_block3</item>
                                         <item name="callback" xsi:type="string">show</item>
                                     </item>
                                     <item name="2" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_content3</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_content3</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
 									<item name="3" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_mobilehide3</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_mobilehide3</item>
                                         <item name="callback" xsi:type="string">show</item>
                                     </item>
                                 </item>
@@ -903,19 +903,19 @@
                                 <item name="value" xsi:type="number">3</item>
                                 <item name="actions" xsi:type="array">
                                     <item name="0" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_category3</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_category3</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="1" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_block3</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_block3</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="2" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_content3</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_content3</item>
                                         <item name="callback" xsi:type="string">show</item>
                                     </item>
 									<item name="3" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_mobilehide3</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_mobilehide3</item>
                                         <item name="callback" xsi:type="string">show</item>
                                     </item>
                                 </item>
@@ -923,10 +923,10 @@
                         </item>
                     </item>
                 </item>
-                <item name="options" xsi:type="object">Echidna\Megamenu\Model\Config\Source\Template\Type</item>
+                <item name="options" xsi:type="object">ScandicDesi\Megamenu\Model\Config\Source\Template\Type</item>
             </argument>
         </field>
-		<field name="echidna_menu_col_mobilehide3">
+		<field name="megamenu_col_mobilehide3">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="sortOrder" xsi:type="number">79</item>
@@ -942,7 +942,7 @@
                 </item>
             </argument>
         </field>
-        <field name="echidna_menu_col_category3">
+        <field name="megamenu_col_category3">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="sortOrder" xsi:type="number">80</item>
@@ -951,10 +951,10 @@
                     <item name="label" xsi:type="string" translate="true">Column 3 Content</item>
                     <item name="visible" xsi:type="boolean">true</item>
                 </item>
-                <item name="options" xsi:type="object">Echidna\Megamenu\Model\Config\Source\Category</item>
+                <item name="options" xsi:type="object">ScandicDesi\Megamenu\Model\Config\Source\Category</item>
             </argument>
         </field>
-        <field name="echidna_menu_col_block3">
+        <field name="megamenu_col_block3">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="sortOrder" xsi:type="number">80</item>
@@ -966,7 +966,7 @@
                 <item name="options" xsi:type="object">Magento\Catalog\Model\Category\Attribute\Source\Page</item>
             </argument>
         </field>
-        <field name="echidna_menu_col_content3">
+        <field name="megamenu_col_content3">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="class" xsi:type="string">Magento\Catalog\Ui\Component\Category\Form\Element\Wysiwyg</item>
@@ -989,7 +989,7 @@
                     <item name="template" xsi:type="string">ui/form/field</item>
                     <item name="source" xsi:type="string">category</item>
                     <item name="wysiwyg" xsi:type="boolean">true</item>
-                    <item name="dataScope" xsi:type="string">echidna_menu_col_content3</item>
+                    <item name="dataScope" xsi:type="string">megamenu_col_content3</item>
                     <item name="sortOrder" xsi:type="number">80</item>
                     <item name="rows" xsi:type="number">8</item>
                     <item name="visible" xsi:type="boolean">true</item>
@@ -997,10 +997,10 @@
                 </item>
             </argument>
         </field>
-		<!--   End : echidna_menu_col 3       -->
+		<!--   End : megamenu_col 3       -->
 		
-		<!--   Start : echidna_menu_col 4       -->
-        <field name="echidna_menu_col_type4">
+		<!--   Start : megamenu_col 4       -->
+        <field name="megamenu_col_type4">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="sortOrder" xsi:type="number">90</item>
@@ -1015,19 +1015,19 @@
                                 <item name="value" xsi:type="number">0</item>
                                 <item name="actions" xsi:type="array">
                                     <item name="0" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_category4</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_category4</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="1" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_block4</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_block4</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="2" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_content4</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_content4</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
 									<item name="3" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_mobilehide4</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_mobilehide4</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                 </item>
@@ -1036,19 +1036,19 @@
                                 <item name="value" xsi:type="number">1</item>
                                 <item name="actions" xsi:type="array">
                                     <item name="0" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_category4</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_category4</item>
                                         <item name="callback" xsi:type="string">show</item>
                                     </item>
                                     <item name="1" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_block4</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_block4</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="2" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_content4</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_content4</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
 									<item name="3" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_mobilehide4</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_mobilehide4</item>
                                         <item name="callback" xsi:type="string">show</item>
                                     </item>
                                 </item>
@@ -1057,19 +1057,19 @@
                                 <item name="value" xsi:type="number">2</item>
                                 <item name="actions" xsi:type="array">
                                     <item name="0" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_category4</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_category4</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="1" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_block4</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_block4</item>
                                         <item name="callback" xsi:type="string">show</item>
                                     </item>
                                     <item name="2" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_content4</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_content4</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
 									<item name="3" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_mobilehide4</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_mobilehide4</item>
                                         <item name="callback" xsi:type="string">show</item>
                                     </item>
                                 </item>
@@ -1078,19 +1078,19 @@
                                 <item name="value" xsi:type="number">3</item>
                                 <item name="actions" xsi:type="array">
                                     <item name="0" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_category4</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_category4</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="1" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_block4</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_block4</item>
                                         <item name="callback" xsi:type="string">hide</item>
                                     </item>
                                     <item name="2" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_content4</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_content4</item>
                                         <item name="callback" xsi:type="string">show</item>
                                     </item>
 									<item name="3" xsi:type="array">
-                                        <item name="target" xsi:type="string">category_form.category_form.menu.echidna_menu_col_mobilehide4</item>
+                                        <item name="target" xsi:type="string">category_form.category_form.menu.megamenu_col_mobilehide4</item>
                                         <item name="callback" xsi:type="string">show</item>
                                     </item>
                                 </item>
@@ -1098,10 +1098,10 @@
                         </item>
                     </item>
                 </item>
-                <item name="options" xsi:type="object">Echidna\Megamenu\Model\Config\Source\Template\Type</item>
+                <item name="options" xsi:type="object">ScandicDesi\Megamenu\Model\Config\Source\Template\Type</item>
             </argument>
         </field>
-		<field name="echidna_menu_col_mobilehide4">
+		<field name="megamenu_col_mobilehide4">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="sortOrder" xsi:type="number">99</item>
@@ -1117,7 +1117,7 @@
                 </item>
             </argument>
         </field>
-        <field name="echidna_menu_col_category4">
+        <field name="megamenu_col_category4">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="sortOrder" xsi:type="number">100</item>
@@ -1126,10 +1126,10 @@
                     <item name="label" xsi:type="string" translate="true">Column 4 Content</item>
                     <item name="visible" xsi:type="boolean">true</item>
                 </item>
-                <item name="options" xsi:type="object">Echidna\Megamenu\Model\Config\Source\Category</item>
+                <item name="options" xsi:type="object">ScandicDesi\Megamenu\Model\Config\Source\Category</item>
             </argument>
         </field>
-        <field name="echidna_menu_col_block4">
+        <field name="megamenu_col_block4">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="sortOrder" xsi:type="number">100</item>
@@ -1141,7 +1141,7 @@
                 <item name="options" xsi:type="object">Magento\Catalog\Model\Category\Attribute\Source\Page</item>
             </argument>
         </field>
-        <field name="echidna_menu_col_content4">
+        <field name="megamenu_col_content4">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="class" xsi:type="string">Magento\Catalog\Ui\Component\Category\Form\Element\Wysiwyg</item>
@@ -1164,7 +1164,7 @@
                     <item name="template" xsi:type="string">ui/form/field</item>
                     <item name="source" xsi:type="string">category</item>
                     <item name="wysiwyg" xsi:type="boolean">true</item>
-                    <item name="dataScope" xsi:type="string">echidna_menu_col_content4</item>
+                    <item name="dataScope" xsi:type="string">megamenu_col_content4</item>
                     <item name="sortOrder" xsi:type="number">100</item>
                     <item name="rows" xsi:type="number">8</item>
                     <item name="visible" xsi:type="boolean">true</item>
@@ -1172,6 +1172,6 @@
                 </item>
             </argument>
         </field>
-		<!--   End : echidna_menu_col 4       -->
+		<!--   End : megamenu_col 4       -->
     </fieldset>
 </form>

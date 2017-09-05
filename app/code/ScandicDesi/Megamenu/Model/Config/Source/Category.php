@@ -6,14 +6,14 @@
  * Time: 9:09 PM
  */
 
-namespace Echidna\Megamenu\Model\Config\Source;
+namespace ScandicDesi\Megamenu\Model\Config\Source;
 
 use Magento\Catalog\Model\ResourceModel\Category\Collection as CategoryCollection;
 use Magento\Catalog\Model\ResourceModel\Category\CollectionFactory as CategoryCollectionFactory;
 use Magento\Eav\Model\Entity\Attribute\Source\AbstractSource;
 
 /**
- * Source model for Echidna Megamenu category
+ * Source model for ScandicDesi Megamenu category
  */
 class Category extends AbstractSource
 {
