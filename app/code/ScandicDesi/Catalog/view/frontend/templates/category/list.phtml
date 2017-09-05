@@ -1,0 +1,97 @@
+<?php
+/** @var \ScandicDesi\Catalog\Block\Category\CategoryList $block */
+
+use Magento\Catalog\Model\Category;
+use Magento\Catalog\Model\ResourceModel\Category\Collection;
+use Magento\Framework\Data\Tree\Node\Collection as NodeCollection;
+
+?>
+<?php
+/** @var Collection|NodeCollection $items */
+$items = $block->getList();
+
+$title = __('Shop By Occasion');
+$mode = "grid";
+
+?>
+<?php if ($items && count($items)): ?>
+    <div class="block widget shop-by-occasion" >
+        <div class="block-title">
+            <h2 role="heading" aria-level="2"><?php /* @escapeNotVerified */ echo $title; ?></h2>
+        </div>
+        <div class="block-content">
+            <div class="products-<?php /* @escapeNotVerified */ echo $mode; ?> <?php /* @escapeNotVerified */ echo $mode; ?>">
+                <ol class="owl-carousel  product-items shop-by-occasion-items"  data-mage-init='{
+               "OwlCarousel":{
+
+                "stagePadding": 320,
+                "loop":true,
+                "items":1,
+                "lazyLoad": false,
+                "nav":true,
+                "rewind": false,
+                "dots": false,
+                "responsive":{
+                    "0":{
+                        "items":1,
+                        "stagePadding": 100
+                    },
+                    "800":{
+                        "items":1,
+                        "stagePadding": 200
+                    },
+                    "1024":{
+                        "items":1,
+                        "stagePadding": 250
+                    },
+
+                    "1200":{
+                        "items":1,
+                        "stagePadding": 316
+                    },
+                    "2400":{
+                        "items":1,
+                        "stagePadding": 326
+                    },
+                    "2500":{
+                        "items":1,
+                        "stagePadding": 376
+                    },
+                    "3000":{
+                        "items":1,
+                        "stagePadding": 400
+                    },
+                    "3000":{
+                        "items":1,
+                        "stagePadding": 500
+                    },
+                    "4500":{
+                        "items":1,
+                        "stagePadding": 700
+                    }
+                }
+
+
+
+                }
+            }'  >
+                    <?php $iterator = 1; ?>
+
+                    <?php 	foreach ($items as $item) :  ?>
+                        <?php /** @var Category $item */ ?>
+                        <?php /* @escapeNotVerified */ echo($iterator++ == 1) ? '<li class="product-item">' : '</li><li class="product-item">' ?>
+
+                        <a href="<?php /* @escapeNotVerified */ echo $item->getUrl(); ?>">
+
+                            <img src="<?php echo $item->getImageUrl(); ?>">
+                            <p><?php echo $block->escapeHtml($item->getName()) ?></p>
+                        </a>
+
+                        <?php echo($iterator == count($items)+1) ? '</li>' : ''; ?>
+
+                    <?php endforeach ?>
+                </ol>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>
