@@ -9,7 +9,8 @@
 namespace ScandicDesi\Catalog\Block\Category;
 
 use Magento\Catalog\Model\Category;
-use Magento\Catalog\Model\CategoryFactory;
+use Magento\Catalog\Model\CategoryRepository;
+use Magento\Catalog\Model\ResourceModel\Category\CollectionFactory;
 use Magento\Catalog\Model\ResourceModel\Category\Collection;
 use Magento\Framework\Data\Tree\Node\Collection as NodeCollection;
 use Magento\Framework\Registry;
@@ -17,19 +18,35 @@ use Magento\Framework\View\Element\Template;
 
 class CategoryList extends Template
 {
-    private $categoryFactory;
+    /** @var CategoryRepository */
+    private $categoryRepository;
+
+    /** @var CollectionFactory */
+    private $collectionFactory;
+
+    /** @var Registry */
     private $coreRegister;
 
     /** @var null|Category */
     private $category = null;
 
+    /**
+     * CategoryList constructor.
+     * @param Template\Context $context
+     * @param CategoryRepository $categoryRepository
+     * @param CollectionFactory $collectionFactory
+     * @param Registry $coreRegister
+     * @param array $data
+     */
     public function __construct(
         Template\Context $context,
-        CategoryFactory $categoryFactory,
+        CategoryRepository $categoryRepository,
+        CollectionFactory $collectionFactory,
         Registry $coreRegister,
         array $data = []
     ) {
-        $this->categoryFactory = $categoryFactory;
+        $this->categoryRepository = $categoryRepository;
+        $this->collectionFactory = $collectionFactory;
         $this->coreRegister = $coreRegister;
         parent::__construct($context, $data);
     }
@@ -44,8 +61,7 @@ class CategoryList extends Template
         }
         if ($this->category == null) {
             $storeRootCategoryId = $this->_storeManager->getStore()->getRootCategoryId();
-            $this->category = $this->categoryFactory->create();
-            $this->category->getResource()->load($this->category, 'entity_id', $storeRootCategoryId);
+            $this->category = $this->categoryRepository->get($storeRootCategoryId);
         }
         return $this->category;
     }
@@ -57,9 +73,19 @@ class CategoryList extends Template
      */
     public function getList()
     {
-        $collection = $this->category->getCategories($this->category->getId(), 2, true, true);
-        $collection->addIsActiveFilter()
-            ->load();
+        $storeId = $this->_storeManager->getStore()->getId();
+        /** @var Collection $collection */
+        $collection = $this->collectionFactory->create();
+        $collection->setStoreId($storeId);
+        $collection->addAttributeToSelect('name');
+        $collection->addAttributeToSelect('image');
+        $collection->addFieldToFilter('path', ['like' => '%' . $this->getCategory()->getId() . '/%']); //load only from store root
+        $collection->addIsActiveFilter();
+        $collection->addUrlRewriteToResult();
+        $collection->addOrder('level', Collection::SORT_ORDER_ASC);
+        $collection->addOrder('position', Collection::SORT_ORDER_ASC);
+        $collection->addOrder('parent_id', Collection::SORT_ORDER_ASC);
+        $collection->addOrder('entity_id', Collection::SORT_ORDER_ASC);
         return $collection;
     }
 }

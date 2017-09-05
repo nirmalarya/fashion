@@ -76,7 +76,6 @@ $mode = "grid";
                 }
             }'  >
                     <?php $iterator = 1; ?>
-
                     <?php 	foreach ($items as $item) :  ?>
                         <?php /** @var Category $item */ ?>
                         <?php /* @escapeNotVerified */ echo($iterator++ == 1) ? '<li class="product-item">' : '</li><li class="product-item">' ?>
@@ -86,9 +85,7 @@ $mode = "grid";
                             <img src="<?php echo $item->getImageUrl(); ?>">
                             <p><?php echo $block->escapeHtml($item->getName()) ?></p>
                         </a>
-
                         <?php echo($iterator == count($items)+1) ? '</li>' : ''; ?>
-
                     <?php endforeach ?>
                 </ol>
             </div>

@@ -8,6 +8,7 @@
 
 namespace ScandicDesi\Megamenu\Block;
 
+use Magento\Catalog\Model\Category;
 use Magento\Catalog\Model\CategoryFactory;
 use Magento\Catalog\Model\ResourceModel\Category\Collection;
 use Magento\Cms\Block\Block;
@@ -68,6 +69,7 @@ class Topmenu extends MagentoTopmenu
         /** @var array $categories */
         $categories = [];
         foreach ($this->getCategories() as $category) {
+            /** @var Category $category */
             if ($parentId == $category->getParentId()) {
                 $categories[] = $category;
             }
