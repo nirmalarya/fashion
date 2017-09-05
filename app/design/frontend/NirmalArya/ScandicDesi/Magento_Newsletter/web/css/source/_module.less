@@ -12,6 +12,9 @@
     //  Newsletter subscription
     .block.newsletter {
         margin-bottom: 0;
+        .footer.content  & {
+            float: none;
+        }
 
         .form.subscribe {
             display: table;
@@ -27,6 +30,8 @@
 
         .field {
             margin: 0;
+            display: table-cell;
+            vertical-align: top;
 
             .control {
                 .lib-icon-font(
@@ -71,6 +76,7 @@
            /*  border-bottom-left-radius: 0;
             border-top-left-radius: 0; */
             margin-left: -1px;
+           /*  min-width: 14.2rem; */
         }
 		.action.subscribe,
 		input {
@@ -80,18 +86,24 @@
 	.footer-newsletter-wrapper {
        /*  background: #f4f4f4; */
 		padding: 2.5rem 0;
-		font-size: 0;
+		font-size: 0;       
+        margin: 0 auto;
+        max-width: 95%;
 		h3 {
 			color: #20252d;
 			margin: 0;
-			font-size: 2.1rem;
+            font-size: 1.8rem;
 			font-family: @font-julius_sans_one;
 			font-weight: normal;
 			span {
 				color: @sd_base__color; 
 			}
 		}
-		
+		.footer-newsletter-content{
+			text-align: center;
+            min-width: 28rem;
+            margin-bottom: 1.2rem;
+		}
 		.block.newsletter{
 			.content {
 				position: relative;	
@@ -103,6 +115,8 @@
 						}
 					}
 					.field {
+                       /*  min-width: 32.8rem; */
+
 						&.newsletter {
 							.control {
 								input {
@@ -115,13 +129,22 @@
 				}
 			}
 			
-			.actions{
+			/* .actions{
 				width: 0;
 				
 				.action.subscribe{
 					
 				}
-			}
+			} */
+           /*  width: 40.6rem;
+            .field {
+                input {
+                    min-width: 29.5rem;
+                }
+            }
+            .action.subscribe {
+                min-width: 11.1rem;
+            } */
 		}
 		
 	}
@@ -132,30 +155,62 @@
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
-    .block.newsletter {
-        width: 34%;		
-    }
+    
 	.footer-newsletter-wrapper {
-		/* margin-bottom:25px; */
+         width: 68.6rem;
+         
 		.footer-newsletter-content,
 		.block.newsletter{			
 			display: inline-block;
 			vertical-align: middle;	
-			box-sizing: border-box;
-			padding-left: 20px;
-			width: 40%;
+			box-sizing: border-box;			
 		}
-		.block.newsletter{
-			width: 60%;
-		}
-		
+				
 		.footer-newsletter-content{
-			text-align: right;
+            width: 28rem;
+            margin-bottom: 0;
 		}
 		.block.newsletter{			
-			padding-right: 10%;			
+            width: 40.6rem;
+            .field {
+                input {
+                    min-width: 29.5rem;
+                }
+            }
+            .actions {
+				width: 0;
+            }
+            .action.subscribe {
+                min-width: 11.1rem;
+            }
 		}
 		
 		
 	}
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+    .footer-newsletter-wrapper {
+         width: 83.7rem;
+         
+        h3{
+            font-size: 2.1rem;         
+        }
+		
+		.footer-newsletter-content{
+            width: 36.7rem;
+		}
+		.block.newsletter{			
+            width: 47rem;
+            .field {
+                input {
+                    min-width: 32.8rem;
+                }
+            }
+            .action.subscribe {
+                min-width: 14.2rem;
+            }
+		}
+	}
+
 }
