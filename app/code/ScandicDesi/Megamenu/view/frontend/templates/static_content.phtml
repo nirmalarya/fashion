@@ -1,0 +1,25 @@
+<?php
+/**
+ * Copyright © 2013-2017 Echidna, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Top menu for store
+ *
+ * @var $block \Echidna\Megamenu\Block\Topmenu
+ */
+?>
+<ul>
+    <li>
+    <?php
+        $category = $block->getCategory();
+        $categoryField = $block->getContentField();
+        echo $category->getData('echidna_menu_col_content' . $categoryField);
+    ?>
+    </li>
+</ul>

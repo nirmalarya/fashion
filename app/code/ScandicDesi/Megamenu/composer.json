@@ -1,0 +1,22 @@
+{
+    "name": "echidna/module-megamenu",
+    "description": "",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "ranjith",
+            "email": "ranjith.vk@echidnainc.com"
+        }
+    ],
+    "require": {},
+    "type": "magento2-module",
+    "version": "1.0.1",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Echidna\\Megamenu\\": ""
+        }
+    }
+}
