@@ -19,7 +19,7 @@ use Magento\Theme\Block\Html\Topmenu as MagentoTopmenu;
 
 class Topmenu extends MagentoTopmenu
 {
-    /** @var null|Collection\ */
+    /** @var Collection|null */
     private $categories = null;
 
     /** @var CategoryFactory */
@@ -62,14 +62,22 @@ class Topmenu extends MagentoTopmenu
      * @param $column
      * @return string
      */
-    private function getCustomContent(Node $child, $column)
+    private function getCategoryContent(Node $child, $column)
     {
+        $parentId = $child->getData('megamenu_col_category' . $column);
+        /** @var array $categories */
+        $categories = [];
+        foreach ($this->getCategories() as $category) {
+            if ($parentId == $category->getParentId()) {
+                $categories[] = $category;
+            }
+        }
         /** @var Template $block */
         $block = $this->getLayout()
             ->createBlock(Template::class)
-            ->setTemplate($this->getStaticContentTemplate())
-            ->setCategory($child)
-            ->setContentField($column);
+            ->setTemplate($this->getCategoryListTemplate())
+            ->setCategoryList($categories);
+
         return $block->toHtml();
     }
 
@@ -92,21 +100,14 @@ class Topmenu extends MagentoTopmenu
      * @param $column
      * @return string
      */
-    private function getCategoryContent(Node $child, $column)
+    private function getCustomContent(Node $child, $column)
     {
-        $parentId = $child->getData('megamenu_col_category' . $column);
-        /** @var Node\Collection|Collection $categories */
-        $categories = [];
-        foreach ($this->getCategories() as $category) {
-            if($category->getParentId() == $parentId) {
-                $categories[] = $category;
-            }
-        }
         /** @var Template $block */
         $block = $this->getLayout()
             ->createBlock(Template::class)
-            ->setTemplate($this->getCategoryListTemplate())
-            ->setCategoryList($categories);
+            ->setTemplate($this->getStaticContentTemplate())
+            ->setCategory($child)
+            ->setContentField($column);
         return $block->toHtml();
     }
 

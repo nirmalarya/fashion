@@ -21,19 +21,27 @@ use Magento\Store\Model\StoreManagerInterface;
 
 class Topmenu
 {
-    /** @var NodeFactory */
     private $nodeFactory;
-
-    /** @var CategoryHelper */
+    /**
+     * Catalog category
+     *
+     * @var CategoryHelper
+     */
     private $catalogCategory;
 
-    /** @var CollectionFactory */
+    /**
+     * @var CollectionFactory
+     */
     private $collectionFactory;
 
-    /** @var StoreManagerInterface */
+    /**
+     * @var StoreManagerInterface
+     */
     private $storeManager;
 
-    /** @var Resolver */
+    /**
+     * @var Resolver
+     */
     private $layerResolver;
 
     /**

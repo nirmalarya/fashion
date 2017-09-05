@@ -1,41 +1,55 @@
 /**
- * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * Copyright © 2013-2017 ScandicDesi. All rights reserved.
  * See COPYING.txt for license details.
  */
-/*jshint jquery:true*/
 define([
     "jquery",
     "underscore",
     "jquery/ui",
-    "Magento_Ui/js/modal/modal"
-], function($, __) {
+    "Magento_Ui/js/modal/modal",
+    "mage/cookies",
+    "mage/validation"
+], function($, _) {
     "use strict";
 
-    $.widget('mage.newsletterPopup', {
+    var newsletterPopup = {
         options: {
-            localStorageKey: "recently-viewed-products",
-            productBlock: "#widget_viewed_item",
-            viewedContainer: "ol"
+            actionSelector: ".action.subscribe",
+            formSelector: ""
         },
-        initialize: function (options) {
+        init: function (options, element) {
             var _this = this;
             _this.options = $.extend(_this.options, options);
-            console.log(_this.options, _this.element());
-            _this.popup = jQuery(_this.element()).modal({
-                title: __('NewsLetter Popup'),
-                type: 'slide',
-                buttons: [{
-                    text: __('OK'),
-                    'class': 'action-primary',
-                    click: function () {
-                        _this.onConfirmBtn();
-                    }
-                }]
-            });
+            _this.options.element = element;
+            if (_this.options.formSelector) {
+                _this.form = $(_this.options.formSelector);
+            } else {
+                _this.form = $(_this.options.element).closest('form');
+            }
+            if (_this.isPopupVisible()) {
+                _this.popup = jQuery(_this.options.element).modal({
+                    title: _('NewsLetter Popup'),
+                    buttons: []
+                });
+                _this.popup.modal('openModal');
+
+                $(document).on('submit', _this.form, function() {
+                    _this.stopPopup();
+                })
+            }
         },
-        test: function () {
-            console.log('test test');
+        isPopupVisible: function () {
+            return !$.mage.cookies.get('newsletterPopup');
+        },
+        stopPopup: function () {
+            var _this = this;
+            if (_this.form.validation('isValid')) {
+                $.mage.cookies.set('newsletterPopup', true);
+            }
         }
-    });
-    return $.mage.newsletterPopup.test();
+    };
+
+    return function(config, element) {
+        newsletterPopup.init(config, element);
+    }
 });

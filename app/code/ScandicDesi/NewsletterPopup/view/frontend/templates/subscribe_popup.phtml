@@ -1,0 +1,12 @@
+<?php
+/** @var \ScandicDesi\NewsletterPopup\Block\Subscribe $block */
+?>
+<div class="newsletter-popup no-display" data-role="popup" data-mage-init='{"newsletterPopup": {}}'>
+    <h3>Popupup Content</h3>
+    <div class="left-block">
+        <?php echo $block->getLeftBlock('newsletter_popup_left_block'); ?>
+    </div>
+    <div class="right-block">
+        <?php echo $block->getNewsletterBlock(); ?>
+    </div>
+</div>
