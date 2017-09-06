@@ -1,0 +1,84 @@
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .newsletter-model-popup {
+        &.modal-popup {
+             .modal-header {
+                padding: 0;
+            }
+            .action-close {
+                padding: 1.8rem;
+                &:before {
+					background: url('../images/newsletter-popup-close-icon.svg') no-repeat center;
+                    background-size: 100%;
+					text-indent: -9999px;
+					width: 2.4rem;
+					height: 3rem;
+                        
+				}
+            }
+            .modal-content{
+                padding: 1.8rem;
+            }
+
+        }
+        .modal-title {
+            display: none;
+        }
+        .left-block,
+        .right-block {
+            width: 50%;
+            padding: 0;
+            box-sizing: border-box;
+            float: left;
+        }
+        .left-block {            
+            padding-right: 5.6rem;
+        }
+        .right-block {
+            margin-top: 4rem;
+        }  
+    }
+}
+
+//
+//  Mobile @screen__m
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    
+}
+
+//
+//  Mobile @screen__s
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+    
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+
+}
+
+
+//
+//  Desktop large
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+   
+}
+//
+//  Desktop large
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
+    
+}
