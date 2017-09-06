@@ -29,6 +29,7 @@ define([
             if (_this.isPopupVisible()) {
                 _this.popup = jQuery(_this.options.element).modal({
                     title: _('NewsLetter Popup'),
+                    modalClass: "newsletter-model-popup",
                     buttons: []
                 });
                 _this.popup.modal('openModal');
