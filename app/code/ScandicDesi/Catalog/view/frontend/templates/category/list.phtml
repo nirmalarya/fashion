@@ -14,14 +14,18 @@ $title = __('Shop By Occasion');
 $mode = "grid";
 
 ?>
-<?php if ($items && count($items)): ?>
-    <div class="block widget shop-by-occasion" >
+<?php $itemsCount = count($items); ?>
+<?php if ($itemsCount >= $block::MIN_SIZE) : ?>
+    <div class="block widget shop-by-occasion">
         <div class="block-title">
-            <h2 role="heading" aria-level="2"><?php /* @escapeNotVerified */ echo $title; ?></h2>
+            <h2 role="heading" aria-level="2"><?php /* @escapeNotVerified */
+                echo $title; ?></h2>
         </div>
         <div class="block-content">
-            <div class="products-<?php /* @escapeNotVerified */ echo $mode; ?> <?php /* @escapeNotVerified */ echo $mode; ?>">
-                <ol class="owl-carousel  product-items shop-by-occasion-items"  data-mage-init='{
+            <div class="products-<?php /* @escapeNotVerified */
+            echo $mode; ?> <?php /* @escapeNotVerified */
+            echo $mode; ?>">
+                <ol class="owl-carousel  product-items shop-by-occasion-items" data-mage-init='{
                "OwlCarousel":{
 
                 "stagePadding": 320,
@@ -74,18 +78,20 @@ $mode = "grid";
 
 
                 }
-            }'  >
+            }'>
                     <?php $iterator = 1; ?>
-                    <?php 	foreach ($items as $item) :  ?>
+                    <?php foreach ($items as $item) : ?>
                         <?php /** @var Category $item */ ?>
-                        <?php /* @escapeNotVerified */ echo($iterator++ == 1) ? '<li class="product-item">' : '</li><li class="product-item">' ?>
+                        <?php /* @escapeNotVerified */
+                        echo ($iterator++ == 1) ? '<li class="product-item">' : '</li><li class="product-item">' ?>
 
-                        <a href="<?php /* @escapeNotVerified */ echo $item->getUrl(); ?>">
+                        <a href="<?php /* @escapeNotVerified */
+                        echo $item->getUrl(); ?>">
 
                             <img src="<?php echo $item->getImageUrl(); ?>">
                             <p><?php echo $block->escapeHtml($item->getName()) ?></p>
                         </a>
-                        <?php echo($iterator == count($items)+1) ? '</li>' : ''; ?>
+                        <?php echo ($iterator == $itemsCount + 1) ? '</li>' : ''; ?>
                     <?php endforeach ?>
                 </ol>
             </div>

@@ -18,6 +18,9 @@ use Magento\Framework\View\Element\Template;
 
 class CategoryList extends Template
 {
+    const MAX_SIZE = 10;
+    const MIN_SIZE = 3;
+
     /** @var CategoryRepository */
     private $categoryRepository;
 
@@ -79,7 +82,9 @@ class CategoryList extends Template
         $collection->setStoreId($storeId);
         $collection->addAttributeToSelect('name');
         $collection->addAttributeToSelect('image');
-        $collection->addFieldToFilter('path', ['like' => '%' . $this->getCategory()->getId() . '/%']); //load only from store root
+        $collection->addFieldToFilter('path', ['like' => '%' . $this->getCategory()->getId() . '/%']);
+        $collection->addAttributeToFilter('image', ['neq' => '']);
+        $collection->setPageSize(self::MAX_SIZE);
         $collection->addIsActiveFilter();
         $collection->addUrlRewriteToResult();
         $collection->addOrder('level', Collection::SORT_ORDER_ASC);
