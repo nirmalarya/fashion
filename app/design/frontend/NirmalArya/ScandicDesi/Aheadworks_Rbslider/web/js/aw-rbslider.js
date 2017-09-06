@@ -82,9 +82,9 @@ define([
             }
             if (mainContent.length) {
                 //if (mainContent.width() < width) {
-                    width = mainContent.width();
+                    /* width = mainContent.width(); */
                 //}
-                this.element.css('width', width);
+                /* this.element.css('width', width); */
             }
             // Recalculate height
             if (slideshow.options.height === 'auto' && slideshow.slides.length) {

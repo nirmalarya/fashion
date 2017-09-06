@@ -5,8 +5,17 @@
     <div class="left-block">
         <?php echo $block->getLeftBlock('newsletter_popup_left_block'); ?>
     </div>
-    <div class="right-block">
+    <div class="right-block newsletter-popup-content-wrapper">
+        <div class="newsletter-logo-block">
+            <img src='<?php echo $this->getViewFileUrl('ScandicDesi_NewsletterPopup::images/newsletter-logo.svg'); ?>' alt="newsletter-logo">
+        </div>
         <?php echo $block->getLeftBlock('footer-sign-up-newsletter-content'); ?>
         <?php echo $block->getNewsletterBlock(); ?>
+        
+        <div class="newsletter-popup-footer-content">
+            <p><?php echo __('*Offer will arrive in email, Valid for full priced items.'); ?></p>
+        </div>
+        
+        
     </div>
 </div>
