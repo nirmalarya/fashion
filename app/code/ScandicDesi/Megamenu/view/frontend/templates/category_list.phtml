@@ -1,0 +1,27 @@
+<?php
+/**
+ * Copyright © 2013-2017 ScandicDesi, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Top menu for store
+ *
+ * @var $block \ScandicDesi\Megamenu\Block\Topmenu
+ */
+
+$categoryList = $block->getCategoryList();
+?>
+<ul>
+    <?php foreach ($categoryList as $category): ?>
+        <li>
+            <a href="<?php echo $category->getUrl() ?>">
+                <span><?php echo $category->getName() ?></span>
+            </a>
+        </li>
+    <?php endforeach; ?>
+</ul>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2013-2017 ScandicDesi, Inc. All rights reserved.
+ */
+-->
+<page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="ScandicDesi_Megamenu::css/megamenu.css" />
+    </head>
+    <body>
+        <referenceContainer name="page.top">
+            <referenceBlock class="ScandicDesi\Megamenu\Block\Topmenu" name="catalog.topnav" template="Magento_Theme::html/topmenu.phtml">
+                <arguments>
+                    <argument name="category_list_template" xsi:type="string">ScandicDesi_Megamenu::category_list.phtml</argument>
+                    <argument name="static_content_template" xsi:type="string">ScandicDesi_Megamenu::static_content.phtml</argument>
+                    <argument name="layout_template" xsi:type="string">ScandicDesi_Megamenu::column_template.phtml</argument>
+                </arguments>
+            </referenceBlock>
+        </referenceContainer>
+    </body>
+</page>

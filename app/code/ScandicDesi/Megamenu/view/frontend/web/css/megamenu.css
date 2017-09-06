@@ -1,0 +1,8 @@
+.navigation .submenu.columns .ui-menu {
+  display: block !important;
+  top: 0px !important;
+}
+.navigation .submenu.columns .column-content {
+  float: left;
+  min-width: 230px;
+}

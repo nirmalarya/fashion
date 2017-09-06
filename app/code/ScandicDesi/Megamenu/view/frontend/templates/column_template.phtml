@@ -1,0 +1,34 @@
+<?php
+/**
+ * Copyright © 2013-2017 ScandicDesi, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Top menu for store
+ *
+ * @var $block \Magento\Framework\View\Element\Template
+ */
+
+$columns = $block->getColumns();
+
+$mobileColumns = isset($columns['enable_mobile_columns'])?$columns['enable_mobile_columns']:0;
+$mobileColumnsClass = "";
+if($mobileColumns){
+	$mobileColumnsClass = "column".$mobileColumns."-layout-mobile";
+}
+
+unset($columns['enable_mobile_columns']);
+$column = count($columns);
+?>
+<ul class="level1 submenu columns column<?php echo $column; ?>-layout <?php echo $mobileColumnsClass; ?>">
+    <?php foreach ($columns as $column => $content): ?>
+    <li class="column-content column<?php echo $column; ?>-content <?php echo $content['hide_in_mbl']?'column-hide-in-mbl':''; ?>">
+        <?php echo $content['html']; ?>
+    </li>
+    <?php endforeach; ?>
+</ul>
