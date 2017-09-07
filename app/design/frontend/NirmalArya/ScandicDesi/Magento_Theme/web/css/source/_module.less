@@ -679,24 +679,32 @@
 	
 	.home-shipping-info-container {
 		text-align: center;
-		padding-bottom: 4rem;
-		margin: 4rem 2rem 2rem;
+		padding-bottom: 2rem;
+		margin: 2rem 2rem;
 		color: @color-dark_brown;
+        
+        &.owl-carousel {
+            margin: 2rem auto;
+            
+            .owl-stage {
+                 >  div {
+                    box-sizing: border-box;                    
+                }
+            }            
+        }
 		.home-shipping-info-block {
 			box-sizing: border-box;
 			vertical-align: top;
 			display:inline-block;
-			width: 32%;
-			padding: 0 2%;
-			
-			&:nth-child(2) {
-				border-left: 1px solid @seprator__color;
-				border-right: 1px solid @seprator__color;
-			}
-						
+			padding: 0 2%;	
+            
+            width: 100%;
+            margin-bottom: 1rem;
+            
+								
 			h3 {
 				font-family: @font-vidaloka;
-				font-size: 2.8rem;
+				font-size: 1.6rem;
 				font-weight: normal;
 				margin: 0;
 				letter-spacing: -0.4px;
@@ -706,16 +714,20 @@
 					color: @sd_base__color;		
 				}
 			}
-			.home-shipping-info-content {
-				p {
-					font-size: 1.6rem;
-					font-weight: 300;
-					b {
-						color: @color-dark_blue;
-						font-weight: 600;
-					}
-				}
+			.home-shipping-info-content {				
+                font-size: 1.2rem;
+                font-weight: 300;
+                b {
+                    color: @color-dark_blue;
+                    font-weight: 600;
+                }				
 			}
+            
+            h3,
+            .home-shipping-info-content {
+                display:inline-block;
+            }
+            
 		}
 	}
 	
@@ -1492,6 +1504,61 @@
         }
     }
     
+    
+    //
+    //  Homepage - shipping info
+    //  ---------------------------------------------
+	
+	.home-shipping-info-container {
+        padding-bottom: 3rem;
+		margin:3rem 2rem 2rem;
+        &.owl-carousel {
+            width: 90%;
+            margin: 3rem auto 2rem;
+            
+            .owl-stage {
+                 >  div {
+                    
+                   /*  &:nth-child(2) {
+                        border-left: 1px solid #d3d3d3;
+                        border-right: 1px solid #d3d3d3;
+                    } */
+                }
+            }            
+        }
+		.home-shipping-info-block {
+			width: 32%;
+			margin-bottom: 0;
+            
+            .owl-carousel& {
+                 width: auto;
+            }
+			&:nth-child(2) {
+				border-left: 1px solid @seprator__color;
+				border-right: 1px solid @seprator__color;
+                .owl-carousel& {
+                     border: 0;
+                }
+			}
+						
+			h3 {
+				font-size: 2.1rem;
+			}
+			
+			.home-shipping-info-content {				
+                font-size: 1.4rem;		
+			}
+            
+            h3,
+            .home-shipping-info-content {
+                display:block;
+            }
+		}
+	}
+    
+    
+    
+    
     .trend-alert-container {
         width: 72.2rem;  
         
@@ -1545,6 +1612,54 @@
             }
         }
     }
+    
+    
+    //
+    //  Homepage - shipping info
+    //  ---------------------------------------------
+	
+	.home-shipping-info-container {
+        padding-bottom: 4rem;
+        width: 90%;
+        max-width: 118.2rem;
+        margin: 4rem auto 2rem;
+        &.owl-carousel {
+           
+            
+            .owl-stage {
+                 >  div {
+                    
+                    &:nth-child(2) {
+                        border-left: 1px solid #d3d3d3;
+                        border-right: 1px solid #d3d3d3;
+                    }
+                }
+            }            
+        }
+		.home-shipping-info-block {            
+            .owl-carousel& {
+                 width: auto;
+            }			
+						
+			h3 {
+				font-size: 2.8rem;
+			}
+			
+			.home-shipping-info-content {				
+                font-size: 1.6rem;		
+			}
+		}
+	}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     .trend-alert-container {
         width: 100rem;  
         
