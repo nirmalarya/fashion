@@ -15,11 +15,18 @@ use Magento\Catalog\Model\ResourceModel\Category\Collection;
 use Magento\Framework\Data\Tree\Node\Collection as NodeCollection;
 use Magento\Framework\Registry;
 use Magento\Framework\View\Element\Template;
+use ScandicDesi\Catalog\Model\Config;
 
 class CategoryList extends Template
 {
     const MAX_SIZE = 10;
     const MIN_SIZE = 3;
+
+    /** @var Collection */
+    private $collection;
+
+    /** @var Config */
+    private $config;
 
     /** @var CategoryRepository */
     private $categoryRepository;
@@ -39,6 +46,7 @@ class CategoryList extends Template
      * @param CategoryRepository $categoryRepository
      * @param CollectionFactory $collectionFactory
      * @param Registry $coreRegister
+     * @param Config $config
      * @param array $data
      */
     public function __construct(
@@ -46,11 +54,13 @@ class CategoryList extends Template
         CategoryRepository $categoryRepository,
         CollectionFactory $collectionFactory,
         Registry $coreRegister,
+        Config $config,
         array $data = []
     ) {
         $this->categoryRepository = $categoryRepository;
         $this->collectionFactory = $collectionFactory;
         $this->coreRegister = $coreRegister;
+        $this->config = $config;
         parent::__construct($context, $data);
     }
 
@@ -76,21 +86,48 @@ class CategoryList extends Template
      */
     public function getList()
     {
-        $storeId = $this->_storeManager->getStore()->getId();
-        /** @var Collection $collection */
-        $collection = $this->collectionFactory->create();
-        $collection->setStoreId($storeId);
-        $collection->addAttributeToSelect('name');
-        $collection->addAttributeToSelect('image');
-        $collection->addFieldToFilter('path', ['like' => '%' . $this->getCategory()->getId() . '/%']);
-        $collection->addAttributeToFilter('image', ['neq' => '']);
-        $collection->setPageSize(self::MAX_SIZE);
-        $collection->addIsActiveFilter();
-        $collection->addUrlRewriteToResult();
-        $collection->addOrder('level', Collection::SORT_ORDER_ASC);
-        $collection->addOrder('position', Collection::SORT_ORDER_ASC);
-        $collection->addOrder('parent_id', Collection::SORT_ORDER_ASC);
-        $collection->addOrder('entity_id', Collection::SORT_ORDER_ASC);
-        return $collection;
+        if ($this->collection == null) {
+            /** @var Collection $this ->collection */
+            $this->collection = $this->collectionFactory->create();
+            $this->collection->addAttributeToSelect('name');
+            $this->collection->addAttributeToSelect('image');
+
+            $categoryId = $this->config->getConfigValue('occasions_category_id');
+            if ($categoryId) {
+                $this->collection->addFieldToFilter(
+                    'path',
+                    ['like' => '%' . $categoryId . '/%']
+                );
+            } else {
+                $storeId = $this->_storeManager->getStore()->getId();
+                $this->collection->setStoreId($storeId);
+                $this->collection
+                    ->addFieldToFilter(
+                        'path',
+                        ['like' => '%' . $this->getCategory()->getId() . '/%']
+                    );
+            }
+            $this->collection->addAttributeToFilter('image', ['neq' => '']);
+            $this->collection->setPageSize(self::MAX_SIZE);
+            $this->collection->addIsActiveFilter();
+            $this->collection->addUrlRewriteToResult();
+            $this->collection->addOrder('level', Collection::SORT_ORDER_ASC);
+            $this->collection->addOrder('position', Collection::SORT_ORDER_ASC);
+            $this->collection->addOrder('parent_id', Collection::SORT_ORDER_ASC);
+            $this->collection->addOrder('entity_id', Collection::SORT_ORDER_ASC);
+        }
+        return $this->collection;
+    }
+
+    /**
+     * Check if module is enabled before preparing the HTML output
+     *
+     * @return string
+     */
+    protected function _toHtml()
+    {
+        if ($this->config->isEnabled()) {
+            return parent::_toHtml();
+        }
     }
 }

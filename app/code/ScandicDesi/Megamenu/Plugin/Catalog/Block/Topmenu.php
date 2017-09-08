@@ -18,10 +18,16 @@ use Magento\Framework\Data\Tree\NodeFactory;
 use Magento\Framework\Data\Collection;
 use Magento\Framework\Exception\LocalizedException;
 use Magento\Store\Model\StoreManagerInterface;
+use ScandicDesi\Megamenu\Model\Config;
 
 class Topmenu
 {
+    /** @var NodeFactory */
     private $nodeFactory;
+
+    /** @var Config */
+    private $config;
+
     /**
      * Catalog category
      *
@@ -52,19 +58,22 @@ class Topmenu
      * @param StoreManagerInterface $storeManager
      * @param Resolver $layerResolver
      * @param NodeFactory $nodeFactory
+     * @param Config $config
      */
     public function __construct(
         CategoryHelper $catalogCategory,
         CollectionFactory $categoryCollectionFactory,
         StoreManagerInterface $storeManager,
         Resolver $layerResolver,
-        NodeFactory $nodeFactory
+        NodeFactory $nodeFactory,
+        Config $config
     ) {
         $this->catalogCategory = $catalogCategory;
         $this->collectionFactory = $categoryCollectionFactory;
         $this->storeManager = $storeManager;
         $this->layerResolver = $layerResolver;
         $this->nodeFactory = $nodeFactory;
+        $this->config = $config;
     }
 
     /**
@@ -83,13 +92,15 @@ class Topmenu
         $childrenWrapClass = '',
         $limit = 0
     ) {
-        $rootId = $this->storeManager->getStore()->getRootCategoryId();
-        $storeId = $this->storeManager->getStore()->getId();
-        /** @var CategoryCollection $collection */
-        $collection = $this->getCategoryTree($storeId, $rootId);
-        $currentCategory = $this->getCurrentCategory();
-        $mapping = [$rootId => $subject->getMenu()];  // use nodes stack to avoid recursion
-        $this->prepareCategoryNode($collection, $mapping, $currentCategory);
+        if ($this->config->isEnabled()) {
+            $rootId = $this->storeManager->getStore()->getRootCategoryId();
+            $storeId = $this->storeManager->getStore()->getId();
+            /** @var CategoryCollection $collection */
+            $collection = $this->getCategoryTree($storeId, $rootId);
+            $currentCategory = $this->getCurrentCategory();
+            $mapping = [$rootId => $subject->getMenu()];  // use nodes stack to avoid recursion
+            $this->prepareCategoryNode($collection, $mapping, $currentCategory);
+        }
     }
 
     /**

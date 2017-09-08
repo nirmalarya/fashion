@@ -17,9 +17,13 @@ use Magento\Framework\View\Element\Template;
 use Magento\Framework\Data\TreeFactory;
 use Magento\Framework\Data\Tree\NodeFactory;
 use Magento\Theme\Block\Html\Topmenu as MagentoTopmenu;
+use ScandicDesi\Megamenu\Model\Config;
 
 class Topmenu extends MagentoTopmenu
 {
+    /** @var Config */
+    private $config;
+
     /** @var Collection|null */
     private $categories = null;
 
@@ -32,6 +36,7 @@ class Topmenu extends MagentoTopmenu
      * @param NodeFactory $nodeFactory
      * @param TreeFactory $treeFactory
      * @param CategoryFactory $categoryFactory
+     * @param Config $config
      * @param array $data
      */
     public function __construct(
@@ -39,10 +44,12 @@ class Topmenu extends MagentoTopmenu
         NodeFactory $nodeFactory,
         TreeFactory $treeFactory,
         CategoryFactory $categoryFactory,
+        Config $config,
         array $data = []
     ) {
         parent::__construct($context, $nodeFactory, $treeFactory, $data);
         $this->categoryFactory = $categoryFactory;
+        $this->config = $config;
     }
 
     /**
@@ -117,10 +124,14 @@ class Topmenu extends MagentoTopmenu
      * Build the ScandicDesi Menu html output
      *
      * @param Node $child
-     * @return mixed
+     * @return string|bool
      */
     public function getMegamenuHtml(Node $child)
     {
+        if (!$this->config->isEnabled()) {
+            return false;
+        }
+
         $columns = (int) $child->getData('megamenu_template');
         $template = $this->getLayoutTemplate();
         /** @var Template $block */
