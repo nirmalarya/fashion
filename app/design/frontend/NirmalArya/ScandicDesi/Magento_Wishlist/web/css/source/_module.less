@@ -24,6 +24,20 @@
             @_icon-font-content: @icon-wishlist-full,
             @_icon-font-position: before
             );
+            &:before {
+                background: url('../images/wishlist-icon.svg') no-repeat center;
+                background-size: 100%;
+                text-indent: -9999px;
+                width: 2rem;
+                height: 2rem;
+            }
+            
+            &:hover {
+                &:before {
+                    background: url('../images/wishlist-fill-icon.svg') no-repeat center;
+                    background-size: 100%;                
+                }
+            }
         }
     }
 

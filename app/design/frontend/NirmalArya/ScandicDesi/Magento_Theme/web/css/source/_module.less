@@ -1015,7 +1015,7 @@
     }
     
     
-    .trend-alert-container {
+    /* .trend-alert-container {
         width: 100%;  
         
         .custom-grid-set {        
@@ -1071,10 +1071,80 @@
                 }
             }                           
         }
+    } */
+    
+    
+    .trend-alert-container { 
+        width: 36.1rem;  
+        
+        .custom-grid-set {        
+            
+            .cc-col-6 {
+                
+                .left_6x6, .right_6x6 {          
+                    .content {
+                        position: absolute;
+                        width: 8rem;
+                        height: auto;                        
+                        font-size: 1rem;
+                        line-height: 1.42857143;
+                        padding: .5rem;
+                        
+                        &.right-align {
+                            right: 0;
+                        }
+                        &:not(.right-align){
+                            left: 0;
+                        }
+                    }
+                }
+                
+                &.left {
+                    width: 14.2rem;
+                    margin-right: 1rem;
+                    
+                    .left_6x6 {
+                        &.left-top {
+                            margin-bottom: 1rem;     
+                            
+                            .content {
+                                bottom: 5rem;
+                            }
+                        }
+                        &.left-bottom {
+                            .content {
+                                bottom: 4rem;
+                            }
+                        }
+                    }                    
+                }
+                
+                &.right {
+                    width: 20.9rem;
+                            
+                    .right_6x6 {
+                        &.right-top {
+                            .content {
+                                bottom: 1rem;
+                            }
+                        }
+                        &.right-center {
+                            margin-top: 1rem;
+                            margin-bottom: 1rem;
+                            .content {
+                                bottom: 3rem;
+                            }                            
+                        }	
+                        &.right-bottom {
+                            .content {
+                                bottom: 3rem;
+                            }
+                        }
+                    }
+                }
+            }                           
+        }
     }
-    
-    
-    
     
     .footer {
         &.content {    
@@ -1153,6 +1223,24 @@
     .logo {
         margin-bottom: 13px;
         margin-top: 4px;
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 370px){
+    .trend-alert-wrapper {
+        .trend-alert-container {
+            width: 32rem;  
+            .custom-grid-set {
+                .cc-col-6 {   
+                    &.left {
+                        width: 12.3rem;     
+                    }
+                    &.right {
+                        width: 18rem;                       
+                    }
+                }                           
+            }
+        }
     }
 }
 

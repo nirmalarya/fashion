@@ -192,6 +192,14 @@
     .page-layout-3columns .block.widget .products-grid .product-item {
         width: 100%/3;
     }
+    
+    .block.widget .products-grid .owl-carousel .product-item,
+    .page-layout-1column .block.widget .products-grid .owl-carousel .product-item,
+    .page-layout-3columns .block.widget .products-grid .owl-carousel .product-item {
+        width: 100%;
+    }
+    
+    
 }
 
 //
@@ -232,10 +240,8 @@
     
     .page-layout-1column .block.widget.shop-by-occasion {
         .block-content {
-            .products-grid {
-                
-                .owl-carousel {
-        
+            .products-grid {                
+                .owl-carousel {        
                     .product-item {
                         width: 100%;
                         margin-left: 0;
@@ -258,6 +264,11 @@
         }
 		
     }
+    .page-layout-1column .block.widget .new-arrivals-best-picks-tab-product-items .products-grid .owl-carousel .product-item {
+        margin-left: 0;
+        width: 100%;
+    }
+    
 	
 
     .page-layout-3columns .block.widget .products-grid .product-item {
