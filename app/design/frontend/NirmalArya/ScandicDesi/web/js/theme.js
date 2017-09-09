@@ -24,7 +24,7 @@ define([
     });
 
     //$('.panel.header > .header.links').clone().appendTo('#store\\.links');
-    $('.header.content > .account_li.wrapper > .header.links').clone().appendTo('#store\\.links');
+    $('.header.content .account_li.wrapper > .header.links').clone().appendTo('#store\\.links');
 
     keyboardHandler.apply();
 	
