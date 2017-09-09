@@ -14,10 +14,12 @@ if ($block->isLoggedIn()) {
 ?>
 
 <?php if ($block->isLoggedIn()) { ?>
-<li>
-    <span><?php echo __('Welcome'); ?> </span>
-    <span   data-bind="scope: 'customer'">
-        <span data-bind="text: customer().fullname"></span>                
+<li class="customer-welcome-name-li">
+    <span class="customer-welcome-name">
+        <span><?php echo __('Welcome'); ?> </span>
+        <span   data-bind="scope: 'customer'">
+            <span data-bind="text: customer().fullname"><?php echo __('User'); ?></span>                
+        </span>
     </span>
 </li>
 <?php } ?>
