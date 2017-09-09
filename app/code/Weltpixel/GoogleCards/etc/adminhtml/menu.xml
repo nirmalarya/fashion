@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
-    <menu>
-        <add id="WeltPixel_GoogleCards::GoogleCards" title="Google Cards &amp; Rich Snippets" module="WeltPixel_GoogleCards" action="adminhtml/system_config/edit/section/weltpixel_google_cards/" sortOrder="90" parent="WeltPixel_Backend::WeltPixel" resource="WeltPixel_GoogleCards::GoogleCards"/>
-        <add id="WeltPixel_GoogleCards::Schemas" title="Twitter Cards, Facebook OG &amp; Pinterest Rich Pins" module="WeltPixel_GoogleCards" action="adminhtml/system_config/edit/section/weltpixel_schemas/" sortOrder="90" parent="WeltPixel_Backend::WeltPixel" resource="WeltPixel_GoogleCards::Schemas"/>
-    </menu>
-</config>
