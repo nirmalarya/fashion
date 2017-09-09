@@ -321,13 +321,17 @@
 				margin-top: 1.5rem;
 			}
 		}
-		&.fixed {
-			position: fixed;
+        &.onload-fixed,
+        &.fixed {
+            position: fixed;
 			width: 100%;
 			box-sizing: border-box;
 			background-color: @color-white;
+            z-index: 20;
+        }
+		&.fixed {			
 			box-shadow: 0 2px 4px 0 rgba(204, 204, 204, 0.5);	
-			z-index: 20;
+			
 			.custom-currency-switcher-wrapper{
 				.switcher.currency{
 					margin-left: 2rem;
@@ -530,7 +534,7 @@
                 width: 98.8rem;
                 max-width: 90%;
                 margin: 0 auto;
-                margin-top: 4.45rem;
+                margin-top: 2.5rem;
                
                 p {
                  margin-bottom: 0; 
@@ -1539,7 +1543,7 @@
 				box-sizing: border-box;
 				text-align: center;
                 
-                padding-top: 3rem;
+                padding-top: 1rem;
                 padding-bottom: 3rem;
                 border-bottom: solid 1px rgba(151, 151, 151, 0.57);
 
@@ -1699,6 +1703,10 @@
 				.block.block-static-block {
 					width: 20%;					                  
                 }
+            }
+            
+            .footer-aboutus-wrapper  {
+                margin-top: 4.45rem;
             }
         }
     }

@@ -43,21 +43,36 @@ define([
         var headerPanel = $('.panel.wrapper');
         var search = $('.block-search');
         var searchWidth = search.outerWidth();
-		var searchHeight = search.outerHeight(true);        
+		var searchHeight = search.outerHeight(true);
+
+        var logoContainer = containerFixed.find('.logo');
         if(!containerFixed.hasClass('onload-fixed')){
 			containerFixed.addClass('onload-fixed')
 		}
         var containerFixedH = containerFixed.outerHeight();
-		/* if(!nav.is(':visible')){
-			containerFixedH += nav.height();
-		} */
-		
-		container.height(containerFixedH);
-		container.css('min-height',containerFixedH);
-		
-		if(nav.attr('style') != undefined){ //reset style for nav
+        
+        if(nav.attr('style') != undefined && ( !containerFixed.hasClass('fixed') || !($(window).width() >= 768) ) ) { // reset style for nav
 			nav.removeAttr('style');				
 		}
+        
+		if(!nav.is(':visible')){
+			containerFixedH += nav.height();
+		}
+		
+		
+		
+        var logoContainerH = logoContainer.height();
+        var logoContainerImageH = logoContainer.find('> img, > svg').height();
+        var logoDiffeneceH =  logoContainerImageH - logoContainerH;
+        if(logoDiffeneceH > 5 && $(window).width() >= 768 ) { // logo small issue
+            containerFixedH += logoDiffeneceH ;
+        }
+        
+        container.height(containerFixedH);
+		container.css('min-height',containerFixedH);
+        
+        
+		
 		
 		var _top = $(window).scrollTop();		
 		var _direction;
@@ -89,10 +104,12 @@ define([
         });
 		
 		var startFloating = function(start) {
-            if(start) {
-                toggleMenu(start);
-            } else {
-                toggleMenu(false);
+            if($(window).width() >= 768) {
+                if(start) {
+                    toggleMenu(start);
+                } else {
+                    toggleMenu(false);
+                }
             }
         }
 		
