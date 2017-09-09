@@ -287,6 +287,10 @@
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     .abs-margin-for-blocks-and-widgets-desktop {
         margin-bottom: @indent__xl + @indent__s;
+        
+        &.block-static-block.widget{
+            margin-bottom: 0;
+        }
     }
 }
 

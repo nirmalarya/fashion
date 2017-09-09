@@ -69,7 +69,7 @@ define([
          * Recalculate the width and height of the banner
          */
         resizeBanner: function(slideshow) {
-            var mainContent = this.element.closest('#maincontent, .page-wrapper'),
+            var mainContent = this.element.closest('#maincontent, .page-wrapper, .page-bottom'),
                 width,
                 height = slideshow.options.height;
 
