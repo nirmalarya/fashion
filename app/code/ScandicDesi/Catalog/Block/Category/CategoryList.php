@@ -25,6 +25,11 @@ class CategoryList extends Template
     /** @var Collection */
     private $collection;
 
+    /** @var array */
+    private $collectionByType = [
+        'default' => null
+    ];
+
     /** @var Config */
     private $config;
 
@@ -80,33 +85,17 @@ class CategoryList extends Template
     }
 
     /**
-     * Get the list of categories by parent category id
-     *
-     * @return Collection|NodeCollection
+     * @return Collection
      */
-    public function getList()
+    public function getCollection()
     {
         if ($this->collection == null) {
+            $storeId = $this->_storeManager->getStore()->getId();
             /** @var Collection $this ->collection */
             $this->collection = $this->collectionFactory->create();
+            $this->collection->setStoreId($storeId);
             $this->collection->addAttributeToSelect('name');
             $this->collection->addAttributeToSelect('image');
-
-            $categoryId = $this->config->getConfigValue('occasions_category_id');
-            if ($categoryId) {
-                $this->collection->addFieldToFilter(
-                    'path',
-                    ['like' => '%' . $categoryId . '/%']
-                );
-            } else {
-                $storeId = $this->_storeManager->getStore()->getId();
-                $this->collection->setStoreId($storeId);
-                $this->collection
-                    ->addFieldToFilter(
-                        'path',
-                        ['like' => '%' . $this->getCategory()->getId() . '/%']
-                    );
-            }
             $this->collection->addAttributeToFilter('image', ['neq' => '']);
             $this->collection->setPageSize(self::MAX_SIZE);
             $this->collection->addIsActiveFilter();
@@ -117,6 +106,42 @@ class CategoryList extends Template
             $this->collection->addOrder('entity_id', Collection::SORT_ORDER_ASC);
         }
         return $this->collection;
+    }
+
+    /**
+     * Get the list of categories by parent category id
+     *
+     * @return Collection|NodeCollection
+     */
+    public function getList()
+    {
+        $type = $this->getListType() ? $this->getListType() : 'default';
+        return $this->getListByType($type);
+    }
+
+    public function getListByType($type)
+    {
+        if (!isset($this->collectionByType[$type]) || empty($this->collectionByType[$type])) {
+            /** @var Collection $collection */
+            $collection = $this->getCollection();
+            if ($type == 'default') {
+                $collection->addFieldToFilter(
+                    'path',
+                    ['like' => '%' . $this->getCategory()->getId() . '/%']
+                );
+            } else {
+                /* apply additonal filter to the collection */
+                $collection->addAttributeToFilter(
+                    'category_type',
+                    ['eq' => $type]
+                )->addFieldToFilter(
+                    'path',
+                    ['like' => '%' . $this->getCategory()->getId() . '/%']
+                );
+            }
+            $this->collectionByType[$type] = $collection;
+        }
+        return $this->collectionByType[$type];
     }
 
     /**
