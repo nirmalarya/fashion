@@ -21,9 +21,13 @@
 @product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3);
 
 
-@product-name__font-size: 1.6rem;
+@product-name__font-size: 1.4rem;
 @product-name__line-height: 1.42857143;
 @product-name__lines-to-show: 2;
+
+
+@web-product-name__font-size: 1.6rem;
+
 
 //
 //  Common
@@ -73,8 +77,7 @@
                 -webkit-box-orient: vertical;
                 overflow: hidden;
                 text-overflow: ellipsis;                
-                max-height: calc(@product-name__line-height * @product-name__font-size * @product-name__lines-to-show) ;                
-                
+                max-height: calc(@product-name__line-height * @product-name__font-size * @product-name__lines-to-show) ;
             }
 
             &-info {
@@ -200,7 +203,7 @@
 
     .price-container {
         .price {
-            .lib-font-size(18);
+            .lib-font-size(16);            
         }
 
         .price-including-tax + .price-excluding-tax,
@@ -552,6 +555,24 @@
                         margin-left: 0;
                     }
                 }
+            }
+        }
+    }
+    
+    .price-container {
+        .price {
+            .owl-carousel & {
+                .lib-font-size(18);
+            }
+        }
+    }
+    .product {
+       
+       &-item {
+            
+            &-name {
+                font-size: @web-product-name__font-size;
+                max-height: calc(@product-name__line-height * @web-product-name__font-size * @product-name__lines-to-show) ; 
             }
         }
     }

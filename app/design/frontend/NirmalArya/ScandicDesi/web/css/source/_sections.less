@@ -62,7 +62,7 @@
             margin-right: 0;
             .lib-css(text-align, center);
             
-            max-width: 31.1rem;
+            max-width: 100%;
 			margin: 0 auto;
             
             .item.title {
@@ -91,8 +91,16 @@
                 }
             }
             .item.content {
-                border-top:1px solid rgba(0,0,0,.2);
-                padding: 35px 0;
+                border-top:0;
+                padding: 0 0 2rem;
+                &:before {
+                    max-width: 31.1rem;
+                    margin: 0 auto;
+                    content: "";
+                    display:block;
+                    border-top: 1px solid rgba(0, 0, 0, 0.2);
+                    padding-top: 2rem;
+                }
 
                 .block-title {
                     display: none;
@@ -118,6 +126,12 @@
 		.new-arrivals-best-picks-tab-product-items &{
 			max-width: 100%;
 			margin: 0 auto;
+            
+            .owl-carousel {
+                .owl-nav {
+                    display: none;
+                }
+            }
 			.product-item-actions { 
 				/* display: none; */
                 /* z-index: 1; */
@@ -154,15 +168,10 @@
                 }
             }
             .item.content {
-                border-top: 0;
                 padding: 0 0 35px;
                 &:before {
                     max-width: 73.2rem;
-                    margin: 0 auto;
-                    content: ".";
-                    display:block;
                     border-top: 2px solid rgba(0, 0, 0, 0.2);
-                    padding-top: 35px;
                 }
 
                 .block-title {

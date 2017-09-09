@@ -14,7 +14,7 @@
  * @var $block \Magento\CatalogWidget\Block\Product\ProductsList
  */
 ?>
-<?php if ($exist = ($block->getProductCollection() && $block->getProductCollection()->getSize())):?>
+<?php if ($exist = ($block->getProductCollection() && $itemCnt = $block->getProductCollection()->getSize())):?>
 <?php
     $type = 'widget-product-grid';
 
@@ -23,12 +23,13 @@
     $image = 'new_products_content_widget_grid';
     $title = $block->getTitle() ? __($block->getTitle()) : '';
     $items = $block->getProductCollection()->getItems();
-
     $showWishlist = true;
     $showCompare = true;
     $showCart = true;
     $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::DEFAULT_VIEW;
     $description = false;
+    
+    $minItemToDisplay =3;
 ?>
     <div class="block widget block-products-list <?php /* @escapeNotVerified */ echo $mode; ?>">
         <?php if ($title):?>
@@ -41,7 +42,9 @@
             <div class="products-<?php /* @escapeNotVerified */ echo $mode; ?> <?php /* @escapeNotVerified */ echo $mode; ?>">
                 <ol class="product-items <?php /* @escapeNotVerified */ echo $type; ?> owl-carousel" data-mage-init='{
                "OwlCarousel":{ 
-                    "items":3,
+                    "items":<?php echo $minItemToDisplay; ?>,
+                    "nav":true,
+                    <?php echo ($itemCnt < $minItemToDisplay)? '"center": true,': ''; ?>
                     "responsive":{
                         "0":{
                             "items":1
