@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2013-2017 ScandicDesi. All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="ScandicDesi_SizeChart::size_chart" title="Size Chart" translate="title" module="ScandicDesi_SizeChart"
+             sortOrder="50" parent="Magento_Catalog::inventory"
+             action="scandicdesi/sizechart" resource="ScandicDesi_SizeChart::chart"/>
+    </menu>
+</config>
