@@ -19,6 +19,11 @@ use ScandicDesi\SizeChart\Model\Config;
 class Chart extends Template
 {
     const TEMPLATE = 'ScandicDesi_SizeChart::product/view/size_chart.phtml';
+
+    /**
+     * @var Product
+     */
+    private $product;
     /**
      * @var ChartFactory
      */
@@ -66,9 +71,11 @@ class Chart extends Template
      */
     public function getProduct()
     {
-        /** @var Product $product */
-        $product = $this->coreRegistry->registry('current_product');
-        return $product;
+        if ($this->product == null) {
+            /** @var Product */
+            $this->product = $this->coreRegistry->registry('current_product');
+        }
+        return $this->product;
     }
 
     /**
@@ -118,7 +125,7 @@ class Chart extends Template
      */
     protected function _toHtml()
     {
-        if ($this->config->isEnabled()) {
+        if ($this->config->isEnabled() && $this->getProduct()->getData('size_chart')) {
             if (!$this->getTemplate()) {
                 $this->setTemplate(self::TEMPLATE);
             }
