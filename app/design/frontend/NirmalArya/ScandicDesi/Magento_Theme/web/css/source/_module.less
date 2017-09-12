@@ -1750,9 +1750,47 @@
             }                           
         }
     }
+    
+    
+    //
+    //  Mega menu - Promo Block
+    //  ---------------------------------------------
+	
+    
+    .navigation {
+        .menu-promo-wrapper {
+            position: relative;
+            .menu-promo-content {
+                position: absolute;
+                bottom: 1rem;
+                text-align: center;
+                width: 100%;
+                left: 24%;
+               /*  white-space: nowrap; */
+                    
+                .festival-shop-text {
+                    font-family: @font-vidaloka;
+                    font-size: 5.4rem;
+                    letter-spacing: -4.2px;
+                    color: @color-white;
+                    white-space: nowrap;
+                    
+                    .shop-text {
+                        letter-spacing: -2.9px;
+                        color: #f9678d;
+                    }
+                }
+                .explore-now-text {
+                    font-size: 1.4rem;
+                    color: @color-white;
+                }
+            }
+        }
+    }
 }
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+  
     .footer {
         &.content {
             .links {                 
