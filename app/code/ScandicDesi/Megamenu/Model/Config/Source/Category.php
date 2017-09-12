@@ -20,6 +20,10 @@ class Category extends AbstractSource
     /** @var CategoryCollection $categoryCollectionFactory */
     private $categoryCollectionFactory;
 
+    /**
+     * Category constructor.
+     * @param CategoryCollectionFactory $categoryCollectionFactory
+     */
     public function __construct(CategoryCollectionFactory $categoryCollectionFactory)
     {
         $this->categoryCollectionFactory = $categoryCollectionFactory;
