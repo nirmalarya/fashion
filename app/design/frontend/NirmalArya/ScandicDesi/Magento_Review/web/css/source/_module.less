@@ -282,10 +282,26 @@
             font-size: floor(.8 * @font-size__base);
             vertical-align: middle;
 
+            /* font-size: 1.1rem; */
+            font-weight: 300;
+            text-transform: uppercase;
+                
             a:not(:last-child) {
                 margin-right: 30px;
             }
-
+            a {
+                .lib-link(
+                @_link-color: @pdp-review-link__color,
+                @_link-text-decoration: underline,
+                @_link-color-visited: @pdp-review-link__color,
+                @_link-text-decoration-visited: underline,
+                @_link-color-hover: @sd_base__color,
+                @_link-text-decoration-hover: underline,
+                @_link-color-active: @pdp-review-link__color,
+                @_link-text-decoration-active: underline
+                );
+                
+            }
             .action.view span {
             }
         }
@@ -312,7 +328,7 @@
         }
 
         .reviews-actions {
-            font-size: @font-size__base;
+            /* font-size: @font-size__base; */
             margin-top: 3px;
         }
     }
