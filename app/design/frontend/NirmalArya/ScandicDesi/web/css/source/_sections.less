@@ -123,10 +123,77 @@
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     .product.data.items {
         .lib-data-tabs();
+        .lib-css(text-align, center);
+        .product.info.detailed & { /*  zepline : #fbfbfb not visible in browser so fafafa added */
+            .lib-data-tabs( 
+                @_tab-control-font-family: @font-montserrat,
+                @_tab-control-font-size: 1.6rem,
+                @_tab-control-font-weight: 500,
+                               
+                
+                @_tab-control-color:  #4a4a4a, 
+                @_tab-control-color-visited:  #4a4a4a,
+                @_tab-control-color-hover:  @sd_base__color,
+                @_tab-control-color-active:  @sd_base__color,
+                @_tab-content-border: 1px solid rgba(151, 151, 151, 0.32),
+                @_tab-control-margin-right: -1px,
+                @_tab-control-background-color:  #fafafa, 
+                
+                @_tab-control-line-height:  50px,
+                @_tab-control-height:  50px,
+                @_tab-control-padding-top: 5px,
+                @_tab-control-padding-right: 40px,
+                @_tab-control-padding-bottom: 5px,
+                @_tab-control-padding-left: 40px,
+                
+                @_tab-content-margin-top: ~'calc( 50px + 1px + 5px + 5px)'
+
+            );
+            
+            &:before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 60px;
+                top: 0;
+                border: 1px solid rgba(151, 151, 151, 0.32);
+                background: #fafafa;
+            }
+            > .item.title {
+                min-width: 18%; /* added if we have less then 5 tab items */
+                margin: 0;
+                margin-left: 1px;
+                > .switch {
+                    border: 1px solid rgba(151, 151, 151, 0.32);
+                    border-left: none;
+                    border-right: none;
+                }
+                
+                &.active {
+                    margin-left: 0;
+                }
+                &.active > .switch,
+                &.active > .switch:focus,
+                &.active > .switch:hover {
+                    .lib-css(padding-bottom, 5px); /* same we added in above css */
+                    border: 1px solid rgba(151, 151, 151, 0.32);
+                
+                }
+            }
+            > .item.content {
+                .lib-css(text-align, left);
+                font-size: 1.3rem;
+                font-weight: 300;
+                color: #4a4a4a; 
+                
+                border: 0;
+            }
+        }
+        
         border-bottom: 0;
         margin-left: 0;
         margin-right: 0;
-		.lib-css(text-align, center);
+		
 		
 		.new-arrivals-best-picks-tab-product-items &{
 			max-width: 100%;

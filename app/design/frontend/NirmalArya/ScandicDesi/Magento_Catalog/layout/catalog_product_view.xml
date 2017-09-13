@@ -7,8 +7,47 @@
 -->
 <page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <move element="page.main.title" destination="product.info.main" before="-"/>
-        <move element="product.info.stock.sku" destination="product.info.price" after="product.price.final"/>
-        <move element="product.info.review" destination="product.info.main" before="product.info.price"/>
+        <referenceContainer name="product.info.main" before="-">
+            <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.main.title" template="product/view/attribute.phtml" before="-">
+                <arguments>
+                    <argument name="at_call" xsi:type="string">getName</argument>
+                    <argument name="at_code" xsi:type="string">name</argument>
+                    <argument name="css_class" xsi:type="string">product-name</argument>
+                    <argument name="at_label" xsi:type="string">none</argument>
+                    <argument name="add_attribute" xsi:type="string">itemprop="name"</argument>
+                </arguments>
+            </block>
+            
+        </referenceContainer>
+        <referenceContainer name="product.info.media" >
+            <container name="product.info.main.mobile" htmlTag="div" htmlClass="product-info-main-mobile show-in-mbl" before="-">
+                <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.main.mobile.title" template="product/view/attribute.phtml" >
+                    <arguments>
+                        <argument name="at_call" xsi:type="string">getName</argument>
+                        <argument name="at_code" xsi:type="string">name</argument>
+                        <argument name="css_class" xsi:type="string">product-name</argument>
+                        <argument name="at_label" xsi:type="string">none</argument>
+                        <argument name="add_attribute" xsi:type="string">itemprop="name"</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.sku1" template="product/view/attribute.phtml" >
+                    <arguments>
+                        <argument name="at_call" xsi:type="string">getSku</argument>
+                        <argument name="at_code" xsi:type="string">sku</argument>
+                        <argument name="css_class" xsi:type="string">sku</argument>
+                        <argument name="at_label" xsi:type="string">default</argument>
+                        <argument name="add_attribute" xsi:type="string">itemprop="sku"</argument>
+                    </arguments>
+                </block>
+            </container>
+        </referenceContainer>
+        <move element="page.main.title" destination="product.info.main" before="-"/>       
+        <move element="product.info.overview" destination="product.info.price" after="product.price.final"/>
+        <!-- <move element="product.info.review" destination="product.info.main" before="product.info.price"/>
+        <move element="product.info.stock.sku" destination="product.info.main" before="product.info.price"/> -->
+        
+        
+        <move element="product.info.type" destination="product.info.extrahint" after="-" />
+        <referenceBlock name="product.info.mailto" remove="true" />
     </body>
 </page>

@@ -22,9 +22,12 @@
 @color-pale_grey: #e1ecf4;
 @color-pink: #f9678d;
 
+
 @color-medium_grey: #767676;
+@color-m_m_l_gray : #9b9b9b;
 @color-medium_light_grey: #bcbcbc;
 
+@pdp-title__color: #58585a;
 
 @dropdown__border-color: #ececec;
 @seprator__color: #d3d3d3;
@@ -66,6 +69,7 @@
 @table-cell-stripped__background-color: @table-cell__hover__background-color;
 @table-responsive-th__background-color: @table-cell-stripped__background-color;
 @table-responsive-cell__padding: @indent__xs @indent__s;
+@table-th__font-weight: 500;
 
 //
 //  Layout grid
@@ -332,9 +336,11 @@
 //  Rating
 //  ---------------------------------------------
 
-@rating-icon__font-size: 16px;
+@rating-icon__color: #e4e4e4;
+@rating-icon__font-size: 18px;
 @rating-icon__letter-spacing: 2px;
-@rating-icon__active__color: @active__color;
+@rating-icon__active__color: #dba86f;
+
 
 //
 //  Dropdowns
@@ -360,9 +366,15 @@
 //  Breadcrumbs
 //  ---------------------------------------------
 
-@breadcrumbs__container-margin: 0 0 15px;
-@breadcrumbs-icon__font-size: 10px;
-@breadcrumbs-icon__font-margin: 0 @indent__s;
+
+@breadcrumbs__container-margin: 0 0 3rem;
+@breadcrumbs-icon__font-size: 1.2rem;
+@breadcrumbs-icon__font-line-height: 1rem;
+@breadcrumbs-icon__font-margin: 0 2px;
+@breadcrumbs-icon__font-content: '/';
+
+//  Current page
+@breadcrumbs-current__color: @color-dark_brown;
 
 //
 //  Popups

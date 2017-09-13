@@ -16,7 +16,7 @@
 & when (@media-common = true) {
 
     .data.switch .counter {
-        .lib-css(color, @text__color__muted);
+        /* .lib-css(color, @text__color__muted); */
 
         &:before {
             content: '(';
@@ -98,11 +98,11 @@
             padding: 0;
 
             span {
-                margin: 0;
+                /* margin: 0; */
             }
 
             strong {
-                display: block;
+                /* display: block; */
                 font-weight: 600;
             }
 
@@ -141,7 +141,8 @@
 
             .block-title {
                 strong {
-                    .lib-heading(h2);
+                    .lib-heading(h3);
+                    font-weight: 300;
                 }
             }
         }

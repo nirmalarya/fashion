@@ -186,17 +186,26 @@
             );
         }
     }
-
+    .product-info-main-mobile,
     .product-info-main {
+        .page-title-wrapper {
+            display: none;
+        }
+        .product.attribute.product-name{
+            font-size: 2.6rem;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+            color: #58585a;
+        }
         .product-info-price {
             .lib-css(color, @product-info-price);
             border-bottom: 1px solid @color-gray-light5;
-            display: table;
+            /* display: table; */
             margin-bottom: @indent__s + @indent__xs;
             width: 100%;
 
             .price-box {
-                display: table-cell;
+               /*  display: table-cell; */
                 vertical-align: top;
                 width: 1px;
 
@@ -250,10 +259,10 @@
         }
 
         .product-info-stock-sku {
-            display: table-cell;
+            /* display: table-cell; */
             padding-bottom: @indent__s;
-            padding-left: 10%;
-            text-align: right;
+            /* padding-left: 10%;
+            text-align: right; */
             vertical-align: top;
         }
 
@@ -270,6 +279,10 @@
         .product.attribute.sku {
             word-break: break-all;
             word-wrap: break-word;
+            
+            font-size: 1.3rem;
+            font-weight: 300;
+            color: @color-m_m_l_gray;
         }
 
         .product {
@@ -285,7 +298,7 @@
                         margin-right: @indent__xs;
 
                         &:after {
-                            content: '#:';
+                            content: ' :';
                         }
                     }
 
@@ -356,7 +369,7 @@
     .product-options-bottom .price-box,
     .product-info-price .price-box {
         .lib-css(color, @product-info-price);
-        display: table-cell;
+        /* display: table-cell; */
         padding-bottom: @indent__s;
         vertical-align: top;
 
@@ -640,6 +653,10 @@
         .page-title-wrapper {
             h1 {
                 .lib-css(margin-bottom, @product-h1-margin-bottom-desktop);
+                font-size: 2.6rem;
+                font-weight: 500;
+                letter-spacing: 0.2px;
+                color: @pdp-title__color;
             }
         }
 
@@ -667,8 +684,9 @@
                 font-size: @font-size__xl;
 
                 .price {
-                    font-size: 36px;
-                    line-height: 36px;
+                    font-size: 2.1rem;
+                    line-height: 2.1rem;
+                    letter-spacing: -0.5px;
                 }
             }
 

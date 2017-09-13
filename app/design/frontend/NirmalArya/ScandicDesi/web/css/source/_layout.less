@@ -85,7 +85,6 @@
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     .navigation,
-    .breadcrumbs,
     .page-header .header.panel,
     .header.content,
     .footer.content,
@@ -109,6 +108,7 @@
 			max-width: none;
 		}
 	}
+    .breadcrumbs,
     .page-wrapper > .page-bottom,
     .footer.content{
         padding-left: 0;
