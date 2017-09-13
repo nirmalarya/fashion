@@ -35,7 +35,7 @@
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
         
     .sections.nav-sections{
-            overflow: inherit !important;
+            /* overflow: inherit !important; */
         .navigation{
             background: transparent;
             position:static;
@@ -231,42 +231,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ****************** */
-
-//portrait styles
-.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l){
-    .show-in-mbl{
-        display: none !important;
-    }
-}
-
-
-//promotion styles ends
-@media only screen and (max-width:767px){
-    .hide-in-mbl, .column-hide-in-mbl{
-        display: none !important;
-    }
-}
-
-
-
-
-
-
 //mobile portrait styles
 @media only screen and (min-width:320px) and (max-width:767px){
 	
@@ -276,9 +240,6 @@
 }
 
 //mega-menu styles starts here for desktop and mobile
-
-
-
 
 @media only screen and (max-width:767px){
     .nav-open{		
