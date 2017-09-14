@@ -4,7 +4,7 @@
 /** @var \ScandicDesi\SizeChart\Model\Chart $chart */
 $chart = $block->getSizeChart();
 ?>
-<a href="#size-chart" data-role="sizechart"><?php echo __('Size Chart'); ?></a>
+<a href="#size-chart" data-role="sizechart" class="size-chart-button" ><?php echo __('Size Chart'); ?></a>
 <div class="size-chart no-display" data-mage-init='{"sizeChart":{"actionSelector": "[data-role=sizechart]"}}'>
     <h2 class="size-chart-title">
         <?php echo $chart->getTitle(); ?>

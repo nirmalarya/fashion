@@ -86,8 +86,11 @@
 }
 
 .swatch-attribute.size .swatch-option, .swatch-attribute.manufacturer .swatch-option {
-    background: rgb(240, 240, 240);
-    color: rgb(148, 148, 148);
+   /*  background: rgb(240, 240, 240);
+    color: rgb(148, 148, 148); */
+    
+    background: #FFF;
+    color: #575757;
 }
 
 .swatch-attribute.size .swatch-option.selected, .swatch-attribute.manufacturer .swatch-option.selected {
