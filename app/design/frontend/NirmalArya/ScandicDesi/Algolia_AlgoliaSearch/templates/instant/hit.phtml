@@ -14,42 +14,87 @@ $showCart = true;
 
 <script type="text/template" id="instant-hit-template">
     <div class="product-item-info product-item-info-plp-{{objectID}}">
-    
-        <a href="{{url}}" class="product photo product-item-photo">
-			<div  class="product-image-container" style="width:240px;">
-				<div class="product-image-wrapper" style="padding-bottom: 125%;">
-					{{#image_url}}<img  class="product-image-photo" src="{{{ image_url }}}" />{{/image_url}}
-					{{^image_url}}<span class="no-image"></span>{{/image_url}}
-				</div>
-			</div>
-		</a>
-        <div class="product details product-item-details">
-                    
-            <div class="price-box price-final_price"  data-role="priceBox" data-product-id="{{objectID}}">
-                <div class="price-wrapper">
-                    <div>
-                        <span class="after_special {{#price<?php echo $priceKey; ?>_original_formated}}promotion{{/price<?php echo $priceKey; ?>_original_formated}}">
-                            {{price<?php echo $priceKey; ?>_formated}}
-                        </span>
-
-                        {{#price<?php echo $priceKey; ?>_original_formated}}
-                            <span class="before_special">
-                                {{price<?php echo $priceKey; ?>_original_formated}}
-                            </span>
-                        {{/price<?php echo $priceKey; ?>_original_formated}}
+        <div class="product-item-info-with-action">
+            <a href="{{url}}" class="product photo product-item-photo">
+                <div  class="product-image-container" style="width:240px;">
+                    <div class="product-image-wrapper" style="padding-bottom: 125%;">
+                        {{#image_url}}<img  class="product-image-photo" src="{{{ image_url }}}" />{{/image_url}}
+                        {{^image_url}}<span class="no-image"></span>{{/image_url}}
                     </div>
                 </div>
+            </a>
+            
+            <div class="product-item-actions">					
+                {{#isQuickViewEnable}}
+                <?php /* ********Start : Quick View********* */ ?>
+                <a class="magebuzz-quickview magebuzz_quickview_button" data-quickview-url='{{quickViewUrlData}}' href="javascript:void(0);"><span>{{quickViewButtonText}}</span></a><?php /* ********End : Quick View********* */?>
+                {{/isQuickViewEnable}}                    
+                                        
+                {{#isAddToCartEnabled}}
+                    <?php /* ********Start : Compare********* */ ?>
+                    <?php if ($showCompare): ?> 
+                        <div class="actions-secondary" data-role="add-to-links">
+                            <?php // if ($showCompare): ?>
+                                <a href="#" class="action tocompare"
+                                   data-post='{{comparePostData}}'
+                                   title="<?php /* @escapeNotVerified */ echo __('Add to Compare') ?>">
+                                    <span><?php /* @escapeNotVerified */ echo __('Add to Compare') ?></span>
+                                </a> 
+                            <?php // endif; ?>
+                        </div>
+                    <?php endif; ?>
+                    <?php /* ********End : Compare********* */?>
+                
+                    <div class="actions-primary">
+                        <?php if ($showCart): ?>	
+                            {{#in_stock}}					
+                                <form data-role="tocart-form" action="{{ addToCart.action }}" method="post">
+                                    <input type="hidden" name="product" value="{{objectID}}">
+                                    <input type="hidden" name="uenc" value="{{ addToCart.uenc }}">
+                                    <input name="form_key" type="hidden" value="{{ addToCart.formKey }}">
+                                    <button type="submit"
+                                            title="<?php echo __('Add to Cart'); ?>"
+                                            class="action tocart primary"  >
+                                        <span><?php /* @escapeNotVerified */ echo __('Add to Cart') ?></span>
+                                    </button>
+                                </form>	
+                            {{/in_stock}}							
+                            {{#outOfStock}}
+                                <div class="stock unavailable"><span><?php  echo __('Out of stock') ?></span></div>
+                            {{/outOfStock}}
+                        <?php endif; ?>
+                    </div>
+                {{/isAddToCartEnabled}}					
             </div>
-            
-            <?php /* ********Start : Wishlist ********* */ ?>
-                <?php  if ($showWishlist): ?>
-                    <a href="#"	   data-post='{{wishListPostData}}'
-                       class="action towishlist" data-action="add-to-wishlist"
-                       title="<?php /* @escapeNotVerified */ echo __('Add to Wish List') ?>">									
-                    </a>
-                <?php  endif; ?>
-            <?php /* ********End : Wishlist ********* */ ?>
-            
+			
+        </div>
+        <div class="product details product-item-details">
+            <div class="price-wishlist-container">        
+                <div class="price-box price-final_price"  data-role="priceBox" data-product-id="{{objectID}}">
+                    <div class="price-wrapper">
+                        <div>
+                            <span class="after_special {{#price<?php echo $priceKey; ?>_original_formated}}promotion{{/price<?php echo $priceKey; ?>_original_formated}}">
+                                {{price<?php echo $priceKey; ?>_formated}}
+                            </span>
+
+                            {{#price<?php echo $priceKey; ?>_original_formated}}
+                                <span class="before_special">
+                                    {{price<?php echo $priceKey; ?>_original_formated}}
+                                </span>
+                            {{/price<?php echo $priceKey; ?>_original_formated}}
+                        </div>
+                    </div>
+                </div>
+                
+                <?php /* ********Start : Wishlist ********* */ ?>
+                    <?php  if ($showWishlist): ?>
+                        <a href="#"	   data-post='{{wishListPostData}}'
+                           class="action towishlist" data-action="add-to-wishlist"
+                           title="<?php /* @escapeNotVerified */ echo __('Add to Wish List') ?>">									
+                        </a>
+                    <?php  endif; ?>
+                <?php /* ********End : Wishlist ********* */ ?>
+            </div> 
             <strong class="product name product-item-name">
 				<a href="{{url}}" class="product-item-link">
                     {{{ _highlightResult.name.value }}}
@@ -57,55 +102,7 @@ $showCart = true;
 			</strong>
         
         
-            <div class="product-item-inner">
-				<div class="product-item-actions">
-					<div class="plp-actions-list" >	
-						{{#isQuickViewEnable}}
-						<?php /* ********Start : Quick View********* */ ?>
-						<a class="magebuzz-quickview magebuzz_quickview_button" data-quickview-url='{{quickViewUrlData}}' href="javascript:void(0);"><span>{{quickViewButtonText}}</span></a><?php /* ********End : Quick View********* */?>
-						{{/isQuickViewEnable}}
-						
-												
-						{{#isAddToCartEnabled}}
-							
-						
-							<?php /* ********Start : Compare********* */ ?>
-							<?php if ($showCompare): ?> 
-								<div class="actions-secondary" data-role="add-to-links">
-									<?php // if ($showCompare): ?>
-										<a href="#" class="action tocompare"
-										   data-post='{{comparePostData}}'
-										   title="<?php /* @escapeNotVerified */ echo __('Add to Compare') ?>">
-											<span><?php /* @escapeNotVerified */ echo __('Add to Compare') ?></span>
-										</a> 
-									<?php // endif; ?>
-								</div>
-							<?php endif; ?>
-							<?php /* ********End : Compare********* */?>
-						
-							<div class="actions-primary">
-								<?php if ($showCart): ?>	
-									{{#in_stock}}					
-										<form data-role="tocart-form" action="{{ addToCart.action }}" method="post">
-											<input type="hidden" name="product" value="{{objectID}}">
-											<input type="hidden" name="uenc" value="{{ addToCart.uenc }}">
-											<input name="form_key" type="hidden" value="{{ addToCart.formKey }}">
-											<button type="submit"
-													title="<?php echo __('Add to Cart'); ?>"
-													class="action tocart primary"  >
-												<span><?php /* @escapeNotVerified */ echo __('Add to Cart') ?></span>
-											</button>
-										</form>	
-									{{/in_stock}}							
-									{{#outOfStock}}
-										<div class="stock unavailable"><span><?php  echo __('Out of stock') ?></span></div>
-									{{/outOfStock}}
-								<?php endif; ?>
-							</div>
-						{{/isAddToCartEnabled}}
-					</div>
-				</div>
-			</div>	        
+           	        
         </div>
     </div>   
   
