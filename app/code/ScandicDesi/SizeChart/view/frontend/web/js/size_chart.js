@@ -21,7 +21,8 @@ define([
             _this.popup = jQuery(_this.options.element).modal({
                 title: _('Size Chart'),
                 modalClass: "sizechart-modal-popup",
-                buttons: []
+                buttons: [],
+                responsive: true
             });
             $(document).on('click', _this.options.actionSelector, function (evt) {
                 evt.preventDefault();
