@@ -1,0 +1,94 @@
+<?php /** @var \Algolia\AlgoliaSearch\Block\Instant\Wrapper $block */?>
+<!-- Wrapping template -->
+<script type="text/template" id="instant_wrapper_template">
+    {{#findAutocomplete}}
+    <div id="algolia-autocomplete-container"></div>
+    {{/findAutocomplete}}
+    <div id="algolia_instant_selector" class="<?php echo $block->hasFacets() ? ' with-facets' : '' ?>">
+        <div class="algolia-main-container columns">
+            <div class="sidebar sidebar-main  algolia-left-container" id="algolia-left-container">
+                <div class="sidebar-algolia-stats" id="algolia-stats"></div>
+                
+                <div class="filter" data-mage-init='{"collapsible":{"openedState": "active", "collapsible": true, "active": false, "collateral": { "openedState": "filter-active", "element": "body" } }}' >
+               		<div  class="block-title filter-title">
+						<strong data-role="title">
+						    <span class="hide-in-mbl"><?php echo __('Filter By'); ?></span>
+							<span class="show-in-mbl"><?php echo __('Filter')?></span>
+						</strong>
+					</div>
+               		<div class="block-content filter-content" >
+						<strong role="heading" class="block-subtitle filter-subtitle mobile-filter-subtitle">
+							<?php echo __('Filter By'); ?>
+							<div id="refinements-clear-all" class="mobile-clear-filter"></div>							
+						</strong>
+                		<div class="instant-search-facets-main-container filter-options" id="instant-search-facets-container" data-role="content">
+                    		<div id="current-refinements"></div>
+                		</div> 
+                	</div> 
+                </div>
+            </div>
+
+            <div class="column main  algolia-right-container" id="algolia-right-container">
+				
+                <div>                   
+					<div class="hits">			
+
+						<div class="instant-search-infos-container">
+							{{#second_bar}}
+							<div class="instant-search-bar-main-container">					
+								<div id="instant-search-bar-container">
+									<div id="instant-search-box">
+										<div class="instant-search-bar-label">
+											<svg xmlns="http://www.w3.org/2000/svg" class="magnifying-glass" width="24" height="24" viewBox="0 0 128 128">
+												<g transform="scale(4)">
+													<path stroke-width="3" d="M19.5 19.582l9.438 9.438"></path>
+													<circle stroke-width="3" cx="12" cy="12" r="10.5" fill="none"></circle>
+													<path d="M23.646 20.354l-3.293 3.293c-.195.195-.195.512 0 .707l7.293 7.293c.195.195.512.195.707 0l3.293-3.293c.195-.195.195-.512 0-.707l-7.293-7.293c-.195-.195-.512-.195-.707 0z"></path>
+												</g>
+											</svg>
+											<span><?php echo __('Current search') ?></span>
+										</div>
+										<div class="instant-search-bar-wrapper">
+											<label for="instant-search-bar">
+												<?php echo __('Search :'); ?>
+											</label>
+
+											<input placeholder="<?php echo __('Search for products'); ?>" id="instant-search-bar" type="text" autocomplete="off" spellcheck="false" autocorrect="off" autocapitalize="off" />
+
+											<span class="clear-cross clear-query-instant"></span>
+										</div>
+									</div>
+								</div>					
+							</div>
+							{{/second_bar}}
+							<div class="infos toolbar toolbar-products">
+								<!-- <div class="toolbar-amount" id="algolia-stats"></div> -->
+								<div class="toolbar-sorter sorter">
+									<label class="sorter-label" for="sorter">
+										<span><?php echo __('Sort'); ?></span>
+									</label>
+									<span id="algolia-sorts"></span>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+						</div>
+				
+						<div id="instant-search-results-container" class="products wrapper grid products-grid"></div>						
+						<div class="toolbar toolbar-products">
+							<!-- <div class="toolbar-amount" id="algolia-stats-footer"></div> -->
+							<div class=" limiter">
+								<label for="limiter">
+									<span><?php echo __('Show'); ?></span>
+								</label>
+								<div class="control" id="hits-per-page-selector">
+								</div>								
+							</div>
+
+							<div id="instant-search-pagination-container" class="pages ais-pagination-pages"></div>
+						</div>						
+					</div>                                      
+                </div>
+            </div>
+        </div>
+    </div>
+</script>

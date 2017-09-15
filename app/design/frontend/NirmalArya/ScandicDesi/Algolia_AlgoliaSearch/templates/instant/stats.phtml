@@ -1,0 +1,5 @@
+<script type="text/template" id="instant-stats-template">
+    <?php echo __('Found'); ?> 
+    {{#hasOneResult}} 1  <?php echo __('item'); ?> found{{/hasOneResult}}
+    {{#hasManyResults}}  {{#helpers.formatNumber}}{{nbHits}}{{/helpers.formatNumber}} <?php echo __('items'); ?>{{/hasManyResults}}    
+</script>
