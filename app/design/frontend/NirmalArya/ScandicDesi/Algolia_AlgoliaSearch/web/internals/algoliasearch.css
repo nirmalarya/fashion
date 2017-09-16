@@ -1253,7 +1253,7 @@ a.ais-current-refined-values--link:hover .clear-cross:before{
 }
 
 #algolia_instant_selector em {
-  background-color: #CFEAFA;
+  background-color: rgba(249, 227, 227, 0.66);
   font-style: normal;
 }
 
