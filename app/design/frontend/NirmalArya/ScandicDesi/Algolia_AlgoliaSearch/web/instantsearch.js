@@ -303,6 +303,21 @@ requirejs(['algoliaBundle'], function(algoliaBundle) {
                 ]
             }
             
+            /**
+             * Widget name: clearAll
+             * This widget clears all the refinements that are currently applied
+             * Docs: https://community.algolia.com/instantsearch.js/documentation/#clearall
+             **/
+            
+            /* ,clearAll: {
+                container: '#top-refinements-clear-all',
+                templates: {
+                  link: algoliaConfig.translations.resetAll
+                },
+                autoHideContainer: true
+            } */
+           
+            
             
 		};
 		
