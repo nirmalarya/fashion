@@ -2207,9 +2207,9 @@ a.ais-current-refined-values--link:hover .clear-cross:before{
     body .minisearch .actions .action.search {
         width: 2.5rem;
     }
+    
+    
 }
-
-
 
 .sidebar-algolia-stats {
     font-size: 1.5rem;
@@ -2231,6 +2231,49 @@ a.ais-current-refined-values--link:hover .clear-cross:before{
     background-size: contain;
     left: 0;
 }
+
+
+@media only screen and (min-width: 768px) and (max-width: 1100px) {
+    .instant-search-bar-main-container {
+        width: 63.3%;
+    }
+
+    .infos.toolbar.toolbar-products {
+        width: 36%;
+    }
+    
+    .hits .toolbar-products select, 
+    .instant-search-infos-container .toolbar-products .sorter-options{
+        min-width: auto; 
+        max-width:20rem;
+    }
+    .sidebar-algolia-stats:before {
+        width: 2.5rem;
+    }
+    
+}
+
+@media only screen and (min-width: 1101px) and (max-width: 1340px) {
+    
+    .instant-search-bar-main-container {
+        width: 69.5%;
+    }
+
+    .infos.toolbar.toolbar-products {
+        width: 30%;
+    }
+    
+    .hits .toolbar-products select, 
+    .instant-search-infos-container .toolbar-products .sorter-options{
+        min-width: auto; 
+        max-width:20rem;
+    }
+    
+}
+
+
+
+
 
 /* Algolia Search results adjustment for mobile screen */
 
