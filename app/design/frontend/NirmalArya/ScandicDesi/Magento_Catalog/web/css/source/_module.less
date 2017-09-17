@@ -76,20 +76,23 @@
         &-image,
         &-description {
             /* margin-bottom: @indent__base; */
-            font-size: 1.8rem;
+            font-size: 1.3rem;
             font-weight: 300;
-            letter-spacing: -0.3px;
+            letter-spacing: -0.2px;
             text-align: center;
             color: @color-black;
-            max-width: 77.7rem;
-            margin: 0 auto 8rem;
+            
+            margin: 0 auto 5rem;
+            max-width: 90%;
+
             
             h2 {
                 font-family: @font-vidaloka;
-                font-size: 6.2rem;
+                font-size: 3.2rem;
                 letter-spacing: -3.4px;
-                color: @color-dark_brown;
+                color: @color-dark_blue; 
                 font-weight: normal;
+                letter-spacing: 0.2px;
                 
                 span {
                     color :  @sd_base__color;
@@ -997,6 +1000,20 @@
             }
         }
     }
+    
+    .category {
+        
+        &-cms,
+        &-image,
+        &-description {
+            font-size: 1.6rem;
+            
+            h2 {
+                font-size: 4.2rem; 
+                letter-spacing: -2px;
+            }
+        }
+    }
 }
 
 //
@@ -1303,6 +1320,23 @@
 
         .product.media {
             /* width: 57%; */
+        }
+    }
+    
+    .category {
+        
+        &-cms,
+        &-image,
+        &-description {
+            font-size: 1.8rem;
+            letter-spacing: -0.3px;
+            
+            width: 77.7rem;
+            margin: 0 auto 8rem;
+            h2 {
+                font-size: 6.2rem; 
+                letter-spacing: -3.4px;
+            }
         }
     }
 }

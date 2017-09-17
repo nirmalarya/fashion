@@ -1852,15 +1852,15 @@ a.ais-current-refined-values--link:hover .clear-cross:before{
   clear: both;
 }
 
-.visible-xs, .visible-sm {
+/* .visible-xs, .visible-sm {
   display: none!important
 }
 
 .hidden-xs, .hidden-sm {
   display: block !important
-}
+} */
 
-@media (max-width: 767px) {
+/* @media (max-width: 767px) {
   .visible-xs {
     display: block !important
   }
@@ -1868,7 +1868,7 @@ a.ais-current-refined-values--link:hover .clear-cross:before{
   .hidden-xs {
     display: none!important
   }
-}
+} */
 
 @media (max-width: 767px) { /* max-width : 992px */
   #algolia-searchbox .clear-query-autocomplete{
