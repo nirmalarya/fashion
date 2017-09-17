@@ -2317,5 +2317,9 @@ a.ais-current-refined-values--link:hover .clear-cross:before{
         left: 0;
         right: 0;        
     }
+    #algolia_instant_selector #instant-search-bar {
+        text-align: center;
+        font-size: 1.2rem;  
+    }
 }
 

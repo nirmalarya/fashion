@@ -298,6 +298,8 @@
             display: table;
             width: 100%; 
             text-align: left;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
             
             .price-box {
                 display: table-cell;
@@ -311,7 +313,7 @@
             
             .action.towishlist {
                 display: table-cell;
-                width: 50%;
+                width: 10%;
                 text-align: right;
                 &:before {
                     margin-right: 0;
@@ -336,6 +338,20 @@
             }
         }
     }
+    
+    
+    .hits {
+        .products-grid {
+            .product-items {
+                text-align: center;
+                .product-item {
+                    width: 75%;
+                    margin-bottom: 2rem;                    
+                }
+            }
+        }
+    }  
+    
 }
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__s) {
@@ -527,8 +543,8 @@
         .products-grid {
             .product-item {
                 /* width: 100%/3; */
-                margin-left: calc((100% - 2 * 49%) / 1);
-                width: 49%;
+                margin-left: calc((100% - 2 * 44%) / 1);
+                width: 44%;
 				&:nth-child(2n + 1) {
                     margin-left: 0;
                 }
