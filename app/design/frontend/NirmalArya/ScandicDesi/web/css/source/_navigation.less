@@ -219,8 +219,15 @@
         .header.links {
             .lib-list-reset-styles();
            /*  border-bottom: 1px solid @color-gray82; */
-            
+            padding: .8rem 3.5rem .8rem 2rem;
+            .header.links {
+                padding: 0;
+            }
             li {
+                &.customer-welcome li .customer-welcome-name,
+                &.customer-welcome li a {
+                    padding-left: 0;
+                }
                 font-size: 1.5rem;
                 font-weight: 300;
                /*  margin: 0; */
