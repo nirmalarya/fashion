@@ -325,13 +325,13 @@
                                     }
                                 }
                                 .instant-search-facets-main-container {
-                                    /*padding: 1.2rem 2rem;*/
+                                    padding: 1rem 2rem;
                                     & > div {
                                         background-color: #fff; 
                                     }
                                 }
                                 .ais-root.facet {
-                                    padding: 1.8rem 2rem;
+                                    padding: 0 2rem;
                                     .ais-header {
                                         /*margin-bottom: 1rem;*/
                                         /* &:after {
@@ -345,7 +345,7 @@
                                         } */
                                     }
                                     .ais-body {
-                                        margin: 1.5rem 0 0;
+                                       /*  margin: 1.5rem 0 0; */
                                         .ais-hierarchical-menu--item {
                                             &.ais-hierarchical-menu--item__active {
                                                 .ais-hierarchical-menu--list {
@@ -396,14 +396,14 @@
                                 }
                             }
                             &.active .filter-title strong {
-                                border-radius: 0;
+                                /* border-radius: 0;
                                 background-color: #6c6c6c;
                                 &:after {
                                     content: "Apply";
                                     color: #fff;
                                     font-size: 1.6rem;
                                     font-weight: 500;
-                                }
+                                } */
                             }
                         }
                     }
@@ -469,14 +469,15 @@
             }
 
             .filter-title {
-                border-top: 1px solid @border-color__base;
-                height: 47px;
-                left: 0;
+                /* border-top: 1px solid @border-color__base; */
+                height: 5rem;
+                /* left: 0; */
                 position: fixed;
                 right: 0;
-                /* top: 0; */
-				bottom: 0;
+                top: 0;
+				/* bottom: 0; */
                 z-index: 2;
+                width: 4rem;
 
                 strong {
                     .lib-css(box-shadow, none);
@@ -488,8 +489,8 @@
                     top: 10px; */
                     .lib-icon-font(
                     @icon-remove,
-                    @_icon-font-color: @text__color__muted,
-                    @_icon-font-size: 16px,
+                    @_icon-font-color: @color-dark_brown,
+                    @_icon-font-size: 1.6rem,
                     @_icon-font-position: after
                     );  
 					
@@ -499,13 +500,7 @@
 					font-size: 0;
 					line-height: 48px;
 					
-					&:after{
-						content:'Cancel';
-						text-transform: uppercase;
-						font-weight: 700;						
-						/* font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; */
-						.lib-css(font-family, @font-family__base);
-					}
+					
                 }
             }
 			
@@ -564,13 +559,13 @@
 
             .filter-options {
                 .lib-css(background, @color-white);
-                bottom: 50px;
+                bottom: 0;
                 display: block;
                 left: 0;
                 overflow: scroll;
                 position: fixed;
                 right: 0;
-                top: 50px;
+                top: 5rem;
                 z-index: 10;
             }
         }

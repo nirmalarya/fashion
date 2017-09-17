@@ -28,7 +28,7 @@ input::-ms-clear {
 	display: inline-block;
 	padding: 0 5px;
 	text-decoration: none;
-	    vertical-align: middle;
+	    /* vertical-align: middle; */
 }
 .ais-pagination--item:not(.ais-pagination--item__active) a:hover{
 	color: #bdbdbd;
@@ -78,9 +78,9 @@ input::-ms-clear {
 	border-radius: 2px;
 	background-color: #616161;
 	color: #FFF;
-	height: 28px;
+	height: 30px;
 	line-height: 28px;
-	min-width: 28px;
+	min-width: 30px;
 	
 }
 
@@ -1980,6 +1980,7 @@ a.ais-current-refined-values--link:hover .clear-cross:before{
         /* padding-left: 30px; */
         position: relative;
         padding: 1.2rem 0px;
+            cursor: pointer;
     }
     #algolia_instant_selector .ais-root__collapsible:not(.ais-current-refined-values) .ais-body {
         display: none;
