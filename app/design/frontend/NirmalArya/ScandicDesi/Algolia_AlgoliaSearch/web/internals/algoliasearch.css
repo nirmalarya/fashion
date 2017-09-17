@@ -544,7 +544,7 @@ a.ais-current-refined-values--link:hover .clear-cross:before{
     font-size: 1.2rem;
     font-weight: 300;
     color: #adadad; 
-    min-width: 20rem;    
+    min-width: 16rem;    
 }
 
 #algolia-autocomplete-container .aa-dropdown-menu .col-2 {
