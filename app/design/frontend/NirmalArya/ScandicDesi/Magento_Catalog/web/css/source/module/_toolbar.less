@@ -24,9 +24,9 @@
             /* padding-top: 60px; */
             position: relative;
             z-index: 1;
-            &.algolia-main-container {
+            /* &.algolia-main-container {
                 padding-top: 60px;
-            }
+            } */
         }
     }
 
@@ -126,7 +126,9 @@
             font-weight: 300;
             color: #000000;
             text-transform: uppercase;
-            padding: 0 1rem;            
+            padding: 0 1rem; 
+            line-height: 4rem;
+            display: inline-block;            
         }    
     }
     
@@ -152,6 +154,23 @@
     }
 }
 
+    
+//
+//  Mobile
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+
+    .page-products {
+        .columns {            
+            &.algolia-main-container {
+                max-width: 90%;
+                margin: 0 auto;
+                padding-top: 5rem;
+            }
+        }
+    }
+}
+    
 //
 //  Desktop
 //  _____________________________________________
