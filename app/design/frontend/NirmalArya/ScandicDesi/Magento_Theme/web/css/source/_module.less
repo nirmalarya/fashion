@@ -939,6 +939,38 @@
             }                           
         }
     }
+    
+    .clp-view-all-product-link {
+        text-align: center;
+        a {
+            
+            .lib-button(
+                @_button-font-family: @font-julius_sans_one,
+                @_button-font-size: 2.2rem,
+                @_button-line-height:56px,
+                @_button-padding: 0 6rem,
+               
+                @_button-color:@button-secondary__color, 
+                @_button-background: @button-secondary__background,
+                @_button-background-hover: @button-secondary__hover__background,
+                @_button-border: @button-secondary__border,
+                @_button-border-hover: @button-secondary__hover__border,
+                @_button-border-active: @button-secondary__active__border,
+                @_button-background-active: @button-secondary__active__background,
+                @_button-color-hover: @button-secondary__hover__color,
+                @_button-color-active: @button-secondary__active__color
+                );
+                
+            letter-spacing: -0.3px;
+            text-decoration: none; 
+            -webkit-transition: background-color 0.3s ease-out;
+            -moz-transition: background-color 0.3s ease-out;
+            -o-transition: background-color 0.3s ease-out;
+            transition: background-color 0.3s ease-out;            
+        }
+    }
+    
+    
     .customer-welcome {
         li {
             font-size: 1.3rem;
