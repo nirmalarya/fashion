@@ -73,7 +73,7 @@
 
 	.main-header-sub-header {
 	font-family: @font-julius_sans_one;
-	font-size: 4.2rem;
+	font-size: 2.1rem;
 	letter-spacing: -0.5px;
 	text-align: center;
 	color: @color-light_grey;
@@ -668,7 +668,7 @@
         .block-title {
             h2 {
                 font-family: @font-julius_sans_one;
-                font-size: 3.8rem;
+                font-size: 2.1rem;
                 letter-spacing: -0.3px;
                 text-align: center;
                 color: @color-black;
@@ -707,11 +707,14 @@
 	.home-shipping-info-container {
 		text-align: center;
 		padding-bottom: 2rem;
-		margin: 2rem 2rem;
+		margin: 1rem 2rem;
 		color: @color-dark_brown;
-        
+        border-bottom: solid 1px #e1e1e1;
+         
         &.owl-carousel {
-            margin: 2rem auto;
+            /* margin: 2rem auto; */
+            margin: 1rem auto;           
+            padding-bottom: 0;
             
             .owl-stage {
                  >  div {
@@ -800,6 +803,9 @@
 		position: relative;
 		
 		.main-header-sub-header {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            
 			color: @color-black;
 			span {
 				color: @color-light_grey;
@@ -810,15 +816,15 @@
 			}
 		}
 		p {
-			font-size: 1.8rem;
+			font-size: 1.3rem;
 			font-weight: 300;
-			letter-spacing: -0.3px;
+			letter-spacing: -0.2px;
 			text-align: center;
 			color: #494949;
 			width: 77.9rem;
             max-width: 98%;
 			display: inline-block;
-			margin-bottom: 4.1rem;
+			margin-bottom: 2.5rem;			
 		}
 	
     
@@ -1151,7 +1157,8 @@
     
     
     .trend-alert-container { 
-        width: 36.1rem;  
+        width: 36.1rem; 
+        padding-top: 1rem;        
         
         .custom-grid-set {        
             
@@ -1685,9 +1692,12 @@
 	.home-shipping-info-container {
         padding-bottom: 3rem;
 		margin:3rem 2rem 2rem;
+        border-bottom: 0;
+        
         &.owl-carousel {
             width: 90%;
             margin: 3rem auto 2rem;
+            
             
             .owl-stage {
                  >  div {
@@ -1733,8 +1743,14 @@
     
     
     .trend-alert-container {
-        width: 72.2rem;  
+        width: 72.2rem; 
+        padding-top: 3rem;
+        padding-bottom: 1rem;
         
+        p {
+			font-size: 1.4rem;
+            margin-bottom: 3.5rem;
+        }
         .custom-grid-set {        
             
             .cc-col-6 {
@@ -1811,6 +1827,19 @@
     .show-in-mbl{
         display: none !important;
     }
+    
+    
+    .widget {        
+        .block-title {
+            h2 {                
+                font-size: 2.8rem;
+            }
+        }
+    }
+    
+    .main-header-sub-header {
+        font-size: 3.2rem;
+	}
 }
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
@@ -1881,6 +1910,14 @@
     
     .trend-alert-container {
         width: 100rem;  
+        padding-top: 6rem;
+        padding-bottom: 4rem;
+        
+        p {
+			font-size: 1.8rem;
+            letter-spacing: -0.3px;
+            margin-bottom: 4.1rem;
+        }
         
         .custom-grid-set {        
             
@@ -1917,6 +1954,18 @@
             }                           
         }
     }
+    
+    .widget {        
+        .block-title {
+            h2 {                
+                font-size: 3.8rem;
+            }
+        }
+    }
+    
+    .main-header-sub-header {
+        font-size: 4.2rem;
+	}
 }
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
     .trend-alert-container {

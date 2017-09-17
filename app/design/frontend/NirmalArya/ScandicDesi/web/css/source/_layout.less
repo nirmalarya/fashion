@@ -17,10 +17,11 @@
 
         .column.main {
             &:extend(.abs-add-box-sizing all);
-            .lib-css(padding-bottom, @indent__xl);
+            /* .lib-css(padding-bottom, @indent__xl); */
             .lib-vendor-prefix-flex-basis(100%);
             .lib-vendor-prefix-flex-grow(1);
             .lib-vendor-prefix-order(1);
+            width: 100%;
         }
 
         .sidebar-main {
@@ -60,7 +61,8 @@
     
 	.page-main,
 	.page-wrapper > .page-bottom {
-		.cms-index-index & {
+		.cms-index-index &,
+		.page-products &  {
 			padding-left: 0;
 			padding-right: 0;
 		}
