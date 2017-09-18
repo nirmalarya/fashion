@@ -253,7 +253,7 @@ requirejs(['algoliaBundle'], function(algoliaBundle) {
 			}
 			
 			if (section.name !== 'suggestions' && section.name !== 'products') {
-				source.templates.header = '<div class="category">' + (section.label ? section.label : section.name) + '</div>';
+				 source.templates.header = '<div class="category">' + (section.label ? section.label : section.name) + '</div>';
 			}
 			
 			return source;
