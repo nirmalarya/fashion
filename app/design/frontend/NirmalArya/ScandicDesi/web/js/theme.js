@@ -145,6 +145,7 @@ define([
 			$(this).toggleClass('active');
 			var searchBlockObj = headerContentObj.find('.block-search');
 			searchBlockObj.toggleClass('active');
+            headerContentObj.find('.logo').toggleClass('active');
 		});
 	}
 	/*******mbl search*****/
