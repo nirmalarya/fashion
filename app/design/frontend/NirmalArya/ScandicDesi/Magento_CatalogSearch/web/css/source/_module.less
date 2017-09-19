@@ -78,10 +78,17 @@
             padding: 0 @layout__width-xs-indent;
         }
 
-        input {
+        input {        
+            .lib-input-placeholder(#b2b2b2);            
+        
             /* left: -300%; */
             margin: 15px 0;
             position: absolute;
+            
+            font-size: 1.8rem;
+            font-weight: 200;
+            text-align: center;
+            color: @color-black;
         }
 
         .nested {
@@ -281,6 +288,8 @@
     }
     .mbl_search_btn.active {
         z-index: 16;
+        margin-top: 10px !important;
+        right: 0;
     }
 }
 //
@@ -307,14 +316,14 @@
         }
 
         input {
-            .lib-input-placeholder(#b2b2b2);
+            /* .lib-input-placeholder(#b2b2b2); */
             margin: 0;
             padding-right: 35px;
             position: static;
             
             font-size: 3.3rem;
-            font-weight: 200;
-            color: @color-black;
+            /* font-weight: 200;
+            color: @color-black; */
             height: 5rem;
             
         }

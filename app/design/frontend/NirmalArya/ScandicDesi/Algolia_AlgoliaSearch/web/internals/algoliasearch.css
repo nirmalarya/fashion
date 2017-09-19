@@ -2391,9 +2391,14 @@ a.ais-current-refined-values--link:hover .clear-cross:before{
     
 }
 
+/******* tab ****/
 
-
-
+@media only screen and  (min-width: 767px)  and (max-width: 1024px){ 
+    #algolia-autocomplete-container .aa-dropdown-menu .algoliasearch-autocomplete-hit,
+    #algolia-autocomplete-container .aa-dropdown-menu .category {
+        font-size: 1.6rem;        
+    }
+}
 
 /* Algolia Search results adjustment for mobile screen */
 
@@ -2440,6 +2445,29 @@ a.ais-current-refined-values--link:hover .clear-cross:before{
     #algolia_instant_selector #instant-search-bar {
         text-align: center;
         font-size: 1.2rem;  
+    }
+    #algolia-autocomplete-container .aa-dropdown-menu .aa-dataset-products {
+        
+        background: #FFF;
+    }
+    #algolia-autocomplete-container .aa-dropdown-menu .aa-dataset-products .aa-suggestion {
+        display: block;
+        width: 100%;
+        border-right: 0;
+        border-bottom: 1px solid #979797;
+        padding: 1% 1% 2%;
+        box-sizing: border-box;
+    }
+    #algolia-autocomplete-container .aa-dropdown-menu .category,
+    #algolia-autocomplete-container .aa-dropdown-menu .algoliasearch-autocomplete-hit {
+        font-size: 1.4rem;
+    }
+    
+    #algolia-autocomplete-container .aa-dropdown-menu .category {        
+        width: 40%;
+    }
+    #algolia-autocomplete-container .aa-dropdown-menu .other-sections .aa-suggestions {
+        width: 60%;        
     }
 }
 
