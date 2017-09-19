@@ -214,7 +214,8 @@ requirejs(['algoliaBundle'], function(algoliaBundle) {
 			}
 			
 			if (section.name === 'products') {
-				source.templates.footer = function (query, content) {
+				source.templates.header = function (query, content) {
+                    var searchnbHits = content.nbHits;
 					var keys = [];
 					for (var key in content.facets['categories.level0']) {
 						var url = algoliaConfig.baseUrl + '/catalogsearch/result/?q=' + encodeURIComponent(query.query) + '#q=' + encodeURIComponent(query.query) + '&hFR[categories.level0][0]=' + encodeURIComponent(key) + '&idx=' + algoliaConfig.indexName + '_products';
@@ -240,15 +241,29 @@ requirejs(['algoliaBundle'], function(algoliaBundle) {
 					}
 					
 					var allUrl = algoliaConfig.baseUrl + '/catalogsearch/result/?q=' + encodeURIComponent(query.query);
-					var returnFooter = '<div id="autocomplete-products-footer">' + algoliaConfig.translations.seeIn + ' <span><a href="' + allUrl +  '">' + algoliaConfig.translations.allDepartments + '</a></span> (' + content.nbHits + ')';
+                    var returnHeader =  "";
 					
-					if(ors && algoliaConfig.instant.enabled) {
-						returnFooter += ' ' + algoliaConfig.translations.orIn + ' ' + ors;
-					}
+                    
+                    var productTextTranslation = "Product";
+					if(searchnbHits > 1){
+						productTextTranslation = "Products";
+					}	
+                    
+                    returnHeader += '<div class="autocomplete-products-header" id="autocomplete-products-header">';
+                    returnHeader +=  '<div class="label-heading">'+productTextTranslation+'</div>';                    
+                        returnHeader += '<div class="links-content">';
+                        // returnHeader +=  algoliaConfig.translations.seeIn ;
+                        returnHeader += ' <span><a href="' + allUrl +  '">' + algoliaConfig.translations.allDepartments + '</a></span>';
+                        // returnHeader += ' (' + content.nbHits + ')';
 					
-					returnFooter += '</div>';
+                        /* if(ors && algoliaConfig.instant.enabled) {
+                            returnHeader += ' ' + algoliaConfig.translations.orIn + ' ' + ors;
+                        } */
+                        
+                        returnHeader += '</div>';
+					returnHeader += '</div>';
 					
-					return returnFooter;
+					return returnHeader;
 				}
 			}
 			
