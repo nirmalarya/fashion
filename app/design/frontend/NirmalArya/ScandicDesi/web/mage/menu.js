@@ -283,7 +283,8 @@ define([
                             if (!target.hasClass('level-top') && !target.hasClass('custom-menu-level')) {
                                 window.location.href = target.find('h4 > a').attr('href');
                             }else {
-                                
+                                current_target.find(".ui-state-active").removeClass("ui-state-active");
+                                target.toggleClass('ui-state-active');
                             }
                             
                         }
@@ -295,9 +296,9 @@ define([
                     if (!target.find('> h4').length) {
                         this.collapseAll(event, true);
                     }else {
+                          // debugger;
                         // this.collapseAll(event);
-                        //current_target.siblings().children(".ui-state-active").removeClass("ui-state-active");
-                        target.toggleClass('ui-state-active');
+                        
                     }
                  }
             });
