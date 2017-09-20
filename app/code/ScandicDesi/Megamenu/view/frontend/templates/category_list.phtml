@@ -20,20 +20,22 @@ $categoryList = $block->getCategoryList();
 ?>
 <ul>
     <?php if(count($parentCategory)): ?>
-    <li>
+    <li class="level1 parent custom-menu-level">
         <h4>
             <a href="<?php echo $parentCategory->getUrl() ?>">
             <span><?php echo $parentCategory->getName() ?></span>
         </a>
         </h4>
+        
+        <ul>
+            <?php foreach ($categoryList as $category): ?>
+                <li>
+                    <a href="<?php echo $category->getUrl() ?>">
+                        <span><?php echo $category->getName() ?></span>
+                    </a>
+                </li>
+            <?php endforeach; ?>
+        </ul>
     </li>
     <?php endif; ?>
-    
-    <?php foreach ($categoryList as $category): ?>
-        <li>
-            <a href="<?php echo $category->getUrl() ?>">
-                <span><?php echo $category->getName() ?></span>
-            </a>
-        </li>
-    <?php endforeach; ?>
 </ul>

@@ -24,7 +24,30 @@
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
 
-
+    
+    .nav-sections-item-content {
+        >  .navigation { 
+            
+            .submenu.menu-columns {
+                .ui-menu {
+                    &.column-content-area {
+                        padding-left: 15px;
+                        padding-right: 15px;                        
+                    }                   
+                    left: 0 !important;
+                }
+                /* .custom-menu-level { 
+                    &:not(.ui-state-active) {
+                        .ui-menu {                        
+                           display: none !important;
+                        }
+                    }
+                } */
+                
+                
+            }
+        }
+    }
 }
 
 

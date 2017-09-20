@@ -93,15 +93,23 @@
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
     .navigation {
         padding: 0;
-
+        .level0 {
+            > .level1 {
+                .nav-sections & {
+                    .lib-css(font-weight, 400);
+                }
+            }
+        }
         .parent {
             .level-top {
                 position: relative;
                 .lib-icon-font(
                 @_icon-font-content: @icon-down,
-                @_icon-font-size: 42px,
+                @_icon-font-size: 1.6rem,
                 @_icon-font-position: after,
-                @_icon-font-display: block
+                @_icon-font-display: block,
+                @_icon-font-color: @color-m_m_l_gray,
+                @_icon-font-color-hover: @sd_base__color
                 );
 
                 &:after {
@@ -111,10 +119,60 @@
                 }
 
                 &.ui-state-active {
-                    .lib-icon-font-symbol(
+                    /* .lib-icon-font-symbol(
                     @_icon-font-content: @icon-up,
                     @_icon-font-position: after
+                    ); */
+                    
+                    
+                    .lib-link(
+                    @_link-color: @color-m_m_l_gray,
+                    @_link-text-decoration: none,
+                    @_link-color-visited: @color-m_m_l_gray,
+                    @_link-text-decoration-visited: none,
+                    @_link-color-hover: @color-m_m_l_gray,
+                    @_link-text-decoration-hover: none,
+                    @_link-color-active: @color-m_m_l_gray,
+                    @_link-text-decoration-active: none
                     );
+
+                    
+                    
+                    .lib-icon-font(
+                    @_icon-font-content: @icon-up,
+                    @_icon-font-size: 1.6rem,
+                    @_icon-font-position: after,
+                    @_icon-font-display: block,
+                    @_icon-font-color: @sd_base__color,
+                    @_icon-font-color-hover: @sd_base__color
+                    );
+                }
+            }
+        }
+        
+        .submenu:not(:first-child) {
+            ul {
+                > li {
+                    a {
+                        font-size: 1.3rem;
+                        font-weight: 300;
+                        color: #000000;
+                        padding-top: .5rem;
+                        padding-bottom: .5rem;
+                    }
+                    h4 {
+                        margin-top: 0;
+                        margin-bottom: 0;
+                        a{
+                            .lib-css(padding-top, @submenu__padding-top);
+                            .lib-css(padding-right, @submenu__padding-right);
+                            .lib-css(padding-bottom, @submenu__padding-bottom);
+                            .lib-css(padding-left, @submenu__padding-left);
+                            .lib-font-size(@navigation-level0-item__font-size);
+                            font-weight: 400;
+                        }
+                    }
+                    
                 }
             }
         }
