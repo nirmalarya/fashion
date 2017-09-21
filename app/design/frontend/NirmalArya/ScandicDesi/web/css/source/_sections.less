@@ -10,7 +10,9 @@
 & when (@media-common = true) {
     .product.data.items {
         .lib-data-accordion();       
-        border-bottom: @tab-control__border-width solid @tab-control__border-color;
+        /* border-bottom: @tab-control__border-width solid @tab-control__border-color; */
+        border-bottom: 1px solid rgba(151, 151, 151, 0.32);        
+        
         margin-bottom: @indent__base;
         margin-left: -@layout__width-xs-indent;
         margin-right: -@layout__width-xs-indent;
@@ -20,7 +22,7 @@
                 position: relative;
                 .lib-icon-font(
                 @_icon-font-content: @icon-down,
-                @_icon-font-size: @font-size__base,
+                @_icon-font-size: 1rem,
                 @_icon-font-line-height: @icon-font__line-height,
                 @_icon-font-color: @icon-font__color,
                 @_icon-font-color-hover: @icon-font__color-hover,
@@ -109,6 +111,35 @@
             }
             
         }
+        
+        .product.info.detailed & {
+            > .item.title {
+                > .switch {
+                    border-top: 1px solid rgba(151, 151, 151, 0.32);
+                }
+                &:not(.disabled) > .switch:active,
+                &.active > .switch,
+                &.active > .switch:focus,
+                &.active > .switch:hover {
+                    .lib-link(
+                        @_link-color: @sd_base__color,
+                        @_link-text-decoration: @accordion-control__text-decoration,
+                        @_link-color-visited: @sd_base__color,
+                        @_link-text-decoration-visited: @accordion-control__text-decoration,
+                        @_link-color-hover: @sd_base__color,
+                        @_link-text-decoration-hover: @accordion-control__hover__text-decoration,
+                        @_link-color-active: @sd_base__color,
+                        @_link-text-decoration-active: @accordion-control__active__text-decoration
+                    );
+                }
+            }
+            > .item.content {
+                .lib-css(text-align, left);
+                font-size: 1.3rem;
+                font-weight: 300;
+                color: #4a4a4a; 
+            }
+        }
     }
     .new-arrivals-best-picks-tab-product-items {
         position: relative;
@@ -181,10 +212,10 @@
                 }
             }
             > .item.content {
-                .lib-css(text-align, left);
+                /* .lib-css(text-align, left);
                 font-size: 1.3rem;
                 font-weight: 300;
-                color: #4a4a4a; 
+                color: #4a4a4a;  */
                 
                 border: 0;
             }

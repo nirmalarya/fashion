@@ -12,10 +12,14 @@ define([
 
     var sizeChart = {
         options: {
-            actionSelector: "[data-role=sizechart]"
+            actionSelector: "[data-role=sizechart]",
+            bodyClass: "size-chart-catalog-product-view"
         },
         init: function (options, element) {
             var _this = this;
+            if(_this.options.bodyClass) {
+                $('body').addClass(_this.options.bodyClass);
+            }
             _this.options = $.extend(_this.options, options);
             _this.options.element = element;
             _this.popup = jQuery(_this.options.element).modal({

@@ -205,6 +205,14 @@
 .swatch-opt {
     margin: 20px 0;
 }
+.swatch-opt .swatch-attribute {
+    margin-bottom: 20px;
+}
+.swatch-opt  .swatch-attribute:last-child {
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 20px;
+}
+
 
 .swatch-more {
     display: inline-block;
