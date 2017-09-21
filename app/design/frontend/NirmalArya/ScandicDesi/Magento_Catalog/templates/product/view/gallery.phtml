@@ -112,8 +112,16 @@
 <div class="pdp-social-shares">
     <div class="pdp-share-item sharethis-inline-share-buttons"></div>
     <script type="text/javascript">
-        share_JS= document.createElement('script');
-        share_JS.src= "//platform-api.sharethis.com/js/sharethis.js#property=58a408468cfe7d0011262856&product=inline-share-buttons";
-        document.body.appendChild(share_JS);
+        require(["jquery"], 
+            function ($) {
+                $(document).ready(function() {	
+                    setTimeout(function(){
+                        share_JS= document.createElement('script');
+                        //share_JS.src= "//platform-api.sharethis.com/js/sharethis.js#property=58a408468cfe7d0011262856&product=inline-share-buttons";
+                        share_JS.src= "//platform-api.sharethis.com/js/sharethis.js#property=59c3c5068dc2660011399235&product=sop";
+                        document.body.appendChild(share_JS);
+                    },2000);
+                });
+        });
     </script>
 </div>	
