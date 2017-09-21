@@ -504,6 +504,9 @@
 
         .action {
             margin-right: 5%;
+            &:last-child {
+                margin-right: 0;
+            }
         }
     }
 
@@ -751,7 +754,8 @@
     //  -----------------------------------------
     
     .pdp-social-shares {
-        margin-left: 10rem;
+        /* margin-left: 10rem; */
+        text-align: center;
     }
     .catalog-product-view .st-btn {
         padding-bottom: 20px;
@@ -766,7 +770,7 @@
         display: inline-block !important;
         line-height: normal;
         text-align: left;
-        margin: 2rem 0 0;
+       /*  margin: 2rem 0 0; */
         opacity: 1;
     }
     .catalog-product-view .pdp-social-shares .pdp-share-item.sharethis-inline-share-buttons .st-total,
@@ -778,9 +782,9 @@
         background: #f1f1f1; */
         margin-left: 1.5rem;
         border-radius: 0.5rem;
-        text-transform: uppercase;
+        /* text-transform: uppercase; */
         position: relative;
-        display: inline-block !important;
+        /* display: inline-block !important; */
     }
     /* .catalog-product-view .pdp-social-shares .pdp-share-item.sharethis-inline-share-buttons .st-total:before,
     .catalog-product-view .post-meta .post-meta-item.sharethis-inline-share-buttons .st-total:before,
@@ -805,7 +809,7 @@
         /* border: 1px solid #464646; */
         height: 3.6rem;
         width: 3.6rem;
-        line-height: 3.4rem;
+        line-height: 3.6rem;
         padding: 0;
         transition: all 0.25s ease;
     }
@@ -831,8 +835,8 @@
         fill: #9b9b9b;
         top: inherit;
         vertical-align: middle;
-        height: 3rem;
-        width: 3rem;
+        height: 2.4rem;
+        width: 2.4rem;
         transition: all 0.25s ease;
     }    
     
@@ -986,7 +990,7 @@
 
     .product.media {
         float: left;
-        margin-bottom: @indent__m;
+        margin-bottom: @indent__s; 
     }
 
     .page-layout-1column {
@@ -1055,6 +1059,11 @@
                 letter-spacing: -2px;
             }
         }
+    }
+    .pdp-social-shares {
+        margin-left: 10rem;
+        margin-top: 1rem;
+        text-align: left;
     }
 }
 
