@@ -105,7 +105,8 @@
     }
 	.page-main {
 		.cms-index-index &,
-		.page-products & {
+		.page-products &,
+        body:not(.catalog-product-view) &{
 			padding-left: 0;
 			padding-right: 0;
 			max-width: none;
@@ -134,6 +135,12 @@
 
     .columns {
         display: block;
+        body:not(.cms-index-index):not(.page-products):not(.catalog-product-view) &,
+        {
+            max-width: @layout__max-width;
+            margin: 0 auto;
+            padding: 0 @layout-indent__width;
+        }
     }
 
     .column.main {
