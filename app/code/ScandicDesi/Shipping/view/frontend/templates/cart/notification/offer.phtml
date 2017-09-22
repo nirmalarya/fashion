@@ -1,0 +1,10 @@
+<div class="block block-cart-offer" data-bind="scope: 'cartOffers'" data-role="cart-offers">
+    <!-- Content -->
+    <!-- ko if: cartOffers().shipping -->
+    <p data-bind="html: cartOffers().shipping.title"></p>
+    <p data-bind="html: cartOffers().shipping.message"></p>
+    <!-- /ko -->
+</div>
+<script type="text/x-magento-init">
+    {"[data-role=cart-offers]": {"Magento_Ui/js/core/app": <?php echo $block->getJsLayout();?>}};
+</script>
