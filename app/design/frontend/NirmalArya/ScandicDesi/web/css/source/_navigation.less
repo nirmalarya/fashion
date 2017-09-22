@@ -93,28 +93,133 @@
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
     .navigation {
         padding: 0;
-
+        .level0 {
+            > .level1 {
+                .nav-sections & {
+                    .lib-css(font-weight, 400);
+                }
+            }
+        }
         .parent {
             .level-top {
                 position: relative;
                 .lib-icon-font(
                 @_icon-font-content: @icon-down,
-                @_icon-font-size: 42px,
+                @_icon-font-size: 1rem,
                 @_icon-font-position: after,
-                @_icon-font-display: block
+                @_icon-font-display: block,
+                @_icon-font-color: @color-m_m_l_gray,
+                @_icon-font-color-hover: @sd_base__color
                 );
 
                 &:after {
                     position: absolute;
-                    right: 7px;
-                    top: -8px;
+                    /* right: 7px;
+                    top: -8px; */
+                    
+                    right: 16px;
+                    top: 12px;
                 }
 
                 &.ui-state-active {
-                    .lib-icon-font-symbol(
+                    /* .lib-icon-font-symbol(
                     @_icon-font-content: @icon-up,
                     @_icon-font-position: after
+                    ); */
+                    
+                    
+                    .lib-link(
+                    @_link-color: @color-m_m_l_gray,
+                    @_link-text-decoration: none,
+                    @_link-color-visited: @color-m_m_l_gray,
+                    @_link-text-decoration-visited: none,
+                    @_link-color-hover: @color-m_m_l_gray,
+                    @_link-text-decoration-hover: none,
+                    @_link-color-active: @color-m_m_l_gray,
+                    @_link-text-decoration-active: none
                     );
+
+                    
+                    
+                    .lib-icon-font(
+                    @_icon-font-content: @icon-up,
+                    @_icon-font-size: 1rem,
+                    @_icon-font-position: after,
+                    @_icon-font-display: block,
+                    @_icon-font-color: @sd_base__color,
+                    @_icon-font-color-hover: @sd_base__color
+                    );
+                }
+            }
+        }
+        
+        
+        
+        .submenu:not(:first-child) {
+            ul {
+                > li {
+                    a {
+                        font-size: 1.3rem;
+                        font-weight: 300;
+                        color: #000000;
+                        padding-top: .5rem;
+                        padding-bottom: .5rem;
+                    }
+                    h4 {
+                        margin-top: 0;
+                        margin-bottom: 0;
+                        a{
+                            .lib-css(padding-top, @submenu__padding-top);
+                            .lib-css(padding-right, @submenu__padding-right);
+                            .lib-css(padding-bottom, @submenu__padding-bottom);
+                            .lib-css(padding-left, @submenu__padding-left);
+                            .lib-font-size(@navigation-level0-item__font-size);
+                            font-weight: 400;
+                        }
+                    }
+                    
+                }
+                
+                .custom-menu-level {
+                    h4 {
+                        a {
+                            position: relative;
+                            .lib-css(padding-right, @submenu__padding-right);
+                            
+                            .lib-icon-font(
+                            @_icon-font-content: @icon-expand,
+                            @_icon-font-size: 1.2rem,
+                            @_icon-font-position: after,
+                            @_icon-font-display: block,
+                            @_icon-font-color: @color-m_m_l_gray,
+                            @_icon-font-color-hover: @sd_base__color
+                            );
+                            &:after {
+                                position: absolute;
+                                right: 0px;
+                                top: 14px;
+                                /* transform: rotate(45deg); */
+                            }
+                        
+                        }
+                    }
+                    &.ui-state-active {
+                        h4 {
+                            a {
+                                 .lib-icon-font(
+                                @_icon-font-content: @icon-collapse,
+                                @_icon-font-size: 1.2rem,
+                                @_icon-font-position: after,
+                                @_icon-font-display: block,
+                                @_icon-font-color: @sd_base__color,
+                                @_icon-font-color-hover: @sd_base__color
+                                );
+                                &:after {
+                                    /* transform: rotate(0); */
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -219,8 +324,15 @@
         .header.links {
             .lib-list-reset-styles();
            /*  border-bottom: 1px solid @color-gray82; */
-            
+            padding: .8rem 3.5rem .8rem 2rem;
+            .header.links {
+                padding: 0;
+            }
             li {
+                &.customer-welcome li .customer-welcome-name,
+                &.customer-welcome li a {
+                    padding-left: 0;
+                }
                 font-size: 1.5rem;
                 font-weight: 300;
                /*  margin: 0; */

@@ -73,19 +73,30 @@ class Topmenu extends MagentoTopmenu
     private function getCategoryContent(Node $child, $column)
     {
         $parentId = $child->getData('megamenu_col_category' . $column);
+        
+        /** @var string $category */
+        $parentCategory = null;
+        
         /** @var array $categories */
         $categories = [];
         foreach ($this->getCategories() as $category) {
+             
+            if($parentId == $category->getId()) {
+                $parentCategory = $category;                
+            }
+            
             /** @var Category $category */
             if ($parentId == $category->getParentId()) {
                 $categories[] = $category;
             }
         }
+        
         /** @var Template $block */
         $block = $this->getLayout()
             ->createBlock(Template::class)
             ->setTemplate($this->getCategoryListTemplate())
-            ->setCategoryList($categories);
+            ->setCategoryList($categories)
+            ->setParentCategory($parentCategory);
 
         return $block->toHtml();
     }
@@ -147,18 +158,21 @@ class Topmenu extends MagentoTopmenu
 
                     $hideInMbl_Value = $child->getData('megamenu_col_mobilehide' . $column);
                     $blockColumns[$column]['hide_in_mbl'] = $hideInMbl_Value;
+                    $blockColumns[$column]['type_of_block'] = "category-block";
                     $mobileColumns += $hideInMbl_Value ? 1 : 0;
                 } elseif ($child->getData('megamenu_col_type' . $column) == 2) { // static block
                     $blockColumns[$column]['html'] = $this->getBlockContent($child, $column);
 
                     $hideInMbl_Value = $child->getData('megamenu_col_mobilehide' . $column);
                     $blockColumns[$column]['hide_in_mbl'] = $hideInMbl_Value;
+                    $blockColumns[$column]['type_of_block'] = "static-block";
                     $mobileColumns += $hideInMbl_Value ? 1 : 0;
                 } elseif ($child->getData('megamenu_col_type' . $column) == 3) { // Custom content
                     $blockColumns[$column]['html'] = $this->getCustomContent($child, $column);
 
                     $hideInMbl_Value = $child->getData('megamenu_col_mobilehide' . $column);
                     $blockColumns[$column]['hide_in_mbl'] = $hideInMbl_Value;
+                    $blockColumns[$column]['type_of_block'] = "custom-content-block";
                     $mobileColumns += $hideInMbl_Value ? 1 : 0;
                 }
             }

@@ -10,8 +10,8 @@
  * @license    https://www.solwininfotech.com/magento-extension-license/
  */
 -->
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-right" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <head>
-        <!-- <css src="Solwin_Instagram::css/instagram.css"/> -->
+         <remove src="Solwin_Instagram::css/instagram.css"/>
     </head>
 </page>

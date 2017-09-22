@@ -31,8 +31,8 @@
 @header-icons-color-hover: @sd__icon__hover__color; /* @color-gray20; */
 @customer-welcome__z-index: @dropdown-list__z-index + 1;
 
-@addto-color: @color-gray60;
-@addto-hover-color: @primary__color;
+@addto-color: @pdp-title__color;
+@addto-hover-color: @sd_base__color;
 @minicart-icons-color: @header-icons-color;
 @minicart-icons-color-hover: @header-icons-color-hover;
 
@@ -73,7 +73,7 @@
 
 	.main-header-sub-header {
 	font-family: @font-julius_sans_one;
-	font-size: 4.2rem;
+	font-size: 2.1rem;
 	letter-spacing: -0.5px;
 	text-align: center;
 	color: @color-light_grey;
@@ -243,6 +243,13 @@
                     float: none;
                     display: inline-block;
                     
+                    &.active {
+                        overflow: hidden;
+                        height: 50px;
+                        margin-bottom: 1.5rem;
+                        z-index: 7;
+                    }
+                    
 					img {
 						display: inline-block;
 					} 
@@ -354,6 +361,21 @@
 	}
     .page-main {
         > .page-title-wrapper {
+            color: @color-dark_brown;
+            font-family: @font-julius_sans_one;
+            background-color: fade(@color-beige, 66%);
+            padding: 2rem 0;
+            margin-bottom: 1.5rem;
+            
+            .page-title {            
+                font-size: 1.8rem; 
+                max-width: @layout__max-width;
+                margin: 0 auto;
+                padding: 0 20px;
+                box-sizing: border-box;
+                line-height: 1;                
+            }
+            
             .page-title + .action {
                 margin-top: @indent__l;
             }
@@ -653,7 +675,7 @@
         .block-title {
             h2 {
                 font-family: @font-julius_sans_one;
-                font-size: 3.8rem;
+                font-size: 2.1rem;
                 letter-spacing: -0.3px;
                 text-align: center;
                 color: @color-black;
@@ -692,11 +714,14 @@
 	.home-shipping-info-container {
 		text-align: center;
 		padding-bottom: 2rem;
-		margin: 2rem 2rem;
+		margin: 1rem 2rem;
 		color: @color-dark_brown;
-        
+        border-bottom: solid 1px #e1e1e1;
+         
         &.owl-carousel {
-            margin: 2rem auto;
+            /* margin: 2rem auto; */
+            margin: 1rem auto;           
+            padding-bottom: 0;
             
             .owl-stage {
                  >  div {
@@ -785,6 +810,9 @@
 		position: relative;
 		
 		.main-header-sub-header {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            
 			color: @color-black;
 			span {
 				color: @color-light_grey;
@@ -795,15 +823,15 @@
 			}
 		}
 		p {
-			font-size: 1.8rem;
+			font-size: 1.3rem;
 			font-weight: 300;
-			letter-spacing: -0.3px;
+			letter-spacing: -0.2px;
 			text-align: center;
 			color: #494949;
 			width: 77.9rem;
             max-width: 98%;
 			display: inline-block;
-			margin-bottom: 4.1rem;
+			margin-bottom: 2.5rem;			
 		}
 	
     
@@ -918,6 +946,38 @@
             }                           
         }
     }
+    
+    .clp-view-all-product-link {
+        text-align: center;
+        a {
+            
+            .lib-button(
+                @_button-font-family: @font-julius_sans_one,
+                @_button-font-size: 2.2rem,
+                @_button-line-height:56px,
+                @_button-padding: 0 6rem,
+               
+                @_button-color:@button-secondary__color, 
+                @_button-background: @button-secondary__background,
+                @_button-background-hover: @button-secondary__hover__background,
+                @_button-border: @button-secondary__border,
+                @_button-border-hover: @button-secondary__hover__border,
+                @_button-border-active: @button-secondary__active__border,
+                @_button-background-active: @button-secondary__active__background,
+                @_button-color-hover: @button-secondary__hover__color,
+                @_button-color-active: @button-secondary__active__color
+                );
+                
+            letter-spacing: -0.3px;
+            text-decoration: none; 
+            -webkit-transition: background-color 0.3s ease-out;
+            -moz-transition: background-color 0.3s ease-out;
+            -o-transition: background-color 0.3s ease-out;
+            transition: background-color 0.3s ease-out;            
+        }
+    }
+    
+    
     .customer-welcome {
         li {
             font-size: 1.3rem;
@@ -964,6 +1024,42 @@
             }
         } 
         
+    }
+    
+    //
+    //  Mega menu - Promo Block
+    //  ---------------------------------------------
+	
+    
+    .navigation {
+        .menu-promo-wrapper {
+            position: relative;
+            .menu-promo-content {
+                position: absolute;
+                bottom: 2rem;
+                text-align: center;
+                width: 100%;
+                left: 0;
+               /*  white-space: nowrap; */
+                    
+                .festival-shop-text {
+                    font-family: @font-vidaloka;
+                    font-size: 4rem;
+                    letter-spacing: -2px;
+                    color: @color-white;
+                    white-space: nowrap;
+                    
+                    .shop-text {
+                        letter-spacing: -2.9px;
+                        color: #f9678d;
+                    }
+                }
+                .explore-now-text {
+                    font-size: 1.4rem;
+                    color: @color-white;
+                }
+            }
+        }
     }
 }
 
@@ -1029,11 +1125,11 @@
         top: -2px;
     } */
 
-    .navigation .parent .level-top:after {
+    /* .navigation .parent .level-top:after {
         .lib-font-size(16);
         right: 10px;
         top: 7px;
-    }
+    } */
 
     .page-footer .footer.content {
         .switcher-store {
@@ -1136,7 +1232,8 @@
     
     
     .trend-alert-container { 
-        width: 36.1rem;  
+        width: 36.1rem; 
+        padding-top: 1rem;        
         
         .custom-grid-set {        
             
@@ -1274,8 +1371,20 @@
     
     
     
+    .hide-in-mbl, 
+    .column-hide-in-mbl {
+        display: none !important;
+    }
     
-    
+    .clp-view-all-product-link {
+        a {
+            width: 100%;
+            max-width: 90%;
+            line-height: 4.8rem;
+            font-size: 1.8rem;
+            letter-spacing: -0.3px;
+        }
+    }
     
     
 }
@@ -1375,8 +1484,14 @@
 	}
     .page-main {
         > .page-title-wrapper {
+            .page-products & {
+                padding: 1rem 0 4rem;
+            }
+            margin-bottom: 3rem;
             .page-title {
-                display: inline-block;
+                /* display: inline-block; */
+                                
+                font-size: 2.1rem;
             }
 
             .page-title + .action {
@@ -1665,9 +1780,12 @@
 	.home-shipping-info-container {
         padding-bottom: 3rem;
 		margin:3rem 2rem 2rem;
+        border-bottom: 0;
+        
         &.owl-carousel {
             width: 90%;
             margin: 3rem auto 2rem;
+            
             
             .owl-stage {
                  >  div {
@@ -1713,8 +1831,14 @@
     
     
     .trend-alert-container {
-        width: 72.2rem;  
+        width: 72.2rem; 
+        padding-top: 3rem;
+        padding-bottom: 1rem;
         
+        p {
+			font-size: 1.4rem;
+            margin-bottom: 3.5rem;
+        }
         .custom-grid-set {        
             
             .cc-col-6 {
@@ -1750,9 +1874,64 @@
             }                           
         }
     }
+    
+    
+    //
+    //  Mega menu - Promo Block
+    //  ---------------------------------------------
+	
+    
+    .navigation {
+        .menu-promo-wrapper {
+            position: relative;
+            .menu-promo-content {
+                position: absolute;
+                bottom: 1rem;
+                text-align: center;
+                width: 100%;
+                left: 24%;
+               /*  white-space: nowrap; */
+                    
+                .festival-shop-text {
+                    font-family: @font-vidaloka;
+                    font-size: 5.4rem;
+                    letter-spacing: -4.2px;
+                    color: @color-white;
+                    white-space: nowrap;
+                    
+                    .shop-text {
+                        letter-spacing: -2.9px;
+                        color: #f9678d;
+                    }
+                }
+                .explore-now-text {
+                    font-size: 1.4rem;
+                    color: @color-white;
+                }
+            }
+        }
+    }
+    
+    .show-in-mbl{
+        display: none !important;
+    }
+    
+    
+    .widget {        
+        .block-title {
+            h2 {                
+                font-size: 2.8rem;
+            }
+        }
+    }
+    
+    .main-header-sub-header {
+        font-size: 3.2rem;
+	}
 }
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+  
     .footer {
         &.content {
             .links {                 
@@ -1819,6 +1998,14 @@
     
     .trend-alert-container {
         width: 100rem;  
+        padding-top: 6rem;
+        padding-bottom: 4rem;
+        
+        p {
+			font-size: 1.8rem;
+            letter-spacing: -0.3px;
+            margin-bottom: 4.1rem;
+        }
         
         .custom-grid-set {        
             
@@ -1855,6 +2042,18 @@
             }                           
         }
     }
+    
+    .widget {        
+        .block-title {
+            h2 {                
+                font-size: 3.8rem;
+            }
+        }
+    }
+    
+    .main-header-sub-header {
+        font-size: 4.2rem;
+	}
 }
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
     .trend-alert-container {

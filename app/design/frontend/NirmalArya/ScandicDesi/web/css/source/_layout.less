@@ -17,10 +17,11 @@
 
         .column.main {
             &:extend(.abs-add-box-sizing all);
-            .lib-css(padding-bottom, @indent__xl);
+            /* .lib-css(padding-bottom, @indent__xl); */
             .lib-vendor-prefix-flex-basis(100%);
             .lib-vendor-prefix-flex-grow(1);
             .lib-vendor-prefix-order(1);
+            width: 100%;
         }
 
         .sidebar-main {
@@ -60,7 +61,8 @@
     
 	.page-main,
 	.page-wrapper > .page-bottom {
-		.cms-index-index & {
+		.cms-index-index &,
+		.page-products &  {
 			padding-left: 0;
 			padding-right: 0;
 		}
@@ -85,7 +87,6 @@
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     .navigation,
-    .breadcrumbs,
     .page-header .header.panel,
     .header.content,
     .footer.content,
@@ -103,12 +104,15 @@
         width: auto;
     }
 	.page-main {
-		.cms-index-index & {
+		.cms-index-index &,
+		.page-products &,
+        body:not(.catalog-product-view) &{
 			padding-left: 0;
 			padding-right: 0;
 			max-width: none;
 		}
 	}
+    .breadcrumbs,
     .page-wrapper > .page-bottom,
     .footer.content{
         padding-left: 0;
@@ -131,12 +135,22 @@
 
     .columns {
         display: block;
+        body:not(.cms-index-index):not(.page-products):not(.catalog-product-view) &,
+        {
+            max-width: @layout__max-width;
+            margin: 0 auto;
+            padding: 0 @layout-indent__width;
+        }
     }
 
     .column.main {
         #lib-layout-columns > .main();
         &:extend(.abs-add-box-sizing-desktop all);
         min-height: 300px;
+        
+        .catalog-product-view & {
+            padding-top: 4rem;
+        }
     }
 
     .sidebar-main {

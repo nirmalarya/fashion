@@ -25,10 +25,14 @@ if($mobileColumns){
 unset($columns['enable_mobile_columns']);
 $column = count($columns);
 ?>
-<ul class="level1 submenu menu-columns column<?php echo $column; ?>-layout <?php echo $mobileColumnsClass; ?>">
-    <?php foreach ($columns as $column => $content): ?>
-    <li class="column-content column<?php echo $column; ?>-content <?php echo $content['hide_in_mbl']?'column-hide-in-mbl':''; ?>">
-        <?php echo $content['html']; ?>
+<ul class="level0 submenu menu-columns column<?php echo $column; ?>-layout <?php echo $mobileColumnsClass; ?>">
+    <li class="column-content-wrapper">
+        <ul class="column-content-area">
+            <?php foreach ($columns as $column => $content): ?>
+            <li class="column-content column<?php echo $column; ?>-content <?php echo $content['hide_in_mbl']?'column-hide-in-mbl':''; ?>   <?php echo $content['type_of_block']; ?> ">
+                <?php echo $content['html']; ?>
+            </li>
+            <?php endforeach; ?>
+        </ul>
     </li>
-    <?php endforeach; ?>
 </ul>

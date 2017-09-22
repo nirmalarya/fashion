@@ -22,9 +22,13 @@
 @color-pale_grey: #e1ecf4;
 @color-pink: #f9678d;
 
+
 @color-medium_grey: #767676;
+@color-m_m_l_gray : #9b9b9b;
 @color-medium_light_grey: #bcbcbc;
 
+@pdp-title__color: #58585a;
+@pdp-review-link__color: #4a4a4a;
 
 @dropdown__border-color: #ececec;
 @seprator__color: #d3d3d3;
@@ -66,6 +70,7 @@
 @table-cell-stripped__background-color: @table-cell__hover__background-color;
 @table-responsive-th__background-color: @table-cell-stripped__background-color;
 @table-responsive-cell__padding: @indent__xs @indent__s;
+@table-th__font-weight: 500;
 
 //
 //  Layout grid
@@ -107,9 +112,20 @@
 @navigation-level0-item__active__border-color: @sd_base__color;
 @navigation-level0-item__border: @sd_base__color;
 
+@submenu-desktop__min-width: 20rem;
+@submenu-desktop__font-size: 1.3rem;
+@submenu-desktop-item__padding: .4rem 1rem;
+@submenu-desktop-item__hover__background: none;
+
+@submenu__padding-left: 0;
+@submenu-item__color: @color-black;
+@submenu-item__active__border-color: @sd_base__color;
+@submenu-desktop-item__active__border-color: @sd_base__color;
+
+
 //  Desktop navigation
 @navigation-desktop-level0-item__line-height: 5rem;
-@submenu-desktop__font-weight: @font-weight__regular;
+@submenu-desktop__font-weight: 300;
 @submenu-desktop-item__active__color: @navigation-level0-item__active__color;
 
 //  Tabs
@@ -136,24 +152,26 @@
 //  ---------------------------------------------
 
 @accordion-control__font-family: false;
-@accordion-control__font-size: @font-size__base;
+@accordion-control__font-size: 1.6rem;
 @accordion-control__font-style: false;
-@accordion-control__font-weight: @font-weight__semibold;
+@accordion-control__font-weight: 500;
 @accordion-control__border-right: false;
 @accordion-control__border-bottom: false;
 @accordion-control__border-left: false;
-@accordion-control__background-color: false;
-@accordion-control__color: @primary__color;
+@accordion-control__background-color: #fafafa;
+@accordion-control__color: #4a4a4a;
 @accordion-control__hover__background-color: false;
 @accordion-control__hover__color: @accordion-control__color;
-@accordion-control__active__background-color: false;
+@accordion-control__active__background-color: #FFF;
 @accordion-control__active__color: @accordion-control__color;
 @accordion-control__margin-bottom: 0;
-@accordion-control__padding-right: @indent__s;
-@accordion-control__padding-left: @indent__s;
+@accordion-control__padding-right: 15px;
+@accordion-control__padding-left: 15px;
+@accordion-control__height: 50px;
 @accordion-content__border: false;
 @accordion-content__margin: 0;
-@accordion-content__padding: @indent__s @indent__s @indent__l;
+@accordion-content__padding: @indent__s 15px;
+
 
 //
 //  Buttons
@@ -326,9 +344,11 @@
 //  Rating
 //  ---------------------------------------------
 
-@rating-icon__font-size: 16px;
+@rating-icon__color: #e4e4e4;
+@rating-icon__font-size: 18px;
 @rating-icon__letter-spacing: 2px;
-@rating-icon__active__color: @active__color;
+@rating-icon__active__color: #dba86f;
+
 
 //
 //  Dropdowns
@@ -354,9 +374,15 @@
 //  Breadcrumbs
 //  ---------------------------------------------
 
-@breadcrumbs__container-margin: 0 0 15px;
-@breadcrumbs-icon__font-size: 10px;
-@breadcrumbs-icon__font-margin: 0 @indent__s;
+
+@breadcrumbs__container-margin: 0;
+@breadcrumbs-icon__font-size: 1.2rem;
+@breadcrumbs-icon__font-line-height: 1rem;
+@breadcrumbs-icon__font-margin: 0 2px;
+@breadcrumbs-icon__font-content: '/';
+
+//  Current page
+@breadcrumbs-current__color: @color-dark_brown;
 
 //
 //  Popups

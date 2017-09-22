@@ -100,7 +100,14 @@
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
-    
+    .newsletter-model-popup {
+        &.modal-popup {
+        
+            .modal-inner-wrap { 
+                width: 95%;
+            }
+        }
+    }    
 }
 
 

@@ -145,6 +145,7 @@ define([
 			$(this).toggleClass('active');
 			var searchBlockObj = headerContentObj.find('.block-search');
 			searchBlockObj.toggleClass('active');
+            headerContentObj.find('.logo').toggleClass('active');
 		});
 	}
 	/*******mbl search*****/
@@ -162,3 +163,96 @@ define([
 	
 	
 });
+
+
+
+
+
+function qtyBox_UiEnabled($){
+	var parentBlock;
+	var newDiv;			
+	var maxQtyLimit = 999;
+	
+	$('input.input-text.qty').each(function(i,el){
+		parentBlock = $(el).parent();
+		
+		// if "inc-qtyBox" is exist means already qtyBox_UiEnabled is enabled
+		if(!parentBlock.hasClass("inc-qtyBox")){ 
+		
+			newDiv = document.createElement('div');		
+			newDiv.id = 'qtyBox'+i;
+			newDiv.className  = "inc-qtyBox";
+			
+			var mainDivContent = parentBlock.html();
+			var disableFirst = 'disabled';
+			if($(el).val() > 1){
+				disableFirst='';
+			}
+			
+			var newDivContent='';
+			newDivContent += ('<button type="button" class="inc-qtyBox-btn qty-decrease '+disableFirst+'" '+disableFirst+'>-</button>');
+			newDivContent += mainDivContent;
+			newDivContent += ('<button type="button" class="inc-qtyBox-btn  qty-increase">+</button>');
+			
+			
+			newDiv.innerHTML = newDivContent; //set new input inside new div
+			parentBlock.html('');  //erase default input
+			parentBlock.append(newDiv); //show new div 
+		}
+	});
+ 
+	$('.inc-qtyBox button.qty-increase').each(function(i,el){
+		$(el).unbind('click.qtyIncreaseUiEnabled'+i);
+		$(el).bind('click.qtyIncreaseUiEnabled'+i,function(event){
+			var currentElement = null;
+			currentElement = $(el).parent().find('input');
+			currentElement_Value = parseInt(currentElement.val());
+			//console.log(currentElement )
+			
+			var upObj =$(el);
+			var dnObj =$(el).parent().find('button.qty-decrease');
+			
+			if(currentElement_Value == NaN){
+				currentElement.val(1);
+				dnObj.addClass('disabled').attr('disabled');
+			}
+			
+				
+			if(currentElement_Value < maxQtyLimit){
+				currentElement.val(currentElement_Value + 1);
+				dnObj.removeClass('disabled').removeAttr('disabled');
+			}
+			else{
+				currentElement.val(maxQtyLimit);
+				dnObj.removeClass('disabled').removeAttr('disabled');
+			}
+		});
+	});
+ 
+	$('.inc-qtyBox  button.qty-decrease').each(function(i,el){
+		$(el).unbind('click.qtyDecreaseUiEnabled'+i);
+		$(el).bind('click.qtyDecreaseUiEnabled'+i,function(event){
+			var currentElement = null;
+			currentElement = $(el).parent().find('input');
+			currentElement_Value = parseInt(currentElement.val());
+			//console.log(currentElement )
+			
+			var upObj =$(el).parent().find('button.qty-increase');
+			var dnObj =$(el);
+			
+			if(currentElement_Value > maxQtyLimit){
+				currentElement.val(maxQtyLimit);
+				dnObj.removeClass('disabled').removeAttr('disabled');
+				
+			}else if(currentElement_Value > 1){
+				currentElement.val(currentElement_Value - 1);
+				dnObj.removeClass('disabled').removeAttr('disabled');
+				
+			}else{
+				currentElement.val(1);
+				dnObj.addClass('disabled').attr('disabled');
+			}
+		});
+	});
+}
+
