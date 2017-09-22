@@ -57,7 +57,17 @@
                     margin: 15px  0 0;
                     .continue {
                         font-size: 1.4rem;
-                        color: @color-dark_blue;
+                        /* color: @color-dark_blue; */
+                         .lib-link(
+                        @_link-color: @color-dark_blue,
+                        @_link-text-decoration: none,
+                        @_link-color-visited: @color-dark_blue,
+                        @_link-text-decoration-visited: none,
+                        @_link-color-hover: @sd_base__color,
+                        @_link-text-decoration-hover: none,
+                        @_link-color-active: @color-dark_blue,
+                        @_link-text-decoration-active: none
+                        );
                     }
                 }
                 
@@ -70,11 +80,35 @@
             
                 .continue {
                     text-transform: uppercase;
+                    font-size: 1.4rem;
+                    /* color: @color-dark_blue; */
+                    .lib-link(
+                    @_link-color: @color-dark_blue,
+                    @_link-text-decoration: none,
+                    @_link-color-visited: @color-dark_blue,
+                    @_link-text-decoration-visited: none,
+                    @_link-color-hover: @sd_base__color,
+                    @_link-text-decoration-hover: none,
+                    @_link-color-active: @color-dark_blue,
+                    @_link-text-decoration-active: none
+                    );
                 }
                 .update {
                     .lib-button-as-link();  
+                    
+                   /*  color: #9b9b9b; */
+                   /*  text-decoration: none; */
+                    .lib-link(
+                    @_link-color: #9b9b9b,
+                    @_link-text-decoration: none,
+                    @_link-color-visited: #9b9b9b,
+                    @_link-text-decoration-visited: none,
+                    @_link-color-hover: @sd_base__color,
+                    @_link-text-decoration-hover: none,
+                    @_link-color-active: #9b9b9b,
+                    @_link-text-decoration-active: none
+                    );
                     font-weight: normal;
-                    color: #9b9b9b;
                 }
             }
         }
@@ -719,6 +753,12 @@
                 /* .continue {
                     text-transform: uppercase;
                 } */
+                
+                border: @border-width__base solid @border-color__base;;
+                border-left: 0;
+                border-right: 0;
+                padding: 1.8rem 1rem;
+                
                 .update {
                     float: right;
                     /* .lib-button-as-link();  
