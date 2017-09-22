@@ -67,6 +67,17 @@
 			padding-right: 0;
 		}
 	}
+    
+    .columns {
+        display: block;
+        body:not(.cms-index-index):not(.page-products):not(.catalog-product-view) &,
+        {
+            padding-left: @layout__width-xs-indent;
+            padding-right: @layout__width-xs-indent;
+        }
+    }
+    
+    
     .footer.content {
         padding-left: 0;
         padding-right: 0;

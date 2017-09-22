@@ -641,7 +641,7 @@
 & when (@media-common = true) {
     .abs-navigation-icon {
         .lib-icon-font(
-            @_icon-font-content: @icon-down,
+            @_icon-font-content: @icon-arrow-down,
             @_icon-font-size: 34px,
             @_icon-font-line-height: 1.2,
             @_icon-font-position: after,
@@ -880,7 +880,7 @@
         @abs-toggling-title();
         .lib-css(padding, @indent__s @indent__xl @indent__s @mobile-cart-padding);
         .lib-icon-font(
-        @icon-down,
+        @icon-arrow-down,
         @_icon-font-size: 12px,
         @_icon-font-line-height: 12px,
         @_icon-font-text-hide: true,
@@ -897,7 +897,7 @@
         .lib-css(border-bottom, @border-width__base solid @border-color__base);
         .lib-css(padding, @indent__s @indent__xl @indent__s @layout__width-xs-indent);
         .lib-icon-font(
-        @icon-down,
+        @icon-arrow-down,
         @_icon-font-size: 12px,
         @_icon-font-text-hide: false,
         @_icon-font-margin: 3px 0 0 0,
@@ -907,7 +907,7 @@
 
         &.active {
             .lib-icon-font-symbol(
-            @_icon-font-content: @icon-up,
+            @_icon-font-content: @icon-arrow-up,
             @_icon-font-position: after
             );
         }
@@ -925,7 +925,7 @@
         > .title {
             &:extend(.abs-toggling-title all);
             &:after {
-                color: @color-gray52;
+                color: @pdp-review-link__color;
             }
         }
 
@@ -938,7 +938,7 @@
         &.active {
             > .title {
                 .lib-icon-font-symbol(
-                @_icon-font-content: @icon-up,
+                @_icon-font-content: @icon-arrow-up,
                 @_icon-font-position: after
                 );
             }
@@ -1142,13 +1142,14 @@
         .price-including-tax,
         .price-excluding-tax {
             .lib-css(color, @cart-price-color);
-            .lib-font-size(18);
+            .lib-font-size(14);
             display: block;
             line-height: 1;
             white-space: nowrap;
-
+            letter-spacing: -0.3px;
+             
             .price {
-                font-weight: @font-weight__bold;
+                font-weight: normal;
             }
         }
     }
@@ -1186,7 +1187,7 @@
         position: relative;
 
         .lib-icon-font(
-        @icon-down,
+        @icon-arrow-down,
         @_icon-font-size: 8px,
         @_icon-font-line-height: 8px,
         @_icon-font-margin: 3px 0 0 0,
@@ -1202,7 +1203,7 @@
 
     .abs-tax-total-expanded {
         .lib-icon-font-symbol(
-        @_icon-font-content: @icon-up,
+        @_icon-font-content: @icon-arrow-up,
         @_icon-font-position: after
         );
     }
@@ -1577,6 +1578,12 @@
         &:extend(.abs-add-box-sizing-desktop all);
         padding-right: 4%;
         position: relative;
+        
+        .actions.main {
+            .continue {
+                display: inline-block;
+            }
+        }
     }
 }
 
@@ -1716,18 +1723,25 @@
 
         tbody,
         tfoot {
+            font-size: 1.3rem;
+            color: @pdp-review-link__color;
             .mark {
                 border: 0;
-                font-weight: @font-weight__regular;
-                padding: 6px 0;
+                /* font-weight: @font-weight__regular; */
+                padding: 6px 0;                
+                
+                font-weight: 300;
+                
             }
 
             .amount {
                 border: 0;
-                font-weight: @font-weight__regular;
+                /* font-weight: @font-weight__regular; */
                 padding: 6px 0 6px 14px;
                 text-align: right;
                 white-space: nowrap;
+                
+                font-weight: 300;
             }
         }
 
@@ -1743,19 +1757,26 @@
 
             strong {
                 display: inline-block;
-                font-weight: @font-weight__semibold;
+                /* font-weight: @font-weight__semibold; */
                 padding: 3px 0 0;
+                
+                font-weight: 500;
             }
 
             .mark {
-                .lib-font-size(18);
+                .lib-font-size(16);
                 border-top: 1px solid @border-color__base;
                 padding-right: @indent__s;
             }
 
             .amount {
-                .lib-font-size(18);
+                .lib-font-size(16);
                 border-top: 1px solid @border-color__base;
+                color: @sd_base__color;
+                
+                strong {
+                    font-weight: normal;
+                }
             }
         }
 
@@ -1780,7 +1801,7 @@
                     padding-right: @indent__base;
                     position: relative;
                     .lib-icon-font(
-                    @icon-down,
+                    @icon-arrow-down,
                     @_icon-font-size: 12px,
                     @_icon-font-line-height: 12px,
                     @_icon-font-text-hide: true,
@@ -1802,7 +1823,7 @@
 
                     .amount .price {
                         .lib-icon-font-symbol(
-                        @_icon-font-content: @icon-up,
+                        @_icon-font-content: @icon-arrow-up,
                         @_icon-font-position: after
                         );
                     }
@@ -1858,7 +1879,7 @@
 
             > .title {
                 strong {
-                    color: @color-blue1;
+                    color: @pdp-review-link__color;
                     font-weight: @font-weight__regular;
                 }
             }
@@ -1920,7 +1941,7 @@
                 padding: 0 0 @indent__s;
 
                 strong {
-                    .lib-font-size(16);
+                    .lib-font-size(14);
                 }
             }
 

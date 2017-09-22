@@ -334,7 +334,7 @@
             .active {
                 > .toggle {
                     .lib-icon-font-symbol(
-                        @_icon-font-content: @icon-up,
+                        @_icon-font-content: @icon-arrow-up,
                         @_icon-font-position: after
                     );
                 }
@@ -348,7 +348,7 @@
                 .toggle {
                     &.tooltip {
                         .lib-icon-font(
-                        @icon-down,
+                        @icon-arrow-down,
                         @_icon-font-size: 12px,
                         @_icon-font-line-height: 12px,
                         @_icon-font-text-hide: true,
@@ -409,6 +409,9 @@
                 .lib-icon-font-symbol(
                 @_icon-font-content: @icon-trash
                 );
+            }
+            &.edit {
+                display: none;
             }
         }
     }

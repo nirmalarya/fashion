@@ -84,6 +84,13 @@
                 text-overflow: ellipsis;                
                 max-height: calc(@product-name__line-height * @product-name__font-size * @product-name__lines-to-show) ;
                 
+                .cart.table-wrapper & {
+                    font-family: @font-montserrat; 
+                    font-weight: 300;
+                    letter-spacing: 0.1px;
+                    color: @pdp-title__color;
+                }
+                
                 .hits & {
                     font-family: @font-montserrat;
                     font-size: @plp-product-name__font-size;

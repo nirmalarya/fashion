@@ -1,0 +1,48 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<?php
+/**
+ * Shopping cart template
+ *
+ * @var $block \Magento\Checkout\Block\Cart
+ */
+ $itemCount = $block->getItemsCount();
+ $itemCount_Qty = $block->getItemsSummaryQty();
+ ?>
+ <?php if ($itemCount) {
+       $quote = $block->getTotalsCache(); 
+	   $getGrandTotal = $quote['grand_total']->getData('value');
+	   // Instance of Object Manager
+       $objectManager = \Magento\Framework\App\ObjectManager::getInstance(); 
+       $priceFormat = $objectManager->create('Magento\Framework\Pricing\PriceCurrencyInterface'); 
+	   // Instance of Pricing Helper
+       $getGrandTotal = $priceFormat->format($getGrandTotal, true);?>
+      
+			<div class="shopping-cart-header show-in-mbl">								
+				<div class="shopping-cart-header-order-total">
+                    <span><?php echo __('Total'); ?> </span>
+                    <span class="price"><?php echo $getGrandTotal;?></span>
+                </div>
+				
+				<div class="shopping-cart-header-actions">
+                    <div>
+                        <?php  echo $block->getChildHtml('checkout.cart.methods.onepage.bottom1'); ?>
+                    </div>
+                    <?php if ($block->getContinueShoppingUrl()): ?>
+                        <div class="action-continue">
+                            <a class="action continue"
+                               href="<?php echo $block->escapeUrl($block->getContinueShoppingUrl()) ?>"
+                               title="<?php echo $block->escapeHtml(__('Continue Shopping')); ?>">
+                                <span><?php /* @escapeNotVerified */ echo __('Continue Shopping') ?></span>
+                            </a>
+                        </div>
+					<?php endif; ?>					
+				</div>
+                
+			</div>
+			
+    <?php  } ?>

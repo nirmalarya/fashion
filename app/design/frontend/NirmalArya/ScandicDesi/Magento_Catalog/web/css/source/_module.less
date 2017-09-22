@@ -691,6 +691,9 @@
     //  Custom Qty Box
     //  -----------------------------------------
     
+    .inc-qtyBox {
+        white-space: nowrap;
+    }
     .inc-qtyBox .mage-error:not(input) {
         display: none !important;
     }
@@ -711,6 +714,11 @@
         
         font-size: 0;
         line-height: 1;
+        
+        .cart.table-wrapper & {
+            /* margin-top: -7px; */
+        }
+        
         &.qty-decrease {
             &:after {
                 content: '';
