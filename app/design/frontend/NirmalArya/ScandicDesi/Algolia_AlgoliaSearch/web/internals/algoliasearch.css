@@ -301,11 +301,11 @@ a.ais-current-refined-values--link:hover .clear-cross:before{
 .ais-current-refined-values--item .current-refinement-wrapper {
 	/* float: left; */
 	width: calc(100% - 2.6rem);
-	height: 1.5rem;
+	/* height: 1.5rem; */
 	padding-left: 0px;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	line-height: 1.5rem;
+	/* line-height: 1.5rem; */
 	display: inline-block;
 	vertical-align: middle;
     

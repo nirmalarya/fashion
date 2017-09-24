@@ -84,6 +84,12 @@
                 text-overflow: ellipsis;                
                 max-height: calc(@product-name__line-height * @product-name__font-size * @product-name__lines-to-show) ;
                 
+                .minicart-items & {
+                    font-family: @font-montserrat; 
+                    font-weight: normal;
+                    letter-spacing: 0.1px;
+                    color: @pdp-review-link__color;
+                }
                 .cart.table-wrapper & {
                     font-family: @font-montserrat; 
                     font-weight: 300;
@@ -693,6 +699,13 @@
             &-name {
                 font-size: @web-product-name__font-size;
                 max-height: calc(@product-name__line-height * @web-product-name__font-size * @product-name__lines-to-show) ; 
+                
+                .minicart-items & {
+                    font-size: @product-name__font-size;
+                    max-height: calc(@product-name__line-height * @product-name__font-size * @product-name__lines-to-show) ;
+                }
+                
+                
             }
         }
     }

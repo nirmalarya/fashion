@@ -39,6 +39,7 @@
         .subtotal {
             margin: 0 @indent__s;
             text-align: right;
+            font-weight: 500;
                 
             .label {
                 &:extend(.abs-colon all);
@@ -52,8 +53,9 @@
             .price-wrapper {
                 &:first-child {
                     .price {
-                        font-size: @font-size__l;
-                        font-weight: 500;
+                        /* font-size: @font-size__l; */
+                        font-weight: normal;
+                        color: @sd_base__color;
                     }
                 }
             }
@@ -134,7 +136,15 @@
             .lib-css(padding, 25px @minicart__padding-horizontal);
             right: 0;
             width: 320px;
-
+            position: absolute;
+            
+            li {
+                position: relative;
+                
+                &:hover {
+                    cursor: default;
+                }
+            }
             .block-title {
                 display: none;
             }
@@ -176,6 +186,8 @@
                 .lib-button-icon(
                     @icon-remove,
                     @_icon-font-color: @minicart-icons-color,
+                    @_icon-font-color-hover: @sd_base__color,
+                    @_icon-font-color-active: @minicart-icons-color,
                     @_icon-font-size: 16px,
                     @_icon-font-line-height: 16px,
                     @_icon-font-text-hide: true
@@ -246,19 +258,21 @@
         border-right: 0;
         overflow-x: auto;
         padding: 15px;
+        padding-top: 0;
     }
 
     .minicart-items {
         .lib-list-reset-styles();
         .product-item {
             padding: @indent__base 0;
-
+            padding-right: @indent__base;
+            
             &:not(:first-child) {
                 .lib-css(border-top, 1px solid @minicart__border-color);
             }
 
             &:first-child {
-                padding-top: 0;
+                /* padding-top: 0; */
             }
 
             > .product {
@@ -271,10 +285,10 @@
         }
 
         .product-item-pricing {
-            .label {
+            /* .label {
                 display: inline-block;
                 width: 4.5rem;
-            }
+            } */
         }
 
         .price-minicart {
@@ -292,9 +306,14 @@
 
         .product-item-details {
             padding-left: 88px;
-
+            
+            .minicart-price,
+            .cart-price {
+                color: #58585a;
+            }
             .price {
                 font-weight: normal;
+                font-size: 1.2rem;
             }
 
             .price-including-tax,
@@ -310,7 +329,11 @@
             }
 
             .details-qty {
-                margin-top: @indent__s;
+                /* margin-top: @indent__s; */
+                .lib-font-size(12);
+                font-weight: 300;
+                letter-spacing: 0.1px;
+                color: #58585a;
             }
         }
 
@@ -345,7 +368,37 @@
             }
 
             &.options {
+            
+                font-size: 12px;
+                font-weight: 300;
+                letter-spacing: 0.1px;
+                color: #58585a;
+                
+                //  Product options
+                .product.options.list,
+                .item-options {
+                    margin-bottom: 0;
+                    font-size: 1.2rem;
+                    font-weight: 300;
+                    letter-spacing: 0.1px;
+                    color: @pdp-title__color;
+                    display: inline-block;
+                    
+                    &:extend(.abs-product-options-list all);
+                    &:extend(.abs-add-clearfix all);
+                    
+                    dt {
+                        font-weight: 300;
+                        margin-right: 5px;
+                    }
+                    dt,
+                    dd {
+                        margin-bottom: 0;
+                    }
+                }
+                
                 .toggle {
+                    display: none;
                     &.tooltip {
                         .lib-icon-font(
                         @icon-arrow-down,
@@ -406,8 +459,19 @@
             }
 
             &.delete {
-                .lib-icon-font-symbol(
-                @_icon-font-content: @icon-trash
+                position: absolute;
+                top: @indent__base;
+                /* .lib-icon-font-symbol(
+                @_icon-font-content: @icon-remove
+                ); */
+                .lib-icon-font(
+                @icon-remove,
+                @_icon-font-size: 12px,
+                @_icon-font-line-height: 20px,
+                @_icon-font-text-hide: true,
+                @_icon-font-color: @minicart-icons-color,
+                @_icon-font-color-hover: @sd_base__color,
+                @_icon-font-color-active: @minicart-icons-color
                 );
             }
             &.edit {
