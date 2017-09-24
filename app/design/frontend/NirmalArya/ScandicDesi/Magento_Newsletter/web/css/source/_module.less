@@ -51,11 +51,17 @@
         }
 
         input {
+            .lib-input-placeholder(#767676);  
             /* padding-left: 35px; */
 			font-size: 1.3rem;
 			font-weight: 300;
 			text-align: center;
-			color: #767676;
+			/* color: #767676; */
+            border-color: @color-light_grey;
+            
+            &.mage-error {
+                border-color: @form-element-validation__border-error;
+            }
         }
 		
         .title {

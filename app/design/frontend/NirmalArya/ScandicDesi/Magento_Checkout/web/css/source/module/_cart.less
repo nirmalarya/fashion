@@ -562,13 +562,19 @@
             }
             .actions-toolbar .action,
             .input-text {
-                height: 3.8rem;
-                border: 1px solid #c2c2c2;                
+                height: 3.8rem;                                
                 font-size: 1.2rem;
+            }
+            .input-text {
+                border-color: fade(@color-m_m_l_gray, 51%);
+                &.mage-error {
+                    border-color: @form-element-validation__border-error;
+                }
             }
             .actions-toolbar .action {
                 font-weight: 500;
                 color: #4a4a4a;
+                border-color: #cccccc;
             }
             
         }

@@ -57,12 +57,18 @@
                 .field {
                     .label {
                         font-weight: @font-weight__regular;
+                        letter-spacing: 0.1px;
+                        color: #383838;
                     }
                 }
 
                 .note {
-                    font-size: @font-size__base;
+                    /* font-size: @font-size__base; */
                     margin-top: @indent__s;
+                    
+                    font-size: 1.2rem;
+                    letter-spacing: 0.1px;
+                    color: #383838;
                 }
             }
         }
@@ -299,7 +305,7 @@
     .opc-wrapper {
         .form-login,
         .form-shipping-address {
-            .lib-css(max-width, @checkout-shipping-address__max-width);
+            /* .lib-css(max-width, @checkout-shipping-address__max-width); */
         }
 
         .form-login {
