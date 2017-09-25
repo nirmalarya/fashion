@@ -173,20 +173,49 @@
     }
 
     .table-checkout-shipping-method {
+        background: #f8f8f8;
+        margin-top: @indent__l;
+
         thead {
             th {
                 display: none;
             }
         }
+        
+        tbody {
+            padding: 20px;
+            display: block;
+            
+            tr {
+                display: block;
+                background-color: #ffffff;
+                border: 1px solid fade(#d7d7d7,9%);
+                margin-bottom: 20px;
+                
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                
+                &.active-method,
+                &:hover {
+                    border-color: fade(@color-black, 9%);
+                }
+            }
+        }
 
         tbody {
             td {
-                .lib-css(border-top, @checkout-shipping-method__border);
+                /* .lib-css(border-top, @checkout-shipping-method__border); */
                 .lib-css(padding-bottom, @checkout-shipping-method__padding);
                 .lib-css(padding-top, @checkout-shipping-method__padding);
-
+                /* vertical-align: middle; */
+                
+                font-size: 1.4rem;
+                letter-spacing: 0.1px;
+                color: #4a4a4a;
+                
                 &:first-child {
-                    padding-left: 0;
+                    padding-left: 20px;
                     padding-right: 0;
                     width: 20px;
                 }
@@ -195,13 +224,15 @@
             tr {
                 &:first-child {
                     td {
-                        border-top: none;
+                        /* border-top: none; */
                     }
                 }
             }
 
             .col-price {
-                font-weight: @font-weight__semibold;
+                /* font-weight: @font-weight__semibold; */
+                font-weight: 500;
+                color: #383838;
             }
 
             .row-error {
