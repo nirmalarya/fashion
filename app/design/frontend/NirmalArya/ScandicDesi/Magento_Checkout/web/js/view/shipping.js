@@ -234,6 +234,7 @@ define(
                             sMethodElementClosestTr.addClass('active-method');
                             
                         }
+                        //debugger;
                     }
                     
                     return shippingMethodExist;
@@ -246,8 +247,9 @@ define(
              */
             selectShippingMethod: function (shippingMethod) {
                
-                var sMethodElement = $("#s_method_"+shippingMethod.carrier_code + '_' + shippingMethod.method_code)
-                if(sMethodElement.length){
+                var shippingMethodExist = shippingMethod.carrier_code + '_' + shippingMethod.method_code;
+                var sMethodElement = $("#s_method_"+shippingMethodExist)
+                if(sMethodElement.length ){
                     var sMethodElementClosestTbl = sMethodElement.closest('table');
                     var sMethodElementClosestTr = sMethodElement.closest('tr');
                     
@@ -256,11 +258,34 @@ define(
                     
                 }
                 
-                
                 selectShippingMethodAction(shippingMethod);
                 checkoutData.setSelectedShippingRate(shippingMethod.carrier_code + '_' + shippingMethod.method_code);
 
                 return true;
+            },
+            /**
+             * @param {Object} customUI_shippingMethod
+             * @return {Boolean}
+             */
+            customUI_selectShippingMethod: function (shippingMethod) {
+                
+                var shippingMethodExist = quote.shippingMethod() ?
+                    quote.shippingMethod().carrier_code + '_' + quote.shippingMethod().method_code
+                    : null;
+                if(shippingMethodExist != null) {   
+                    var sMethodElement = $("#s_method_"+shippingMethodExist)
+                    if(sMethodElement.length){
+                        var sMethodElementClosestTbl = sMethodElement.closest('table');
+                        var sMethodElementClosestTr = sMethodElement.closest('tr');
+                        
+                        sMethodElementClosestTbl.find('tr').removeClass('active-method');
+                        sMethodElementClosestTr.addClass('active-method');
+                        
+                    }
+                }
+                
+                return shippingMethodExist;
+                
             },
 
             /**
