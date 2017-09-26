@@ -188,20 +188,80 @@
                     color: @pdp-review-link__color;
                 }
             }
-
+            .item-title {
+                font-weight: 500;
+                color: #383838;
+                font-size: 1.4rem;
+                letter-spacing: 0.1px;
+            }
+            
             .item-options {
-                margin: 0 0 16px;
+                margin: 0 0 10px;
+                font-size: 1.4rem;
+                letter-spacing: 0.1px;
+                color: #4a4a4a;
 
                 .field {
+                                        
                     .radio {
                         float: left;
+                        
+                        visibility: hidden;
+                        position: absolute;
                     }
 
                     .radio {
                         + .label {
+                            /* display: block;
+                            margin: 0;
+                            overflow: hidden; */
+                            
+                            .lib-icon-font(
+                            @icon-comment-reflected, 
+                            @_icon-font-size: 20px,
+                            @_icon-font-line-height: 20px,
+                            @_icon-font-text-hide: true,
+                            @_icon-font-color: fade(#d7d7d7,90),
+                            @_icon-font-color-hover: false,
+                            @_icon-font-color-active: false
+                            );
+                            
+                            position: relative;
                             display: block;
                             margin: 0;
                             overflow: hidden;
+                            
+                            padding-bottom: 5px;
+                            padding-top: 5px;
+                            padding-left: 35px;
+                            
+                            &:before {
+                                position: absolute;
+                                
+                                font-size: 0;
+                                border: 1px solid fade(#d7d7d7,90);
+                                background: #FFF;
+                                border-radius: 50%;
+                                width: 20px;
+                                height: 20px;
+                                
+                                left: 0;
+                                box-sizing: border-box;
+                                
+                            }
+                        }
+                    }
+                    
+                    &.active-method {
+                        .radio {
+                            + .label {
+                                &:before {
+                                    color: @sd_base__color;
+                                    
+                                    border-color: @sd_base__color;
+                                    background: @sd_base__color;
+                                }
+                            }
                         }
                     }
                 }
