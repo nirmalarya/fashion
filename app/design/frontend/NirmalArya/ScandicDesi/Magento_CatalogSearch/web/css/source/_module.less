@@ -68,7 +68,39 @@
         }
 
         .action.search {
-            display: none;
+            
+            .lib-button-icon(
+            @_icon-font-content: @icon-search,
+            @_icon-font-size: 2.6rem,
+            @_icon-font-text-hide: true,
+            @_icon-font-color: @header-icons-color,
+            @_icon-font-color-hover: @header-icons-color-hover,
+            @_icon-font-line-height: 4.2rem
+            );
+            .lib-button-reset();
+            position: absolute;
+            top: 0;
+            z-index: 1;
+            
+            
+            left: 0;
+            margin-top: 2rem;
+            width: 4rem;
+            margin-left: 1rem;
+                
+            &:focus {
+                &:before {
+                    .lib-css(color, @color-gray20);
+                }
+            }
+            &:before {
+                background: url('../images/search-icon.svg') no-repeat center;
+                background-size: 100%;
+                text-indent: -9999px;
+                width: 2rem;
+                height: 4.2rem;
+            }
+                        
         }
 
         .control {
@@ -89,6 +121,9 @@
             font-weight: 200;
             text-align: center;
             color: @color-black;
+            height: 4.2rem;
+            padding: 0 4rem;
+            border: none;
         }
 
         .nested {
@@ -350,27 +385,27 @@
             @_icon-font-line-height: 5rem
             );
             .lib-button-reset();
-            position: absolute;
+            /* position: absolute; */
            /*  right: @indent__s; */
-            top: 0;
-            z-index: 1;
+            /* top: 0;
+            z-index: 1; */
 			/* display: none; */
             
             
             left: 0;
             margin-top: 75px;
-            width: 4rem;
+           /*  width: 4rem; */
             margin-left: 3.5rem;
                 
-            &:focus {
+           /*  &:focus {
                 &:before {
                     .lib-css(color, @color-gray20);
                 }
-            }
+            } */
             &:before {
-                background: url('../images/search-icon.svg') no-repeat center;
+               /*  background: url('../images/search-icon.svg') no-repeat center;
                 background-size: 100%;
-                text-indent: -9999px;
+                text-indent: -9999px; */
                 width: 2.6rem;
                 height: 5rem;
             }

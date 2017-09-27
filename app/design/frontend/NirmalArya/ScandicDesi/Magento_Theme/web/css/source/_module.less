@@ -234,6 +234,8 @@
 								text-indent: -9999px;
 								width: 2rem;
 								height: 2rem;
+                                
+                                margin-right: .5rem;
 							}							
 						}
 					}					
@@ -243,12 +245,12 @@
                     float: none;
                     display: inline-block;
                     
-                    &.active {
+                    /* &.active {
                         overflow: hidden;
                         height: 50px;
                         margin-bottom: 1.5rem;
                         z-index: 7;
-                    }
+                    } */
                     
 					img {
 						display: inline-block;
@@ -1104,12 +1106,27 @@
             .account_li.wrapper{
                 margin-top: 1rem;
             }
+            
+            
         }
         &.fixed {
             .minicart-wrapper,
             .mbl_search_btn,
             .account_li.wrapper{
                 margin-top: 1rem;
+            }
+            
+        }
+        .mbl_search_btn {
+            margin-right: 2rem;
+            
+            &.active {
+                margin-right: 0;
+                margin-left: 0;
+                
+                &:before {
+                    width: 1.5rem;
+                }
             }
         }
     }
@@ -1624,7 +1641,13 @@
 
     .logo {
         margin: -@indent__s auto @indent__s 0;
-
+            
+        &.active {
+            overflow: hidden;
+            height: 50px;
+            margin-bottom: 1.5rem;
+            z-index: 7;
+        }
         img {
             max-height: inherit;
         }

@@ -1146,10 +1146,10 @@ a.ais-current-refined-values--link:hover .clear-cross:before{
     color: #9d9c9c;
 
 }
-.minisearch input[type=text]{
+/* .minisearch input[type=text]{
 	padding-right: 3.4rem;
     border: 0;
-}
+} */
 
 .instant-search-bar-wrapper  .ais-search-box:before {
     -webkit-font-smoothing: antialiased;
