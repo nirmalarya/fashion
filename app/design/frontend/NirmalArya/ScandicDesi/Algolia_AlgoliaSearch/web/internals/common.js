@@ -64,7 +64,47 @@ requirejs(['algoliaBundle'], function(algoliaBundle) {
 				'uenc': AlgoliaBase64.mageEncode(action),
 				'formKey': algoliaConfig.instant.addToCartParams.formKey
 			};
+            
+            // Add parameters
+			var compareUrl = algoliaConfig.instant.extraRequiredParams.compareUrl;
+			var quickViewUrl = algoliaConfig.instant.extraRequiredParams.quickViewUrl;
+			var wishListUrl = algoliaConfig.instant.extraRequiredParams.wishListUrl;
+			var currentUrl_Encode = algoliaConfig.instant.extraRequiredParams.currentUrl_Encode;
+			var quickViewButtonText = algoliaConfig.instant.extraRequiredParams.quickViewButtonText;
+			var isQuickViewEnable = algoliaConfig.instant.extraRequiredParams.isQuickViewEnable;
 			
+            /******Compare ******/
+			var comparePostData = {
+						"action":compareUrl, 
+						"data":{
+							"product": hit.objectID,
+							'uenc': currentUrl_Encode
+						}
+			};
+			/****** Compare ******/
+            
+            /******Wishlist ******/
+			var wishListPostData = {
+						"action":wishListUrl, 
+						"data":{
+							"product": hit.objectID,
+							'uenc': currentUrl_Encode
+						}
+			};
+			/****** Wishlist ******/
+            
+            /****** Quick View ******/
+			var quickViewUrlData = quickViewUrl + 'id/' + hit.objectID + '/';
+			/****** Quick View ******/
+            
+            hit.isQuickViewEnable = isQuickViewEnable ;
+			hit.quickViewUrlData = quickViewUrlData ;
+			hit.quickViewButtonText = quickViewButtonText ;
+			hit.comparePostData = JSON.stringify(comparePostData);			
+			hit.wishListPostData = JSON.stringify(wishListPostData);
+            hit.outOfStock = (hit.in_stock === ""?1:"");            
+            
+            
 			return hit;
 		};
 		

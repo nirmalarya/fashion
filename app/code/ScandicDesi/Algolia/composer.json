@@ -1,0 +1,24 @@
+{
+    "name": "scandicdesi/algolia",
+    "description": "N/A",
+    "authors": [
+        {
+          "name": "Kanhaiya Lal",
+          "email": "kanhaiya5590@gmail.com"
+        }
+    ],
+    "require": {
+        "magento/module-catalog": "101.*"
+    },
+    "type": "magento2-module",
+    "version": "100.0.0",
+    "license": ["MIT"],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "ScandicDesi\\Algolia\\": ""
+        }
+    }
+}
