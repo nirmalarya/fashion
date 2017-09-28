@@ -363,7 +363,32 @@ requirejs(['algoliaBundle'], function(algoliaBundle) {
 		/** Add all facet widgets to instantsearch object **/
 		
 		window.getFacetWidget = function (facet, templates) {
-			
+			if(facet.attribute == 'color') {
+               // var facetTemplateColors = '<a href="javascript:void(0);" data-facet-value="{{name}}" class="facet-color {{#isRefined}}checked{{/isRefined}}"></a>';
+                
+                var facetTemplateColors = '<label class="facet-color-label  {{cssClasses.label}} {{#isRefined}}selected{{/isRefined}}" data-facet-value="{{name}}" >';
+                facetTemplateColors += '<input type="checkbox" class="{{cssClasses.checkbox}}" value="{{name}}" {{#isRefined}}checked{{/isRefined}} />';
+                facetTemplateColors += '{{name}}';
+                // facetTemplateColors += '<span class="{{cssClasses.count}}">{{#helpers.formatNumber}}{{count}}{{/helpers.formatNumber}}</span>';
+                facetTemplateColors += '</label>';
+                
+                
+                return ['refinementList', {
+					container: facet.wrapper.appendChild(createISWidgetContainer(facet.attribute)),
+					attributeName: facet.attribute,
+					limit: algoliaConfig.maxValuesPerFacet,
+					operator: 'or',
+					// templates: templates,
+                    templates: {
+                        header: '<div class="name">' + (facet.label ? facet.label : facet.attribute) + '</div>',
+                        item: facetTemplateColors
+                    },
+					cssClasses: {
+						root: 'facet disjunctive custom-color-swatches'
+					}
+				}];
+                
+            }
 			if (facet.type === 'priceRanges') {
 				delete templates.item;
 				

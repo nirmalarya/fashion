@@ -2471,3 +2471,155 @@ a.ais-current-refined-values--link:hover .clear-cross:before{
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    #algolia_instant_selector  .custom-color-swatches:after {
+        content: "";
+        display: table;
+        clear: both; 
+    }
+    #algolia_instant_selector .custom-color-swatches .ais-refinement-list--item { 
+        display:inline-block;
+    }
+    #algolia_instant_selector .custom-color-swatches .ais-refinement-list--item:before{ 
+        display:none;
+    }
+       
+    #algolia_instant_selector .custom-color-swatches .facet-color-label {
+        width: 32px;
+        height: 32px;
+        /* border-radius: 3px; */
+        margin: 0 8px 5px;
+        display: block;
+        overflow: hidden;
+        float: left;
+        text-indent: -9999px;
+        border: 1px solid #a9a8a8;
+        box-sizing: border-box;
+        padding: 0;
+    }
+    #algolia_instant_selector .custom-color-swatches     .facet-color-label.selected {
+        box-shadow: inset 0 0 0 4px rgba(255, 255, 255, 0.5); 
+    }
+    #algolia_instant_selector .custom-color-swatches     .facet-color-label[data-facet-value="White"].selected {
+        box-shadow: inset 0 0 0 4px rgba(0, 0, 0, 0.2); 
+    }
+    .facet-color-label[data-facet-value="White"] {
+       background-color: #FFFFFF;
+       box-shadow: inset 0 0 0 1px #CCC; 
+    }
+    .facet-color-label[data-facet-value="White"].selected {
+       box-shadow: inset 0 0 0 4px rgba(0, 0, 0, 0.1); 
+    }
+    .facet-color-label[data-facet-value="Black"] {
+       background-color: #000000; 
+    }
+    .facet-color-label[data-facet-value="Black-brown"] {
+       background-color: #382919; 
+    }
+    .facet-color-label[data-facet-value="Pink"] {
+       background-color: #C0116D; 
+    }
+    .facet-color-label[data-facet-value="Gray"] {
+       background-color: #6F6E6C; 
+    }
+    .facet-color-label[data-facet-value="Blue"] {
+       background-color: #5182A1; 
+    }
+    .facet-color-label[data-facet-value="Green"] {
+       background-color: #1E9C5E; 
+    }
+    .facet-color-label[data-facet-value="Brown"] {
+       background-color: #7B6A63; 
+    }
+    .facet-color-label[data-facet-value="Red"] {
+       background-color: #BC1C1A; 
+    }
+    .facet-color-label[data-facet-value="Dark gray"] {
+       background-color: #444348; 
+    }
+    .facet-color-label[data-facet-value="Silver color"] {
+       background-color: #AAAAA8; 
+    }
+    .facet-color-label[data-facet-value="Light brown"] {
+       background-color: #C19A6E; 
+    }
+    .facet-color-label[data-facet-value="Black-brown stain"] {
+       background-color: #4B4640; 
+    }
+    .facet-color-label[data-facet-value="Off-white"] {
+       background-color: #D0C8B4; 
+    }
+    .facet-color-label[data-facet-value="Beige"] {
+    background-color: #C9B8A3; 
+    }
+    .facet-color-label[data-facet-value="Light green"] {
+       background-color: #ABBD9B; 
+    }
+    .facet-color-label[data-facet-value="White stain"] {
+       background-color: #E4E1DC; 
+    }
+    .facet-color-label[data-facet-value="Turquoise"] {
+       background-color: #46BCC9; 
+    }
+    .facet-color-label[data-facet-value="Birch effect"] {
+       background-color: #CBBFA4; 
+    }
+    .facet-color-label[data-facet-value="Yellow"] {
+       background-color: #F5E500; 
+    }
+    .facet-color-label[data-facet-value="Dark blue"] {
+       background-color: #374063; 
+    }
+    .facet-color-label[data-facet-value="Galvanized"] {
+       background-color: #726F6A; 
+    }
+    .facet-color-label[data-facet-value="Birch"] {
+       background-color: #726F6A; 
+    }
+    .facet-color-label[data-facet-value="Dark brown"] {
+       background-color: #74523E; 
+    }
+    .facet-color-label[data-facet-value="High gloss gray"] {
+       background-color: #E5E5E5; 
+    }
+    .facet-color-label[data-facet-value="Gray/white"] {
+       background-color: #E5E5E5; 
+    }
+    .facet-color-label[data-facet-value="Red/white"] {
+       background-color: #FA757B; 
+    }
+    .facet-color-label[data-facet-value="Clear"] {
+       background-color: #D5DAE0; 
+    }
+    .facet-color-label[data-facet-value="Matte black"] {
+       background-color: #616872; 
+    }
+    .facet-color-label[data-facet-value="Matte white"] {
+       background-color: #DCDBD7; 
+    }
+
+    .facet-color-label[data-facet-value="Orange"] {
+        background-color: #ffa500; 
+    }
+
+    .facet-color-label[data-facet-value="Purple"] {
+        background-color: #800080; 
+    }
+
+
+
