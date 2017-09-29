@@ -41,6 +41,18 @@
                 </block>
             </container>
         </referenceContainer>
+        
+        
+        <referenceContainer name="content.aside">
+            <container name="upsell_related_products-container" as="upsell_related_products-container" label="Custom - Upsell and Related Container" htmlTag="div" htmlClass="upsell-related-products-container new-arrivals-best-picks-tab-product-items"  before="-" >
+            
+                <container name="upsell_related_products" as="upsell_related_products" label="Custom - Upsell and Related Container" htmlTag="div" htmlClass="product data items" htmlId="upsell-related-products" before="-" />
+            
+            </container>
+        </referenceContainer>
+        
+        
+        
         <move element="page.main.title" destination="product.info.main" before="-"/>       
         <move element="product.info.overview" destination="product.info.price" after="product.price.final"/>
         <!-- <move element="product.info.review" destination="product.info.main" before="product.info.price"/>
@@ -49,5 +61,9 @@
         
         <move element="product.info.type" destination="product.info.extrahint" after="-" />
         <referenceBlock name="product.info.mailto" remove="true" />
+        
+        <move element="catalog.product.related" destination="upsell_related_products" />
+        <move element="product.info.upsell" destination="upsell_related_products" />
+        
     </body>
 </page>
