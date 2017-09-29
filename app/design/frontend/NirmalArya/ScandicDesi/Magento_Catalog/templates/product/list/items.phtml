@@ -7,6 +7,8 @@
 // @codingStandardsIgnoreFile
 
 /* @var $block \Magento\Catalog\Block\Product\AbstractProduct */
+
+$owlCarouselItems = 3;
 ?>
 
 <?php
@@ -105,6 +107,7 @@ switch ($type = $block->getType()) {
             $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::SHORT_VIEW;
             $description = false;
             $canItemsAddToCart = false;
+            $owlCarouselItems = 4;
         }
     break;
 
@@ -123,6 +126,7 @@ switch ($type = $block->getType()) {
             $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::SHORT_VIEW;
             $description = false;
             $canItemsAddToCart = false;
+            $owlCarouselItems = 4;
         }
     break;
 
@@ -202,7 +206,7 @@ switch ($type = $block->getType()) {
         <div class="products wrapper grid products-grid products-<?php /* @escapeNotVerified */ echo $type; ?>">
             <ol class="products list items product-items owl-carousel"  data-mage-init='{
                "OwlCarousel":{ 
-                    "items":3,
+                    "items": <?php echo $owlCarouselItems; ?>,
                     "nav":true,
                     "responsive":{
                         "0":{
@@ -212,7 +216,10 @@ switch ($type = $block->getType()) {
                             "items":"2.5"
                         },
                         "1024":{
-                            "items":3
+                            "items": 3
+                        },
+                        "1360":{
+                            "items":<?php echo $owlCarouselItems; ?>
                         }
                     }
                }}' >
