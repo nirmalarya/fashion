@@ -72,20 +72,16 @@ class Offers implements SectionSourceInterface
     {
         $title = '';
         $message = '';
-        $subTotal = (float)$this->checkoutSession->getQuote()->getBaseSubtotalWithDiscount();
-        $itemsQty = (float)$this->checkoutSession->getQuote()->getItemsQty();
-        $freeShippingThreshold = $this->getFreeShippingThresholdValue();
-        if ($freeShippingThreshold !== null && $itemsQty) {
-            $additional = $freeShippingThreshold - $subTotal;
-            if ($additional > 0) {
-                $formattedAdditionalValue = $this->pricingHelper->currency($additional, true, false);
-                $shippingMessage = $this->config->getConfigValue('shipping', 'cart_offers_messages');
-                $message = __(
-                    $shippingMessage,
-                    $formattedAdditionalValue
-                );
-                $title = __('Free Shipping');
-            }
+        $freeShippingApplicable = $this->isFreeShippingOfferApplicable();
+        if ($freeShippingApplicable) {
+            $difference = $this->shipping->getFreeShippingThresholdDifference();
+            $formattedAdditionalValue = $this->pricingHelper->currency($difference, true, false);
+            $shippingMessage = $this->config->getConfigValue('shipping', 'cart_offers_messages');
+            $message = __(
+                $shippingMessage,
+                $formattedAdditionalValue
+            );
+            $title = __('Free Shipping');
         }
         return [
             'title' => $title,
@@ -94,14 +90,16 @@ class Offers implements SectionSourceInterface
     }
 
     /**
-     * @return float|null
+     * Return true if the Free Shipping is applicable else return false
+     * @return bool|float
      */
-    private function getFreeShippingThresholdValue()
+    public function isFreeShippingOfferApplicable()
     {
-        $freeShipping = $this->shipping->isFreeShippingAvailable();
-        if ($freeShipping) {
-            return (float)($this->shipping->getConfigData('free_shipping_subtotal'));
+        $itemsQty = (float) $this->checkoutSession->getQuote()->getItemsQty();
+        $isApplicable = $this->shipping->isFreeShippingApplicable();
+        if (!$isApplicable && $itemsQty) {
+            return true;
         }
-        return null;
+        return false;
     }
 }

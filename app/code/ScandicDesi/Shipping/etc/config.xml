@@ -16,7 +16,8 @@
                 <title>ScandicDesi Shipping</title>
                 <sallowspecific>0</sallowspecific>
                 <model>ScandicDesi\Shipping\Model\Carrier\Shipping</model>
-                <scandicdesi_express_price>10.00</scandicdesi_express_price>
+                <scandicdesi_express_price>200</scandicdesi_express_price>
+                <scandicdesi_standard_price>100</scandicdesi_standard_price>
                 <allowed_methods></allowed_methods>
                 <type>I</type>
                 <specificerrmsg>This shipping method is currently unavailable. If you would like to ship using this shipping method, please contact us.</specificerrmsg>

@@ -39,6 +39,10 @@
                     <label>Express Price</label>
                     <validate>validate-number validate-zero-or-greater</validate>
                 </field>
+                <field id="scandicdesi_standard_price" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Standard Price</label>
+                    <validate>validate-number validate-zero-or-greater</validate>
+                </field>
                 <field id="handling_type" translate="label" type="select" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Calculate Handling Fee</label>
                     <source_model>Magento\Shipping\Model\Source\HandlingType</source_model>

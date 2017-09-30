@@ -9,6 +9,7 @@
 namespace ScandicDesi\Shipping\Model\Carrier;
 
 use Magento\Customer\Model\Session as CustomerSession;
+use Magento\Checkout\Model\Session as CheckoutSession;
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Quote\Model\Quote\Address\RateRequest;
 use Magento\Quote\Model\Quote\Address\RateResult\Error;
@@ -28,7 +29,9 @@ use Psr\Log\LoggerInterface;
  */
 class Shipping extends AbstractCarrier implements CarrierInterface
 {
-    const FREE_SHIPPING = 'scandicdesi_free';
+    const SHIPPING_FREE = 'scandicdesi_free';
+    const SHIPPING_STANDARD = 'scandicdesi_standard';
+    const SHIPPING_EXPRESS = 'scandicdesi_express';
     /**
      * @var string
      */
@@ -53,6 +56,18 @@ class Shipping extends AbstractCarrier implements CarrierInterface
      * @var CustomerSession\Proxy
      */
     private $customerSessionProxy;
+    /**
+     * @var RateRequest|null
+     */
+    private $request;
+    /**
+     * @var float|null
+     */
+    private $freeShippingThresholdDifference = null;
+    /**
+     * @var CheckoutSession\Proxy
+     */
+    private $checkoutSession;
 
     /**
      * Shipping constructor.
@@ -63,6 +78,7 @@ class Shipping extends AbstractCarrier implements CarrierInterface
      * @param ResultFactory $rateResultFactory
      * @param MethodFactory $rateMethodFactory
      * @param CustomerSession\Proxy $customerSessionProxy
+     * @param CheckoutSession\Proxy $checkoutSession
      * @param array $data
      */
     public function __construct(
@@ -72,6 +88,7 @@ class Shipping extends AbstractCarrier implements CarrierInterface
         ResultFactory $rateResultFactory,
         MethodFactory $rateMethodFactory,
         CustomerSession\Proxy $customerSessionProxy,
+        CheckoutSession\Proxy $checkoutSession,
         array $data = []
     ) {
         parent::__construct($scopeConfig, $rateErrorFactory, $logger, $data);
@@ -79,6 +96,7 @@ class Shipping extends AbstractCarrier implements CarrierInterface
         $this->rateMethodFactory = $rateMethodFactory;
         $this->rateErrorFactory = $rateErrorFactory;
         $this->customerSessionProxy = $customerSessionProxy;
+        $this->checkoutSession = $checkoutSession;
     }
 
     /**
@@ -106,6 +124,38 @@ class Shipping extends AbstractCarrier implements CarrierInterface
     }
 
     /**
+     * Return true if the Free Shipping is applicable else return false
+     * @return bool|float
+     */
+    public function isFreeShippingApplicable()
+    {
+        $thresholdDifference = $this->getFreeShippingThresholdDifference();
+        if ($this->isFreeShippingAvailable() &&
+            $thresholdDifference <= 0
+        ) {
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Get the free shipping threshold and subtotal difference
+     */
+    public function getFreeShippingThresholdDifference()
+    {
+        if ($this->freeShippingThresholdDifference === null) {
+            if ($this->getRequest() !== null) {
+                $subTotal = (float) $this->getRequest()->getBaseSubtotalInclTax();
+            } else {
+                $subTotal = (float) $this->checkoutSession->getQuote()->getBaseSubtotal();
+            }
+            $freeShippingThreshold = (float) $this->getConfigData('free_shipping_subtotal');
+            $this->freeShippingThresholdDifference = $freeShippingThreshold - $subTotal;
+        }
+        return (float) $this->freeShippingThresholdDifference;
+    }
+
+    /**
      * Get configuration data of carrier
      *
      * @param string $code
@@ -115,11 +165,12 @@ class Shipping extends AbstractCarrier implements CarrierInterface
     public function getCode($code = '', $includeFree = false)
     {
         $codes = [
-            'scandicdesi_express' => __('Express Shipping')
+            self::SHIPPING_STANDARD => __('Standard Shipping'),
+            self::SHIPPING_EXPRESS => __('Express Shipping')
         ];
 
         if ($includeFree && $this->isFreeShippingAvailable()) {
-            $codes[self::FREE_SHIPPING] = __('Free Shipping');
+            $codes[self::SHIPPING_FREE] = __('Free Shipping');
         }
 
         if ($code == '') {
@@ -136,14 +187,15 @@ class Shipping extends AbstractCarrier implements CarrierInterface
     /**
      * Set result for request
      *
+     * @param $request
      * @return $this
      */
     public function setResult()
     {
         /** @var Result */
-        $this->result = $this->rateResultFactory->create();
-
+        $this->result = $this->getResult();
         $methods = $this->getAllowedMethods();
+
         foreach ($methods as $code => $label) {
             /** @var Method $method */
             $method = $this->rateMethodFactory->create();
@@ -155,7 +207,6 @@ class Shipping extends AbstractCarrier implements CarrierInterface
             $amount = $this->getConfigData($code . '_price');
             $method->setCost($amount);
             $method->setPrice($amount);
-
             $this->result->append($method);
         }
 
@@ -176,7 +227,8 @@ class Shipping extends AbstractCarrier implements CarrierInterface
     }
 
     /**
-     * get allowed methods
+     * Get allowed methods
+     *
      * @return array
      */
     public function getAllowedMethods()
@@ -185,13 +237,48 @@ class Shipping extends AbstractCarrier implements CarrierInterface
         $allowedMethods = explode(',', $allowedMethods);
         $allowed = [];
         foreach ($allowedMethods as $method) {
-            $allowed[$method] = $this->getCode($method);
+            if ($method) {
+                $allowed[$method] = $this->getCode($method);
+            }
         }
         // add free shipping if applicable
-        if ($this->isFreeShippingAvailable()) {
-            $allowed[self::FREE_SHIPPING] = $this->getCode(self::FREE_SHIPPING, true);
+        if ($this->isFreeShippingApplicable()) {
+            $allowed[self::SHIPPING_FREE] = $this->getCode(self::SHIPPING_FREE, true);
         }
+        $allowed = $this->filterMethods($allowed);
         return $allowed;
+    }
+
+    /**
+     * Get allowed methods
+     *
+     * @param $methods
+     * @return array
+     */
+    private function filterMethods($methods)
+    {
+        if (isset($methods[self::SHIPPING_FREE]) && isset($methods[self::SHIPPING_STANDARD])) {
+            unset($methods[self::SHIPPING_STANDARD]);
+        }
+        return $methods;
+    }
+
+    /**
+     * @param $request
+     * @return $this
+     */
+    private function setRequest($request)
+    {
+        $this->request = $request;
+        return $this;
+    }
+
+    /**
+     * @return RateRequest
+     */
+    private function getRequest()
+    {
+        return $this->request;
     }
 
     /**
@@ -208,6 +295,7 @@ class Shipping extends AbstractCarrier implements CarrierInterface
             return $this->getErrorMessage();
         }
 
+        $this->setRequest($request);
         $this->setResult();
 
         return $this->getResult();
@@ -218,7 +306,7 @@ class Shipping extends AbstractCarrier implements CarrierInterface
      *
      * @return bool|Error
      */
-    protected function getErrorMessage()
+    private function getErrorMessage()
     {
         if ($this->getConfigData('showmethod')) {
             /** @var Error $error */
