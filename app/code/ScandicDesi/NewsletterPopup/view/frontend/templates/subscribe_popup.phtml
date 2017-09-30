@@ -1,7 +1,7 @@
 <?php
 /** @var \ScandicDesi\NewsletterPopup\Block\Subscribe $block */
 ?>
-<div class="newsletter-popup no-display" data-role="popup" data-mage-init='{"newsletterPopup": {}}'>
+<div class="newsletter-popup no-display" data-role="newsletter-popup">
     <div class="left-block">
         <?php echo $block->getLeftBlock('newsletter_popup_left_block'); ?>
     </div>
@@ -15,7 +15,19 @@
         <div class="newsletter-popup-footer-content">
             <p><?php echo __('*Offer will arrive in email, Valid for full priced items.'); ?></p>
         </div>
-        
-        
     </div>
+    <!-- ko if: newsletter.newsletter -->
+    <script type="text/x-magento-init">
+        {
+            "[data-role='newsletter-popup']": {
+                "newsletterPopup": {
+                    "showPopup": ""
+                }
+            }
+        }
+    </script>
+    <!-- /ko -->
 </div>
+<script type="text/x-magento-init">
+    {"[data-role=newsletter-popup]": {"Magento_Ui/js/core/app": <?php echo $block->getJsLayout();?>}}
+</script>

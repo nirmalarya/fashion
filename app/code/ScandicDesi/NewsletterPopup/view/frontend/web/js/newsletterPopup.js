@@ -5,52 +5,66 @@
 define([
     "jquery",
     "underscore",
+    "Magento_Customer/js/customer-data",
     "jquery/ui",
     "Magento_Ui/js/modal/modal",
     "mage/cookies",
     "mage/validation"
-], function($, _) {
+], function($, _, customerData) {
     "use strict";
 
-    var newsletterPopup = {
-        options: {
+    $.widget('scandicdesi.newsletterPopup', {
+        defaults: {
             actionSelector: ".action.subscribe",
             formSelector: ""
         },
-        init: function (options, element) {
+        _create: function (options) {
             var _this = this;
-            _this.options = $.extend(_this.options, options);
-            _this.options.element = element;
+            _this.options = $.extend(_this.defaults, options);
             if (_this.options.formSelector) {
                 _this.form = $(_this.options.formSelector);
             } else {
-                _this.form = $(_this.options.element).closest('form');
+                _this.form = $(_this.element).closest('form');
             }
+
+            _this.popup = jQuery(_this.element).modal({
+                title: _('NewsLetter Popup'),
+                modalClass: "newsletter-model-popup",
+                buttons: []
+            });
+
+            $(document).ajaxComplete(function (event, xhr, settings) {
+                if (settings.url.indexOf('customer/section/load') > 0) {
+                    _this.init();
+                }
+            });
+        },
+        init: function () {
+            var _this = this;
             if (_this.isPopupVisible()) {
-                _this.popup = jQuery(_this.options.element).modal({
-                    title: _('NewsLetter Popup'),
-                    modalClass: "newsletter-model-popup",
-                    buttons: []
-                });
                 _this.popup.modal('openModal');
 
                 $(document).on('submit', _this.form, function() {
                     _this.stopPopup();
-                })
+                });
+
+                _this.popup.on('modalclosed', function() {
+                    _this.stopPopup();
+                });
             }
         },
         isPopupVisible: function () {
-            return !$.mage.cookies.get('newsletterPopup');
+            return !customerData.get("newsletter")().subscribed;
         },
         stopPopup: function () {
             var _this = this;
             if (_this.form.validation('isValid')) {
-                $.mage.cookies.set('newsletterPopup', true);
+                var newsletter = customerData.get("newsletter")();
+                newsletter.subscribed = true;
+                customerData.set("newsletter", newsletter);
             }
         }
-    };
+    });
 
-    return function(config, element) {
-        newsletterPopup.init(config, element);
-    }
+    return $.scandicdesi.newsletterPopup;
 });
