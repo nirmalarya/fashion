@@ -12,7 +12,8 @@
             <container name="checkout.cart.header.container" htmlTag="div" htmlClass="cart-header-container" before="-">
 				<block class="Magento\Checkout\Block\Cart" name="checkout.cart.header.content" as="cart.header.content" template="cart/cart-header-content.phtml"  >
 					<block class="Magento\Checkout\Block\Onepage\Link" name="checkout.cart.methods.onepage.bottom1" template="onepage/link.phtml" />
-				</block>				
+					<block class="ScandicDesi\Checkout\Block\Cart" name="scandicdesi.cart" />
+				</block>
 			</container>	
             
             <container name="cart.summary.discount" label="Cart Summary and Discount Container" htmlTag="div" htmlClass="cart-summary-discount" after="cart-items" >  
