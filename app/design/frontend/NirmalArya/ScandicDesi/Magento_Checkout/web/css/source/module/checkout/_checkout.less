@@ -71,7 +71,7 @@
         }
         
         .page-header {
-            z-index: 999;
+            z-index: 899; // model override issue of increase then 900
         }
     }
     
@@ -138,13 +138,22 @@
         padding-right: @indent__l; 
         
         padding-left: @layout-indent__width;
+        
         box-sizing: border-box;
         
+    }
+    .opc-wrapper,
+    form.payments,
+    form.form-shipping-address {
+    
+        box-sizing: border-box;
         .fieldset > .field {
-            width: 48%;
-            display: inline-block;
-            margin-right: 2%;
-            vertical-align: top;
+            &:not(.choice) {
+                width: 48%;
+                display: inline-block;
+                margin-right: 2%;
+                vertical-align: top;
+            }
         }
     }
     
