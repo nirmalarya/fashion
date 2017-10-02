@@ -8,7 +8,7 @@
 //  _____________________________________________
 
 @checkout-tooltip__hover__z-index: @tooltip__z-index;
-@checkout-tooltip-breakpoint__screen-m: @modal-popup-breakpoint-screen__m;
+@checkout-tooltip-breakpoint__screen-m: @screen__m + 1;
 
 @checkout-tooltip-icon-arrow__font-size: 10px;
 @checkout-tooltip-icon-arrow__left: -( @checkout-tooltip-content__padding + @checkout-tooltip-icon-arrow__font-size - @checkout-tooltip-content__border-width);
@@ -18,7 +18,7 @@
 @checkout-tooltip-icon__font-size: 24px;
 @checkout-tooltip-icon__hover__color: @primary__color;
 
-@checkout-tooltip-content__background-color: @color-gray-light01;
+@checkout-tooltip-content__background-color: @color-white-fog;
 @checkout-tooltip-content__border-color: @color-gray60;
 @checkout-tooltip-content__border-width: 1px;
 @checkout-tooltip-content__font-size: @font-size__base;
@@ -143,7 +143,7 @@
     }
 }
 
-.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @checkout-tooltip-breakpoint__screen-m) {
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @checkout-tooltip-breakpoint__screen-m) {  
     .field-tooltip {
         .field-tooltip-content {
             &:extend(.abs-checkout-tooltip-content-position-top-mobile all);
