@@ -96,27 +96,29 @@
             margin: 0 0 @indent__base;            
         }
         
-        .payment-option-inner,
-        .actions-toolbar {
-            display: table-cell;
-        }
+        .discount-code {
+            .payment-option-inner,
+            .actions-toolbar {
+                display: table-cell;
+            }
         
-        .actions-toolbar {
-            vertical-align: top;
-            width: 1%;
-            
-            .action {
-                &.action-apply,
-                &.action-cancel {
-                    &:extend(.abs-revert-to-action-secondary all);
-                    border-bottom-left-radius: 0;
-                    border-top-left-radius: 0;
-                    margin: 0 0 0 -1px;
-                    white-space: nowrap;
-                    width: auto;
-                }
-                &:not(:focus) {
-                    box-shadow: none;
+            .actions-toolbar {
+                vertical-align: top;
+                width: 1%;
+                
+                .action {
+                    &.action-apply,
+                    &.action-cancel {
+                        &:extend(.abs-revert-to-action-secondary all);
+                        border-bottom-left-radius: 0;
+                        border-top-left-radius: 0;
+                        margin: 0 0 0 -1px;
+                        white-space: nowrap;
+                        width: auto;
+                    }
+                    &:not(:focus) {
+                        box-shadow: none;
+                    }
                 }
             }
         }

@@ -104,6 +104,10 @@
 
         .billing-address-same-as-shipping-block {
             margin: 0 0 @indent__s;
+            font-size: 1.3rem;
+            font-weight: 300;
+            letter-spacing: 0.1px;
+            color: #58585a;
         }
 
         .checkout-billing-address {
@@ -120,8 +124,14 @@
             }
 
             .billing-address-details {
-                .lib-css(line-height, @checkout-billing-address-details__line-height);
-                .lib-css(padding, @checkout-billing-address-details__padding);
+                /* .lib-css(line-height, @checkout-billing-address-details__line-height); */
+                /* .lib-css(padding, @checkout-billing-address-details__padding); */
+                font-size: 1.4rem;
+                color: #4a4a4a;
+            }
+            
+            .choice.field {
+                margin-bottom: @indent__base;
             }
         }
 
@@ -175,7 +185,7 @@
                     .lib-css(padding, 15px @checkout-payment-method-title__padding);
                     display: block;
                     cursor: pointer;
-                    padding-left: 50px;
+                    padding-left: 55px;
                     position: relative;
                     
                     font-size: 1.8rem;
@@ -209,6 +219,8 @@
                     
                 
                     .label {
+                        cursor: default;
+                        
                         &:before {
                             color: @sd_base__color;
                             
@@ -218,6 +230,14 @@
                     }
                 }
             }
+        }
+        
+        .checkout-message-block {
+            font-size: 1.2rem;
+            letter-spacing: 0.1px;
+            color: #383838;
+            /* .lib-css(padding, @checkout-billing-address-details__padding); */
+  
         }
     }
 }
@@ -265,15 +285,9 @@
         .actions-toolbar {
             .primary {
                 /* float: right; */
-                margin: 0;
-                margin-bottom: 3rem;
-            }
+                margin: 0;               
+            }            
             
-            .action {
-                &.primary {
-                    width: 30rem;
-                }
-            }
         }
 
         .fieldset {
@@ -284,16 +298,45 @@
                 }
             }
         }
+        
+        .payment-method-content {
+            > .actions-toolbar {
+                .lib-css(padding, @checkout-billing-address-details__padding);
+                
+                .primary {
+                     margin-bottom: 3rem;
+                }
+                .action {
+                    &.primary {
+                        width: 30rem;
+                    }
+                }
+            }
+        }
+        .checkout-agreements-block {
+            .lib-css(padding, @checkout-billing-address-details__padding);
+        }
+        .checkout-message-block { 
+            .lib-css(padding, @checkout-billing-address-details__padding);
+            padding-top: 15px; 
+            padding-bottom: 15px; 
+        }
     }
 
     .checkout-billing-address {
+        > .fieldset { 
+            .lib-css(padding, @checkout-billing-address-details__padding);
+        }
+        .billing-address-details {
+            .lib-css(padding, @checkout-billing-address-details__padding);
+        }
         .action-update {
-            float: right;
+            /* float: right; */
         }
 
         .actions-toolbar {
             .action-cancel {
-                margin: 6px @indent__base 0 0;
+                margin: 0 0 0 @indent__base;
             }
         }
     }
