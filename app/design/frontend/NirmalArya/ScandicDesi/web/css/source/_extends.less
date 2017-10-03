@@ -1704,6 +1704,7 @@
         .lib-css(padding-bottom, @checkout-step-title__padding);
         .lib-typography(
         @_font-size: @checkout-step-title__font-size,
+        @_color: @color-dark_brown,
         @_font-weight: @checkout-step-title__font-weight,
         @_font-family: false,
         @_font-style: false,
@@ -1723,6 +1724,7 @@
 
         tbody,
         tfoot {
+            
             font-size: 1.3rem;
             color: @pdp-review-link__color;
             .mark {
@@ -1742,6 +1744,15 @@
                 white-space: nowrap;
                 
                 font-weight: 300;
+            }
+            
+            tr {
+                &:first-child {
+                    .mark ,
+                    .amount {
+                        padding-top: 20px;   
+                    }
+                }
             }
         }
 

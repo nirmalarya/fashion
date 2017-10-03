@@ -47,9 +47,7 @@
             &:extend(.abs-sidebar-totals all);
             
             background-color: #f8f8f8;
-            border: solid 1px #e3e3e3;
-            border-left: 0;
-            border-right: 0;
+            border-top: solid 1px #e3e3e3;
             
             
             /* margin-left: -@indent__l;
@@ -108,6 +106,10 @@
 
         //  Block title
         .items-in-cart {
+            .opc-sidebar & {
+                margin-bottom: 0;
+            }
+            
             > .title {
                /*  border-bottom: @border-width__base solid @border-color__base; */
                 .lib-css(padding, @indent__s @indent__xl @indent__s 0);
