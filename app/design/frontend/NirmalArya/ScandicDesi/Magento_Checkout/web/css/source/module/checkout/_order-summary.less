@@ -258,6 +258,39 @@
     }
 }
 
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .opc-summary-wrapper {
+        .modal-header {
+            .action-close {
+                z-index: 1;
+                margin: 22px 30px 20px;
+                
+                .lib-button-icon(
+                    @icon-remove,
+                    @_icon-font-color: @minicart-icons-color,
+                    @_icon-font-color-hover: @sd_base__color,
+                    @_icon-font-color-active: @minicart-icons-color,
+                    @_icon-font-size: 18px,
+                    @_icon-font-line-height: 2.5rem,
+                    @_icon-font-text-hide: true
+                );
+            }
+        }
+    }
+    
+    .opc-block-summary {
+        .items-in-cart {
+            > .title {
+                position: relative;
+                right: 0;
+                top: 0;
+                margin: 0 20px;
+            }
+        }
+    }
+}
+
+
 //
 //  Desktop
 //  _____________________________________________
