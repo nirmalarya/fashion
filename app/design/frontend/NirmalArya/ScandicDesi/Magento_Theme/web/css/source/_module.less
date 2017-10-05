@@ -362,9 +362,18 @@
 		}
 	}
     .page-main {
+        .page-title-wrapper {
+            color: @pdp-review-link__color;
+            font-family: @font-julius_sans_one;
+            .page-title {
+                font-size: 2.4rem; 
+                margin-bottom: 2.5rem;
+            }
+        }
+        
         > .page-title-wrapper {
             color: @color-dark_brown;
-            font-family: @font-julius_sans_one;
+            /* font-family: @font-julius_sans_one; */
             background-color: fade(@color-beige, 66%);
             padding: 2rem 0;
             margin-bottom: 1.5rem;
@@ -1500,6 +1509,12 @@
 		}
 	}
     .page-main {
+        .page-title-wrapper {
+            .page-title {
+                font-size: 3.2rem; 
+            }
+        }
+        
         > .page-title-wrapper {
             .page-products & {
                 padding: 1rem 0 4rem;

@@ -7,7 +7,7 @@
 //  Variables
 //  _____________________________________________
 
-@account-title-border-color: @color-gray-middle2;
+@account-title-border-color: fade(#979797,25); // @color-gray-middle2;
 @account-table-border-bottom-color: @color-gray-middle1;
 @account-table-action-delete: @color-red12;
 
@@ -101,6 +101,9 @@
     .box-newsletter {
         .box-content {
             &:extend(.abs-account-block-line-height all);
+            font-size: 13px;
+            font-weight: 300;
+            color: #4a4a4a;
         }
     }
 

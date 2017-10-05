@@ -1034,8 +1034,9 @@
     .abs-account-title {
         > strong,
         > span {
-            .lib-font-size(22);
+            .lib-font-size(18);
             .lib-css(font-weight, @font-weight__light);
+            color: #4a4a4a;
         }
 
         .lib-css(border-bottom, 1px solid @account-title-border-color);
@@ -1050,7 +1051,9 @@
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     .abs-account-block-font-size {
-        .lib-font-size(16);
+        .lib-font-size(13);       
+        font-weight: 300;
+        color: #4a4a4a;
     }
 }
 
@@ -1060,7 +1063,7 @@
 
 & when (@media-common = true) {
     .abs-account-block-line-height {
-        line-height: 24px;
+        /* line-height: 24px; */
     }
 }
 
@@ -1284,8 +1287,9 @@
         }
 
         .box-title {
+            font-weight: normal;
             > span {
-                .lib-font-size(16);
+                .lib-font-size(18);                
             }
 
             display: inline-block;
