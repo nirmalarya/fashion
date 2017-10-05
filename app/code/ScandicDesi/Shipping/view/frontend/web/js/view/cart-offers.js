@@ -13,9 +13,9 @@ define([
             this._super();
             this.cartOffers = customerData.get('cart-offers');
             
-            if(this.cartOffers) {
+            /* if(this.cartOffers) {
                 $('.block-cart-offer .message-area').addClass('success');
-            }
+            } */
         }
     });
 });
