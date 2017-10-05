@@ -7,13 +7,13 @@
 //  Variables
 //  _____________________________________________
 
-@collapsible-nav-background: @sidebar__background-color;
-@collapsible-nav-color: @color-gray34;
+@collapsible-nav-background: fade(#fceded, 42); // @sidebar__background-color;
+@collapsible-nav-color: @pdp-review-link__color;
 @collapsible-nav-current-border: 3px solid transparent;
 @collapsible-nav-current-border-color: @sd_base__color;
 @collapsible-nav-current-color: @color-black;
-@collapsible-nav-current-font-weight: @font-weight__semibold;
-@collapsible-nav-item-hover: @color-gray91;
+@collapsible-nav-current-font-weight: 400;
+@collapsible-nav-item-hover: @color-white;
 
 //
 //  Common
@@ -42,6 +42,8 @@
                 .lib-css(color, @collapsible-nav-color);
                 display: block;
                 padding: 5px 18px 5px 15px;
+                font-size: 16px;
+                font-weight: 300;
             }
 
             a {
@@ -58,6 +60,7 @@
                     .lib-css(border-color, @collapsible-nav-current-border-color);
                     .lib-css(color, @collapsible-nav-current-color);
                     .lib-css(font-weight, @collapsible-nav-current-font-weight);
+                    background: @color-white;
                 }
 
                 a {
@@ -88,18 +91,45 @@
     .block-collapsible-nav {
         left: 0;
         position: absolute;
-        top: -21px;
+        /* top: -21px; */
+        top: 0;
         width: 100%;
         z-index: 5;
 
         .title {
             &:extend(.abs-toggling-title-mobile all);
+            
+            background-color: fade(#f9e3e3,66);
+            .lib-css(padding, @layout__width-xs-indent @indent__xl @layout__width-xs-indent @layout__width-xs-indent);
+            
+           
+            .lib-icon-font(
+                @icon-arrow-down,
+                @_icon-font-size: 12px,
+                @_icon-font-color: @sd_base__color,                
+                @_icon-font-text-hide: false,
+                @_icon-font-margin: 8px 0 0 0,
+                @_icon-font-position: after,
+                @_icon-font-display: block
+            );
+            
+            &:after {
+                font-weight: 800;
+            }
+            
+            strong {
+                font-size: 1.8rem;
+                color: @color-dark_brown;
+                font-family: @font-julius_sans_one;
+                font-weight: normal;
+            }
         }
 
         .content {
             border-bottom: @border-width__base solid @border-color__base;
             display: none;
-
+            background-color: #fceded;
+            
             &.active {
                 display: block;
             }

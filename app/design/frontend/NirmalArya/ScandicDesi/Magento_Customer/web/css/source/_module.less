@@ -106,6 +106,15 @@
 
     //  My account
     .account {
+        .page-main {
+            > .page-title-wrapper {
+                .page-title {
+                    display: block;
+                    margin-right: auto;
+                }
+            }
+        }
+        
         .page-title-wrapper {
             .page-title {
                 display: inline-block;
@@ -502,6 +511,11 @@
     }
 
     .account {
+        .page-main {
+            > .page-title-wrapper {
+                display: none;
+            }
+        }
         .page.messages {
             margin-bottom: @indent__xl;
         }

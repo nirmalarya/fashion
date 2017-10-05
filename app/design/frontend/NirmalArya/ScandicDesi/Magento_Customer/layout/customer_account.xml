@@ -38,6 +38,17 @@
                 </block>
             </block>
         </referenceContainer>
+        
+        
+        <referenceContainer name="columns.top">
+            <block class="Magento\Theme\Block\Html\Title" name="page.main.title.heading" template="Magento_Theme::html/title.phtml" before="-" >
+                <action method="setPageTitle">
+                    <argument translate="true" name="title" xsi:type="string">My Account</argument>
+                </action>
+            </block>
+        </referenceContainer>
+        
+        
         <move element="page.main.title" destination="content.top" before="-"/>
     </body>
 </page>
