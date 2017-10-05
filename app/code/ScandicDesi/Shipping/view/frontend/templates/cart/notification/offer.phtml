@@ -1,8 +1,10 @@
 <div class="block block-cart-offer" data-bind="scope: 'cartOffers'" data-role="cart-offers">
     <!-- Content -->
     <!-- ko if: cartOffers().shipping -->
-    <p data-bind="html: cartOffers().shipping.title"></p>
-    <p data-bind="html: cartOffers().shipping.message"></p>
+    <div class="message-area message">
+        <strong data-bind="html: cartOffers().shipping.title" class="cart-offer-shipping-title"></strong> 
+        <span data-bind="html: cartOffers().shipping.message" class="cart-offer-shipping-message"></span>
+    </div>
     <!-- /ko -->
 </div>
 <script type="text/x-magento-init">

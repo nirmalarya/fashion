@@ -6,8 +6,8 @@
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <referenceContainer name="content">
-            <block class="ScandicDesi\Shipping\Block\Cart\Notification\Offer" name="cart_notification_offer" before="-"
+        <referenceContainer name="columns.top">
+            <block class="ScandicDesi\Shipping\Block\Cart\Notification\Offer" name="cart_notification_offer" after="page.messages"
                    template="ScandicDesi_Shipping::cart/notification/offer.phtml">
                 <arguments>
                     <argument name="jsLayout" xsi:type="array">
