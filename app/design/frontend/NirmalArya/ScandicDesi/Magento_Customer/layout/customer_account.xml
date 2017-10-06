@@ -39,6 +39,9 @@
             </block>
         </referenceContainer>
         
+        <referenceContainer name="sidebar.additional">
+            <referenceBlock name="sale.reorder.sidebar" remove="true"/>
+        </referenceContainer>
         
         <referenceContainer name="columns.top">
             <block class="Magento\Theme\Block\Html\Title" name="page.main.title.heading" template="Magento_Theme::html/title.phtml" before="-" >

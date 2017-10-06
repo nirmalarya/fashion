@@ -307,6 +307,7 @@
     }
 
     //  Totals block
+    .table-order-items,
     .cart-totals {
         &:extend(.abs-sidebar-totals all);
         tbody,
@@ -318,6 +319,10 @@
     }
 
     //  Products table
+    .order-items-creditmemo,
+    .order-items-shipment,
+    .table-order-items,
+    .order-items,
     .cart {
         &.table-wrapper {
             .cart {
@@ -500,6 +505,7 @@
             }
 
             //  Product options
+            .item.options,
             .item-options {
                 margin-bottom: 0;
                 font-size: 1.2rem;
@@ -520,6 +526,7 @@
                 }
             }
 
+            .product-item-name + .item.options,
             .product-item-name + .item-options {
                 margin-top: @indent__base;
             }
@@ -706,6 +713,7 @@
         border-bottom: @border-width__base solid @border-color__base;
     }
 
+    
     .cart {
         &.table-wrapper {
             border-top: @border-width__base solid @border-color__base;
@@ -923,6 +931,10 @@
     }
 
     //  Products table
+    .order-items-creditmemo,
+    .order-items-shipment,
+    .table-order-items,
+    .order-items,
     .cart {
         &.table-wrapper {
             .items { // Google Chrome version 44.0.2403.107 m fix

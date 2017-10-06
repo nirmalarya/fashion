@@ -576,10 +576,11 @@
             .product-item {
                 margin-bottom: @indent__base;
                 position: relative;
-
+                    
                 &-info {
                     position: relative;
                     width: auto;
+                    text-align: left;
 
                     .product-item-photo {
                         left: 0;
@@ -631,9 +632,10 @@
             .action {
                 &.delete {
                     &:extend(.abs-remove-button-for-blocks all);
-                    position: absolute;
+                    /* position: absolute;
                     right: 0;
-                    top: 0;
+                    top: 0; */
+                    top: 3px;
                 }
             }
         }
@@ -672,6 +674,15 @@
 
             .product-item-name {
                 margin: 0;
+            }
+        }
+        
+        .block-wishlist {
+            .product-items {
+                .product-item {
+                    padding: 10px;
+                    .lib-css(border, 1px solid @account-title-border-color);
+                }
             }
         }
     }
@@ -1276,6 +1287,14 @@
 
         .action.primary {
             &:extend(.abs-revert-to-action-secondary all);
+        }
+    }
+    .block-compare,
+    .block-wishlist{
+        .empty {
+            font-size: 13px;
+            font-weight: 300;
+            color: #4a4a4a;
         }
     }
 }

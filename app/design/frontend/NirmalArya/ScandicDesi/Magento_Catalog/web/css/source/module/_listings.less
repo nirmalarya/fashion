@@ -74,7 +74,7 @@
                 word-wrap: break-word;
 				
 				letter-spacing: -0.4px;
-				font-family: @font-julius_sans_one; 
+				 
                 
                 font-size: @product-name__font-size;
                 line-height: @product-name__line-height;
@@ -83,6 +83,10 @@
                 overflow: hidden;
                 text-overflow: ellipsis;                
                 max-height: calc(@product-name__line-height * @product-name__font-size * @product-name__lines-to-show) ;
+               
+               .block-products-list & {
+                    font-family: @font-julius_sans_one;
+                }
                 
                 .minicart-items & {
                     font-family: @font-montserrat; 

@@ -305,9 +305,9 @@
         @_icon-font-size: 12px,
         @_icon-font-line-height: 15px,
         @_icon-font-text-hide: true,
-        @_icon-font-color: @color-gray60,
-        @_icon-font-color-hover: @color-gray-darken4,
-        @_icon-font-color-active: @color-gray60
+        @_icon-font-color: @color-m_m_l_gray,
+        @_icon-font-color-hover: @sd_base__color,
+        @_icon-font-color-active: @color-m_m_l_gray
         );
     }
 }
@@ -1146,7 +1146,7 @@
         .price-excluding-tax {
             .lib-css(color, @cart-price-color);
             .lib-font-size(14);
-            display: block;
+            /* display: block; */
             line-height: 1;
             white-space: nowrap;
             letter-spacing: -0.3px;
@@ -1763,7 +1763,7 @@
         .table-caption {
             &:extend(.abs-no-display all);
         }
-
+        .grand_total,
         .grand {
             th,
             td {
