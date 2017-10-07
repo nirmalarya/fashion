@@ -532,6 +532,31 @@
             }
         }
     }
+    
+    .order-items-creditmemo,
+    .order-items-shipment,
+    .table-order-items,
+    .order-items {
+        &.table-wrapper {
+            table {
+                > tbody {
+                    > tr {
+                        td,
+                        th {
+                            &.col {
+                                &.name {
+                                    &:before {
+                                        display: none !important;
+                                    }
+                                }  
+                            }            
+                        }            
+                    }            
+                }            
+            }            
+        }
+    }
+    
 }
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {

@@ -382,8 +382,12 @@
 
                 > .price {
                     .lib-css(color, @primary__color__lighter);
-                    .lib-font-size(18);
-                    font-weight: @font-weight__bold;
+                    .lib-font-size(14);
+                    font-weight: 400;
+                    font-size: 1.4rem;
+                    line-height: 1;
+                    white-space: nowrap;
+                    letter-spacing: -0.3px;
                 }
             }
 
@@ -983,7 +987,9 @@
             }
             .col {
                 padding-top: 25px;
-
+                
+                &.total,
+                &.discount,
                 &.price,
                 &.subtotal,
                 &.msrp {
