@@ -40,7 +40,13 @@ class HeadingPlugin
         $heading = $pageHeading->getPageHeading();
         $qty = $this->cart->getSummaryQty();
         $itemText = $qty > 1 ? 'Items' : 'Item';
-        $heading = __("%1 (%2 %3)", $heading, $qty, $itemText);
+        
+        $itemText = __($itemText);
+        $headingQty = "";
+        if($qty >= 1){
+            $headingQty = __("(%1 %2)", $qty, $itemText);
+        }
+        $heading = __("%1 %2", $heading, $headingQty);
         $pageHeading->setPageTitle($heading);
         return $result;
     }
