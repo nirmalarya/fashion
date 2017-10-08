@@ -335,21 +335,38 @@
 @pager-item__margin: 0 8px 0 0;
 @pager-item__padding: 0 @indent__xs;
 
+//  Pager link default
+@pager__color: #212121;
+
+//  Pager link visited
+@pager__visited__color: #212121;
+
+//  Pager link hover
+@pager__hover__color: #bdbdbd;
+
+//  Pager link active
+@pager__active__color: #212121;
+
 //  Pager current page
-@pager-current__background: @color-gray90;
+@pager-current__background: @sd__anchor__color;
+@pager-current__color : @color-white;
+@pager-current__font-weight: 400;
 
 //  Pager link.action
 @pager-icon__font-margin: 0;
 @pager-icon__font-size: 16px;
+@pager-action__color: #4a4a4a;
+@pager-action__border:none;
+@pager-action__background: none;
 
 //  Pager link.action visited
-@pager-action__visited__color: @text__color__muted;
+/* @pager-action__visited__color: @pager-action__color; */
 
 //  Pager link.action hover
-@pager-action__hover__color: @text__color__muted;
+/* @pager-action__hover__color: @pager-action__color; */
 
 //  Pager link.action active
-@pager-action__active__color: @text__color__muted;
+/* @pager-action__active__color: @pager-action__color; */
 
 //
 //  Rating

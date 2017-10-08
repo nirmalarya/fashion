@@ -37,8 +37,8 @@
                 <height>100</height>
             </image>
             <image id="customer_account_product_review_page" type="image">
-                <width>285</width>
-                <height>285</height>
+                <width>240</width>
+                <height>300</height>
             </image>
             <image id="customer_shared_wishlist" type="small_image">
                 <width>113</width>
