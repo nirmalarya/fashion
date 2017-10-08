@@ -8,8 +8,11 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="checkout" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="content">
-            <block class="Magento\Framework\View\Element\Template" name="checkout.footer.content" after="-" template="Magento_Checkout::checkout-footer-content.phtml" />
         
+            <container name="checkout.footer.content.container"  label="Custom - Checkout Footer Content Container" htmlTag="div" htmlClass="checkout-footer-content"  after="-">            
+                <block class="Magento\Framework\View\Element\Template" name="checkout.footer.content" after="-" template="Magento_Checkout::checkout-footer-content.phtml" />   
+            </container>
+            
             <referenceBlock name="checkout.root">
                 <arguments>
                     <argument name="jsLayout" xsi:type="array">                        
@@ -69,6 +72,6 @@
         
         <referenceBlock name="header_nav_container" remove="true" />
         <referenceBlock name="copyright" remove="true" />
-        <move element="checkout.footer.content" destination="before.body.end"/>
+        <move element="checkout.footer.content.container" destination="before.body.end"/>
     </body>
 </page>
