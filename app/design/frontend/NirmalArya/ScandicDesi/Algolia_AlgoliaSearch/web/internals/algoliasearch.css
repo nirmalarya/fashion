@@ -1253,6 +1253,11 @@ a.ais-current-refined-values--link:hover .clear-cross:before{
   margin-top: 5px;
   margin-bottom: 5px;
 }
+#algolia_instant_selector .hits .ais-hits__empty {
+    font-size: 18px;
+    font-weight: 300;
+    color: #4a4a4a;    
+}
 
 /**
  * Facets
@@ -2297,7 +2302,7 @@ a.ais-current-refined-values--link:hover .clear-cross:before{
 }
 
 .algolia-content-loading .page-main{
-    min-height: 20rem;	
+    min-height: 25rem;	
 }
 .algolia-content-loading .page-main:before {
     content: '';
@@ -2313,7 +2318,7 @@ a.ais-current-refined-values--link:hover .clear-cross:before{
     position: absolute;
     width: 100%;
     /* z-index: -1; */
-	min-height:20rem;
+	min-height:25rem;
 	background:url('../images/loader.gif') no-repeat center;
 }
 

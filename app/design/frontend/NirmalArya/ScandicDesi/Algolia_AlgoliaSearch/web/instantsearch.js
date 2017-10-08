@@ -43,6 +43,11 @@ requirejs(['algoliaBundle'], function(algoliaBundle) {
 			translations: algoliaConfig.translations
 		})).show();
 		
+        if($('body').hasClass('algolia-content-loading')){
+			//console.log('going to remove');
+			$('body').removeClass('algolia-content-loading')
+		}
+        
 		/**
 		 * Initialise instant search
 		 * For rendering instant search page is used Algolia's instantsearch.js library
