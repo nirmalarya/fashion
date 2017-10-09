@@ -165,12 +165,12 @@ class Shipping extends AbstractCarrier implements CarrierInterface
     public function getCode($code = '', $includeFree = false)
     {
         $codes = [
-            self::SHIPPING_STANDARD => __('Standard Shipping'),
-            self::SHIPPING_EXPRESS => __('Express Shipping')
+            self::SHIPPING_STANDARD => 'Standard Shipping',
+            self::SHIPPING_EXPRESS => 'Express Shipping'
         ];
 
         if ($includeFree && $this->isFreeShippingAvailable()) {
-            $codes[self::SHIPPING_FREE] = __('Free Shipping');
+            $codes[self::SHIPPING_FREE] = 'Free Shipping';
         }
 
         if ($code == '') {
@@ -187,7 +187,6 @@ class Shipping extends AbstractCarrier implements CarrierInterface
     /**
      * Set result for request
      *
-     * @param $request
      * @return $this
      */
     public function setResult()
@@ -201,7 +200,9 @@ class Shipping extends AbstractCarrier implements CarrierInterface
             $method = $this->rateMethodFactory->create();
 
             $method->setCarrier($this->getCarrierCode());
-            $method->setCarrierTitle($this->getConfigData('title'));
+            $title = __($this->getConfigData('title') . " " . $label);
+            $label = __($label);
+            $method->setCarrierTitle($title);
             $method->setMethod($code);
             $method->setMethodTitle($label);
             $amount = $this->getConfigData($code . '_price');
@@ -289,10 +290,6 @@ class Shipping extends AbstractCarrier implements CarrierInterface
     {
         if (!$this->isActive()) {
             return false;
-        }
-
-        if (!$this->getConfigData('name')) {
-            return $this->getErrorMessage();
         }
 
         $this->setRequest($request);
