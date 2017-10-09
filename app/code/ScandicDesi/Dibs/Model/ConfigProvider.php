@@ -28,11 +28,15 @@ class ConfigProvider extends \Dibs\Flexwin\Model\ConfigProvider
     public function getConfig()
     {
         $config =  parent::getConfig();
-        if($this->method->getConfigData('scandicdesi_tc_enable') == 1 && $this->method->getConfigData('scandicdesi_tc_text') && $this->method->getConfigData('scandicdesi_tc_link')) {
+                
             
-            $paytypes = $config['payment']['dibsFlexwin']['paytype'];
+        $paytypes = $config['payment']['dibsFlexwin']['paytype'];
             
-            foreach ($paytypes as $k => $v ){
+        foreach ($paytypes as $k => $v ){
+            
+            $config['payment']['dibsFlexwin']['paytype'][$k]['scandicdesi_desc_text'] = $this->method->getConfigData('scandicdesi_desc_text');
+            
+            if($this->method->getConfigData('scandicdesi_tc_enable') == 1 && $this->method->getConfigData('scandicdesi_tc_text') && $this->method->getConfigData('scandicdesi_tc_link')) {
                 
                 $config['payment']['dibsFlexwin']['paytype'][$k]['terms_and_condition'] = [ 
                     'scandicdesi_tc_enable' => $this->method->getConfigData('scandicdesi_tc_enable'),

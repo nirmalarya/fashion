@@ -5,19 +5,27 @@
             <group id="dibs_flexwin_all">
                 <group id="dibs_flexwin_scandicdesi" translate="label" type="text" sortOrder="35" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Scandicdesi Terms and Condition:</label>
-                    <field id="scandicdesi_tc_enable" translate="label" type="select" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="0">
+                    
+                    <field id="scandicdesi_desc_text" translate="label comment" type="textarea" sortOrder="99" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Description Text :</label>
+                        <comment>Scandicdesi - Description</comment>
+                        <config_path>payment/dibs_flexwin/scandicdesi_desc_text</config_path>
+                    </field>
+                    
+                    
+                    <field id="scandicdesi_tc_enable" translate="label" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="0">
                         <label>Terms and Condition Enable :</label>
                         <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                         <config_path>payment/dibs_flexwin/scandicdesi_tc_enable</config_path>
                     </field>
                     
-                    <field id="scandicdesi_tc_text" translate="label comment" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <field id="scandicdesi_tc_text" translate="label comment" type="text" sortOrder="101" showInDefault="1" showInWebsite="1" showInStore="0">
                         <label>Terms and Condition Text :</label>
                         <comment>Scandicdesi - Terms and Condition Text, it will appear in payment section before place order button.</comment>
                         <config_path>payment/dibs_flexwin/scandicdesi_tc_text</config_path>
                     </field>
                     
-                    <field id="scandicdesi_tc_link" translate="label comment" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <field id="scandicdesi_tc_link" translate="label comment" type="text" sortOrder="102" showInDefault="1" showInWebsite="1" showInStore="0">
                         <label>Terms and Condition Link :</label>
                         <comment>Scandicdesi - Terms and Condition link, it will appear in payment section before place order button.</comment>
                         <config_path>payment/dibs_flexwin/scandicdesi_tc_link</config_path>
