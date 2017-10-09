@@ -237,6 +237,23 @@
             letter-spacing: 0.1px;
             color: #383838;
             /* .lib-css(padding, @checkout-billing-address-details__padding); */
+            .block,
+            .block-cms-link-inline {
+                display: inline-block;
+                margin: 0;
+                a {
+                    .lib-link(
+                        @_link-color: @color-m_m_l_gray,
+                        @_link-text-decoration: none,
+                        @_link-color-visited: @color-m_m_l_gray,
+                        @_link-text-decoration-visited: none,
+                        @_link-color-hover: @sd_base__color,
+                        @_link-text-decoration-hover: underline,
+                        @_link-color-active: @color-m_m_l_gray,
+                        @_link-text-decoration-active: none
+                    );
+                }
+            }
   
         }
     }
