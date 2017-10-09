@@ -19,7 +19,14 @@
             <!--/ko-->
         </div>
         <div class="checkout-message-block">
+            <!-- ko if: !$data.scandicdesi_desc_text  -->
             <span data-bind="i18n: 'You will be redirected to DIBS payment window..'"></span> 
+             <!--/ko-->
+            
+             <!-- ko if: $data.scandicdesi_desc_text  -->
+            <span data-bind="html: $data.scandicdesi_desc_text"></span> 
+             <!--/ko-->
+            
             
             <!-- ko if: $data.terms_and_condition && $data.terms_and_condition.scandicdesi_tc_enable -->
             <a target="_blank" data-bind="attr: {'href': $data.terms_and_condition.scandicdesi_tc_link},'text': $data.terms_and_condition.scandicdesi_tc_text" ></a>
