@@ -68,6 +68,10 @@ class Shipping extends AbstractCarrier implements CarrierInterface
      * @var CheckoutSession\Proxy
      */
     private $checkoutSession;
+    /**
+     * @var ScopeConfigInterface
+     */
+    private $scopeConfig;
 
     /**
      * Shipping constructor.
@@ -97,6 +101,7 @@ class Shipping extends AbstractCarrier implements CarrierInterface
         $this->rateErrorFactory = $rateErrorFactory;
         $this->customerSessionProxy = $customerSessionProxy;
         $this->checkoutSession = $checkoutSession;
+        $this->scopeConfig = $scopeConfig;
     }
 
     /**
@@ -112,13 +117,8 @@ class Shipping extends AbstractCarrier implements CarrierInterface
      */
     public function isFreeShippingAvailable()
     {
-        if ($this->getConfigData('free_shipping_enable')) {
-            $customerGroupId = $this->customerSessionProxy->getCustomerGroupId();
-            $freeShippingCustomerGroups = $this->getConfigData('free_shipping_customer_groups');
-            $freeShippingCustomerGroups = explode(',', $freeShippingCustomerGroups);
-            if (in_array($customerGroupId, $freeShippingCustomerGroups)) {
-                return true;
-            }
+        if ($this->scopeConfig->getValue('carriers/freeshipping/active')) {
+            return true;
         }
         return false;
     }
@@ -149,7 +149,7 @@ class Shipping extends AbstractCarrier implements CarrierInterface
             } else {
                 $subTotal = (float) $this->checkoutSession->getQuote()->getBaseSubtotal();
             }
-            $freeShippingThreshold = (float) $this->getConfigData('free_shipping_subtotal');
+            $freeShippingThreshold = (float) $this->scopeConfig->getValue('carriers/freeshipping/free_shipping_subtotal');
             $this->freeShippingThresholdDifference = $freeShippingThreshold - $subTotal;
         }
         return (float) $this->freeShippingThresholdDifference;
@@ -159,19 +159,14 @@ class Shipping extends AbstractCarrier implements CarrierInterface
      * Get configuration data of carrier
      *
      * @param string $code
-     * @param bool $includeFree
      * @return array|bool|mixed
      */
-    public function getCode($code = '', $includeFree = false)
+    public function getCode($code = '')
     {
         $codes = [
             self::SHIPPING_STANDARD => 'Standard Shipping',
             self::SHIPPING_EXPRESS => 'Express Shipping'
         ];
-
-        if ($includeFree && $this->isFreeShippingAvailable()) {
-            $codes[self::SHIPPING_FREE] = 'Free Shipping';
-        }
 
         if ($code == '') {
             return $codes;
@@ -242,10 +237,6 @@ class Shipping extends AbstractCarrier implements CarrierInterface
                 $allowed[$method] = $this->getCode($method);
             }
         }
-        // add free shipping if applicable
-        if ($this->isFreeShippingApplicable()) {
-            $allowed[self::SHIPPING_FREE] = $this->getCode(self::SHIPPING_FREE, true);
-        }
         $allowed = $this->filterMethods($allowed);
         return $allowed;
     }
@@ -258,7 +249,7 @@ class Shipping extends AbstractCarrier implements CarrierInterface
      */
     private function filterMethods($methods)
     {
-        if (isset($methods[self::SHIPPING_FREE]) && isset($methods[self::SHIPPING_STANDARD])) {
+        if ($this->isFreeShippingApplicable()) {
             unset($methods[self::SHIPPING_STANDARD]);
         }
         return $methods;

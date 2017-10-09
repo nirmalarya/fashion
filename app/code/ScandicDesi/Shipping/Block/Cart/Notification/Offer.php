@@ -39,7 +39,7 @@ class Offer extends Template
     protected function _toHtml()
     {
         $isCartOfferActive = $this->config->getConfigValue('active', 'cart_offers');
-        $isShippingActive = $this->config->getConfigValue('active', 'scandicdesi', 'carriers');
+        $isShippingActive = $this->config->getConfigValue('active', 'freeshipping', 'carriers');
         // return output only if the shipping is active
         if ($isShippingActive && $isCartOfferActive) {
             return parent::_toHtml();
