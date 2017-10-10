@@ -70,7 +70,7 @@ requirejs(['algoliaBundle'], function(algoliaBundle) {
 			var quickViewUrl = algoliaConfig.instant.extraRequiredParams.quickViewUrl;
 			var wishListUrl = algoliaConfig.instant.extraRequiredParams.wishListUrl;
 			var currentUrl_Encode = algoliaConfig.instant.extraRequiredParams.currentUrl_Encode;
-			var quickViewButtonText = algoliaConfig.instant.extraRequiredParams.quickViewButtonText;
+			var quickViewButtonStyle = algoliaConfig.instant.extraRequiredParams.quickViewButtonStyle;
 			var isQuickViewEnable = algoliaConfig.instant.extraRequiredParams.isQuickViewEnable;
 			
             /******Compare ******/
@@ -99,7 +99,7 @@ requirejs(['algoliaBundle'], function(algoliaBundle) {
             
             hit.isQuickViewEnable = isQuickViewEnable ;
 			hit.quickViewUrlData = quickViewUrlData ;
-			hit.quickViewButtonText = quickViewButtonText ;
+			hit.quickViewButtonStyle = quickViewButtonStyle ;
 			hit.comparePostData = JSON.stringify(comparePostData);			
 			hit.wishListPostData = JSON.stringify(wishListPostData);
             hit.outOfStock = (hit.in_stock === ""?1:"");            
