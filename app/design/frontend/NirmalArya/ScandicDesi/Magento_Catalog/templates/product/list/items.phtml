@@ -156,7 +156,7 @@ switch ($type = $block->getType()) {
 ?>
 
 <?php if ($exist):?>
-
+<?php $_helperProduct = $this->helper('Magento\Catalog\Helper\Product'); ?>
 
 
     <?php if ($type == 'related' || $type == 'upsell'): ?>
@@ -246,6 +246,10 @@ switch ($type = $block->getType()) {
                     
                         <?php if ($showAddTo || $showCart): ?>
                             <div class="product actions product-item-actions">
+                                
+                                <?php /* ********Start : Quick View********* */?>
+                                    <?php echo $_helperProduct->quickViewCustomButtonHtml($_item); ?>
+                                <?php /* ********End : Quick View********* */?>
                                 
                                 <?php if ($showAddTo): ?>
                                     <div class="secondary-addto-links actions-secondary" data-role="add-to-links">
