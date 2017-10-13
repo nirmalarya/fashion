@@ -108,6 +108,52 @@
             }
         }
     }
+    
+    .checkout-onepage-success {
+        #registration,
+        .checkout-success {
+            text-align: center;
+            .actions-toolbar {
+                text-align: center;
+                .primary {
+                    float: none;
+                    margin: 0;
+                }
+            }
+        }
+        .column.main {
+            .order-details-items {
+                .table-wrapper {
+                    .data.table {
+                        &:extend(.abs-table-striped all);
+                    }
+                }
+            }
+        }
+        .order-details-items {
+        
+        }
+        .block-order-details-view {
+            .block-title {
+                display: none;
+            }
+            .block-content {
+                .box {
+                    margin-bottom: @indent__base;
+                    .box-content {
+                        padding: @indent__base 0;
+                        .lib-css(border-bottom, @checkout-step-title__border);
+                    }
+                    &:last-child {
+                        .box-content {
+                            border-bottom: none;
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
 }
 
 //
@@ -185,6 +231,24 @@
             font-size: 1.6rem;            
         }
     }
+    
+    .checkout-onepage-success {        
+        .order-details-items {
+            &:extend(.abs-add-box-sizing-desktop-m all);
+            .lib-layout-column(2, 1, @checkout-wrapper__columns);
+            box-sizing: border-box;
+            padding-right: @indent__l;
+        }
+        
+        .block-order-details-view {
+            .lib-layout-column(2, 2, @checkout-sidebar__columns);
+             .lib-css(margin, 55px 0 @indent__base);
+            box-sizing: border-box;
+            border: solid 1px #e3e3e3;
+            .lib-css(padding, @layout-indent__width);
+        }
+    }
+    
 }
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {

@@ -42,6 +42,10 @@
         margin-bottom: @indent__xl;
         padding: @indent__s 0 0;
         
+        .checkout-onepage-success & {
+            border: none;
+        }
+        
         .actions-toolbar,
         .order-title {
             padding: 0 @indent__base;
@@ -713,6 +717,10 @@
         &.ordered {
             .order-title {
                 display: none;
+                
+                .checkout-onepage-success & {
+                    display: block;
+                }
             }
         }
     }
