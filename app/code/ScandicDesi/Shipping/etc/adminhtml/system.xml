@@ -51,25 +51,6 @@
                     <label>Handling Fee</label>
                     <validate>validate-number validate-zero-or-greater</validate>
                 </field>
-                <field id="free_shipping_enable" translate="label" type="select" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="0">
-                    <label>Free Shipping</label>
-                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
-                </field>
-                <field id="free_shipping_subtotal" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
-                    <label>Enable Free Shipping Threshold</label>
-                    <validate>validate-number validate-zero-or-greater</validate>
-                    <depends>
-                        <field id="free_shipping_enable">1</field>
-                    </depends>
-                </field>
-                <field id="free_shipping_customer_groups" translate="label" type="multiselect" sortOrder="35" showInDefault="1" showInWebsite="1" showInStore="0">
-                    <label>Free Shipping Customer Groups</label>
-                    <source_model>ScandicDesi\Shipping\Model\Source\Customer\Group\Multiselect</source_model>
-                    <can_be_empty>1</can_be_empty>
-                    <depends>
-                        <field id="free_shipping_enable">1</field>
-                    </depends>
-                </field>
                 <field id="allowed_methods" translate="label" type="multiselect" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
                     <label>Allowed Methods</label>
                     <source_model>ScandicDesi\Shipping\Model\Source\Methods</source_model>
@@ -80,7 +61,7 @@
                     <frontend_class>shipping-applicable-country</frontend_class>
                     <source_model>Magento\Shipping\Model\Config\Source\Allspecificcountries</source_model>
                 </field>
-                <field id="specific_country" translate="label" type="multiselect" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="0">
+                <field id="specificcountry" translate="label" type="multiselect" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Ship to Specific Countries</label>
                     <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
                     <can_be_empty>1</can_be_empty>
