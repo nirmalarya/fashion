@@ -1763,6 +1763,7 @@
         .table-caption {
             &:extend(.abs-no-display all);
         }
+        .grand_total_incl,
         .grand_total,
         .grand {
             th,
@@ -1792,6 +1793,16 @@
                 strong {
                     font-weight: normal;
                 }
+            }
+        }
+
+        .grand_total_incl{
+            .mark {
+                .lib-font-size(14);
+            }
+
+            .amount {
+                .lib-font-size(14);
             }
         }
 

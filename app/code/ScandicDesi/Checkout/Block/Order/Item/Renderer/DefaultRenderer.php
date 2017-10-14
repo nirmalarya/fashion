@@ -65,7 +65,7 @@ class DefaultRenderer extends \Magento\Sales\Block\Order\Item\Renderer\DefaultRe
     public function getProductImage()
     {   
         $imageHtml = null;
-        $itemId = $this->getItem()->getId();
+        $itemId = $this->getItem()->getProductId();
         if($itemId){
             $product =  $this->getProductByProductId($itemId);
             // $imageHtml = $this->_checkoutCartItemRenderer->getImage($product, 'cart_page_product_thumbnail')->toHtml();
