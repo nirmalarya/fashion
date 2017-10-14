@@ -30,6 +30,8 @@
     $description = false;
     
     $minItemToDisplay =3;
+    $_helperProduct = $this->helper('Magento\Catalog\Helper\Product');
+    
 ?>
     <div class="block widget block-products-list <?php /* @escapeNotVerified */ echo $mode; ?>">
         <?php if ($title):?>
@@ -66,8 +68,15 @@
                                 <?php echo $block->getImage($_item, $image)->toHtml(); ?>
                             </a>
                             
+
+                                                
                             <?php if ($showWishlist || $showCompare || $showCart): ?>
-                                <div class="product-item-actions">                                    
+                                <div class="product-item-actions">         
+                                    
+                                    <?php /* ********Start : Quick View********* */?>
+                                        <?php echo $_helperProduct->quickViewCustomButtonHtml($_item); ?>
+                                    <?php /* ********End : Quick View********* */?>
+                            
                                     <?php if ($showWishlist || $showCompare): ?>
                                         <div class="actions-secondary" data-role="add-to-links">
                                             <?php if ($this->helper('Magento\Wishlist\Helper\Data')->isAllow() && $showWishlist): ?>

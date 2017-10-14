@@ -27,7 +27,10 @@ $showCart = true;
             <div class="product-item-actions">					
                 {{#isQuickViewEnable}}
                 <?php /* ********Start : Quick View********* */ ?>
-                <a class="magebuzz-quickview magebuzz_quickview_button" data-quickview-url='{{quickViewUrlData}}' href="javascript:void(0);"><span>{{quickViewButtonText}}</span></a><?php /* ********End : Quick View********* */?>
+                <a class="weltpixel-quickview weltpixel_quickview_button_{{quickViewButtonStyle}}" data-quickview-url='{{quickViewUrlData}}' href="javascript:void(0);">
+                    <span><?php /* @escapeNotVerified */ echo __('Quickview') ?></span>
+                </a>
+                <?php /* ********End : Quick View********* */?>
                 {{/isQuickViewEnable}}                    
                                         
                 {{#isAddToCartEnabled}}

@@ -21,10 +21,10 @@ use Magento\Catalog\Model\CategoryRepositoryFactory;
 class Configuration extends \Algolia\AlgoliaSearch\Block\Configuration implements CollectionDataSourceInterface
 {
     /**
-     * @var Magebuzz\Quickview\Plugin\BlockProductList --  for custom button 
+     * @var WeltPixel\Quickview\Plugin\BlockProductList --  for custom button 
      */
-	const XML_PATH_QUICKVIEW_ENABLED = 'magebuzz_quickview/general/enabled';
-	const XML_PATH_QUICKVIEW_BUTTONTEXT = 'magebuzz_quickview/general/button_text';
+	const XML_PATH_QUICKVIEW_ENABLED = 'weltpixel_quickview/general/enable_product_listing';
+    const XML_PATH_QUICKVIEW_BUTTONSTYLE = 'weltpixel_quickview/general/button_style';
 	/**
      * @var \Magento\Framework\App\Config\ScopeConfigInterface
      */
@@ -246,20 +246,19 @@ class Configuration extends \Algolia\AlgoliaSearch\Block\Configuration implement
 		$getCurrentUrl = $this->urlHelper->getEncodedUrl($this->_urlBuilder->getCurrentUrl());
 		$compareUrl =  $this->_urlBuilder->getUrl('catalog/product_compare/add');    
         $wishListUrl =  $this->_urlBuilder->getUrl('wishlist/index/add');
-        $quickViewUrl =  $this->_urlBuilder->getUrl('quickview/catalog_product/view');
+        $quickViewUrl =  $this->_urlBuilder->getUrl('weltpixel_quickview/catalog_product/view');
 		
 		
 		$isQuickViewEnabled = $this->_scopeConfig->getValue(self::XML_PATH_QUICKVIEW_ENABLED,  \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
-		 
-		$quickViewButtonText = $this->_scopeConfig->getValue(self::XML_PATH_QUICKVIEW_BUTTONTEXT,  \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
-		 
+        	 
+		$quickViewButtonStyle = $this->_scopeConfig->getValue(self::XML_PATH_QUICKVIEW_BUTTONSTYLE,  \Magento\Store\Model\ScopeInterface::SCOPE_STORE); 
 		
         return [
             'currentUrl_Encode' => $getCurrentUrl,
             'compareUrl' => $compareUrl,
             'wishListUrl' => $wishListUrl,
             'quickViewUrl' => $quickViewUrl,
-            'quickViewButtonText' => $quickViewButtonText,
+            'quickViewButtonStyle' => $quickViewButtonStyle,
             'isQuickViewEnable' => $isQuickViewEnabled,
         ];
     }
