@@ -164,8 +164,8 @@ class Shipping extends AbstractCarrier implements CarrierInterface
     public function getCode($code = '')
     {
         $codes = [
-            self::SHIPPING_STANDARD => 'Standard Shipping',
-            self::SHIPPING_EXPRESS => 'Express Shipping'
+            self::SHIPPING_STANDARD => $this->getConfigData(self::SHIPPING_STANDARD . '_name'),
+            self::SHIPPING_EXPRESS => $this->getConfigData(self::SHIPPING_EXPRESS . '_name')
         ];
 
         if ($code == '') {
@@ -195,8 +195,7 @@ class Shipping extends AbstractCarrier implements CarrierInterface
             $method = $this->rateMethodFactory->create();
 
             $method->setCarrier($this->getCarrierCode());
-            $title = __($this->getConfigData('title') . " " . $label);
-            $label = __($label);
+            $title = $this->getConfigData($code . '_title');
             $method->setCarrierTitle($title);
             $method->setMethod($code);
             $method->setMethodTitle($label);
