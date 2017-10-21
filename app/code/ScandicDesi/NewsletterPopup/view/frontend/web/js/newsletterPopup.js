@@ -16,11 +16,13 @@ define([
     $.widget('scandicdesi.newsletterPopup', {
         defaults: {
             actionSelector: ".action.subscribe",
-            formSelector: ""
+            formSelector: "",
+            popupDelay: 0
         },
-        _create: function (options) {
+        _create: function () {
             var _this = this;
-            _this.options = $.extend(_this.defaults, options);
+            _this.options = $.extend(_this.defaults, _this.options);
+            _this.options.popupDelay *= 1000;
             if (_this.options.formSelector) {
                 _this.form = $(_this.options.formSelector);
             } else {
@@ -33,16 +35,14 @@ define([
                 buttons: []
             });
 
-            $(document).ajaxComplete(function (event, xhr, settings) {
-                if (settings.url.indexOf('customer/section/load') > 0) {
-                    _this.init();
-                }
-            });
+            _this.init();
         },
         init: function () {
             var _this = this;
             if (_this.isPopupVisible()) {
-                _this.popup.modal('openModal');
+                setTimeout(function() {
+                    _this.popup.modal('openModal');
+                }, _this.options.popupDelay);
 
                 $(document).on('submit', _this.form, function() {
                     _this.stopPopup();

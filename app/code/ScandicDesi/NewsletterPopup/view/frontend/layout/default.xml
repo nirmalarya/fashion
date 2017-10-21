@@ -18,6 +18,8 @@
                             </item>
                         </item>
                     </argument>
+                    <!--<argument name="is_visible" xsi:type="boolean">false</argument>-->
+                    <argument name="popup_delay" xsi:type="number">5</argument>
                 </arguments>
             </block>
         </referenceContainer>

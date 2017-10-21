@@ -16,12 +16,12 @@
             <p><?php echo __('*Offer will arrive in email, Valid for full priced items.'); ?></p>
         </div>
     </div>
-    <!-- ko if: newsletter.newsletter -->
+    <!-- ko ifnot: newsletter.subscribed -->
     <script type="text/x-magento-init">
         {
             "[data-role='newsletter-popup']": {
                 "newsletterPopup": {
-                    "showPopup": ""
+                    "popupDelay": "<?php echo $block->getPopupDelay(); ?>"
                 }
             }
         }

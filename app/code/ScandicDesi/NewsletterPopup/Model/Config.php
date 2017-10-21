@@ -44,6 +44,14 @@ class Config
     }
 
     /**
+     * @return bool
+     */
+    public function isPopupActive()
+    {
+        return $this->getConfigValue('active', 'popup');
+    }
+
+    /**
      * Return the modules store config values
      *
      * @param string $field
@@ -55,7 +63,7 @@ class Config
     public function getConfigValue(
         $field = '',
         $group = 'general',
-        $section = 'scandicdesi_newsletterpopup',
+        $section = 'scandicdesi_newsletter',
         $scope = ScopeInterface::SCOPE_WEBSITES
     ) {
         return $this->scopeConfig->getValue("{$section}/{$group}/{$field}", $scope);

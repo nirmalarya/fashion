@@ -54,12 +54,16 @@ class Newsletter implements SectionSourceInterface
      */
     private function isCustomerSubscribed()
     {
-        $customerEmail = $this->customerSessionProxy->getCustomerData()->getEmail();
-        /** @var Subscriber $subscription */
-        $subscription = $this->subscriberFactory->create();
-        $subscription->loadByEmail($customerEmail);
-        if ($subscription->getEmail() && $subscription->isSubscribed()) {
-            return true;
+        return false;
+        $customerData = $this->customerSessionProxy->getCustomerData();
+        $customerEmail = $customerData ? $customerData->getEmail() : '';
+        if ($customerEmail) {
+            /** @var Subscriber $subscription */
+            $subscription = $this->subscriberFactory->create();
+            $subscription->loadByEmail($customerEmail);
+            if ($subscription->getEmail() && $subscription->isSubscribed()) {
+                return true;
+            }
         }
         return false;
     }
