@@ -23,6 +23,7 @@ define([
             var _this = this;
             _this.options = $.extend(_this.defaults, _this.options);
             _this.options.popupDelay *= 1000;
+            _this.options.triggered = false;
             if (_this.options.formSelector) {
                 _this.form = $(_this.options.formSelector);
             } else {
@@ -35,13 +36,29 @@ define([
                 buttons: []
             });
 
-            _this.init();
+            if (_this.options.popupDelay <= 1000) {
+                /* make sure customer-data is updated before the popup triggers */
+                $(document).ajaxComplete(function (event, xhr, settings) {
+                    if (settings.url.indexOf('customer/section/load') > 0) {
+                        _this.init();
+                    }
+                });
+                /* if customer-data ajax is not triggered load popup after 5 sec */
+                setTimeout(function () {
+                    if (_this.options.triggered === false) {
+                        _this.init();
+                    }
+                }, 5000);
+            } else {
+                _this.init();
+            }
         },
         init: function () {
             var _this = this;
             if (_this.isPopupVisible()) {
                 setTimeout(function() {
                     _this.popup.modal('openModal');
+                    _this.options.triggered = true;
                 }, _this.options.popupDelay);
 
                 $(document).on('submit', _this.form, function() {
