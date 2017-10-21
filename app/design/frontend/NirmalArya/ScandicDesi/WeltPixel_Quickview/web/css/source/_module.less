@@ -52,7 +52,43 @@
 			}
 		}
 	}
-
+    .mfp-close-btn-in {
+        .mfp-iframe-holder {
+            .mfp-close {
+                width: auto;
+                right: 0;
+                padding-left: 6px;
+                padding-right: 6px;
+                font-size: 0;
+            }
+        }
+    }
+    
+    .mfp-iframe-holder {        
+        .mfp-close {           
+            
+            .lib-icon-font(
+				@_icon-font-content: @icon-remove,
+				@_icon-font-line-height: 3rem,
+				@_icon-font-size: 2.2rem,
+				@_icon-font-color: @color-white,
+				@_icon-font-color-hover: @header-icons-color-hover,
+				@_icon-font-color-active: @color-white,
+				@_icon-font-margin: @icon-font__margin,
+				@_icon-font-vertical-align: @icon-font__vertical-align,
+				@_icon-font-position: before,
+				@_icon-font-display: false
+			);			
+        }
+    }
+    
+    .products-grid .product-item {
+        .product-item-info {
+            .weltpixel-quickview.weltpixel_quickview_button_v2 {
+                &:extend(.abs-actions-addto all);
+            }
+        }
+    }
 }
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
 
@@ -115,17 +151,11 @@
 					}
 				}
 				.weltpixel-quickview.weltpixel_quickview_button_v2 {
+                    
 					display: block;
 					z-index: 9;
 					position: absolute;
-					/* text-indent: -10000px;
-					width: 33px;
-					height: 35px;
-					background-image: url('../WeltPixel_Quickview/images/quickview.png');
-					background-repeat: no-repeat;
-					top: -46px;
-					right: 5px; */
-                    
+					                   
                     
                     
                     top: -120px;
@@ -133,7 +163,7 @@
                     font-size: 12px;
                     letter-spacing: 0.1px;
                     text-align: center;
-                    color: #272727;
+                    /* color: #272727; */
                     left: 0;
                     border-radius: 100px;
                     background-color: fade(@color-white, 89);
@@ -142,13 +172,18 @@
                     width: 120px;
                     margin: 0 auto;
                     
-                    /* .lib-icon-font(
-                        @_icon-font-content: @icon-compare-full,
-                        @_icon-font-size: 16px,
-                        @_icon-font-color: @header-icons-color,
-                        @_icon-font-color-hover: @header-icons-color-hover,
+                    
+                    .lib-icon-font-symbol(
+                        @_icon-font-content: @icon-wishlist-full,
                         @_icon-font-position: before
-                    ); */
+                    );
+                    &:before {
+                        background: url('../images/quick-view-icon.svg') no-repeat center;
+                        background-size: 100%;
+                        text-indent: -9999px;
+                        width: 2.1rem;
+                        height: 1.3rem;
+                    }
                     
                     &:active,
                     &:hover {

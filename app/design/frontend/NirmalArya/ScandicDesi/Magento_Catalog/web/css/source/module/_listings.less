@@ -142,6 +142,15 @@
                     > .action {
                         &:extend(.abs-actions-addto all);
                         
+                        &.tocompare {                           
+                            &:before {
+                                background: url('../images/compare-icon.svg') no-repeat center;
+                                background-size: 100%;
+                                text-indent: -9999px;
+                                width: 3rem;
+                                height: 2rem;
+                            }
+                        }
                             
                         :not(.product-item-actions-comparison)& {
                             &:before {
@@ -219,6 +228,13 @@
                 .lib-icon-font-symbol(
                 @icon-compare-full
                 );
+                /* &:before {
+                    background: url('../images/compare-icon.svg') no-repeat center;
+                    background-size: 100%;
+                    text-indent: -9999px;
+                    width: 2rem;
+                    height: 2rem;
+                } */
             }
             
             .tocart {

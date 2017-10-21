@@ -892,14 +892,35 @@
                         /* top: 50%; */
                         opacity: 0.94;
                         background-color: #20252d;	
-                        height: 9.2rem;
+                        /* height: 9.2rem; */
                         
                         font-family: @font-julius_sans_one;
                         font-size: 2.4rem;
                         letter-spacing: -0.3px;
                         text-align: center;
                         color: #ffffff;
-                        line-height: 9.2rem;
+                        /* line-height: 9.2rem; */
+                        
+                        padding: 2.8rem 1rem;
+                        box-sizing: border-box;
+                        
+                        .widget.block {
+                            display: inline;
+                            
+                            a {
+                                .lib-link(
+                                    @_link-color: @color-white,
+                                    @_link-text-decoration: none,
+                                    @_link-color-visited: @color-white,
+                                    @_link-text-decoration-visited: none,
+                                    @_link-color-hover: @sd_base__color,
+                                    @_link-text-decoration-hover: none,
+                                    @_link-color-active: @color-white,
+                                    @_link-text-decoration-active: none
+                                );
+                            }
+                            
+                        }
                         
                         &.right-align {
                             right: 0;
