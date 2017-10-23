@@ -1108,6 +1108,72 @@
             }
         }
     }
+    
+    //
+    //  CMS - Pages
+    //  ---------------------------------------------
+    .cms-page-view,
+    .cms-no-route {
+        .column.main {
+            
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: #4a4a4a;
+            
+            h2,
+            .heading {
+                font-size: 2.1rem;
+                color: @color-black;
+                font-weight: normal;
+            } 
+            
+            a {
+                .lib-link(
+                @_link-color: @color-black,
+                @_link-text-decoration: underline,
+                @_link-color-visited: @color-black,
+                @_link-text-decoration-visited: none,
+                @_link-color-hover: @sd_base__color,
+                @_link-text-decoration-hover: none,
+                @_link-color-active: @color-black,
+                @_link-text-decoration-active: none
+                );                
+            }  
+            
+            /* ul {
+                list-style: none;
+                li{
+                    &:before {
+                        content: '•';
+                        color: #fb9ab3;
+                        display: inline-block;
+                        width: 1em;
+                        margin-left: -1em;
+                    }
+                }
+            } */
+        }
+               
+        
+    }
+    .cms-no-route {
+        .no-result {
+            text-align: center;            
+            max-width: 48rem;
+            margin: 0 auto;
+            padding: 5rem 0rem 3rem;
+            
+            img.no-result-icon {
+                max-width: 20rem;
+            }
+            .heading {
+                letter-spacing: 5px;
+            }
+            .action.primary {
+                margin-top: 2rem;
+            }
+        }
+    }
 }
 
 //
@@ -2006,6 +2072,23 @@
     .main-header-sub-header {
         font-size: 3.2rem;
 	}
+    
+    //
+    //  CMS - Pages
+    //  ---------------------------------------------
+    
+    .cms-no-route {
+        .no-result {
+            max-width: 48rem;
+            margin: 0 auto;
+            padding: 5rem 5rem 3rem; 
+                
+            img.no-result-icon {
+                max-width: 100%;
+            }
+        }
+    }
+    
 }
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
