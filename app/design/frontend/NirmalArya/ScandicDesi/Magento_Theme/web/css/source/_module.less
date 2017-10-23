@@ -1127,14 +1127,14 @@
                 font-weight: normal;
             } 
             
-            a { 
+            a:not(.action):not(.primary) { 
                 .lib-link(
                 @_link-color: @color-black,
                 @_link-text-decoration: underline,
                 @_link-color-visited: @color-black,
                 @_link-text-decoration-visited: none,
                 @_link-color-hover: @sd_base__color,
-                @_link-text-decoration-hover: none,
+                @_link-text-decoration-hover: underline,
                 @_link-color-active: @color-black,
                 @_link-text-decoration-active: none
                 );                
