@@ -70,8 +70,8 @@
                             <tr class="row">
                                 <th class="col col-method" data-bind="i18n: 'Select Method'"></th>
                                 <th class="col col-price" data-bind="i18n: 'Price'"></th>
-                                <th class="col col-method" data-bind="i18n: 'Method Title'"></th>
                                 <th class="col col-carrier" data-bind="i18n: 'Carrier Title'"></th>
+                                <th class="col col-method" data-bind="i18n: 'Method Title'"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -110,12 +110,10 @@
                                 <!-- ko template: getTemplate() --><!-- /ko -->
                                 <!-- /ko -->
                             </td>
-
-                            <td class="col col-method"
-                                    data-bind="text: method.method_title, attr: {'id': 'label_method_' + method.method_code + '_' + method.carrier_code}"></td>
-
-                            <td class="col col-carrier"
+                            <td class="col col-carrier col-look-new-tr-mbl"
                                     data-bind="text: method.carrier_title, attr: {'id': 'label_carrier_' + method.method_code + '_' + method.carrier_code}"></td>
+                            <td class="col col-method col-look-new-tr"
+                                    data-bind="text: method.method_title, attr: {'id': 'label_method_' + method.method_code + '_' + method.carrier_code}"></td>
                         </tr>
 
                         <!-- ko if:  method.error_message -->
