@@ -535,6 +535,14 @@
                 @_icon-font-content: @icon-compare-full,
                 @_icon-font-position: before
             );
+            
+            &:before {
+                background: url('../images/compare-icon.svg') no-repeat center;
+                background-size: 100%;
+                text-indent: -9999px;
+                width: 3rem;
+                height: 2rem;
+            }
         }
     }
 
@@ -721,7 +729,13 @@
             @_link-text-decoration-active: none
         );
         
-        
+        &:before {
+            background: url('../images/size-chart-icon.svg') no-repeat;
+            background-size: 100%;
+            text-indent: -9999px;
+            width: 2rem;
+            height: 2.5rem;
+        }
     }
     
     //
