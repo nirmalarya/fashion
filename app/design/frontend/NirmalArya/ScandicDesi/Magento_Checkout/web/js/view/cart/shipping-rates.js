@@ -55,6 +55,13 @@ define(
                         null;
                 }
             ),
+            selectedShippingMethodHeaderEvent: function(carrier_code,method_code){
+                var quote_c_m =  quote.shippingMethod() ?
+                        quote.shippingMethod()['carrier_code'] + '_' + quote.shippingMethod()['method_code'] :
+                        null;
+                console.log(carrier_code+'_'+method_code+'  === '+quote_c_m);
+                return (carrier_code+'_'+method_code === quote_c_m)?1:0;
+            },
 
             /**
              * @override
