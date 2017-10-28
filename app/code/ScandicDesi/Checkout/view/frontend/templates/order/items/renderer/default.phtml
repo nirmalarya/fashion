@@ -51,7 +51,7 @@ $_item = $block->getItem();
         <ul class="items-qty">
         <?php if ($block->getItem()->getQtyOrdered() > 0): ?>
             <li class="item">
-                <span class="title"><?php /* @escapeNotVerified */ echo __('Ordered'); ?></span>
+                <!-- <span class="title"><?php /* @escapeNotVerified */ echo __('Ordered'); ?></span> -->
                 <span class="content"><?php /* @escapeNotVerified */ echo $block->getItem()->getQtyOrdered()*1 ?></span>
             </li>
         <?php endif; ?>
