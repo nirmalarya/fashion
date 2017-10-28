@@ -26,10 +26,27 @@
                     
                         <block class="ScandicDesi\Checkout\Block\Order\Item\Renderer\DefaultRenderer" as="default" template="ScandicDesi_Checkout::order/items/renderer/default.phtml"/>
                         
-                        
-                        <block class="Magento\Sales\Block\Order\Item\Renderer\DefaultRenderer" name="item_unit_price" template="items/price/unit.phtml"/>
+                        <!-- Exc. Tax -->
+                        <!-- <block class="Magento\Sales\Block\Order\Item\Renderer\DefaultRenderer" name="item_unit_price" template="items/price/unit.phtml"/>
                         <block class="Magento\Sales\Block\Order\Item\Renderer\DefaultRenderer" name="item_row_total" template="items/price/row.phtml"/>
-                        <block class="Magento\Sales\Block\Order\Item\Renderer\DefaultRenderer" name="item_row_total_after_discount" template="items/price/total_after_discount.phtml"/>
+                        <block class="Magento\Sales\Block\Order\Item\Renderer\DefaultRenderer" name="item_row_total_after_discount" template="items/price/total_after_discount.phtml"/> -->
+                        
+                        
+                        <!-- Inc. Tax -->
+                        <block class="Magento\Weee\Block\Item\Price\Renderer" name="item_unit_price" template="item/price/unit.phtml">
+                            <arguments>
+                                <argument name="zone" xsi:type="string">sales</argument>
+                            </arguments>
+                        </block>
+                        <block class="Magento\Weee\Block\Item\Price\Renderer" name="item_row_total" template="item/price/row.phtml">
+                            <arguments>
+                                <argument name="zone" xsi:type="string">sales</argument>
+                            </arguments>
+                        </block>
+                        <block class="Magento\Weee\Block\Item\Price\Renderer" name="item_row_total_after_discount" template="item/price/total_after_discount.phtml"/>
+                        
+                        
+                        
                     </block>
                     <block class="Magento\Sales\Block\Order\Totals" name="order_totals" template="Magento_Sales::order/totals.phtml">
                         <arguments>

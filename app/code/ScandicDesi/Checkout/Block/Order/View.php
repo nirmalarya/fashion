@@ -56,9 +56,13 @@ class View extends \Magento\Sales\Block\Order\View // \Magento\Framework\View\El
     {   
         $checkoutSession = $this->_checkoutSession->getLastRealOrder();
         
+        if($this->_coreRegistry->registry('current_order')){
+            $this->_coreRegistry->unregister('current_order');
+        }
         if($checkoutSession && !$this->_coreRegistry->registry('current_order')){
             $getOrderId = $checkoutSession->getEntityId();
-            $orderId = (int)$getOrderId;
+            // $orderId = (int)$getOrderId;
+            $orderId = (int) $checkoutSession->getIncrementId();
             $current_order = $this->_salesOrder->loadByIncrementId($orderId);
             $this->_coreRegistry->register('current_order', $current_order); 
         }
