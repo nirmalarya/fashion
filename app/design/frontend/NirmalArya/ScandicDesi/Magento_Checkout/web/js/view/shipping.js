@@ -240,6 +240,13 @@ define(
                     return shippingMethodExist;
                 }
             ),
+            isSelectedHeaderEvent: function(carrier_code,method_code){
+                var quote_c_m =  quote.shippingMethod() ?
+                        quote.shippingMethod().carrier_code + '_' + quote.shippingMethod().method_code
+                        : null;;
+                console.log('checkout :' +carrier_code+'_'+method_code+'  === '+quote_c_m);
+                return (carrier_code+'_'+method_code === quote_c_m)?1:0;
+            },
 
             /**
              * @param {Object} shippingMethod
@@ -270,7 +277,7 @@ define(
             customUI_selectShippingMethod: function (shippingMethod) {
                 
                 var shippingMethodExist = quote.shippingMethod() ?
-                    quote.shippingMethod().carrier_code + '_' + quote.shippingMethod().method_code
+                    quote.shippingMethod().method_code
                     : null;
                 if(shippingMethodExist != null) {   
                     var sMethodElement = $("#s_method_"+shippingMethodExist)

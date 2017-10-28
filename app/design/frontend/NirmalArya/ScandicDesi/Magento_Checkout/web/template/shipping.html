@@ -70,14 +70,14 @@
                             <tr class="row">
                                 <th class="col col-method" data-bind="i18n: 'Select Method'"></th>
                                 <th class="col col-price" data-bind="i18n: 'Price'"></th>
-                                <th class="col col-carrier" data-bind="i18n: 'Carrier Title'"></th>
                                 <th class="col col-method" data-bind="i18n: 'Method Title'"></th>
+                                <th class="col col-carrier" data-bind="i18n: 'Carrier Title'"></th>
                             </tr>
                         </thead>
                         <tbody>
 
                         <!--ko foreach: { data: rates(), as: 'method'}-->
-                        <tr class="row" data-bind="click: $parent.selectShippingMethod">
+                        <tr class="row " data-bind="click: $parent.selectShippingMethod,css: { 'active-method ok2': !method.error_message && ( $parent.rates().length == 1 ||   $parent.isSelectedHeaderEvent(method.carrier_code,method.method_code))}">
                             <td class="col col-method">
                                 <!-- ko ifnot: method.error_message -->
                                 <!-- ko if: $parent.rates().length == 1 -->
@@ -86,10 +86,10 @@
                                        data-bind="attr: {
                                                     checked: $parent.rates().length == 1,
                                                     'value' : method.carrier_code + '_' + method.method_code,
-                                                    'id': 's_method_' + method.method_code + '_' + method.method_code,
+                                                    'id': 's_method_' + method.method_code,
                                                     'aria-labelledby': 'label_method_' + method.method_code + '_' + method.carrier_code + ' ' + 'label_carrier_' + method.method_code + '_' + method.carrier_code
                                                  },
-                                                click: $parent.customUI_selectShippingMethod"" />
+                                                click: $parent.customUI_selectShippingMethod" />
                                 <!-- /ko -->
                                 <!--ko ifnot: ($parent.rates().length == 1)-->
                                 <input type="radio"
@@ -110,10 +110,12 @@
                                 <!-- ko template: getTemplate() --><!-- /ko -->
                                 <!-- /ko -->
                             </td>
-                            <td class="col col-carrier col-look-new-tr-mbl"
-                                    data-bind="text: method.carrier_title, attr: {'id': 'label_carrier_' + method.method_code + '_' + method.carrier_code}"></td>
-                            <td class="col col-method col-look-new-tr"
+
+                            <td class="col col-method col-look-new-tr-mbl"
                                     data-bind="text: method.method_title, attr: {'id': 'label_method_' + method.method_code + '_' + method.carrier_code}"></td>
+
+                            <td class="col col-carrier col-look-new-tr"
+                                    data-bind="text: method.carrier_title, attr: {'id': 'label_carrier_' + method.method_code + '_' + method.carrier_code}"></td>
                         </tr>
 
                         <!-- ko if:  method.error_message -->
