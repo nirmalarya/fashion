@@ -12,7 +12,17 @@
             <container name="checkout.cart.header.container" htmlTag="div" htmlClass="cart-header-container" before="-">
 				<block class="Magento\Checkout\Block\Cart" name="checkout.cart.header.content" as="cart.header.content" template="cart/cart-header-content.phtml"  >
 					<block class="Magento\Checkout\Block\Onepage\Link" name="checkout.cart.methods.onepage.bottom1" template="onepage/link.phtml" />
-					<block class="ScandicDesi\Checkout\Block\Cart" name="scandicdesi.cart" />
+					<block class="ScandicDesi\Checkout\Block\Cart" name="scandicdesi.cart" >
+                        <arguments>
+                            <argument name="jsLayout" xsi:type="array">
+                                <item name="components" xsi:type="array">
+                                    <item name="cartOffers" xsi:type="array">
+                                        <item name="component" xsi:type="string">ScandicDesi_Shipping/js/view/cart-offers</item>
+                                    </item>
+                                </item>
+                            </argument>
+                        </arguments>
+                    </block>
 				</block>
 			</container>	
             

@@ -11,6 +11,7 @@ namespace ScandicDesi\Shipping\Model\Carrier;
 use Magento\Customer\Model\Session as CustomerSession;
 use Magento\Checkout\Model\Session as CheckoutSession;
 use Magento\Framework\App\Config\ScopeConfigInterface;
+use Magento\Quote\Api\CartTotalRepositoryInterface;
 use Magento\Quote\Model\Quote\Address\RateRequest;
 use Magento\Quote\Model\Quote\Address\RateResult\Error;
 use Magento\Quote\Model\Quote\Address\RateResult\ErrorFactory;
@@ -72,6 +73,10 @@ class Shipping extends AbstractCarrier implements CarrierInterface
      * @var ScopeConfigInterface
      */
     private $scopeConfig;
+    /**
+     * @var CartTotalRepositoryInterface
+     */
+    private $cartTotalRepository;
 
     /**
      * Shipping constructor.
@@ -83,6 +88,7 @@ class Shipping extends AbstractCarrier implements CarrierInterface
      * @param MethodFactory $rateMethodFactory
      * @param CustomerSession\Proxy $customerSessionProxy
      * @param CheckoutSession\Proxy $checkoutSession
+     * @param CartTotalRepositoryInterface $cartTotalRepository
      * @param array $data
      */
     public function __construct(
@@ -93,6 +99,7 @@ class Shipping extends AbstractCarrier implements CarrierInterface
         MethodFactory $rateMethodFactory,
         CustomerSession\Proxy $customerSessionProxy,
         CheckoutSession\Proxy $checkoutSession,
+        CartTotalRepositoryInterface $cartTotalRepository,
         array $data = []
     ) {
         parent::__construct($scopeConfig, $rateErrorFactory, $logger, $data);
@@ -102,6 +109,7 @@ class Shipping extends AbstractCarrier implements CarrierInterface
         $this->customerSessionProxy = $customerSessionProxy;
         $this->checkoutSession = $checkoutSession;
         $this->scopeConfig = $scopeConfig;
+        $this->cartTotalRepository = $cartTotalRepository;
     }
 
     /**
@@ -139,6 +147,17 @@ class Shipping extends AbstractCarrier implements CarrierInterface
     }
 
     /**
+     * Get the cart totals
+     *
+     * @return \Magento\Quote\Api\Data\TotalsInterface
+     */
+    public function getTotals()
+    {
+        $totals = $this->cartTotalRepository->get($this->checkoutSession->getQuote()->getId());
+        return $totals;
+    }
+
+    /**
      * Get the free shipping threshold and subtotal difference
      */
     public function getFreeShippingThresholdDifference()
@@ -147,7 +166,7 @@ class Shipping extends AbstractCarrier implements CarrierInterface
             if ($this->getRequest() !== null) {
                 $subTotal = (float) $this->getRequest()->getBaseSubtotalInclTax();
             } else {
-                $subTotal = (float) $this->checkoutSession->getQuote()->getBaseSubtotal();
+                $subTotal = (float) $this->getTotals()->getBaseSubtotalInclTax();
             }
             $freeShippingThreshold = (float) $this->scopeConfig->getValue('carriers/freeshipping/free_shipping_subtotal');
             $this->freeShippingThresholdDifference = $freeShippingThreshold - $subTotal;

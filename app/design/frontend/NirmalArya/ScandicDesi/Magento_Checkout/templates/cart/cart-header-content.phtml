@@ -17,11 +17,14 @@ if ($itemCount) {
     $cart = $block->getChildBlock('scandicdesi.cart');
     $grandTotal = $cart->getGrandTotal(true);
 ?>
-    <div class="shopping-cart-header show-in-mbl">
+    <div class="shopping-cart-header show-in-mbl" data-bind="scope: 'cartOffers'" data-role="cart-offers">
+
+        <!-- ko if: cartOffers().shipping && getGrandTotal() -->
         <div class="shopping-cart-header-order-total">
             <span><?php echo __('Total'); ?> </span>
-            <span class="price"><?php echo $grandTotal;?></span>
+            <span class="price" data-bind="html: getGrandTotal()"></span>
         </div>
+        <!-- /ko -->
         <div class="shopping-cart-header-actions">
             <div>
                 <?php  echo $block->getChildHtml('checkout.cart.methods.onepage.bottom1'); ?>
@@ -37,4 +40,7 @@ if ($itemCount) {
             <?php endif; ?>
         </div>
     </div>
+    <script type="text/x-magento-init">
+        {"[data-role=cart-offers]": {"Magento_Ui/js/core/app": <?php echo $cart->getJsLayout();?>}}
+    </script>
 <?php } ?>

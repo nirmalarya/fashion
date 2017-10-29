@@ -70,23 +70,24 @@ class Offers implements SectionSourceInterface
      */
     public function getShippingOffer()
     {
-        $title = '';
-        $message = '';
+        $response = [
+            'title' => __('Free Shipping'),
+            'message' => '',
+            'free_shipping_threshold' => 0,
+            'subtotal' => 0
+        ];
         $freeShippingApplicable = $this->isFreeShippingOfferApplicable();
         if ($freeShippingApplicable) {
-            $difference = $this->shipping->getFreeShippingThresholdDifference();
-            $formattedAdditionalValue = $this->pricingHelper->currency($difference, true, false);
             $shippingMessage = $this->config->getConfigValue('shipping', 'cart_offers_messages');
-            $message = __(
-                $shippingMessage,
-                $formattedAdditionalValue
+            $response['message'] = __($shippingMessage);
+            $response['free_shipping_threshold'] = $this->config->getConfigValue(
+                'free_shipping_subtotal',
+                'freeshipping',
+                'carriers'
             );
-            $title = __('Free Shipping');
+            $response['subtotal'] = $this->checkoutSession->getQuote()->getBaseSubtotal();
         }
-        return [
-            'title' => $title,
-            'message' => $message
-        ];
+        return $response;
     }
 
     /**
@@ -96,8 +97,8 @@ class Offers implements SectionSourceInterface
     public function isFreeShippingOfferApplicable()
     {
         $itemsQty = (float) $this->checkoutSession->getQuote()->getItemsQty();
-        $isApplicable = $this->shipping->isFreeShippingApplicable();
-        if (!$isApplicable && $itemsQty) {
+        $isApplicable = $this->shipping->isFreeShippingAvailable();
+        if ($isApplicable && $itemsQty) {
             return true;
         }
         return false;

@@ -9,8 +9,8 @@ use Magento\Framework\Data\Tree\Node\Collection as NodeCollection;
 <?php
 /** @var Collection|NodeCollection $items */
 $items = $block->getList();
-
-$title = __('Shop By Occasion');
+$type = $this->getListType();
+$title = __('Shop By ' . ucfirst($type));
 $mode = "grid";
 
 ?>
