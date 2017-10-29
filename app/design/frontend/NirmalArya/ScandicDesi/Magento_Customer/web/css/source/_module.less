@@ -331,18 +331,20 @@
     }
     
     .account {
-        a {
-            .lib-link(
-                @_link-color: @color-m_m_l_gray,
-                @_link-text-decoration: none,
-                @_link-color-visited: @color-m_m_l_gray,
-                @_link-text-decoration-visited: none,
-                @_link-color-hover: @sd_base__color,
-                @_link-text-decoration-hover: underline,
-                @_link-color-active: @color-m_m_l_gray,
-                @_link-text-decoration-active: none
-            );
-            font-size: 1.3rem;
+        .page-main {
+            a {
+                .lib-link(
+                    @_link-color: @color-m_m_l_gray,
+                    @_link-text-decoration: none,
+                    @_link-color-visited: @color-m_m_l_gray,
+                    @_link-text-decoration-visited: none,
+                    @_link-color-hover: @sd_base__color,
+                    @_link-text-decoration-hover: underline,
+                    @_link-color-active: @color-m_m_l_gray,
+                    @_link-text-decoration-active: none
+                );
+                font-size: 1.3rem;
+            }
         }
     }
 }
@@ -352,6 +354,10 @@
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .form.password.reset,
+    .form.send.confirmation,
+    .form.password.forget,
+    .form.create.account,
     .login-container {
         &:extend(.abs-add-clearfix-desktop all);
 
