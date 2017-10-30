@@ -4,16 +4,27 @@
  * Copyright © 2013-2017 ScandicDesi, Inc. All rights reserved.
  */
 -->
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="columns.top">
-            <block class="ScandicDesi\Shipping\Block\Cart\Notification\Offer" name="cart_notification_offer" after="page.messages"
-                   template="ScandicDesi_Shipping::cart/notification/offer.phtml">
+            <block class="Magento\Framework\View\Element\Template" name="cart_notification_offer" after="page.messages"
+                   template="ScandicDesi_Shipping::cart/notification/cart-components.phtml">
                 <arguments>
                     <argument name="jsLayout" xsi:type="array">
                         <item name="components" xsi:type="array">
-                            <item name="cartOffers" xsi:type="array">
-                                <item name="component" xsi:type="string">ScandicDesi_Shipping/js/view/cart-offers</item>
+                            <item name="cart-components" xsi:type="array">
+                                <item name="component" xsi:type="string">uiComponent</item>
+                                <item name="config" xsi:type="array">
+                                    <item name="template" xsi:type="string">ScandicDesi_Shipping/cart-components</item>
+                                </item>
+                                <item name="children" xsi:type="array">
+                                    <item name="cartOffers" xsi:type="array">
+                                        <item name="sortOrder" xsi:type="string">0</item>
+                                        <item name="component" xsi:type="string">ScandicDesi_Shipping/js/view/cart-offers</item>
+                                        <item name="displayArea" xsi:type="string">cartOffers</item>
+                                    </item>
+                                </item>
                             </item>
                         </item>
                     </argument>

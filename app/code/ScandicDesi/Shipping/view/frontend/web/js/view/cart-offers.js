@@ -3,6 +3,7 @@
  */
 define([
     'jquery',
+    /*'Magento_Ui/js/form/form',*/
     'uiComponent',
     'Magento_Customer/js/customer-data',
     'mage/translate',
@@ -13,12 +14,16 @@ define([
     'use strict';
 
     return Component.extend({
+        defaults: {
+            template: 'ScandicDesi_Shipping/cart-offers'
+        },
         initialize: function () {
             this._super();
             this.cartOffers = customerData.get('cart-offers');
             this.cart = customerData.get('cart');
             totalsDefaultProvider.estimateTotals(quote.shippingAddress());
             this.cartData = customerData.get('cart-data');
+            console.log('test');
         },
         getGrandTotal: function () {
             var cartTotals = this.cartData().totals;
@@ -41,6 +46,7 @@ define([
         getCartMessage: function () {
             var message = $t(this.cartOffers().shipping.message);
             var balance = this.getSubtotalBalance();
+            console.log('cart-message');
             return message.replace('%1', this.formatPrice(balance));
         },
         formatPrice: function (price) {

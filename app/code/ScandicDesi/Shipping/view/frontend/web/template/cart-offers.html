@@ -1,5 +1,10 @@
-<div class="block block-cart-offer" data-bind="scope: 'cartOffers'" data-role="cart-offers">
-    <!-- Content -->
+<!--
+/**
+ * Copyright © 2017 ScandicDesi. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<div class="block block-cart-offer">
     <!-- ko if: cartOffers().shipping && getSubtotalBalance() -->
     <div class="message-area message" data-bind="css: {'success': cartOffers().shipping.title }">
         <strong data-bind="html: cartOffers().shipping.title" class="cart-offer-shipping-title"></strong>
@@ -7,6 +12,3 @@
     </div>
     <!-- /ko -->
 </div>
-<script type="text/x-magento-init">
-    {"[data-role=cart-offers]": {"Magento_Ui/js/core/app": <?php echo $block->getJsLayout();?>}}
-</script>

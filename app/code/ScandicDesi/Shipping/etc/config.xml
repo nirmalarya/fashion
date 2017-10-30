@@ -7,7 +7,7 @@
                 <active>1</active>
             </cart_offers>
             <cart_offers_messages>
-                <shipping>Shop for additional %1 to avail free shipping!</shipping>
+                <shipping><![CDATA[Shop additional %1 to avail <strong>Free Shipping</strong>!]]></shipping>
             </cart_offers_messages>
         </scandicdesi_shipping>
         <carriers>

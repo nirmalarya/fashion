@@ -1,0 +1,14 @@
+<!--
+/**
+ * Copyright © 2017 ScandicDesi. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+
+<div id="cart-components" data-bind="scope:'cart-components'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+
+<script type="text/x-magento-init">
+    {"#cart-components": {"Magento_Ui/js/core/app": <?php echo $block->getJsLayout();?>}}
+</script>
