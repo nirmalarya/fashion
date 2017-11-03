@@ -10,14 +10,14 @@
 @checkout-wrapper__margin: @indent__base;
 @checkout-wrapper__columns: 16;
 
-@checkout-step-title__border: @border-width__base solid @color-gray80;
-@checkout-step-title__font-size: 26px;
-@checkout-step-title__font-weight: @font-weight__light;
+@checkout-step-title__border: @border-width__base solid @border-color__base;
+@checkout-step-title__font-size: 21px;
+@checkout-step-title__font-weight: 400;
 @checkout-step-title__padding: @indent__s;
 
 @checkout-step-title-mobile__font-size: 18px;
 
-@checkout-step-content-mobile__background: @color-gray-light01;
+@checkout-step-content-mobile__background: @color-white-fog;
 @checkout-step-content-mobile__margin-s: 15px;
 @checkout-step-content-mobile__margin: @indent__base -(@checkout-step-content-mobile__margin-s) @checkout-step-content-mobile__margin-s;
 
@@ -27,8 +27,7 @@
 
 & when (@media-common = true) {
 
-    .checkout-index-index,
-    .checkout-onepage-success {
+    .checkout-index-index{  // .checkout-onepage-success 
         .page-title-wrapper {
             &:extend(.abs-visually-hidden all);
         }
@@ -37,6 +36,7 @@
     .checkout-container {
         &:extend(.abs-add-clearfix all);
         .lib-css(margin, 0 0 @checkout-wrapper__margin);
+        min-height: 300px;
     }
 
     .opc-wrapper {
@@ -49,6 +49,9 @@
         .step-title {
             &:extend(.abs-checkout-title all);
             .lib-css(border-bottom, @checkout-step-title__border);
+            font-weight: 500;
+            color: @pdp-review-link__color;
+            margin-bottom: @indent__base;
         }
 
         .step-content {
@@ -64,6 +67,91 @@
 
         .logo {
             margin-left: 0;
+            display: inline-block;
+            float: none;
+        }
+        
+        .page-header {
+            z-index: 899; // model override issue of increase then 900
+        }
+    }
+    
+    .checkout-footer-content {
+        background: @color-white-fog;
+        padding: 2.5em 2rem ;
+        text-align: center;
+                
+        .payment_methods ,
+        .secure-checkout {
+            box-sizing: border-box;
+            
+            img {
+                width: 30rem;
+                display: inline-block;
+                vertical-align: middle;
+                
+            }
+        }
+        
+        .secure-checkout {
+            font-size: 1.3rem;
+            font-weight: 300;
+            color: #4a4a4a;
+            line-height: 2.5;
+            
+            img {
+                width: 2rem;
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: 1rem;
+                height: 2.6rem;
+            }
+        }
+    }
+    
+    .checkout-onepage-success {
+        #registration,
+        .checkout-success {
+            text-align: center;
+            .actions-toolbar {
+                text-align: center;
+                .primary {
+                    float: none;
+                    margin: 0;
+                }
+            }
+        }
+        .column.main {
+            .order-details-items {
+                .table-wrapper {
+                    .data.table {
+                        &:extend(.abs-table-striped all);
+                    }
+                }
+            }
+        }
+        .order-details-items {
+        
+        }
+        .block-order-details-view {
+            .block-title {
+                display: none;
+            }
+            .block-content {
+                .box {
+                    margin-bottom: @indent__base;
+                    .box-content {
+                        padding: @indent__base 0;
+                        .lib-css(border-bottom, @checkout-step-title__border);
+                    }
+                    &:last-child {
+                        .box-content {
+                            border-bottom: none;
+                        }
+                    }
+                }
+            }
+            
         }
     }
 }
@@ -94,6 +182,91 @@
     .opc-wrapper {
         &:extend(.abs-add-box-sizing-desktop-m all);
         .lib-layout-column(2, 1, @checkout-wrapper__columns);
-        padding-right: @indent__l;
+        padding-right: @indent__l; 
+        
+        padding-left: @layout-indent__width;
+        
+        box-sizing: border-box;
+        
     }
+    .opc-wrapper,
+    form.payments,
+    form.form-shipping-address {
+    
+        box-sizing: border-box;
+        .fieldset > .field {
+            &:not(.choice) {
+                width: 48%;
+                display: inline-block;
+                margin-right: 2%;
+                vertical-align: top;
+            }
+        }
+    }
+    
+    .checkout-footer-content {
+        
+        padding: 3em 2rem 2.5rem;
+        text-align: left;
+            
+        .block-static-block,
+        .payment_methods ,
+        .secure-checkout {
+            display: inline-block;
+            vertical-align: middle;
+            width: 48%;
+            margin-bottom: 0;
+            
+            img {
+                /* width: 18rem;
+                display: block;
+                max-height: 2.6rem; */
+            }
+        }
+        /* .payment_methods {
+            display: none;
+        } */
+        .secure-checkout {
+            text-align: right;
+            font-size: 1.6rem;            
+        }
+    }
+    
+    .checkout-onepage-success {        
+        .order-details-items {
+            &:extend(.abs-add-box-sizing-desktop-m all);
+            .lib-layout-column(2, 1, @checkout-wrapper__columns);
+            box-sizing: border-box;
+            padding-right: @indent__l;
+        }
+        
+        .block-order-details-view {
+            .lib-layout-column(2, 2, @checkout-sidebar__columns);
+             .lib-css(margin, 55px 0 @indent__base);
+            box-sizing: border-box;
+            border: solid 1px #e3e3e3;
+            .lib-css(padding, @layout-indent__width);
+        }
+    }
+    
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
+    .checkout-container {
+        text-align: center;
+        
+        > .opc-estimated-wrapper,
+        > .messages,
+        > .opc-wrapper,
+        > .opc-sidebar {
+            text-align: left;
+        }
+    }
+    .opc-wrapper {
+        max-width: calc((@layout__max-width*2/3) - 3rem );
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+    }
+
 }

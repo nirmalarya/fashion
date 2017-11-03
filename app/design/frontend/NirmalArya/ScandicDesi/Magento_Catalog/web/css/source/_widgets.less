@@ -1,0 +1,420 @@
+// /**
+//  * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .block-product-link,
+    .block-category-link {
+        &.widget {
+            display: block;
+            margin-bottom: @indent__base;
+        }
+    }
+
+    .block-product-link-inline {
+        &.widget {
+            margin: 0;
+        }
+    }
+
+    .block.widget {
+        .product-item-info {
+            width: auto;
+        }
+
+        .pager {
+            padding: 0;
+
+            .toolbar-amount {
+                float: none;
+                .lib-font-size(12);
+            }
+
+            .pages-item-previous {
+                padding-left: 0;
+            }
+
+            .pages-item-next {
+                position: relative;
+            }
+
+            .items {
+                white-space: nowrap;
+            }
+        }
+    }
+    
+    /* .page-layout-1column .block.widget */
+    .shop-by-occasion {
+        background-color: @color-pale_grey;
+        padding-top: 5rem;
+        padding-bottom: 3rem;
+        
+        .block-title {
+            margin-bottom: 0;
+            h2 {
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+        }
+        .block-content {
+            .products-grid {
+                max-width: 112.4rem;
+                margin: 0 auto;
+                margin-top: 2rem;
+                
+                .owl-carousel {
+                    /* padding: 0 7rem; */
+                    box-sizing: border-box;
+                    margin: 0;
+                    
+                    .product-item {
+                        width: 100%;
+                        margin-left: 0;
+                        padding-left: 0;
+                        a{
+                            text-decoration: none;
+                        }
+                        p {
+                            text-align: center;
+                            font-family: @font-julius_sans_one;
+                            font-size: 1.8rem;
+                            letter-spacing: -0.3px;
+                            color: @color-dark_brown;
+                            margin-top: 1.2rem;
+                        }
+                    }
+                
+                    .owl-item {
+                        /* margin-left: -30px;
+                        margin-right: -30px; */
+                        z-index: 11;
+                        img {
+                            transition: width .4s ease;
+                        }
+                        &.next-of-active,
+                        &.prev-of-active {
+                            margin:0;
+                            text-align: right;
+                            z-index: 10;
+                            img {
+                                max-width: 75%;
+                                display: inline-block;
+                                vertical-align: middle;
+                                margin-top: 13%;
+                                margin-bottom: 12%;
+                            }
+                            p {
+                                font-size: 1.6rem;
+                                letter-spacing: -0.2px;
+                                color: @color-black;
+                                margin-top: 1rem;
+                            }
+                        }
+                        &.next-of-active {
+                             text-align: left;
+                        }
+                        &.active {
+                          margin:0;
+                          img {
+
+                          }
+                        }
+                    }
+                    /* .owl-nav {
+                        display: block;
+                    } */
+
+                }
+            }
+        }
+    }
+    
+    .owl-carousel {
+        .owl-nav {
+            margin: 0;
+            .shop-by-occasion & {
+                display: none;
+            }
+            
+            div{
+                font-size: 0;
+                cursor: pointer;
+                position: absolute;
+                width: 4.8rem;
+                height: 4.8rem;                            
+                line-height: 4.8rem;
+                
+                text-align: center;
+                
+                top: 50%;
+                top: ~"calc(50% - 4.8rem/2)";                            
+                
+                transform: translate(0,-50%);                            
+                border-radius: 0;
+                padding: 0;
+                margin: 0;
+                
+                filter: Alpha(Opacity=84);/*IE7 fix*/
+                opacity: 0.84;  
+
+                border-radius: 50%;
+                border: 0;
+                
+                .shop-by-occasion & {
+                    background-color: @color-dark_blue;
+                }
+                &:hover{
+                    filter: Alpha(Opacity=70);/*IE7 fix*/
+                    opacity: 0.7;  
+
+                }
+               
+                &.owl-prev,
+                &.owl-next{
+                     .lib-icon-font(
+                        @_icon-font-content: @icon-prev,
+                        @_icon-font-size: 1.8rem,
+                        @_icon-font-color: @color-dark_blue,
+                        @_icon-font-vertical-align: @icon-font__vertical-align,
+                        @_icon-font-position: after
+                    );  
+                    
+                    .shop-by-occasion & {
+                       .lib-icon-font(
+                            @_icon-font-content: @icon-prev,
+                            @_icon-font-size: 1.8rem,
+                            @_icon-font-color: @color-white,
+                            @_icon-font-vertical-align: @icon-font__vertical-align,
+                            @_icon-font-position: after
+                        ); 
+                    }
+                }
+                &.owl-prev{
+                    left: 0;                                
+                }				
+                &.owl-next{
+                    right: 0;
+                    
+                    .lib-icon-font-symbol(
+                        @_icon-font-content: @icon-next,
+                        @_icon-font-position: after
+                    );
+                    .shop-by-occasion & {
+                        .lib-icon-font-symbol(
+                            @_icon-font-content: @icon-next,
+                            @_icon-font-position: after
+                        );
+                    }
+                }                               
+            }
+            
+        }
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__s) {
+    .block.widget .products-grid .product-item,
+    .page-layout-1column .block.widget .products-grid .product-item,
+    .page-layout-3columns .block.widget .products-grid .product-item {
+        width: 100%/3;
+    }
+    
+    .block.widget .products-grid .owl-carousel .product-item,
+    .page-layout-1column .block.widget .products-grid .owl-carousel .product-item,
+    .page-layout-3columns .block.widget .products-grid .owl-carousel .product-item {
+        width: 100%;
+    }
+    
+    
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    
+    .block.widget .new-arrivals-best-picks-tab-product-items  .products-grid .product-items.owl-carousel .product-item,
+    .page-layout-1column .block.widget .new-arrivals-best-picks-tab-product-items  .products-grid .product-items.owl-carousel .product-item,
+    .page-layout-3columns .block.widget .new-arrivals-best-picks-tab-product-items  .products-grid .product-items.owl-carousel .product-item {
+        width: 75%;
+    }
+    /* .block.widget {
+        .products-grid {
+            .product-items.owl-carousel {
+                .product-item {
+                    width: 75%;
+                }
+            }
+        }
+    } */
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .block.widget .products-grid .product-item {
+        width: 100%/3;
+    }
+
+    .page-layout-1column .block.widget .products-grid .product-item {
+        width: 100%/4;
+    }
+
+    .page-layout-3columns .block.widget .products-grid .product-item {
+        width: 100%/2;
+    }
+    .shop-by-occasion {
+        padding-top: 4rem;
+        padding-bottom: 3rem;
+        .block-content {
+            .products-grid {
+                 margin-top: 3rem;
+                .owl-carousel {
+                    padding: 0 2.7rem;
+                    
+                    .product-item {                        
+                        p {
+                            font-size: 2.8rem;
+                            margin-top: 2.2rem;
+                        }
+                    }
+                    
+                    
+                    
+                    .owl-item {
+                        &.next-of-active,
+                        &.prev-of-active {
+                            p {
+                                font-size: 2rem;
+                                margin-top: 1.5rem;
+                            }
+                        }
+                    }
+                    
+                    
+                    
+                    
+                    
+                }
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+    .block.widget .products-grid .product-item {
+        width: 100%/5;
+    }
+
+    .page-layout-1column .block.widget .products-grid .product-item {
+        margin-left: calc(~'(100% - 5 * (100%/6)) / 4');
+        width: 100%/6;
+
+        &:nth-child(4n + 1) {
+            margin-left: calc(~'(100% - 5 * (100%/6)) / 4');
+        }
+
+        &:nth-child(5n + 1) {
+            margin-left: 0;
+        }
+    }
+    
+    /* .page-layout-1column .block.widget */
+    .shop-by-occasion {
+        padding-top: 9rem;
+        padding-bottom: 4rem;
+        .block-content {
+            .products-grid { 
+                margin-top: 4.1rem;
+                .owl-carousel {
+                    padding: 0 7rem;
+                    .product-item {
+                        /* width: 100%;
+                        margin-left: 0; */
+                                               
+                        p {
+                            font-size: 3.8rem;
+                            margin-top: 3.2rem;
+                        }
+                       
+                    }
+                    .owl-item {
+                        &.next-of-active,
+                        &.prev-of-active {
+                            p {
+                                font-size: 2.6rem;
+                                margin-top: 2rem;
+                            }
+                        }
+                    }
+                    .owl-nav {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+	
+	.page-layout-1column .block.widget .new-arrivals-best-picks-tab-product-items .products-grid .product-item {
+        margin-left: calc(~'(100% - 3 * (100%/4)) / 2');
+        width: 100%/4;
+
+        &:nth-child(2n + 1) {
+            margin-left: calc(~'(100% - 3 * (100%/4)) / 2');
+        }
+		
+		&:nth-child(3n + 1) {
+            margin-left: 0;
+        }
+		
+    }
+    .page-layout-1column .block.widget .new-arrivals-best-picks-tab-product-items .products-grid .owl-carousel .product-item {
+        margin-left: 0;
+        width: 100%;
+    }
+    
+	
+
+    .page-layout-3columns .block.widget .products-grid .product-item {
+        width: 100%/4;
+    }
+
+    .block.widget .products-grid .product-items {
+        margin: 0;
+    }
+
+    .block.widget .products-grid .product-item {
+        margin-left: calc(~'(100% - 4 * 24.439%) / 3');
+        padding: 0;
+        width: 24.439%;
+
+        &:nth-child(4n + 1) {
+            margin-left: 0;
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .sidebar .block.widget .pager {
+        .item:not(.pages-item-next):not(.pages-item-previous) {
+            &:extend(.abs-no-display-desktop all);
+        }
+
+        .pages-item-next {
+            padding: 0;
+
+            .action {
+                margin: 0;
+            }
+        }
+    }
+}

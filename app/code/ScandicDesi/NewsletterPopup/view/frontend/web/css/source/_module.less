@@ -1,0 +1,158 @@
+//
+//  Typography - local variable 
+//  ---------------------------------------------
+@color-medium_light_grey: #bcbcbc;
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .newsletter-model-popup {
+        &.modal-popup {
+        
+            .modal-inner-wrap { 
+                max-width: 40rem;
+            }
+            
+            .modal-header {
+                padding: 0;
+                 .modal-title {
+                    display: none;
+                }
+                
+                .action-close {
+                    padding: 1.8rem;
+                    z-index: 1;
+                    
+                    &:before {
+                        background: url('../ScandicDesi_NewsletterPopup/images/newsletter-popup-close-icon.svg') no-repeat center;
+                        background-size: 100%;
+                        text-indent: -9999px;
+                        width: 2.4rem;
+                        height: 3rem;
+                            
+                    }
+                }
+            }
+            
+            .modal-content {
+                padding: 1.8rem;
+                
+                .newsletter-popup {
+                    position: relative;
+                    &:after {
+                        content: '';
+                        clear: both;
+                        display: block;
+                    }
+                    
+                    .left-block,
+                    .right-block {                        
+                        padding: 0;
+                        box-sizing: border-box;                        
+                    }
+                    .left-block {
+                        display: none;
+                        img {
+                            display: block;
+                            width: 100%;
+                        }
+                    }
+                    .newsletter-popup-content-wrapper {
+                        text-align: center;
+                        padding: 4rem 1rem;
+                        
+                        .newsletter-logo-block { 
+                            padding: 1rem 5rem 3rem;
+                            max-width: 16.9rem;
+                            margin: 0 auto;
+                        } 
+                        
+                        .block.newsletter{
+                            margin-top: 2.1rem;
+                        }
+                        
+                        .newsletter-popup-footer-content {
+                            font-size: 1.2rem;
+                            font-weight: 300;
+                            text-align: center;
+                            color: @color-medium_light_grey;
+                            margin-top: 2rem;
+                            
+                            p {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                }               
+                
+               
+            }
+
+        }
+          
+    }
+}
+
+//
+//  Mobile @screen__m
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .newsletter-model-popup {
+        &.modal-popup {
+        
+            .modal-inner-wrap { 
+                width: 95%;
+            }
+        }
+    }    
+}
+
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+    .newsletter-model-popup {
+        &.modal-popup {
+            
+            .modal-inner-wrap { 
+                max-width: 74.5rem;
+            }
+            .modal-content {
+                padding: 1.8rem;
+                
+                .newsletter-popup {
+                
+                    .left-block,
+                    .right-block {
+                        width: 50%;                        
+                        float: left;
+                    }
+                    .left-block {    
+                        padding-right: 4.6rem;
+                        display: block;                       
+                    }
+                    .newsletter-popup-content-wrapper {
+                        padding: 4rem 1rem 0;
+                        min-height: 42rem;
+                        .newsletter-popup-footer-content {
+                            position: absolute;
+                            bottom: 0;
+                            width: 100%;
+                            max-width: 33.5rem;
+                            margin-top: 1rem;
+                        }
+                    }
+                }               
+                
+               
+            }
+
+        }
+          
+    }
+}

@@ -14,14 +14,51 @@
 //
 //  Typography
 //  ---------------------------------------------
+//  SD Base Colors
+@color-beige: #f9e3e3;
+@color-dark_brown: #494949;
+@color-dark_blue: #17335b;
+@color-light_grey: #bcbcbc;
+@color-pale_grey: #e1ecf4;
+@color-pink: #f9678d;
+
+
+@color-medium_grey: #767676;
+@color-m_m_l_gray : #9b9b9b;
+@color-medium_light_grey: #bcbcbc;
+
+@pdp-title__color: #58585a;
+@pdp-review-link__color: #4a4a4a;
+
+@dropdown__border-color: #ececec;
+@seprator__color: #d3d3d3;
+@sub-heading__color: #525252;
+@sd-links-heading__color: #20252d;
+
+
+@sd_base__color: @color-pink;
+@sd_base__hover__color: @color-dark_brown;
+@sd__anchor__color: #616161;
+@sd__icon__color: @sd_base__hover__color;
+@sd__icon__hover__color: @sd_base__color;
+@sd__anchor__hover__color: @sd_base__color;
+
+
+
+@active__color: @sd_base__color;
+@copyright__color: #a5a5a5;
+
 
 //  Fonts
-@icons__font-path: '@{baseDir}fonts/Luma-Icons';
+@icons__font-path: '@{baseDir}fonts/Luma_Icons/Luma-Icons';
 @icons__font-name: 'luma-icons';
 
 //  Color nesting
 @panel__background-color: @color-gray-light0;
-@border-color__base: @color-gray80;
+ // @border-color__base: @color-gray80;
+@border-color__base: fade(#979797, 13%);
+@primary__color : @color-black;
+@color-white-smoke: #f9f9f9;
 
 //  Headings
 @h3__font-weight: @font-weight__semibold;
@@ -35,6 +72,7 @@
 @table-cell-stripped__background-color: @table-cell__hover__background-color;
 @table-responsive-th__background-color: @table-cell-stripped__background-color;
 @table-responsive-cell__padding: @indent__xs @indent__s;
+@table-th__font-weight: 500;
 
 //
 //  Layout grid
@@ -49,24 +87,63 @@
 @layout-column-checkout__width-left: 6;
 
 //
+//  Layout variables
+//  _____________________________________________
+
+@layout__max-width: 148rem;
+
+//
 //  Navigation
 //  ---------------------------------------------
 
-@navigation__background: @color-gray94;
-@navigation-level0-item__active__color: @primary__color;
+@navigation__background: @color-white;
+@navigation-level0-item__active__color: @sd_base__color;
+@navigation-desktop-level0-item__active__color: @sd_base__color;
+@navigation-desktop-level0-item__active__border-color: '';
+@navigation-desktop-level0-item__active__border-style: '';
+@navigation-desktop-level0-item__active__border-width: '';
+@navigation-desktop__font-size: 1.5rem;
+@navigation-desktop__font-weight: 300;
+@navigation-desktop-level0-item__hover__color: @sd_base__color;
+@navigation-desktop-level0-item__color: @color-black;
+
 @submenu-item__active__color: @navigation-level0-item__active__color;
+@navigation-level0-item__color: @color-black;
+@navigation-level0-item__font-size: 1.5rem;
+@navigation-level0-item__font-weight: 300;
+@navigation-level0-item__active__border-color: @sd_base__color;
+@navigation-level0-item__border: @sd_base__color;
+
+@submenu-desktop__min-width: 20rem;
+@submenu-desktop__font-size: 1.3rem;
+@submenu-desktop-item__padding: .4rem 1rem;
+@submenu-desktop-item__hover__background: none;
+
+@submenu__padding-left: 0;
+@submenu-item__color: @color-black;
+@submenu-item__active__border-color: @sd_base__color;
+@submenu-desktop-item__active__border-color: @sd_base__color;
+
 
 //  Desktop navigation
-@navigation-desktop-level0-item__line-height: 47px;
-@submenu-desktop__font-weight: @font-weight__regular;
+@navigation-desktop-level0-item__line-height: 5rem;
+@submenu-desktop__font-weight: 300;
 @submenu-desktop-item__active__color: @navigation-level0-item__active__color;
 
 //  Tabs
 @tab-control__font-weight: @font-weight__regular;
 @tab-control__height: @indent__base*2;
-@tab-control__margin-right: -1px;
+@tab-control__margin-right: 0;/* -1px; */
 @tab-control__padding-top: 1px;
 @tab-control__padding-right: 35px;
+@tab-control__background-color: #FFF;
+@tab-control__active__background-color: #FFF;
+@tab-content__border: none;
+
+@tab-control__color: @color-light_grey;
+@tab-control__active__color: @color-black;
+@tab-control__font-size: 2.4rem;
+@tab-control__font-family: @font-julius_sans_one;
 
 //  Tabs content
 @tab-content__padding-top: 35px;
@@ -77,53 +154,92 @@
 //  ---------------------------------------------
 
 @accordion-control__font-family: false;
-@accordion-control__font-size: @font-size__base;
+@accordion-control__font-size: 1.6rem;
 @accordion-control__font-style: false;
-@accordion-control__font-weight: @font-weight__semibold;
+@accordion-control__font-weight: 500;
 @accordion-control__border-right: false;
 @accordion-control__border-bottom: false;
 @accordion-control__border-left: false;
-@accordion-control__background-color: false;
-@accordion-control__color: @primary__color;
+@accordion-control__background-color: #fafafa;
+@accordion-control__color: #4a4a4a;
 @accordion-control__hover__background-color: false;
 @accordion-control__hover__color: @accordion-control__color;
-@accordion-control__active__background-color: false;
+@accordion-control__active__background-color: #FFF;
 @accordion-control__active__color: @accordion-control__color;
 @accordion-control__margin-bottom: 0;
-@accordion-control__padding-right: @indent__s;
-@accordion-control__padding-left: @indent__s;
+@accordion-control__padding-right: 15px;
+@accordion-control__padding-left: 15px;
+@accordion-control__height: 50px;
 @accordion-content__border: false;
 @accordion-content__margin: 0;
-@accordion-content__padding: @indent__s @indent__s @indent__l;
+@accordion-content__padding: @indent__s 15px;
+
 
 //
 //  Buttons
 //  ---------------------------------------------
 
 @button__font-weight: @font-weight__semibold;
+@button__border-radius: 0;
 
 //  Default = secondary button
-@button__background: @color-gray-darken0;
-@button__border: 1px solid @border-color__base;
-@button__hover__color: @button__color;
-@button__hover__background: darken(@button__background, 5%);
-@button__active__background: @color-gray-darken1;
+@button__background: @color-white;
+@button__border: 1px solid @sd_base__color;
+@button__color: @sd_base__color;
+@button__hover__background: @sd_base__color;
+@button__hover__color: @color-white;
+
+@button__active__background: @sd_base__color;
+@button__active__color: @color-white;
 
 //  Primary button
+@button-primary__background: @sd_base__color;
+@button-primary__border: 1px solid @sd_base__color;
+@button-primary__color: @color-white;
+
+@button-primary__hover__background: @sd_base__hover__color;
+@button-primary__hover__border: 1px solid @sd_base__hover__color;
 @button-primary__hover__color: @color-white;
-@button-primary__active__background: @link__hover__color;
-@button-primary__active__border: 1px solid @link__hover__color;
+
+@button-primary__active__background: @sd_base__hover__color;
+@button-primary__active__border: 1px solid @sd_base__hover__color;
 @button-primary__active__color: @color-white;
+
+
+//  Secondary button
+@button-secondary__background: transparent;
+@button-secondary__border: 1px solid @color-black;
+@button-secondary__color: @color-black;
+
+@button-secondary__hover__background: @color-black;
+@button-secondary__hover__border: 1px solid @color-black;
+@button-secondary__hover__color: @color-white;
+
+@button-secondary__active__background: @color-black;
+@button-secondary__active__border: 1px solid @color-black;
+@button-secondary__active__color: @color-white;
+
 
 //  Button with icon
 @button-icon__line-height: @icon-font__line-height;
+
+
+//
+//  Links
+//  ---------------------------------------------
+
+@link__color: @sd__anchor__color;
+@link__visited__color: @sd__anchor__color;
+@link__hover__color: @sd__anchor__hover__color;
+@link__active__color: @sd__anchor__hover__color;
+
 
 //
 //  Icons
 //  ---------------------------------------------
 
 @icon-wishlist-empty: false;
-@icon-comment-reflected: false;
+/* @icon-comment-reflected: false; */
 @icon-compare-empty: false;
 @icon-arrow-up-thin: false;
 @icon-arrow-right-thin: false;
@@ -150,8 +266,27 @@
 @loader-overlay__background-color: rgba(255, 255, 255, .7);
 
 //
+//  Focus
+//  ---------------------------------------------
+@focus__box-shadow: none;
+@focus__border-color: @sd__anchor__hover__color;
+
+
+//
 //  Forms
 //  ---------------------------------------------
+
+
+//  Form elements inputs 
+@form-element-input__height: 3.8rem;
+@form-element-input__padding : 0 1.5rem;
+@form-element-input__font-size: 1.2rem;
+@form-element-input__border-color: fade(@color-m_m_l_gray, 90%);
+
+@form-validation-note__font-weight: 300;
+
+@form-field-label-asterisk__color: #383838;
+@form-field-label-asterisk__margin: 0;
 
 //  Form fieldset
 @form-fieldset-legend__font-size: 18px;
@@ -165,11 +300,31 @@
 @form-field__additional-vertical-indent: @indent__s;
 
 //  Form field label
-@form-field-label__font-weight: @font-weight__semibold;
+@form-field-label__font-weight: 400;
 @form-field-type-label-block__margin: 0 0 8px;
+@form-field-label__color: #383838;
+@form-field-label__font-size: 1.4rem;
 
 //  Form field note icon
 @form-field-note-icon-font__content: false;
+
+
+//
+//  Variables
+//  _____________________________________________
+
+/* @product-name-link__color: @text__color;
+@product-name-link__color__active: @text__color;
+@product-name-link__color__hover: @text__color;
+@product-name-link__color__visited: @text__color; */
+
+@product-name-link__text-decoration: none;
+@product-name-link__text-decoration__active: none;
+@product-name-link__text-decoration__hover: none;
+@product-name-link__text-decoration__visited: none;
+
+@product-item__hover__box-shadow: none;
+
 
 //
 //  Pager
@@ -180,29 +335,48 @@
 @pager-item__margin: 0 8px 0 0;
 @pager-item__padding: 0 @indent__xs;
 
+//  Pager link default
+@pager__color: #212121;
+
+//  Pager link visited
+@pager__visited__color: #212121;
+
+//  Pager link hover
+@pager__hover__color: #bdbdbd;
+
+//  Pager link active
+@pager__active__color: #212121;
+
 //  Pager current page
-@pager-current__background: @color-gray90;
+@pager-current__background: @sd__anchor__color;
+@pager-current__color : @color-white;
+@pager-current__font-weight: 400;
 
 //  Pager link.action
 @pager-icon__font-margin: 0;
 @pager-icon__font-size: 16px;
+@pager-action__color: #4a4a4a;
+@pager-action__border:none;
+@pager-action__background: none;
 
 //  Pager link.action visited
-@pager-action__visited__color: @text__color__muted;
+/* @pager-action__visited__color: @pager-action__color; */
 
 //  Pager link.action hover
-@pager-action__hover__color: @text__color__muted;
+/* @pager-action__hover__color: @pager-action__color; */
 
 //  Pager link.action active
-@pager-action__active__color: @text__color__muted;
+/* @pager-action__active__color: @pager-action__color; */
 
 //
 //  Rating
 //  ---------------------------------------------
 
-@rating-icon__font-size: 16px;
+@rating-icon__color: #e4e4e4;
+@rating-icon__font-size: 18px;
 @rating-icon__letter-spacing: 2px;
-@rating-icon__active__color: @active__color;
+@rating-icon__active__color: #dba86f;
+
 
 //
 //  Dropdowns
@@ -211,6 +385,10 @@
 @dropdown-toggle-icon__content: @icon-down;
 @dropdown-toggle-icon__active__content: @icon-up;
 @dropdown-toggle-icon__font-size: 12px;
+
+@dropdown-list__border: 1px solid @dropdown__border-color;
+@dropdown-list__shadow: none;
+@dropdown-list-pointer__border: @dropdown__border-color;
 
 //  Split dropdown
 @dropdown-split-actions__padding: 0 @indent__xs;
@@ -224,9 +402,15 @@
 //  Breadcrumbs
 //  ---------------------------------------------
 
-@breadcrumbs__container-margin: 0 0 15px;
-@breadcrumbs-icon__font-size: 10px;
-@breadcrumbs-icon__font-margin: 0 @indent__s;
+
+@breadcrumbs__container-margin: 0;
+@breadcrumbs-icon__font-size: 1.2rem;
+@breadcrumbs-icon__font-line-height: 1rem;
+@breadcrumbs-icon__font-margin: 0 2px;
+@breadcrumbs-icon__font-content: '/';
+
+//  Current page
+@breadcrumbs-current__color: @color-dark_brown;
 
 //
 //  Popups

@@ -1,5 +1,5 @@
 {
-    "name": "magento/theme-frontend-luma",
+    "name": "nirmalarya/scandicdesi",
     "description": "N/A",
     "require": {
         "php": "~5.6.5|7.0.2|7.0.4|~7.0.6",

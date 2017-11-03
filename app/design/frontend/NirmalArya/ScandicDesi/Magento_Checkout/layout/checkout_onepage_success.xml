@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="page.main.title">
+            <action method="setPageTitle">
+                <argument translate="true" name="title" xsi:type="string">Order Confirmation</argument> <!-- Thank you for your purchase! -->
+            </action>
+            <referenceBlock name="checkout.success.print.button" remove="true" />
+        </referenceBlock> 
+        <!-- <referenceContainer name="content">
+            <block class="Magento\Checkout\Block\Onepage\Success" name="checkout.success" template="success.phtml" cacheable="false"/>
+            <block class="Magento\Checkout\Block\Registration" name="checkout.registration" template="registration.phtml" cacheable="false"/>
+        </referenceContainer>
+        <container name="order.success.additional.info" label="Order Success Additional Info"/> -->
+        
+        <referenceContainer name="content">
+            <block class="ScandicDesi\Checkout\Block\Order\View" name="sales.order.view" cacheable="false" after="sales.order.info.links">
+                <block class="Magento\Sales\Block\Order\Items" name="order_items" template="ScandicDesi_Checkout::order/items.phtml">
+                    <block class="Magento\Framework\View\Element\RendererList" name="sales.order.items.renderers" as="renderer.list">
+                    
+                        <block class="ScandicDesi\Checkout\Block\Order\Item\Renderer\DefaultRenderer" as="default" template="ScandicDesi_Checkout::order/items/renderer/default.phtml"/>
+                        
+                        <!-- Exc. Tax -->
+                        <!-- <block class="Magento\Sales\Block\Order\Item\Renderer\DefaultRenderer" name="item_unit_price" template="items/price/unit.phtml"/>
+                        <block class="Magento\Sales\Block\Order\Item\Renderer\DefaultRenderer" name="item_row_total" template="items/price/row.phtml"/>
+                        <block class="Magento\Sales\Block\Order\Item\Renderer\DefaultRenderer" name="item_row_total_after_discount" template="items/price/total_after_discount.phtml"/> -->
+                        
+                        
+                        <!-- Inc. Tax -->
+                        <block class="Magento\Weee\Block\Item\Price\Renderer" name="item_unit_price" template="item/price/unit.phtml">
+                            <arguments>
+                                <argument name="zone" xsi:type="string">sales</argument>
+                            </arguments>
+                        </block>
+                        <block class="Magento\Weee\Block\Item\Price\Renderer" name="item_row_total" template="item/price/row.phtml">
+                            <arguments>
+                                <argument name="zone" xsi:type="string">sales</argument>
+                            </arguments>
+                        </block>
+                        <block class="Magento\Weee\Block\Item\Price\Renderer" name="item_row_total_after_discount" template="item/price/total_after_discount.phtml"/>
+                        
+                        
+                        
+                    </block>
+                    <block class="Magento\Sales\Block\Order\Totals" name="order_totals" template="Magento_Sales::order/totals.phtml">
+                        <arguments>
+                            <argument name="label_properties" xsi:type="string">colspan="3" class="mark"</argument>
+                            <argument name="value_properties" xsi:type="string">class="amount"</argument>
+                        </arguments>
+                        <block class="Magento\Tax\Block\Sales\Order\Tax" name="tax" template="Magento_Tax::order/tax.phtml"/>
+                    </block>
+                </block>
+            </block>
+            <block class="Magento\Sales\Block\Order\Info" as="info" name="sales.order.info" after="sales.order.view"/>
+        </referenceContainer> 
+        
+    </body>
+</page>

@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="checkout" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+        
+            <container name="checkout.footer.content.container"  label="Custom - Checkout Footer Content Container" htmlTag="div" htmlClass="checkout-footer-content"  after="-">            
+                <block class="Magento\Framework\View\Element\Template" name="checkout.footer.content" after="-" template="Magento_Checkout::checkout-footer-content.phtml" />   
+            </container>
+            
+            <referenceBlock name="checkout.root">
+                <arguments>
+                    <argument name="jsLayout" xsi:type="array">                        
+                        <item name="components" xsi:type="array">
+                            <item name="checkout" xsi:type="array">                               
+                                <item name="children" xsi:type="array">
+                                
+                                     <item name="steps" xsi:type="array">
+                                        <item name="children" xsi:type="array">
+                                            <item name="shipping-step" xsi:type="array">
+                                                 <item name="children" xsi:type="array">
+                                                    <item name="shippingAddress" xsi:type="array">
+                                                        <item name="children" xsi:type="array">
+                                                            <item name="shipping-address-fieldset" xsi:type="array">
+                                                                <item name="children" xsi:type="array">
+                                                                    
+                                                                    <item name="company" xsi:type="array">
+                                                                        <item name="visible" xsi:type="boolean">false</item>
+                                                                    </item>
+                                                                    
+                                                                </item>
+                                                            </item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                            </item>                                            
+                                        </item>
+                                    </item>
+                                
+                                
+                                
+                                    <item name="sidebar" xsi:type="array">                                         
+                                        <item name="children" xsi:type="array">
+                                            <item name="summary" xsi:type="array">                                               
+                                                <item name="children" xsi:type="array">
+                                                    <item name="totals" xsi:type="array">                                                        
+                                                        <item name="sortOrder" xsi:type="string">3</item>
+                                                    </item>
+                                                    <item name="itemsBefore" xsi:type="array">
+                                                        <item name="sortOrder" xsi:type="string">1</item>
+                                                    </item>
+                                                    <item name="cart_items" xsi:type="array">
+                                                        <item name="sortOrder" xsi:type="string">0</item>
+                                                    </item>
+                                                    <item name="itemsAfter" xsi:type="array">
+                                                        <item name="sortOrder" xsi:type="string">2</item>
+                                                    </item>
+                                                </item>
+                                            </item>                                            
+                                        </item>
+                                    </item>
+                                </item>
+                            </item>                          
+                        </item>
+                    </argument>
+                </arguments>
+            </referenceBlock>
+        </referenceContainer>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <!-- <move element="logo" destination="checkout.header.wrapper"/> -->
+        
+        <!-- page.main.title -->
+        <referenceContainer name="columns.top">        
+            
+        </referenceContainer>
+        
+        <referenceBlock name="header_nav_container" remove="true" />
+        <referenceBlock name="copyright" remove="true" />
+        <move element="checkout.footer.content.container" destination="before.body.end"/>
+    </body>
+</page>

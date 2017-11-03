@@ -10,9 +10,9 @@
 @toolbar-mode-icon-font-size: 16px;
 @toolbar-background: transparent;
 @toolbar-element-background: @color-gray94;
-@pager-action__background: @toolbar-element-background;
+/* @pager-action__background: @toolbar-element-background;
 @pager-action__hover__background: darken(@toolbar-element-background, 7%);
-@pager__font-weight: @font-weight__bold;
+@pager__font-weight: @font-weight__bold; */
 
 //
 //  Common
@@ -21,9 +21,12 @@
 & when (@media-common = true) {
     .page-products {
         .columns {
-            padding-top: 60px;
+            /* padding-top: 60px; */
             position: relative;
             z-index: 1;
+            /* &.algolia-main-container {
+                padding-top: 60px;
+            } */
         }
     }
 
@@ -79,9 +82,11 @@
     .sorter {
         float: right;
 
+       
+        
         .page-products & {
             position: absolute;
-            right: @indent__s;
+            right: 0;
             top: 0;
             z-index: 1;
         }
@@ -114,6 +119,19 @@
         display: none;
     }
 
+    .limiter,
+    .sorter { 
+        label {            
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: #000000;
+            text-transform: uppercase;
+            padding: 0 1rem; 
+            line-height: 4rem;
+            display: inline-block;            
+        }    
+    }
+    
     .limiter {
         display: none;
 
@@ -136,6 +154,23 @@
     }
 }
 
+    
+//
+//  Mobile
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+
+    .page-products {
+        .columns {            
+            &.algolia-main-container {
+                max-width: 90%;
+                margin: 0 auto;
+                padding-top: 5rem;
+            }
+        }
+    }
+}
+    
 //
 //  Desktop
 //  _____________________________________________
@@ -152,6 +187,13 @@
             padding-top: 0;
             position: relative;
             z-index: 1;
+            
+            &.algolia-main-container {
+                max-width: @layout__max-width;
+                margin: 0 auto;
+                padding: 0 2rem;
+                box-sizing: border-box;
+            }
         }
     }
 

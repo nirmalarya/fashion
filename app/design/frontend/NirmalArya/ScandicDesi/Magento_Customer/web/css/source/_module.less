@@ -7,11 +7,11 @@
 //  Variables
 //  _____________________________________________
 
-@account-title-border-color: @color-gray-middle2;
-@account-table-border-bottom-color: @color-gray-middle1;
+@account-title-border-color: fade(#979797,25); // @color-gray-middle2;
+@account-table-border-bottom-color: fade(#979797,25); // @color-gray-middle1;
 @account-table-action-delete: @color-red12;
 
-@_password-default: @color-gray-light01;
+@_password-default: @color-white-fog;
 @_password-weak: #ffafae;
 @_password-medium: #ffd6b3;
 @_password-strong: #c5eeac;
@@ -94,18 +94,37 @@
             }
         }
     }
-
+    
+    .box-order-billing-method,
+    .box-order-billing-address,
+    .box-order-shipping-method,
+    .box-order-shipping-address,
+    .block-addresses-list,
+    .box-address-shipping,
     .box-billing-address,
     .box-shipping-address,
     .box-information,
     .box-newsletter {
         .box-content {
             &:extend(.abs-account-block-line-height all);
+            font-size: 13px;
+            font-weight: 300;
+            color: #4a4a4a;
+            margin-bottom: 15px;
         }
     }
 
     //  My account
     .account {
+        .page-main {
+            > .page-title-wrapper {
+                .page-title {
+                    display: block;
+                    margin-right: auto;
+                }
+            }
+        }
+        
         .page-title-wrapper {
             .page-title {
                 display: inline-block;
@@ -134,7 +153,7 @@
 
         .table-wrapper {
             .lib-css(margin-bottom, @indent__base);
-            border-bottom: 1px solid @account-table-border-bottom-color;
+            /* border-bottom: 1px solid @account-table-border-bottom-color; */
 
             &:last-child {
                 margin-bottom: 0;
@@ -310,6 +329,24 @@
     .order-products-toolbar {
         position: relative;
     }
+    
+    .account {
+        .page-main {
+            a {
+                .lib-link(
+                    @_link-color: @color-m_m_l_gray,
+                    @_link-text-decoration: none,
+                    @_link-color-visited: @color-m_m_l_gray,
+                    @_link-text-decoration-visited: none,
+                    @_link-color-hover: @sd_base__color,
+                    @_link-text-decoration-hover: underline,
+                    @_link-color-active: @color-m_m_l_gray,
+                    @_link-text-decoration-active: none
+                );
+                font-size: 1.3rem;
+            }
+        }
+    }
 }
 
 //
@@ -317,6 +354,10 @@
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .form.password.reset,
+    .form.send.confirmation,
+    .form.password.forget,
+    .form.create.account,
     .login-container {
         &:extend(.abs-add-clearfix-desktop all);
 
@@ -463,7 +504,16 @@
             &:extend(.abs-account-block-font-size all);
         }
     }
-
+    
+    /* .box-billing-address,
+    .box-shipping-address,
+    .box-information,
+    .box-newsletter {
+        .box-content {
+           margin-bottom: 15px;
+        }
+    } */
+    
     .control.captcha-image {
         .captcha-img {
             margin: 0 @indent__s @indent__s 0;
@@ -477,7 +527,7 @@
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
     .account {
-        .column.main,
+        /* .column.main, */
         .sidebar-additional {
             margin: 0;
         }
@@ -502,6 +552,11 @@
     }
 
     .account {
+        .page-main {
+            > .page-title-wrapper {
+                display: none;
+            }
+        }
         .page.messages {
             margin-bottom: @indent__xl;
         }

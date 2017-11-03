@@ -6,7 +6,32 @@
  */
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+		<css src="Magento_Theme::owl-carousal2/css/owl.carousel.min.css"/>
+	</head>
     <body>
+        <referenceContainer name="page.wrapper">
+			<!-- Fixed sticky bar change structure -->
+            <container name="header_nav_container" as="header_nav_container" label="Custom - Page Header and Nav Container" htmlTag="div" htmlClass="header-nav-container" htmlId="header-nav-container" after="header.container">
+                <container name="header_nav_container_fixed" as="header_nav_container_fixed" label="Page Header and Nav Container Fixed" htmlTag="div" htmlClass="header-nav-container-fixed" htmlId="header-nav-container-fixed"/>
+            </container>
+			
+        </referenceContainer>
+		<referenceContainer name="header-wrapper">
+			<!-- Currency and help link -->
+			<container name="custom-header-currency-switcher-wrapper" as="custom-header-currency-switcher-wrapper" label="Custom - Header Currency Switcher Wrapper"  before="logo" htmlTag="div" htmlClass="custom-currency-switcher-wrapper header-top-left" >
+				<block class="Magento\Framework\View\Element\Template" name="navigation.web.toggle" before="-" template="Magento_Theme::web-nav-link.phtml" />
+			</container>
+			
+			
+            <!-- Account Li in header -->
+            <container name="custom-header-account-wrapper" as="custom-header-account-wrapper"  label="Custom  - Header Account Li Wrapper"  htmlTag="div" htmlClass="account_li wrapper" />
+                
+            <!-- Custom Header Items Wrapper -->
+			<container name="custom-header-items-wrapper" as="custom-header-items-wrapper"  label="Custom  - Header Items Wrapper" after="logo" htmlTag="div" htmlClass="custom-header-items-wrapper  header-top-right" />
+			
+		</referenceContainer>
+       
         <referenceContainer name="header.panel">
             <block class="Magento\Framework\View\Element\Html\Links" name="header.links">
                 <arguments>
@@ -16,13 +41,68 @@
         </referenceContainer>
         <referenceBlock name="logo">
             <arguments>
-                <argument name="logo_img_width" xsi:type="number">148</argument>
-                <argument name="logo_img_height" xsi:type="number">43</argument>
+                <argument name="logo_img_width" xsi:type="number">142</argument>
+                <argument name="logo_img_height" xsi:type="number">74</argument>
             </arguments>
         </referenceBlock>
         <referenceContainer name="footer">
             <block class="Magento\Store\Block\Switcher" name="store_switcher" as="store_switcher" after="footer_links" template="switch/stores.phtml"/>
-        </referenceContainer>
+        
+			<!-- footer container layout change -->
+			<container name="footer-newsletter-wrapper" label="Footer Newsletter"  htmlTag="div" htmlClass="footer-newsletter-wrapper" before="-">
+				<container name="footer-newsletter-content" label="Footer Newsletter Content"  htmlTag="div" htmlClass="footer-newsletter-content" before="-">
+					<block class="Magento\Cms\Block\Block" name="footer.sign.up.newsletter.content">
+						<arguments>
+							<argument name="block_id" xsi:type="string">footer-sign-up-newsletter-content</argument>
+						</arguments>
+					</block>
+				</container>
+			</container>
+			
+			<container name="footer-aboutus-wrapper" label="Footer About Us"  htmlTag="div" htmlClass="footer-aboutus-wrapper"  after="footer.links">
+				<block class="Magento\Cms\Block\Block" name="footer.about.us.section">
+					<arguments>
+						<argument name="block_id" xsi:type="string">footer-about-us-section</argument>
+					</arguments>
+				</block>
+			</container>
+			
+		</referenceContainer>
+		<move element="form.subscribe" destination="footer-newsletter-wrapper"/>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<move element="header.container" destination="header_nav_container_fixed"/>
+        <move element="navigation.sections" destination="header_nav_container_fixed"/>
+		
+		
+        
+        <move element="header.links" destination="custom-header-account-wrapper"/>
+        <move element="top.search" destination="custom-header-items-wrapper"/>
+        <move element="minicart" destination="custom-header-items-wrapper" before="top.search"/>
+       
+        <move element="custom-header-account-wrapper" destination="custom-header-items-wrapper" after="top.search" />
+        
+        
+        
+        
+        
+        
+        
+		<move element="currency" destination="custom-header-currency-switcher-wrapper"/>
+		
+
+        
+        
+        <!-- <referenceBlock name="header.panel" remove="true"/> -->
+		
+		<referenceBlock name="footer_links" remove="true"/>
         <referenceBlock name="report.bugs" remove="true"/>
         <move element="copyright" destination="before.body.end"/>
     </body>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2013-2017 ScandicDesi. All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="scandicdesi" translate="label" sortOrder="200">
+            <label>ScandicDesi</label>
+        </tab>
+        <section id="scandicdesi_catalog" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0">
+            <class>separator-top</class>
+            <label>Catalog</label>
+            <tab>scandicdesi</tab>
+            <resource>ScandicDesi_Catalog::config_catalog</resource>
+            <group id="general" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="enable" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="occasions_category_id" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="1" canRestore="1">
+                    <label>Occasions Category</label>
+                    <source_model>ScandicDesi\Catalog\Model\Config\Source\CategoryList</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

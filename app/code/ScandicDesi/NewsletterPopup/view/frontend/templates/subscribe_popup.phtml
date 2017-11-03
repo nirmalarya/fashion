@@ -1,0 +1,33 @@
+<?php
+/** @var \ScandicDesi\NewsletterPopup\Block\Subscribe $block */
+?>
+<div class="newsletter-popup no-display" data-role="newsletter-popup">
+    <div class="left-block">
+        <?php echo $block->getLeftBlock('newsletter_popup_left_block'); ?>
+    </div>
+    <div class="right-block newsletter-popup-content-wrapper">
+        <div class="newsletter-logo-block">
+            <img src='<?php echo $this->getViewFileUrl('ScandicDesi_NewsletterPopup::images/newsletter-logo.svg'); ?>' alt="newsletter-logo">
+        </div>
+        <?php echo $block->getLeftBlock('footer-sign-up-newsletter-content'); ?>
+        <?php echo $block->getNewsletterBlock(); ?>
+        
+        <div class="newsletter-popup-footer-content">
+            <p><?php echo __('*Offer will arrive in email, Valid for full priced items.'); ?></p>
+        </div>
+    </div>
+    <!-- ko ifnot: newsletter.subscribed -->
+    <script type="text/x-magento-init">
+        {
+            "[data-role='newsletter-popup']": {
+                "newsletterPopup": {
+                    "popupDelay": "<?php echo $block->getPopupDelay(); ?>"
+                }
+            }
+        }
+    </script>
+    <!-- /ko -->
+</div>
+<script type="text/x-magento-init">
+    {"[data-role=newsletter-popup]": {"Magento_Ui/js/core/app": <?php echo $block->getJsLayout();?>}}
+</script>

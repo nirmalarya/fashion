@@ -1,0 +1,31 @@
+<?php
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/** @var $block \Magento\Customer\Block\Account\AuthorizationLink */
+$dataPostParam = '';
+if ($block->isLoggedIn()) {
+    $dataPostParam = sprintf(" data-post='%s'", $block->getPostParams());
+}
+?>
+
+<?php if ($block->isLoggedIn()) { ?>
+<li class="customer-welcome-name-li">
+    <span class="customer-welcome-name">
+        <span><?php echo __('Welcome'); ?> </span>
+        <span   data-bind="scope: 'customer'">
+            <span data-bind="text: customer().fullname"><?php echo __('User'); ?></span>                
+        </span>
+    </span>
+</li>
+<?php } ?>
+<li class="authorization-link" data-label="<?php echo $block->escapeHtml(__('or')); ?>">    
+            
+    <a <?php /* @escapeNotVerified */ echo $block->getLinkAttributes(); ?><?php /* @escapeNotVerified */ echo $dataPostParam; ?>>
+        <?php echo $block->escapeHtml($block->getLabel()); ?>
+    </a>
+</li>

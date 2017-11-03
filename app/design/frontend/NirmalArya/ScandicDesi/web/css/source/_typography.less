@@ -1,0 +1,109 @@
+// /**
+//  * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+	/**********Montserrat ********/
+	
+	.lib-font-face(
+        @family-name: @font-montserrat,
+        @font-path: '@{baseDir}fonts/Montserrat/Montserrat-Light',
+        @font-weight: 300,
+        @font-style: normal
+    );
+	
+	.lib-font-face(
+        @family-name: @font-montserrat,
+        @font-path: '@{baseDir}fonts/Montserrat/Montserrat-Regular',
+        @font-weight: 400,
+        @font-style: normal
+    );
+
+    .lib-font-face(
+        @family-name: @font-montserrat,
+        @font-path: '@{baseDir}fonts/Montserrat/Montserrat-Regular',
+        @font-weight: normal,
+        @font-style: normal
+    );
+	
+	.lib-font-face(
+        @family-name: @font-montserrat,
+        @font-path: '@{baseDir}fonts/Montserrat/Montserrat-Medium',
+        @font-weight: 500,
+        @font-style: normal
+    );
+	
+	/**********Montserrat ********/
+	
+	/**********Vidaloka ********/
+	.lib-font-face(
+        @family-name: @font-vidaloka,
+        @font-path: '@{baseDir}fonts/Vidaloka/Vidaloka-Regular',
+        @font-weight: normal,     
+        @font-style: normal
+    );
+	/**********Vidaloka ********/
+	
+	/**********Julius_Sans_One ********/
+	.lib-font-face(
+        @family-name: @font-julius_sans_one,
+        @font-path: '@{baseDir}fonts/Julius_Sans_One/JuliusSansOne-Regular',
+        @font-weight: normal,     
+        @font-style: normal
+    );
+	/**********Julius_Sans_One ********/
+	
+    .lib-font-face(
+        @family-name: @font-family-name__base,
+        @font-path: '@{baseDir}fonts/opensans/light/opensans-300',
+        @font-weight: 300,
+        @font-style: normal
+    );
+
+    .lib-font-face(
+        @family-name: @font-family-name__base,
+        @font-path: '@{baseDir}fonts/opensans/regular/opensans-400',
+        @font-weight: 400,
+        @font-style: normal
+    );
+
+    .lib-font-face(
+        @family-name: @font-family-name__base,
+        @font-path: '@{baseDir}fonts/opensans/semibold/opensans-600',
+        @font-weight: 600,
+        @font-style: normal
+    );
+
+    .lib-font-face(
+        @family-name: @font-family-name__base,
+        @font-path: '@{baseDir}fonts/opensans/bold/opensans-700',
+        @font-weight: 700,
+        @font-style: normal
+    );
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    h1 {
+        .lib-css(font-size, @h1__font-size-desktop);
+        .lib-css(margin-bottom, @h1__margin-bottom__desktop);
+    }
+}
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .items {
+        .lib-list-reset-styles();
+    }
+}

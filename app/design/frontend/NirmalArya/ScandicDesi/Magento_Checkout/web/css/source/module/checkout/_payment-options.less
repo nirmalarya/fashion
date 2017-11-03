@@ -39,22 +39,26 @@
 
             &._collapsible {
                 .payment-option-title {
-                    cursor: pointer;
+                    /* cursor: pointer; */
                 }
 
                 .payment-option-content {
-                    display: none;
+                   /*  display: none; */
                 }
             }
         }
 
         .payment-option-title {
-            .lib-css(border-top, @checkout-payment-option-title__border);
+            /* .lib-css(border-top, @checkout-payment-option-title__border); */
             .lib-css(padding, @checkout-payment-option-title__padding 0);
 
             .action-toggle {
-                .lib-css(color, @checkout-payment-option-title__color);
-                .lib-icon-font(
+                /* .lib-css(color, @checkout-payment-option-title__color); */
+                color: #4a4a4a;
+                font-weight: 400;
+                font-size: 1.4rem;
+
+                /* .lib-icon-font(
                 @icon-down,
                 @_icon-font-size: @checkout-payment-option-title-icon__font-size,
                 @_icon-font-line-height: @checkout-payment-option-title-icon__line-height,
@@ -63,16 +67,66 @@
                 @_icon-font-color-active: @checkout-payment-option-title-icon__color,
                 @_icon-font-margin: @checkout-payment-option-title-icon__margin,
                 @_icon-font-position: after
-                );
+                ); */
             }
         }
 
         .payment-option-content {
-            .lib-css(padding, 0 0 @indent__base @checkout-payment-option-content__padding__xl);
+            .lib-css(padding, 0 0 @indent__base 0); // @checkout-payment-option-content__padding__xl
+            
+            .actions-toolbar .action,
+            .input-text {
+                height: 3.8rem;
+                font-size: 1.2rem;                
+            }
+            .input-text {
+                border-color: fade(@color-m_m_l_gray, 51%);
+                &.mage-error {
+                    border-color: @form-element-validation__border-error;
+                }
+            }
+            .actions-toolbar .action {
+                font-weight: 500;
+                color: #4a4a4a;
+                border-color: #cccccc;
+            }
         }
 
         .payment-option-inner {
-            margin: 0 0 @indent__base;
+            margin: 0 0 @indent__base;            
+        }
+        
+        .discount-code {
+            .payment-option-inner,
+            .actions-toolbar {
+                display: table-cell;
+            }
+        
+            .actions-toolbar {
+                vertical-align: top;
+                width: 1%;
+                
+                .action {
+                    &.action-apply,
+                    &.action-cancel {
+                        &:extend(.abs-revert-to-action-secondary all);
+                        border-bottom-left-radius: 0;
+                        border-top-left-radius: 0;
+                        margin: 0 0 0 -1px;
+                        white-space: nowrap;
+                        width: auto;
+                        
+                        font-weight: 500;
+                        color: #4a4a4a;
+                        border-color: #cccccc;
+                        
+                        &:not(:focus) {
+                            box-shadow: none;
+                        }
+                    }
+                   
+                }
+            }
         }
 
         .credit-card-types {
@@ -199,7 +253,7 @@
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     .checkout-payment-method {
         .payment-option-title {
-            .lib-css(padding-left, @checkout-payment-option-content__padding__xl);
+            /* .lib-css(padding-left, @checkout-payment-option-content__padding__xl); */
         }
 
         .payment-option-content {

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="catalog_category_link">
+        <parameters>
+            <parameter name="template" xsi:type="select" visible="true">
+                <options>                   
+                    <option name="clp_link_block" 
+                            value="ScandicDesi_Catalog::category/widget/link/clp_link_block.phtml">
+                        <label translate="true">CLP - View All Product Category Link Template</label>
+                    </option>
+                </options>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>

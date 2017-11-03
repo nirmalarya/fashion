@@ -40,15 +40,24 @@
     .order-details-items {
         border: @border-width__base solid @border-color__base;
         margin-bottom: @indent__xl;
-        padding: @indent__s;
-    
+        padding: @indent__s 0 0;
+        
+        .checkout-onepage-success & {
+            border: none;
+        }
+        
+        .actions-toolbar,
+        .order-title {
+            padding: 0 @indent__base;
+        }
         .order-title {
             border-bottom: @border-width__base solid @border-color__base;
-            padding: 0 0 @indent__s;
+            padding: 0 @indent__base @indent__s;
     
             > strong {
-                .lib-font-size(24);
+                .lib-font-size(18);
                 font-weight: @font-weight__light;
+                color: #4a4a4a;
             }
     
             .action {
@@ -64,7 +73,7 @@
             }
     
             &:not(:last-child) {
-                margin-bottom: @indent__l;
+               /*  margin-bottom: @indent__l; */
             }
         }
     
@@ -177,7 +186,28 @@
         tfoot {
             &:extend(.abs-account-summary all);
         }
-    
+        tfoot,
+        thead,
+        tbody {
+            /* .mark {
+                padding-left: 15px;
+            }
+            .amount {
+                padding-right: 15px;
+            } */
+            tr {
+                
+                th,td {
+                    &:first-child {
+                        padding-left: @indent__base;
+                    }
+                    
+                    &:last-child {
+                        padding-right: @indent__base;
+                    }
+                }
+            }
+        }
         .action {
             &.show {
                 .lib-icon-font(
@@ -200,7 +230,8 @@
         }
     
         .product-item-name {
-            .lib-font-size(18);
+            /* .lib-font-size(18); */
+            font-weight: 300;
         }
     
         .items-qty {
@@ -229,9 +260,12 @@
     .block-order-details {
         &-comments {
             margin: 0 0 40px;
+            font-size: 13px;
+            font-weight: 300;
+            color: #4a4a4a;
     
             .comment-date {
-                font-weight: @font-weight__semibold;
+                font-weight: 500;
             }
     
             .comment-content {
@@ -502,6 +536,31 @@
             }
         }
     }
+    
+    .order-items-creditmemo,
+    .order-items-shipment,
+    .table-order-items,
+    .order-items {
+        &.table-wrapper {
+            table {
+                > tbody {
+                    > tr {
+                        td,
+                        th {
+                            &.col {
+                                &.name {
+                                    &:before {
+                                        display: none !important;
+                                    }
+                                }  
+                            }            
+                        }            
+                    }            
+                }            
+            }            
+        }
+    }
+    
 }
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
@@ -522,6 +581,25 @@
             margin: 0;
         }
     }
+    
+    .order-items-creditmemo,
+    .order-items-shipment,
+    .table-order-items,
+    .order-items {
+        &.table-wrapper {
+            .col {
+                &.qty,
+                &.price,
+                &.subtotal,
+                &.msrp {
+                    text-align: left;
+                }  
+            }            
+        }
+    }
+    
+    
+    
 }
 
 //
@@ -608,11 +686,11 @@
 
     .order-details-items {
         margin-top: -1px;
-        padding: 25px;
+        padding: 25px 0 0; 
 
         .col {
             &.name {
-                padding-left: 0;
+                /* padding-left: 0; */
             }
 
             &.price {
@@ -639,6 +717,10 @@
         &.ordered {
             .order-title {
                 display: none;
+                
+                .checkout-onepage-success & {
+                    display: block;
+                }
             }
         }
     }

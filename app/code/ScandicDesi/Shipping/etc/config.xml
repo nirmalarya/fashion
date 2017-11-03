@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <scandicdesi_shipping>
+            <cart_offers>
+                <active>1</active>
+            </cart_offers>
+            <cart_offers_messages>
+                <shipping><![CDATA[Shop additional %1 to avail <strong>Free Shipping</strong>!]]></shipping>
+            </cart_offers_messages>
+        </scandicdesi_shipping>
+        <carriers>
+            <scandicdesi>
+                <active>1</active>
+                <title>ScandicDesi Shipping</title>
+                <scandicdesi_express_title>Express Shipping</scandicdesi_express_title>
+                <scandicdesi_standard_title>Normal Shipping</scandicdesi_standard_title>
+                <scandicdesi_express_name>Next Day Delivery to Shipping Address</scandicdesi_express_name>
+                <scandicdesi_standard_name>Delivered to Nearest Collection Point via Normal Post in 3-5 Days</scandicdesi_standard_name>
+                <sallowspecific>0</sallowspecific>
+                <model>ScandicDesi\Shipping\Model\Carrier\Shipping</model>
+                <scandicdesi_express_price>200</scandicdesi_express_price>
+                <scandicdesi_standard_price>100</scandicdesi_standard_price>
+                <allowed_methods></allowed_methods>
+                <type>I</type>
+                <specificerrmsg>This shipping method is currently unavailable. If you would like to ship using this shipping method, please contact us.</specificerrmsg>
+            </scandicdesi>
+        </carriers>
+    </default>
+</config>

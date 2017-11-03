@@ -9,10 +9,31 @@
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="checkout.cart.container">
-            <container name="cart.discount" label="Cart Discount Container" htmlTag="div" htmlClass="cart-discount" after="-" />
+            <container name="checkout.cart.header.container" htmlTag="div" htmlClass="cart-header-container" before="-">
+				<block class="Magento\Checkout\Block\Cart" name="checkout.cart.header.content" as="cart.header.content" template="cart/cart-header-content.phtml"  >
+					<block class="Magento\Checkout\Block\Onepage\Link" name="checkout.cart.methods.onepage.bottom1" template="onepage/link.phtml" />
+					<block class="ScandicDesi\Checkout\Block\Cart" name="scandicdesi.cart" >
+                        <arguments>
+                            <argument name="jsLayout" xsi:type="array">
+                                <item name="components" xsi:type="array">
+                                    <item name="cartOffers" xsi:type="array">
+                                        <item name="component" xsi:type="string">ScandicDesi_Shipping/js/view/cart-offers</item>
+                                    </item>
+                                </item>
+                            </argument>
+                        </arguments>
+                    </block>
+				</block>
+			</container>	
+            
+            <container name="cart.summary.discount" label="Cart Summary and Discount Container" htmlTag="div" htmlClass="cart-summary-discount" after="cart-items" >  
+                <container name="cart.discount" label="Cart Discount Container" htmlTag="div" htmlClass="cart-discount" after="-" />
+            </container>
         </referenceContainer>
-        <move element="checkout.cart.crosssell" destination="checkout.cart.container" after="-" />
+        <!--  <move element="checkout.cart.crosssell" destination="checkout.cart.container" after="-" /> -->
         <move element="checkout.cart.coupon" destination="cart.discount" />
         <move element="checkout.cart.shortcut.buttons" destination="checkout.cart.methods" after="checkout.cart.methods.onepage.bottom"/>
+        
+        <move element="cart.summary" destination="cart.summary.discount"  before="-"/>
     </body>
 </page>

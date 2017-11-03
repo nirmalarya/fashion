@@ -1,0 +1,14 @@
+<!--
+/**
+ * Copyright © 2017 ScandicDesi. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<div class="block block-cart-offer">
+    <!-- ko if: cartOffers().shipping && getSubtotalBalance() -->
+    <div class="message-area message" data-bind="css: {'success': cartOffers().shipping.title }">
+        <strong data-bind="html: cartOffers().shipping.title" class="cart-offer-shipping-title"></strong>
+        <span data-bind="html: getCartMessage()" class="cart-offer-shipping-message"></span>
+    </div>
+    <!-- /ko -->
+</div>

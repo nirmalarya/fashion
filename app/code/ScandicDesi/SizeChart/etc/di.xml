@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="scandicdesi_sizechart_listing_data_source" xsi:type="string">ScandicDesi\SizeChart\Model\ResourceModel\Chart\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="ScandicDesi\SizeChart\Model\ResourceModel\Chart\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">scandicdesi_size_chart</argument>
+            <argument name="eventPrefix" xsi:type="string">scandicdesi_sizechart_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">sizechart_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">ScandicDesi\SizeChart\Model\ResourceModel\Chart</argument>
+        </arguments>
+    </type>
+</config>

@@ -19,7 +19,20 @@
 
 & when (@media-common = true) {
     .block-search {
-        margin-bottom: 0;
+		display: none;
+		margin-bottom: 0;
+        box-sizing: border-box;
+		
+        &.active {
+			display: block;
+			position: absolute;
+			background: #FFF;
+			width: 100%;
+			/* height: 100%; */
+			top: 0;
+			left: 0;
+			z-index: 6;
+		}
 
         .block {
             &-title {
@@ -55,7 +68,39 @@
         }
 
         .action.search {
-            display: none;
+            
+            .lib-button-icon(
+            @_icon-font-content: @icon-search,
+            @_icon-font-size: 2.6rem,
+            @_icon-font-text-hide: true,
+            @_icon-font-color: @header-icons-color,
+            @_icon-font-color-hover: @header-icons-color-hover,
+            @_icon-font-line-height: 4.2rem
+            );
+            .lib-button-reset();
+            position: absolute;
+            top: 0;
+            z-index: 1;
+            
+            
+            left: 0;
+            margin-top: 2rem;
+            width: 4rem;
+            margin-left: 1rem;
+                
+            &:focus {
+                &:before {
+                    .lib-css(color, @color-gray20);
+                }
+            }
+            &:before {
+                background: url('../images/search-icon.svg') no-repeat center;
+                background-size: 100%;
+                text-indent: -9999px;
+                width: 2rem;
+                height: 4.2rem;
+            }
+                        
         }
 
         .control {
@@ -65,16 +110,80 @@
             padding: 0 @layout__width-xs-indent;
         }
 
-        input {
-            left: -300%;
+        input {        
+            .lib-input-placeholder(#b2b2b2);            
+        
+            /* left: -300%; */
             margin: 15px 0;
             position: absolute;
+            
+            font-size: 1.8rem;
+            font-weight: 200;
+            text-align: center;
+            color: @color-black;
+            height: 4.2rem;
+            padding: 0 4rem;
+            border: none;
         }
 
         .nested {
             display: none;
-        }
+        }		
     }
+	.mbl_search_btn{
+		float: right;
+		position: relative;
+		margin: 0 1rem;
+        cursor: pointer;
+		
+		.lib-icon-font(
+			@_icon-font-content: @icon-search,
+			@_icon-font-line-height: 4rem,
+			@_icon-font-size: 2.2rem,
+			@_icon-font-color: @header-icons-color,
+			@_icon-font-color-hover: @header-icons-color-hover,
+			@_icon-font-color-active: @header-icons-color,
+			@_icon-font-margin: @icon-font__margin,
+			@_icon-font-vertical-align: @icon-font__vertical-align,
+			@_icon-font-position: before,
+			@_icon-font-display: false
+			);
+		&:before {
+			background: url('../images/search-icon.svg') no-repeat center;
+            background-size: 100%;
+			text-indent: -9999px;
+			width: 2.4rem;
+			height: 3rem;
+		}
+		
+		&.active {
+			z-index: 7;
+            
+            margin-top: 65px !important;
+            position: absolute;
+            right: 3.5rem;
+            
+			.lib-icon-font(
+				@_icon-font-content: @icon-remove,
+				@_icon-font-line-height: 4rem,
+				@_icon-font-size: 2.2rem,
+				@_icon-font-color: @header-icons-color,
+				@_icon-font-color-hover: @header-icons-color-hover,
+				@_icon-font-color-active: @header-icons-color,
+				@_icon-font-margin: @icon-font__margin,
+				@_icon-font-vertical-align: @icon-font__vertical-align,
+				@_icon-font-position: before,
+				@_icon-font-display: false
+			);
+			&:before {
+				background: url('../images/search-close-icon.svg') no-repeat center;
+                width: 2rem;
+                margin-right: .5rem;
+                margin-left: .5rem;
+			}
+			
+		}
+	}
 
     .search-autocomplete {
         display: none;
@@ -205,6 +314,20 @@
     }
 }
 
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .block-search.active {
+        position: fixed;
+        height: 65px;
+        z-index: 15;
+        margin-top: 0;
+    }
+    .mbl_search_btn.active {
+        z-index: 16;
+        margin-top: 10px !important;
+        right: 0;
+    }
+}
 //
 //  Desktop
 //  _____________________________________________
@@ -212,10 +335,11 @@
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     .block-search {
         float: right;
-        padding-left: 15px;
-        position: relative;
+        /* padding-left: 15px;
+        position: relative; */
         width: 250px;
         z-index: 4;
+		text-align: right; 
 
         .label {
             &:extend(.abs-visually-hidden-desktop all);
@@ -228,34 +352,64 @@
         }
 
         input {
-            .lib-input-placeholder(@form-element-input-placeholder__color);
+            /* .lib-input-placeholder(#b2b2b2); */
             margin: 0;
             padding-right: 35px;
             position: static;
+            
+            font-size: 3.3rem;
+            /* font-weight: 200;
+            color: @color-black; */
+            height: 5rem;
+            
+        }
+        
+        &.active {
+            input {
+                margin-top: 75px;
+                margin-bottom: 1.5rem;
+                padding: 0 7.4rem;
+                text-align: center;
+                
+                
+            }
         }
 
         .action.search {
-            display: inline-block;
             .lib-button-icon(
             @_icon-font-content: @icon-search,
-            @_icon-font-size: 16px,
+            @_icon-font-size: 2.6rem,
             @_icon-font-text-hide: true,
             @_icon-font-color: @header-icons-color,
             @_icon-font-color-hover: @header-icons-color-hover,
-            @_icon-font-line-height: 32px
+            @_icon-font-line-height: 5rem
             );
             .lib-button-reset();
-            position: absolute;
-            right: @indent__s;
-            top: 0;
-            z-index: 1;
-
-            &:focus {
+            /* position: absolute; */
+           /*  right: @indent__s; */
+            /* top: 0;
+            z-index: 1; */
+			/* display: none; */
+            
+            
+            left: 0;
+            margin-top: 75px;
+           /*  width: 4rem; */
+            margin-left: 3.5rem;
+                
+           /*  &:focus {
                 &:before {
                     .lib-css(color, @color-gray20);
                 }
+            } */
+            &:before {
+               /*  background: url('../images/search-icon.svg') no-repeat center;
+                background-size: 100%;
+                text-indent: -9999px; */
+                width: 2.6rem;
+                height: 5rem;
             }
-        }
+        }		
     }
 
     .search-autocomplete {

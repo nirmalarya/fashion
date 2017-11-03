@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="23px" height="15px" viewBox="0 0 23 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+    <title>Page 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="PLP-Filter-Expanded" transform="translate(-648.000000, -585.000000)" stroke="#000000">
+            <g id="Page-1" transform="translate(649.000000, 586.000000)">
+                <path d="M20.8473593,6.30478537 C20.6457395,6.0472247 15.8555066,0 10.5003355,0 C5.14449343,0 0.35426052,6.0472247 0.152640659,6.30478537 L0,6.5 L0.152640659,6.69521463 C0.35426052,6.9527753 5.14449343,13 10.5003355,13 C15.8555066,13 20.6457395,6.9527753 20.8473593,6.69521463 L21,6.5 L20.8473593,6.30478537 Z" id="Stroke-1"></path>
+                <path d="M10.4997225,9 C9.12137862,9 8,7.87834388 8,6.4997225 C8,5.12137862 9.12137862,4 10.4997225,4 C11.8786214,4 13,5.12137862 13,6.4997225 C13,7.87834388 11.8786214,9 10.4997225,9 Z" id="Stroke-3"></path>
+            </g>
+        </g>
+    </g>
+</svg>
