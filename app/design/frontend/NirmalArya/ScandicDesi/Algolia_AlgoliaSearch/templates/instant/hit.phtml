@@ -25,14 +25,17 @@ $showCart = true;
             </a>
             
             <div class="product-item-actions">					
+                
                 {{#isQuickViewEnable}}
-                <?php /* ********Start : Quick View********* */ ?>
+                <?php /* ***Start : Quick View**** */ ?>
+                <?php /*  ?>
                 <a class="weltpixel-quickview weltpixel_quickview_button_{{quickViewButtonStyle}}" data-quickview-url='{{quickViewUrlData}}' href="javascript:void(0);">
-                    <span><?php /* @escapeNotVerified */ echo __('Quickview') ?></span>
+                    <span><?php  echo __('Quickview') ?></span>
                 </a>
-                <?php /* ********End : Quick View********* */?>
-                {{/isQuickViewEnable}}                    
-                                        
+                 <?php */  ?>
+                <?php /* ***End : Quick View**** */?>
+                {{/isQuickViewEnable}}
+                
                 {{#isAddToCartEnabled}}
                     <?php /* ********Start : Compare********* */ ?>
                     <?php if ($showCompare): ?> 
