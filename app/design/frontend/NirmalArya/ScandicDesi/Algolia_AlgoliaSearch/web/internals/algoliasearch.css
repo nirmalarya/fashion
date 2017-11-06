@@ -2738,5 +2738,8 @@ a.ais-current-refined-values--link:hover .clear-cross:before{
     .facet-color-label[data-facet-value="PINK"] {
        background-color: #ffc0cb; 
     }
-    
+    .facet-color-label[data-facet-value="BRICK RED"i] ,
+    .facet-color-label[data-facet-value="BRICK RED"] {
+       background-color: #c74537; 
+    }
 
