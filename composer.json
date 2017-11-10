@@ -10,12 +10,10 @@
     "require": {
         "magento/product-community-edition": "2.1.9",
         "composer/composer": "@alpha",
-        "mailchimp/mc-magento2": "^1.0",
         "dibs/module-payment-flexwin": "^2.2",
         "algolia/algoliasearch-magento-2": "^1.2",
         "shopialfb/facebook-module": "^2.0",
         "aheadworks/module-rbslider": "^1.1",
-        "mageplaza/magento-2-blog-extension": "^2.4",
         "apptrian/facebook-pixel": "^2.1",
         "weltpixel/m2-weltpixel-google-cards": "^1.1",
         "weltpixel/m2-weltpixel-quickview": "^1.0",
@@ -40,7 +38,9 @@
         "magento/module-review-sample-data": "100.1.*",
         "magento/module-swatches-sample-data": "100.1.*",
         "magento/sample-data-media": "100.1.*",
-        "magento/module-offline-shipping-sample-data": "100.1.*"
+        "magento/module-offline-shipping-sample-data": "100.1.*",
+        "mailchimp/mc-magento2": "^1.0",
+        "mageplaza/magento-2-blog-extension": "^2.5"
     },
     "require-dev": {
         "phpunit/phpunit": "4.1.0",
