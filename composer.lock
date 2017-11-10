@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ac3c977fa20336c912edc775e36a5d2d",
+    "content-hash": "ce8aa8974ccf0d281cafb5649fb7dc3b",
     "packages": [
         {
             "name": "aheadworks/module-rbslider",
@@ -6265,12 +6265,17 @@
         },
         {
             "name": "mageplaza/magento-2-blog-extension",
-            "version": "2.4.0",
+            "version": "2.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mageplaza/magento-2-blog.git",
+                "reference": "cab8b75e2a17ab4a86a5497ec9cc8d84879aabcf"
+            },
             "dist": {
                 "type": "zip",
-                "url": "https://repo.magento.com/archives/mageplaza/magento-2-blog-extension/mageplaza-magento-2-blog-extension-2.4.0.0.zip",
-                "reference": null,
-                "shasum": "4481da22b5d407fed82a013c51436c4339ae1e55"
+                "url": "https://api.github.com/repos/mageplaza/magento-2-blog/zipball/cab8b75e2a17ab4a86a5497ec9cc8d84879aabcf",
+                "reference": "cab8b75e2a17ab4a86a5497ec9cc8d84879aabcf",
+                "shasum": ""
             },
             "require": {
                 "mageplaza/module-core": "*"
@@ -6284,9 +6289,9 @@
                     "Mageplaza\\Blog\\": ""
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "OSL-3.0",
-                "AFL-3.0"
+                "Mageplaza License"
             ],
             "authors": [
                 {
@@ -6296,7 +6301,14 @@
                     "role": "Leader"
                 }
             ],
-            "description": "Magento 2 Blog extension"
+            "description": "Magento 2 Blog extension",
+            "keywords": [
+                "blog",
+                "magento 2",
+                "magento 2 blog",
+                "mageplaza"
+            ],
+            "time": "2017-11-07T09:24:04+00:00"
         },
         {
             "name": "mageplaza/module-core",
