@@ -41,7 +41,7 @@ abstract class SizeChart extends Action
     /**
      * @var RedirectFactory
      */
-    protected $resutlRedirctFactory;
+    protected $resultRedirectFactory;
     /**
      * @var DataPersistorInterface
      */
@@ -56,7 +56,6 @@ abstract class SizeChart extends Action
      * @param Action\Context $context
      * @param PageFactory $resultPageFactory
      * @param ChartFactory $chartFactory
-     * @param RedirectFactory $resultRedirectFactory
      * @param DataPersistorInterface $dataPersistor
      * @param Registry $coreRegistry
      * @param Config $config
@@ -65,7 +64,6 @@ abstract class SizeChart extends Action
         Action\Context $context,
         PageFactory $resultPageFactory,
         ChartFactory $chartFactory,
-        RedirectFactory $resultRedirectFactory,
         DataPersistorInterface $dataPersistor,
         Registry $coreRegistry,
         Config $config
@@ -74,7 +72,7 @@ abstract class SizeChart extends Action
         $this->config = $config;
         $this->chartFactory = $chartFactory;
         $this->resultPageFactory = $resultPageFactory;
-        $this->resutlRedirctFactory = $resultRedirectFactory;
+        $this->resultRedirectFactory = $context->getResultRedirectFactory();
         $this->dataPersistor = $dataPersistor;
         $this->coreRegistry = $coreRegistry;
     }

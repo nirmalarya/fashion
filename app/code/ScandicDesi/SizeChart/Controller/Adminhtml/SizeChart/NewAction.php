@@ -11,7 +11,6 @@ namespace ScandicDesi\SizeChart\Controller\Adminhtml\SizeChart;
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
 use Magento\Backend\Model\View\Result\ForwardFactory;
-use Magento\Backend\Model\View\Result\RedirectFactory;
 use Magento\Framework\App\Request\DataPersistorInterface;
 use Magento\Framework\Controller\Result\Forward;
 use Magento\Framework\Registry;
@@ -32,7 +31,6 @@ class NewAction extends SizeChart
      * @param Context $context
      * @param PageFactory $resultPageFactory
      * @param ChartFactory $chartFactory
-     * @param RedirectFactory $resultRedirectFactory
      * @param DataPersistorInterface $dataPersistor
      * @param Registry $coreRegistry
      * @param Config $config
@@ -42,7 +40,6 @@ class NewAction extends SizeChart
         Action\Context $context,
         PageFactory $resultPageFactory,
         ChartFactory $chartFactory,
-        RedirectFactory $resultRedirectFactory,
         DataPersistorInterface $dataPersistor,
         Registry $coreRegistry,
         Config $config,
@@ -52,7 +49,6 @@ class NewAction extends SizeChart
             $context,
             $resultPageFactory,
             $chartFactory,
-            $resultRedirectFactory,
             $dataPersistor,
             $coreRegistry,
             $config
