@@ -11,7 +11,6 @@ namespace ScandicDesi\Checkout\Block;
 use Magento\Framework\Pricing\Helper\Data as PriceHelper;
 use Magento\Framework\View\Element\Template;
 use Magento\Checkout\Model\Session as CheckoutSession;
-use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\Exception\LocalizedException;
 use Magento\Quote\Api\CartRepositoryInterface;
 use Magento\Quote\Api\CartTotalRepositoryInterface;
@@ -29,10 +28,6 @@ class Cart extends Template
      * @var CartInterface|null
      */
     private $cart = null;
-    /**
-     * @var ScopeConfigInterface
-     */
-    private $scopeConfig;
     /**
      * @var int|null
      */
@@ -58,7 +53,6 @@ class Cart extends Template
      * HeadingPlugin constructor.
      * @param Template\Context $context
      * @param CartRepositoryInterface $cartRepository
-     * @param ScopeConfigInterface $scopeConfig
      * @param CartTotalRepositoryInterface $cartTotalRepository
      * @param CheckoutSession\Proxy $checkoutSessionProxy
      * @param PriceHelper $priceHelper
@@ -67,14 +61,12 @@ class Cart extends Template
     public function __construct(
         Template\Context $context,
         CartRepositoryInterface $cartRepository,
-        ScopeConfigInterface $scopeConfig,
         CartTotalRepositoryInterface $cartTotalRepository,
         CheckoutSession\Proxy $checkoutSessionProxy,
         PriceHelper $priceHelper,
         array $data = []
     ) {
         parent::__construct($context, $data);
-        $this->scopeConfig = $scopeConfig;
         $this->cartRepository = $cartRepository;
         $this->checkoutSessionProxy = $checkoutSessionProxy;
         $this->cartTotalRepository = $cartTotalRepository;
@@ -107,7 +99,7 @@ class Cart extends Template
     {
         $cart = $this->getCart();
         if ($this->summaryQty === null && $cart !== null) {
-            $useQty = $this->scopeConfig->getValue(
+            $useQty = $this->_scopeConfig->getValue(
                 'checkout/cart_link/use_qty',
                 ScopeInterface::SCOPE_STORE
             );
