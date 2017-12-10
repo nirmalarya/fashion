@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--
 /**
- * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * Copyright 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 -->
@@ -46,9 +46,9 @@
             </arguments>
         </referenceBlock>
 		
-		<!--<referenceBlock name="store.settings">
+		<referenceBlock name="store.settings">
             <container name="custom-header-mbl-currency-switcher-wrapper" as="custom-header-mbl-currency-switcher-wrapper" label="Custom - Header Mobile Currency Switcher Wrapper" htmlTag="div" htmlClass="custom-currency-switcher-wrapper switcher" after="-"  />
-        </referenceBlock>-->
+        </referenceBlock>
 		
 		
         <referenceContainer name="footer">
@@ -76,29 +76,14 @@
 		</referenceContainer>
 		<move element="form.subscribe" destination="footer-newsletter-wrapper"/>
 		
-		
-		
-		
-		
-		
-		
-		
-		
 		<move element="header.container" destination="header_nav_container_fixed"/>
         <move element="navigation.sections" destination="header_nav_container_fixed"/>
 		
-		
-        
         <move element="header.links" destination="custom-header-account-wrapper"/>
         <move element="top.search" destination="custom-header-items-wrapper"/>
         <move element="minicart" destination="custom-header-items-wrapper" before="top.search"/>
        
         <move element="custom-header-account-wrapper" destination="custom-header-items-wrapper" after="top.search" />
-        
-        
-        
-        
-        
         
         
 		<move element="currency" destination="custom-header-currency-switcher-wrapper"/>
