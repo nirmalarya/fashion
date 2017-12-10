@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--
 /**
- * Copyright Š 2013-2017 Magento, Inc. All rights reserved.
+ * Copyright 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 -->
@@ -29,7 +29,7 @@
                                                             <item name="shipping-address-fieldset" xsi:type="array">
                                                                 <item name="children" xsi:type="array">
                                                                     
-                                                                    <!--<item name="telephone" xsi:type="array">
+                                                                    <item name="telephone" xsi:type="array">
                                                                         <item name="validation" xsi:type="array">
                                                                             <item name="validate-digits" xsi:type="string">true</item>
                                                                         </item>
@@ -38,7 +38,7 @@
                                                                                     <item name="description" xsi:type="string" translate="true">For delivery questions.  Please enter number only in this field.</item>
                                                                             </item>
                                                                         </item>
-                                                                    </item>-->
+                                                                    </item>
                                                                     
                                                                     <item name="company" xsi:type="array">
                                                                         <item name="visible" xsi:type="boolean">false</item>
