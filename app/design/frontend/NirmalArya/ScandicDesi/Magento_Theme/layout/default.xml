@@ -46,9 +46,9 @@
             </arguments>
         </referenceBlock>
 		
-		<referenceBlock name="store.settings">
+		<!--<referenceBlock name="store.settings">
             <container name="custom-header-mbl-currency-switcher-wrapper" as="custom-header-mbl-currency-switcher-wrapper" label="Custom - Header Mobile Currency Switcher Wrapper" htmlTag="div" htmlClass="custom-currency-switcher-wrapper switcher" after="-"  />
-        </referenceBlock>
+        </referenceBlock>-->
 		
 		
         <referenceContainer name="footer">
