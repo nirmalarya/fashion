@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--
 /**
- * Copyright Â© 2013-2017 Magento, Inc. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 -->
@@ -45,6 +45,12 @@
                 <argument name="logo_img_height" xsi:type="number">74</argument>
             </arguments>
         </referenceBlock>
+		
+		<referenceBlock name="store.settings">
+            <container name="custom-header-mbl-currency-switcher-wrapper" as="custom-header-mbl-currency-switcher-wrapper" label="Custom - Header Mobile Currency Switcher Wrapper" htmlTag="div" htmlClass="custom-currency-switcher-wrapper switcher" after="-"  />
+        </referenceBlock>
+		
+		
         <referenceContainer name="footer">
             <block class="Magento\Store\Block\Switcher" name="store_switcher" as="store_switcher" after="footer_links" template="switch/stores.phtml"/>
         
