@@ -1120,18 +1120,77 @@
             font-weight: 300;
             color: #4a4a4a;
             
-			.accord-cont {
+			max-width: 120rem;
+            margin: 0 auto;
 			
-			    .accord-title {
-    				cursor: pointer;
-				}
-				
+			.accord-cont {
+                .lib-dropdown(
+                    @_toggle-selector : ~".accord-title > *",
+                    @_options-selector : ~".block-content",
+                    
+                    @_dropdown-actions-padding: 0,
+                    @_dropdown-list-item-padding: 0,
+                    @_dropdown-toggle-icon-content: @icon-arrow-down,
+                    @_dropdown-toggle-active-icon-content: @icon-arrow-up,
+                    @_icon-font-text-hide: true,
+                    @_icon-font-size: 10px,
+                    @_icon-font-line-height: 22px,
+                    @_dropdown-list-min-width: 100%,
+                    
+                    @_dropdown-list-item-hover: none,
+                    @_dropdown-list-pointer: false,
+                    @_dropdown-list-border: none,
+                    
+                    @_icon-font-color: @color-dark_brown,
+                    @_icon-font-color-hover: @color-dark_brown,
+                    @_icon-font-color-active: @color-dark_brown
+    
+                    );
+                    display: block;
+                    
+                .accord-title {
+                    cursor: pointer;
+                    background-color: rgba(194, 222, 232, 0.66);
+                    padding: 10px;
+                    margin-top: 20px;
+                    margin-bottom: 10px;
+                    position: relative;
+                    padding-right: 30px;
+                        
+                    h2 {
+                        margin: 0;
+                        font-weight: 600;
+                        color: #4a4a4a;
+                        
+                        &:after {
+                            position: absolute;
+                            right: 10px;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            font-weight: bold;
+                        }
+                    }
+                    
+                    &.active { 
+                        > * {
+                            .lib-icon-font(
+                                @_icon-font-content: @icon-arrow-up,
+                                @_icon-font-size: 10px,
+                                @_icon-font-line-height: 22px,
+                                @_icon-font-position: after
+                                );
+                        }
+                        display: block;
+                        
+                    }
+                }
                 .block-content {
                     display: none;
                 }
                 &.active {
                     .block-content {
                         display: block;
+                        position: relative;
                     }
                 }
             }
