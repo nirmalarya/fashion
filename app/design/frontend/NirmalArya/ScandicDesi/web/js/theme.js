@@ -1,7 +1,3 @@
-/**
- * Copyright © 2013-2017 Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
- */
 define([
     'jquery',
     'mage/smart-keyboard-handler',
@@ -116,13 +112,16 @@ define([
 		var toggleMenu = function(hide) {
 			var topmenu_ActiveLis = topmenu_Obj.find(' > li.active').length;
 			if(hide && !navDepandEle_Obj.hasClass('open') && !topmenu_ActiveLis) {
-				nav.stop(0).slideUp();
+				// nav.stop(0).slideUp();
+				nav.slideUp(); // required smooth transition for menu so remove stop
+				
 				navDepandEle_Obj.removeClass('open');
 			} else {
 				if(topmenu_ActiveLis){
 					navDepandEle_Obj.addClass('open');
 				}
-				nav.stop(0).slideDown();
+				// nav.stop(0).slideDown();
+				nav.slideDown();
 			}
 			
         }
