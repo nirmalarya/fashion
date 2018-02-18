@@ -317,8 +317,11 @@
 					height: 3rem;
 				}
 				
-				&:hover { // added hover for customer icon... 
-                    opacity: 0.6;
+				&:hover { // account icon added for hover
+                    &:before {
+                        background-image: url('../images/account-icon-hover.svg');
+                    }
+                    /* opacity: 0.6; */
                 }
 			}
 			
