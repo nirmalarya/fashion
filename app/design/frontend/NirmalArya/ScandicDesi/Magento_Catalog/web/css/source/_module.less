@@ -1431,6 +1431,13 @@
         display: inline-block;
         margin-right: 1rem;
         
+        li {
+            display: inline-block;
+            margin-bottom: 0;
+            min-width: 4rem;
+            list-style: none;
+        }
+        
         .action.compare {
            /* line-height: @form-element-input__height;
             .lib-link(
@@ -1466,8 +1473,11 @@
                    height: 3rem;
                 }
                 
-                &:hover { // added hover for compare icon... 
-                    opacity: 0.6;
+                &:hover { // compare icon added for hover
+                    &:before {
+                        background-image: url('../images/compare-icon-hover.svg');
+                    }
+                    /* opacity: 0.6; */
                 }
         }
 
