@@ -24,6 +24,8 @@
         </referenceContainer>
 		
 		<!-- removed compare from header bar -->
-		<referenceBlock name="compare-link-wrapper" remove="true" />
+		<!-- <referenceBlock name="compare-link-wrapper" remove="true" /> -->
+        
+        <move element="compare-link-wrapper" destination="custom-header-account-wrapper" before="-" />
     </body>
 </page>
