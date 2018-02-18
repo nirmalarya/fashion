@@ -215,8 +215,16 @@
 					}
 				}
                 
-                &:hover { // added hover for search icon... 
-                  opacity: 0.6;
+                &:hover {  // cart icon added for hover
+                    &:before {
+                        background-image: url('../images/shopping-bag-default-icon-hover.svg');
+                    }
+                    &.not-empty {
+                        &:before {
+                            background-image: url('../images/shopping-bag-icon-hover.svg') 
+                        }
+                    }
+                    /* opacity: 0.6; */
                 }
                 
                 .text {
