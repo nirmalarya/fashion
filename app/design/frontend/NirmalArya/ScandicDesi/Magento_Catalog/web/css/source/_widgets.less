@@ -1,7 +1,3 @@
-// /**
-//  * Copyright © 2013-2017 Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
 
 //
 //  Common
@@ -139,7 +135,16 @@
         .owl-nav {
             margin: 0;
             .shop-by-occasion & {
-                display: none;
+               /* display: none; */
+                div {
+                    &.owl-prev,
+                    &.owl-next {
+                        width: 30%;
+                        height: 100%;
+                        border-radius: 0;
+                        opacity: 0;
+                    }
+                }
             }
             
             div{
@@ -358,6 +363,12 @@
                     }
                     .owl-nav {
                         display: block;
+                        div {
+                            &.owl-prev,
+                            &.owl-next {
+                                width: 35%;
+                            }
+                        }
                     }
                 }
             }
