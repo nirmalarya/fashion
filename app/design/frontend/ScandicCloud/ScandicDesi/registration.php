@@ -6,6 +6,6 @@
 
 \Magento\Framework\Component\ComponentRegistrar::register(
     \Magento\Framework\Component\ComponentRegistrar::THEME,
-    'frontend/NirmalArya/ScandicDesi',
+    'frontend/ScandicCloud/ScandicDesi',
     __DIR__
 );
