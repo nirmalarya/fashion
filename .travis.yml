@@ -48,9 +48,7 @@ cache:
     - $HOME/node_modules
     - $HOME/yarn.lock
 before_install: ./dev/travis/before_install.sh
-install:
-    - echo "{\"http-basic\":{\"repo.magento.com\":{\"username\":\"${dd44b2e7345039f2108b2c8396b0bccb}\",\"password\":\"${fcc00f7c45d86834cbc245ec6f93baf6}\"}}}" > auth.json 
-    - composer install --no-interaction --prefer-dist
+install: composer install --no-interaction --prefer-dist
 before_script: ./dev/travis/before_script.sh
 script:
   # Set arguments for variants of phpunit based tests; '|| true' prevents failing script when leading test fails
